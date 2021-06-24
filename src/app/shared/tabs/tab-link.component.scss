@@ -1,0 +1,12 @@
+﻿.navbar-light .navbar-nav .nav-link {
+  border-radius: 3px;
+  padding: 3px 10px;
+
+  &.active-link {
+    background-color: #2196f3;
+    color: #fff;
+  }
+}
+.active-link {
+  color: #F20B22;
+} 

@@ -1,0 +1,197 @@
+.g-50,
+.gy-50 {
+  --bs-gutter-y: 50px;
+}
+
+.g-100-x,
+.gy-100-x {
+  --bs-gutter-x: 100px;
+}
+
+.g-40-x,
+.gy-40-x {
+  --bs-gutter-x: 40px;
+}
+
+.g-30-x,
+.gy-30-x {
+  --bs-gutter-x: 30px;
+}
+
+.gx-100 {
+  --bs-gutter-x: 150px;
+}
+
+.border-right-line {
+  border-right: 4px solid blue;
+}
+
+.left-arrow {
+  position: relative;
+}
+
+.left-arrow::after {
+  position: absolute;
+  right: 0;
+  border-bottom: 4px solid #000;
+  width: 30px;
+  content: "";
+  display: block;
+  top: 65px;
+}
+
+.left-arrow::before {
+  position: absolute;
+  right: 30px;
+  border-color: transparent #000 transparent transparent;
+  border-width: 8px;
+  border-style: solid;
+  content: "";
+  display: block;
+  top: 59px;
+}
+
+.graph-container div > div:first-child .row .right-arrow::after {
+  top: 0px;
+  bottom: auto;
+}
+
+.graph-container div > div:first-child .row .right-arrow::before {
+  top: -5px;
+  bottom: auto;
+}
+
+.right-arrow {
+  position: relative;
+}
+
+.graph-container div > div:first-child .row .right-container {
+  margin-top: -10px;
+}
+
+.graph-container div > div:last-child .row {
+  align-self: flex-end !important;
+}
+
+.graph-container div > div:last-child .row .right-container {
+  margin-bottom: -10px;
+}
+
+.graph-container div > div:last-child .row .right-arrow {
+  padding-bottom: 0 !important;
+  align-self: flex-end !important;
+}
+
+.right-arrow::after {
+  position: absolute;
+  left: 0;
+  border-bottom: 4px solid #000;
+  width: 30px;
+  content: "";
+  display: block;
+  top: 15px;
+  margin-top: 0;
+}
+
+.right-arrow::before {
+  position: absolute;
+  left: 30px;
+  border-color: transparent transparent transparent #000;
+  border-width: 8px;
+  border-style: solid;
+  content: "";
+  display: block;
+  top: 9px;
+}
+
+.graph-container div > div:last-child .row .right-arrow::after {
+  bottom: 0px;
+  top: auto;
+}
+
+.graph-container div > div:last-child .row .right-arrow::before {
+  bottom: -5px;
+  top: auto;
+}
+
+.right-arrow-center {
+  position: relative;
+}
+
+.right-arrow-center::after {
+  position: absolute;
+  left: -33px;
+  border-bottom: 4px solid #000;
+  width: 34px;
+  content: "";
+  display: block;
+  top: 50px;
+  margin-top: 0;
+}
+
+.right-arrow-center::before {
+  position: absolute;
+  left: -5px;
+  border-color: transparent transparent transparent #000;
+  border-width: 8px;
+  border-style: solid;
+  content: "";
+  display: block;
+  top: 44px;
+}
+
+.pb-50 {
+  padding-bottom: 50px !important;
+}
+
+.pt-50 {
+  padding-top: 50px !important;
+}
+
+.rounded-image {
+  height: 74px;
+  width: 74px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+.rounded-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.year-container {
+  display: inline-flex;
+  background-color: #c1d3d9;
+  color: #5466ba;
+  padding: 5px 10px 4px;
+  font-size: 12px;
+  border-radius: 2px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  position: absolute;
+  right: 5px;
+  top: 15px;
+}
+
+.btn-sm {
+  font-size: 11px;
+}
+
+.graph-container {
+  float: left;
+  width: 100%;
+  margin: 50px 0;
+}
+.navbar-light .navbar-nav .nav-link {
+  border-radius: 3px;
+  padding: 3px 10px;
+
+  &.active-link {
+    background-color: #2196f3;
+    color: #fff;
+  }
+}

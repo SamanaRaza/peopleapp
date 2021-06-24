@@ -1,0 +1,61 @@
+<div class="mt-5">
+    <h3>Employee Transfer</h3>
+    <div class="storyes-card row justify-content-center">
+        <div class="arrow first">
+            <!-- <i class="fa fa-long-arrow-alt-right"></i> -->
+            <i class="fa fa-arrow-right"></i>
+
+        </div>
+        <div class="storyes col-auto" *ngFor="let timeline of timelines">
+
+            <div class="story">
+                <div class="year">{{timeline.year}}</div>
+                <div class="row justify-content-center g-1">
+                    <div class="col-auto">
+                        <div class="details">
+
+                            <div class="panel primary-panel">{{timeline.department}}</div>
+                            <div class="arrow second">
+                                <i class="fa fa-arrow-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="story">
+                <div class="row justify-content-center g-1">
+                    <div class="col-auto">
+                        <div class="details">
+                            <div class="panel warning-panel">{{timeline.office}}</div>
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <div class="details">
+                            <div class="panel palevioletred-panel">{{timeline.city}} {{timeline.country}}</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="story">
+                <div class="row justify-content-center g-1">
+                    <div class="col-auto">
+                        <div class="details">
+                            <div class="panel info-panel">{{timeline.position.position1}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="story">
+                <div class="row justify-content-center g-1">
+                    <div class="col-auto">
+                        <div class="details">
+                            <div class="panel info-panel" *ngIf="timeline.position.position2">
+                                {{timeline.position.position2}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,1075 @@
+[
+    {
+        "employeeId": "1",
+        "years": [
+            {
+                "year": 2020,
+                "appraisalYear": "19-20",
+                "salary": {
+                    "salaryBefore": 100000,
+                    "salaryAfter": 150000,
+                    "incrementPercent": "55%"
+                },
+                "assesment": {
+                    "Self": "1.7",
+                    "LM": "1.8",
+                    "HR": "1.3"
+                },
+                "designation": "Chief Analyst",
+                "band": 6,
+                "duties": "Previous Outsourcing Service",
+                "duration": "15-feb-12 - 20-april-14",
+                "city": "Lahore",
+                "underPersons": [
+                    {
+                        "personName": "John",
+                        "personImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpaMfkALsKeGcO5G6uTBH0AtbYJ2gK8jypbJ9ogVVZ5BZCbBLsr5senzJm3q63JPPf3zw&usqp=CAU",
+                        "duration": "24 months"
+                    },
+                    {
+                        "personName": "Rose",
+                        "personImage": "https://thumbs.dreamstime.com/z/office-employee-18387003.jpg",
+                        "duration": "20 months"
+                    },
+                    {
+                        "personName": "John",
+                        "personImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpaMfkALsKeGcO5G6uTBH0AtbYJ2gK8jypbJ9ogVVZ5BZCbBLsr5senzJm3q63JPPf3zw&usqp=CAU",
+                        "duration": "24 months"
+                    }
+                ]
+            },
+            {
+                "year": 2019,
+                "appraisalYear": "18-19",
+                "salary": {
+                    "salaryBefore": 80000,
+                    "salaryAfter": 70000,
+                    "incrementPercent": "38%"
+                },
+                "assesment": {
+                    "Self": "1.3",
+                    "LM": "1.9",
+                    "HR": "1.2"
+                },
+                "designation": "",
+                "band": "",
+                "duties": "",
+                "duration": "",
+                "city": "",
+                "underPersons": []
+            },
+            {
+                "year": 2018,
+                "appraisalYear": "17-18",
+                "salary": {
+                    "salaryBefore": 100000,
+                    "salaryAfter": 150000,
+                    "incrementPercent": "55%"
+                },
+                "assesment": {
+                    "Self": "1.7",
+                    "LM": "1.8",
+                    "HR": "1.3"
+                },
+                "designation": "Chief Analyst",
+                "band": 6,
+                "duties": "Previous Outsourcing Service",
+                "duration": "15-feb-12 - 20-april-14",
+                "city": "Lahore",
+                "underPersons": [
+                    {
+                        "personName": "John",
+                        "personImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpaMfkALsKeGcO5G6uTBH0AtbYJ2gK8jypbJ9ogVVZ5BZCbBLsr5senzJm3q63JPPf3zw&usqp=CAU",
+                        "duration": "24 months"
+                    },
+                    {
+                        "personName": "Rose",
+                        "personImage": "https://thumbs.dreamstime.com/z/office-employee-18387003.jpg",
+                        "duration": "20 months"
+                    }
+                ]
+            },
+            {
+                "year": 2017,
+                "appraisalYear": "17-18",
+                "salary": {
+                    "salaryBefore": 100000,
+                    "salaryAfter": 150000,
+                    "incrementPercent": "55%"
+                },
+                "assesment": {
+                    "Self": "1.7",
+                    "LM": "1.8",
+                    "HR": "1.3"
+                }
+            },
+            {
+                "year": 2016,
+                "appraisalYear": "17-18",
+                "salary": {
+                    "salaryBefore": 100000,
+                    "salaryAfter": 150000,
+                    "incrementPercent": "55%"
+                },
+                "assesment": {
+                    "Self": "1.7",
+                    "LM": "1.8",
+                    "HR": "1.3"
+                },
+                "designation": "Chief Analyst",
+                "band": 6,
+                "duties": "Previous Outsourcing Service",
+                "duration": "15-feb-12 - 20-april-14",
+                "city": "Lahore",
+                "underPersons": [
+                    {
+                        "personName": "John",
+                        "personImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpaMfkALsKeGcO5G6uTBH0AtbYJ2gK8jypbJ9ogVVZ5BZCbBLsr5senzJm3q63JPPf3zw&usqp=CAU",
+                        "duration": "24 months"
+                    },
+                    {
+                        "personName": "Rose",
+                        "personImage": "https://thumbs.dreamstime.com/z/office-employee-18387003.jpg",
+                        "duration": "20 months"
+                    }
+                ]
+            },
+            {
+                "year": 2015,
+                "appraisalYear": "17-18",
+                "salary": {
+                    "salaryBefore": 100000,
+                    "salaryAfter": 150000,
+                    "incrementPercent": "55%"
+                },
+                "assesment": {
+                    "Self": "1.7",
+                    "LM": "1.8",
+                    "HR": "1.3"
+                }
+            },
+            {
+                "year": 2014,
+                "appraisalYear": "17-18",
+                "salary": {
+                    "salaryBefore": 100000,
+                    "salaryAfter": 150000,
+                    "incrementPercent": "55%"
+                },
+                "assesment": {
+                    "Self": "1.7",
+                    "LM": "1.8",
+                    "HR": "1.3"
+                },
+                "designation": "Chief Analyst",
+                "band": 6,
+                "duties": "Previous Outsourcing Service",
+                "duration": "15-feb-12 - 20-april-14",
+                "city": "Lahore",
+                "underPersons": [
+                    {
+                        "personName": "John",
+                        "personImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpaMfkALsKeGcO5G6uTBH0AtbYJ2gK8jypbJ9ogVVZ5BZCbBLsr5senzJm3q63JPPf3zw&usqp=CAU",
+                        "duration": "24 months"
+                    },
+                    {
+                        "personName": "Rose",
+                        "personImage": "https://thumbs.dreamstime.com/z/office-employee-18387003.jpg",
+                        "duration": "20 months"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "employeeId": "2",
+        "years": [
+            {
+                "year": 2020,
+                "appraisalYear": "19-20",
+                "salary": {
+                    "salaryBefore": 100000,
+                    "salaryAfter": 150000,
+                    "incrementPercent": "55%"
+                },
+                "assesment": {
+                    "Self": "1.7",
+                    "LM": "1.8",
+                    "HR": "1.3"
+                },
+                "designation": "Chief Analyst",
+                "band": 6,
+                "duties": "Previous Outsourcing Service",
+                "duration": "15-feb-12 - 20-april-14",
+                "city": "Lahore",
+                "underPersons": [
+                    {
+                        "personName": "John",
+                        "personImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpaMfkALsKeGcO5G6uTBH0AtbYJ2gK8jypbJ9ogVVZ5BZCbBLsr5senzJm3q63JPPf3zw&usqp=CAU",
+                        "duration": "24 months"
+                    },
+                    {
+                        "personName": "Rose",
+                        "personImage": "https://thumbs.dreamstime.com/z/office-employee-18387003.jpg",
+                        "duration": "20 months"
+                    }
+                ]
+            },
+            {
+                "year": 2019,
+                "appraisalYear": "18-19",
+                "salary": {
+                    "salaryBefore": 80000,
+                    "salaryAfter": 70000,
+                    "incrementPercent": "38%"
+                },
+                "assesment": {
+                    "Self": "1.3",
+                    "LM": "1.9",
+                    "HR": "1.2"
+                },
+                "designation": "",
+                "band": "",
+                "duties": "",
+                "duration": "",
+                "city": "",
+                "underPersons": []
+            }
+        ]
+    },
+    {
+        "employeeId": "3",
+        "years": [
+            {
+                "year": 2020,
+                "appraisalYear": "19-20",
+                "salary": {
+                    "salaryBefore": 100000,
+                    "salaryAfter": 150000,
+                    "incrementPercent": "55%"
+                },
+                "assesment": {
+                    "Self": "1.7",
+                    "LM": "1.8",
+                    "HR": "1.3"
+                },
+                "designation": "Chief Analyst",
+                "band": 6,
+                "duties": "Previous Outsourcing Service",
+                "duration": "15-feb-12 - 20-april-14",
+                "city": "Lahore",
+                "underPersons": [
+                    {
+                        "personName": "John",
+                        "personImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpaMfkALsKeGcO5G6uTBH0AtbYJ2gK8jypbJ9ogVVZ5BZCbBLsr5senzJm3q63JPPf3zw&usqp=CAU",
+                        "duration": "24 months"
+                    },
+                    {
+                        "personName": "Rose",
+                        "personImage": "https://thumbs.dreamstime.com/z/office-employee-18387003.jpg",
+                        "duration": "20 months"
+                    }
+                ]
+            },
+            {
+                "year": 2019,
+                "appraisalYear": "18-19",
+                "salary": {
+                    "salaryBefore": 80000,
+                    "salaryAfter": 70000,
+                    "incrementPercent": "38%"
+                },
+                "assesment": {
+                    "Self": "1.3",
+                    "LM": "1.9",
+                    "HR": "1.2"
+                },
+                "designation": "",
+                "band": "",
+                "duties": "",
+                "duration": "",
+                "city": "",
+                "underPersons": []
+            },
+            {
+                "year": 2018,
+                "appraisalYear": "17-18",
+                "salary": {
+                    "salaryBefore": 100000,
+                    "salaryAfter": 150000,
+                    "incrementPercent": "55%"
+                },
+                "assesment": {
+                    "Self": "1.7",
+                    "LM": "1.8",
+                    "HR": "1.3"
+                },
+                "designation": "Chief Analyst",
+                "band": 6,
+                "duties": "Previous Outsourcing Service",
+                "duration": "15-feb-12 - 20-april-14",
+                "city": "Lahore",
+                "underPersons": [
+                    {
+                        "personName": "John",
+                        "personImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpaMfkALsKeGcO5G6uTBH0AtbYJ2gK8jypbJ9ogVVZ5BZCbBLsr5senzJm3q63JPPf3zw&usqp=CAU",
+                        "duration": "24 months"
+                    },
+                    {
+                        "personName": "Rose",
+                        "personImage": "https://thumbs.dreamstime.com/z/office-employee-18387003.jpg",
+                        "duration": "20 months"
+                    }
+                ]
+            },
+            {
+                "year": 2017,
+                "appraisalYear": "17-18",
+                "salary": {
+                    "salaryBefore": 100000,
+                    "salaryAfter": 150000,
+                    "incrementPercent": "55%"
+                },
+                "assesment": {
+                    "Self": "1.7",
+                    "LM": "1.8",
+                    "HR": "1.3"
+                }
+            }
+        ]
+    },
+    {
+        "employeeId": "4",
+        "years": [
+            {
+                "year": 2020,
+                "appraisalYear": "19-20",
+                "salary": {
+                    "salaryBefore": 100000,
+                    "salaryAfter": 150000,
+                    "incrementPercent": "55%"
+                },
+                "assesment": {
+                    "Self": "1.7",
+                    "LM": "1.8",
+                    "HR": "1.3"
+                },
+                "designation": "Chief Analyst",
+                "band": 6,
+                "duties": "Previous Outsourcing Service",
+                "duration": "15-feb-12 - 20-april-14",
+                "city": "Lahore",
+                "underPersons": [
+                    {
+                        "personName": "John",
+                        "personImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpaMfkALsKeGcO5G6uTBH0AtbYJ2gK8jypbJ9ogVVZ5BZCbBLsr5senzJm3q63JPPf3zw&usqp=CAU",
+                        "duration": "24 months"
+                    },
+                    {
+                        "personName": "Rose",
+                        "personImage": "https://thumbs.dreamstime.com/z/office-employee-18387003.jpg",
+                        "duration": "20 months"
+                    }
+                ]
+            },
+            {
+                "year": 2019,
+                "appraisalYear": "18-19",
+                "salary": {
+                    "salaryBefore": 80000,
+                    "salaryAfter": 70000,
+                    "incrementPercent": "38%"
+                },
+                "assesment": {
+                    "Self": "1.3",
+                    "LM": "1.9",
+                    "HR": "1.2"
+                },
+                "designation": "",
+                "band": "",
+                "duties": "",
+                "duration": "",
+                "city": "",
+                "underPersons": []
+            },
+            {
+                "year": 2018,
+                "appraisalYear": "17-18",
+                "salary": {
+                    "salaryBefore": 100000,
+                    "salaryAfter": 150000,
+                    "incrementPercent": "55%"
+                },
+                "assesment": {
+                    "Self": "1.7",
+                    "LM": "1.8",
+                    "HR": "1.3"
+                },
+                "designation": "Chief Analyst",
+                "band": 6,
+                "duties": "Previous Outsourcing Service",
+                "duration": "15-feb-12 - 20-april-14",
+                "city": "Lahore",
+                "underPersons": [
+                    {
+                        "personName": "John",
+                        "personImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpaMfkALsKeGcO5G6uTBH0AtbYJ2gK8jypbJ9ogVVZ5BZCbBLsr5senzJm3q63JPPf3zw&usqp=CAU",
+                        "duration": "24 months"
+                    },
+                    {
+                        "personName": "Rose",
+                        "personImage": "https://thumbs.dreamstime.com/z/office-employee-18387003.jpg",
+                        "duration": "20 months"
+                    }
+                ]
+            },
+            {
+                "year": 2017,
+                "appraisalYear": "17-18",
+                "salary": {
+                    "salaryBefore": 100000,
+                    "salaryAfter": 150000,
+                    "incrementPercent": "55%"
+                },
+                "assesment": {
+                    "Self": "1.7",
+                    "LM": "1.8",
+                    "HR": "1.3"
+                }
+            }
+        ]
+    },
+    {
+        "employeeId": "5",
+        "years": [
+            {
+                "year": 2020,
+                "appraisalYear": "19-20",
+                "salary": {
+                    "salaryBefore": 100000,
+                    "salaryAfter": 150000,
+                    "incrementPercent": "55%"
+                },
+                "assesment": {
+                    "Self": "1.7",
+                    "LM": "1.8",
+                    "HR": "1.3"
+                },
+                "designation": "Chief Analyst",
+                "band": 6,
+                "duties": "Previous Outsourcing Service",
+                "duration": "15-feb-12 - 20-april-14",
+                "city": "Lahore",
+                "underPersons": [
+                    {
+                        "personName": "John",
+                        "personImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpaMfkALsKeGcO5G6uTBH0AtbYJ2gK8jypbJ9ogVVZ5BZCbBLsr5senzJm3q63JPPf3zw&usqp=CAU",
+                        "duration": "24 months"
+                    },
+                    {
+                        "personName": "Rose",
+                        "personImage": "https://thumbs.dreamstime.com/z/office-employee-18387003.jpg",
+                        "duration": "20 months"
+                    }
+                ]
+            },
+            {
+                "year": 2019,
+                "appraisalYear": "18-19",
+                "salary": {
+                    "salaryBefore": 80000,
+                    "salaryAfter": 70000,
+                    "incrementPercent": "38%"
+                },
+                "assesment": {
+                    "Self": "1.3",
+                    "LM": "1.9",
+                    "HR": "1.2"
+                },
+                "designation": "",
+                "band": "",
+                "duties": "",
+                "duration": "",
+                "city": "",
+                "underPersons": []
+            }
+        ]
+    },
+    {
+        "employeeId": "6",
+        "years": [
+            {
+                "year": 2020,
+                "appraisalYear": "19-20",
+                "salary": {
+                    "salaryBefore": 100000,
+                    "salaryAfter": 150000,
+                    "incrementPercent": "55%"
+                },
+                "assesment": {
+                    "Self": "1.7",
+                    "LM": "1.8",
+                    "HR": "1.3"
+                },
+                "designation": "Chief Analyst",
+                "band": 6,
+                "duties": "Previous Outsourcing Service",
+                "duration": "15-feb-12 - 20-april-14",
+                "city": "Lahore",
+                "underPersons": [
+                    {
+                        "personName": "John",
+                        "personImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpaMfkALsKeGcO5G6uTBH0AtbYJ2gK8jypbJ9ogVVZ5BZCbBLsr5senzJm3q63JPPf3zw&usqp=CAU",
+                        "duration": "24 months"
+                    },
+                    {
+                        "personName": "Rose",
+                        "personImage": "https://thumbs.dreamstime.com/z/office-employee-18387003.jpg",
+                        "duration": "20 months"
+                    }
+                ]
+            },
+            {
+                "year": 2019,
+                "appraisalYear": "18-19",
+                "salary": {
+                    "salaryBefore": 80000,
+                    "salaryAfter": 70000,
+                    "incrementPercent": "38%"
+                },
+                "assesment": {
+                    "Self": "1.3",
+                    "LM": "1.9",
+                    "HR": "1.2"
+                },
+                "designation": "",
+                "band": "",
+                "duties": "",
+                "duration": "",
+                "city": "",
+                "underPersons": []
+            }
+        ]
+    },
+    {
+        "employeeId": "7",
+        "years": [
+            {
+                "year": 2020,
+                "appraisalYear": "19-20",
+                "salary": {
+                    "salaryBefore": 100000,
+                    "salaryAfter": 150000,
+                    "incrementPercent": "55%"
+                },
+                "assesment": {
+                    "Self": "1.7",
+                    "LM": "1.8",
+                    "HR": "1.3"
+                },
+                "designation": "Chief Analyst",
+                "band": 6,
+                "duties": "Previous Outsourcing Service",
+                "duration": "15-feb-12 - 20-april-14",
+                "city": "Lahore",
+                "underPersons": [
+                    {
+                        "personName": "John",
+                        "personImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpaMfkALsKeGcO5G6uTBH0AtbYJ2gK8jypbJ9ogVVZ5BZCbBLsr5senzJm3q63JPPf3zw&usqp=CAU",
+                        "duration": "24 months"
+                    },
+                    {
+                        "personName": "Rose",
+                        "personImage": "https://thumbs.dreamstime.com/z/office-employee-18387003.jpg",
+                        "duration": "20 months"
+                    }
+                ]
+            },
+            {
+                "year": 2019,
+                "appraisalYear": "18-19",
+                "salary": {
+                    "salaryBefore": 80000,
+                    "salaryAfter": 70000,
+                    "incrementPercent": "38%"
+                },
+                "assesment": {
+                    "Self": "1.3",
+                    "LM": "1.9",
+                    "HR": "1.2"
+                },
+                "designation": "",
+                "band": "",
+                "duties": "",
+                "duration": "",
+                "city": "",
+                "underPersons": []
+            }
+        ]
+    },
+    {
+        "employeeId": "8",
+        "years": [
+            {
+                "year": 2020,
+                "appraisalYear": "19-20",
+                "salary": {
+                    "salaryBefore": 100000,
+                    "salaryAfter": 150000,
+                    "incrementPercent": "55%"
+                },
+                "assesment": {
+                    "Self": "1.7",
+                    "LM": "1.8",
+                    "HR": "1.3"
+                },
+                "designation": "Chief Analyst",
+                "band": 6,
+                "duties": "Previous Outsourcing Service",
+                "duration": "15-feb-12 - 20-april-14",
+                "city": "Lahore",
+                "underPersons": [
+                    {
+                        "personName": "John",
+                        "personImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpaMfkALsKeGcO5G6uTBH0AtbYJ2gK8jypbJ9ogVVZ5BZCbBLsr5senzJm3q63JPPf3zw&usqp=CAU",
+                        "duration": "24 months"
+                    },
+                    {
+                        "personName": "Rose",
+                        "personImage": "https://thumbs.dreamstime.com/z/office-employee-18387003.jpg",
+                        "duration": "20 months"
+                    }
+                ]
+            },
+            {
+                "year": 2019,
+                "appraisalYear": "18-19",
+                "salary": {
+                    "salaryBefore": 80000,
+                    "salaryAfter": 70000,
+                    "incrementPercent": "38%"
+                },
+                "assesment": {
+                    "Self": "1.3",
+                    "LM": "1.9",
+                    "HR": "1.2"
+                },
+                "designation": "",
+                "band": "",
+                "duties": "",
+                "duration": "",
+                "city": "",
+                "underPersons": []
+            },
+            {
+                "year": 2018,
+                "appraisalYear": "17-18",
+                "salary": {
+                    "salaryBefore": 100000,
+                    "salaryAfter": 150000,
+                    "incrementPercent": "55%"
+                },
+                "assesment": {
+                    "Self": "1.7",
+                    "LM": "1.8",
+                    "HR": "1.3"
+                },
+                "designation": "Chief Analyst",
+                "band": 6,
+                "duties": "Previous Outsourcing Service",
+                "duration": "15-feb-12 - 20-april-14",
+                "city": "Lahore",
+                "underPersons": [
+                    {
+                        "personName": "John",
+                        "personImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpaMfkALsKeGcO5G6uTBH0AtbYJ2gK8jypbJ9ogVVZ5BZCbBLsr5senzJm3q63JPPf3zw&usqp=CAU",
+                        "duration": "24 months"
+                    },
+                    {
+                        "personName": "Rose",
+                        "personImage": "https://thumbs.dreamstime.com/z/office-employee-18387003.jpg",
+                        "duration": "20 months"
+                    }
+                ]
+            },
+            {
+                "year": 2017,
+                "appraisalYear": "17-18",
+                "salary": {
+                    "salaryBefore": 100000,
+                    "salaryAfter": 150000,
+                    "incrementPercent": "55%"
+                },
+                "assesment": {
+                    "Self": "1.7",
+                    "LM": "1.8",
+                    "HR": "1.3"
+                }
+            }
+        ]
+    },
+    {
+        "employeeId": "9",
+        "years": [
+            {
+                "year": 2020,
+                "appraisalYear": "19-20",
+                "salary": {
+                    "salaryBefore": 100000,
+                    "salaryAfter": 150000,
+                    "incrementPercent": "55%"
+                },
+                "assesment": {
+                    "Self": "1.7",
+                    "LM": "1.8",
+                    "HR": "1.3"
+                },
+                "designation": "Chief Analyst",
+                "band": 6,
+                "duties": "Previous Outsourcing Service",
+                "duration": "15-feb-12 - 20-april-14",
+                "city": "Lahore",
+                "underPersons": [
+                    {
+                        "personName": "John",
+                        "personImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpaMfkALsKeGcO5G6uTBH0AtbYJ2gK8jypbJ9ogVVZ5BZCbBLsr5senzJm3q63JPPf3zw&usqp=CAU",
+                        "duration": "24 months"
+                    },
+                    {
+                        "personName": "Rose",
+                        "personImage": "https://thumbs.dreamstime.com/z/office-employee-18387003.jpg",
+                        "duration": "20 months"
+                    },
+                    {
+                        "personName": "John",
+                        "personImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpaMfkALsKeGcO5G6uTBH0AtbYJ2gK8jypbJ9ogVVZ5BZCbBLsr5senzJm3q63JPPf3zw&usqp=CAU",
+                        "duration": "24 months"
+                    }
+                ]
+            },
+            {
+                "year": 2019,
+                "appraisalYear": "18-19",
+                "salary": {
+                    "salaryBefore": 80000,
+                    "salaryAfter": 70000,
+                    "incrementPercent": "38%"
+                },
+                "assesment": {
+                    "Self": "1.3",
+                    "LM": "1.9",
+                    "HR": "1.2"
+                },
+                "designation": "",
+                "band": "",
+                "duties": "",
+                "duration": "",
+                "city": "",
+                "underPersons": []
+            },
+            {
+                "year": 2018,
+                "appraisalYear": "17-18",
+                "salary": {
+                    "salaryBefore": 100000,
+                    "salaryAfter": 150000,
+                    "incrementPercent": "55%"
+                },
+                "assesment": {
+                    "Self": "1.7",
+                    "LM": "1.8",
+                    "HR": "1.3"
+                },
+                "designation": "Chief Analyst",
+                "band": 6,
+                "duties": "Previous Outsourcing Service",
+                "duration": "15-feb-12 - 20-april-14",
+                "city": "Lahore",
+                "underPersons": [
+                    {
+                        "personName": "John",
+                        "personImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpaMfkALsKeGcO5G6uTBH0AtbYJ2gK8jypbJ9ogVVZ5BZCbBLsr5senzJm3q63JPPf3zw&usqp=CAU",
+                        "duration": "24 months"
+                    },
+                    {
+                        "personName": "Rose",
+                        "personImage": "https://thumbs.dreamstime.com/z/office-employee-18387003.jpg",
+                        "duration": "20 months"
+                    }
+                ]
+            },
+            {
+                "year": 2017,
+                "appraisalYear": "17-18",
+                "salary": {
+                    "salaryBefore": 100000,
+                    "salaryAfter": 150000,
+                    "incrementPercent": "55%"
+                },
+                "assesment": {
+                    "Self": "1.7",
+                    "LM": "1.8",
+                    "HR": "1.3"
+                }
+            },
+            {
+                "year": 2016,
+                "appraisalYear": "17-18",
+                "salary": {
+                    "salaryBefore": 100000,
+                    "salaryAfter": 150000,
+                    "incrementPercent": "55%"
+                },
+                "assesment": {
+                    "Self": "1.7",
+                    "LM": "1.8",
+                    "HR": "1.3"
+                },
+                "designation": "Chief Analyst",
+                "band": 6,
+                "duties": "Previous Outsourcing Service",
+                "duration": "15-feb-12 - 20-april-14",
+                "city": "Lahore",
+                "underPersons": [
+                    {
+                        "personName": "John",
+                        "personImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpaMfkALsKeGcO5G6uTBH0AtbYJ2gK8jypbJ9ogVVZ5BZCbBLsr5senzJm3q63JPPf3zw&usqp=CAU",
+                        "duration": "24 months"
+                    },
+                    {
+                        "personName": "Rose",
+                        "personImage": "https://thumbs.dreamstime.com/z/office-employee-18387003.jpg",
+                        "duration": "20 months"
+                    }
+                ]
+            },
+            {
+                "year": 2015,
+                "appraisalYear": "17-18",
+                "salary": {
+                    "salaryBefore": 100000,
+                    "salaryAfter": 150000,
+                    "incrementPercent": "55%"
+                },
+                "assesment": {
+                    "Self": "1.7",
+                    "LM": "1.8",
+                    "HR": "1.3"
+                }
+            },
+            {
+                "year": 2014,
+                "appraisalYear": "17-18",
+                "salary": {
+                    "salaryBefore": 100000,
+                    "salaryAfter": 150000,
+                    "incrementPercent": "55%"
+                },
+                "assesment": {
+                    "Self": "1.7",
+                    "LM": "1.8",
+                    "HR": "1.3"
+                },
+                "designation": "Chief Analyst",
+                "band": 6,
+                "duties": "Previous Outsourcing Service",
+                "duration": "15-feb-12 - 20-april-14",
+                "city": "Lahore",
+                "underPersons": [
+                    {
+                        "personName": "John",
+                        "personImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpaMfkALsKeGcO5G6uTBH0AtbYJ2gK8jypbJ9ogVVZ5BZCbBLsr5senzJm3q63JPPf3zw&usqp=CAU",
+                        "duration": "24 months"
+                    },
+                    {
+                        "personName": "Rose",
+                        "personImage": "https://thumbs.dreamstime.com/z/office-employee-18387003.jpg",
+                        "duration": "20 months"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "employeeId": "10",
+        "years": [
+            {
+                "year": 2020,
+                "appraisalYear": "19-20",
+                "salary": {
+                    "salaryBefore": 100000,
+                    "salaryAfter": 150000,
+                    "incrementPercent": "55%"
+                },
+                "assesment": {
+                    "Self": "1.7",
+                    "LM": "1.8",
+                    "HR": "1.3"
+                },
+                "designation": "Chief Analyst",
+                "band": 6,
+                "duties": "Previous Outsourcing Service",
+                "duration": "15-feb-12 - 20-april-14",
+                "city": "Lahore",
+                "underPersons": [
+                    {
+                        "personName": "John",
+                        "personImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpaMfkALsKeGcO5G6uTBH0AtbYJ2gK8jypbJ9ogVVZ5BZCbBLsr5senzJm3q63JPPf3zw&usqp=CAU",
+                        "duration": "24 months"
+                    },
+                    {
+                        "personName": "Rose",
+                        "personImage": "https://thumbs.dreamstime.com/z/office-employee-18387003.jpg",
+                        "duration": "20 months"
+                    },
+                    {
+                        "personName": "John",
+                        "personImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpaMfkALsKeGcO5G6uTBH0AtbYJ2gK8jypbJ9ogVVZ5BZCbBLsr5senzJm3q63JPPf3zw&usqp=CAU",
+                        "duration": "24 months"
+                    }
+                ]
+            },
+            {
+                "year": 2019,
+                "appraisalYear": "18-19",
+                "salary": {
+                    "salaryBefore": 80000,
+                    "salaryAfter": 70000,
+                    "incrementPercent": "38%"
+                },
+                "assesment": {
+                    "Self": "1.3",
+                    "LM": "1.9",
+                    "HR": "1.2"
+                },
+                "designation": "",
+                "band": "",
+                "duties": "",
+                "duration": "",
+                "city": "",
+                "underPersons": []
+            },
+            {
+                "year": 2018,
+                "appraisalYear": "17-18",
+                "salary": {
+                    "salaryBefore": 100000,
+                    "salaryAfter": 150000,
+                    "incrementPercent": "55%"
+                },
+                "assesment": {
+                    "Self": "1.7",
+                    "LM": "1.8",
+                    "HR": "1.3"
+                },
+                "designation": "Chief Analyst",
+                "band": 6,
+                "duties": "Previous Outsourcing Service",
+                "duration": "15-feb-12 - 20-april-14",
+                "city": "Lahore",
+                "underPersons": [
+                    {
+                        "personName": "John",
+                        "personImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpaMfkALsKeGcO5G6uTBH0AtbYJ2gK8jypbJ9ogVVZ5BZCbBLsr5senzJm3q63JPPf3zw&usqp=CAU",
+                        "duration": "24 months"
+                    },
+                    {
+                        "personName": "Rose",
+                        "personImage": "https://thumbs.dreamstime.com/z/office-employee-18387003.jpg",
+                        "duration": "20 months"
+                    }
+                ]
+            },
+            {
+                "year": 2017,
+                "appraisalYear": "17-18",
+                "salary": {
+                    "salaryBefore": 100000,
+                    "salaryAfter": 150000,
+                    "incrementPercent": "55%"
+                },
+                "assesment": {
+                    "Self": "1.7",
+                    "LM": "1.8",
+                    "HR": "1.3"
+                }
+            },
+            {
+                "year": 2016,
+                "appraisalYear": "17-18",
+                "salary": {
+                    "salaryBefore": 100000,
+                    "salaryAfter": 150000,
+                    "incrementPercent": "55%"
+                },
+                "assesment": {
+                    "Self": "1.7",
+                    "LM": "1.8",
+                    "HR": "1.3"
+                },
+                "designation": "Chief Analyst",
+                "band": 6,
+                "duties": "Previous Outsourcing Service",
+                "duration": "15-feb-12 - 20-april-14",
+                "city": "Lahore",
+                "underPersons": [
+                    {
+                        "personName": "John",
+                        "personImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpaMfkALsKeGcO5G6uTBH0AtbYJ2gK8jypbJ9ogVVZ5BZCbBLsr5senzJm3q63JPPf3zw&usqp=CAU",
+                        "duration": "24 months"
+                    },
+                    {
+                        "personName": "Rose",
+                        "personImage": "https://thumbs.dreamstime.com/z/office-employee-18387003.jpg",
+                        "duration": "20 months"
+                    }
+                ]
+            },
+            {
+                "year": 2015,
+                "appraisalYear": "17-18",
+                "salary": {
+                    "salaryBefore": 100000,
+                    "salaryAfter": 150000,
+                    "incrementPercent": "55%"
+                },
+                "assesment": {
+                    "Self": "1.7",
+                    "LM": "1.8",
+                    "HR": "1.3"
+                }
+            },
+            {
+                "year": 2014,
+                "appraisalYear": "17-18",
+                "salary": {
+                    "salaryBefore": 100000,
+                    "salaryAfter": 150000,
+                    "incrementPercent": "55%"
+                },
+                "assesment": {
+                    "Self": "1.7",
+                    "LM": "1.8",
+                    "HR": "1.3"
+                },
+                "designation": "Chief Analyst",
+                "band": 6,
+                "duties": "Previous Outsourcing Service",
+                "duration": "15-feb-12 - 20-april-14",
+                "city": "Lahore",
+                "underPersons": [
+                    {
+                        "personName": "John",
+                        "personImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpaMfkALsKeGcO5G6uTBH0AtbYJ2gK8jypbJ9ogVVZ5BZCbBLsr5senzJm3q63JPPf3zw&usqp=CAU",
+                        "duration": "24 months"
+                    },
+                    {
+                        "personName": "Rose",
+                        "personImage": "https://thumbs.dreamstime.com/z/office-employee-18387003.jpg",
+                        "duration": "20 months"
+                    }
+                ]
+            }
+        ]
+    }
+]

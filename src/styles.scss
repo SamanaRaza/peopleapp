@@ -1,0 +1,247 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '~@angular/material' as mat;
+
+@import 'styles-variables';
+
+@import '../node_modules/font-awesome/css/font-awesome.css';
+@import '~bootstrap/scss/bootstrap-reboot';
+@import '~bootstrap/scss/bootstrap-grid';
+
+@include mat.core();
+
+
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+
+
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 11px;
+}
+
+* {
+  &:active,
+  :focus {
+    outline: none !important;
+  }
+}
+
+.h1,
+h1,
+.mat-card-title {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.h2,
+h2,
+.mat-card-subtitle {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 11px;
+}
+
+span {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 11px;
+}
+
+table {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 11px;
+}
+
+strong {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 11px;
+}
+
+code {
+  white-space: nowrap;
+  border-radius: 10px;
+  padding: 0 8px 1px 8px;
+}
+
+.mat-menu-content {
+  fa-icon {
+    position: relative;
+    top: 2px;
+    left: 4px;
+  }
+}
+
+p {
+  a {
+    border-bottom: 3px solid;
+  }
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.mat-card {
+  box-shadow: none !important;
+  color: #343434;
+  padding: 0 !important;
+  height: 100%;
+
+  .mat-card-header {
+    background: linear-gradient(#d8dcdf, #f5f5f5);
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+
+    .mat-card-header-text {
+      margin: 7px 20px;
+    }
+
+    .mat-card-title {
+      font-size: 12px;
+      margin-bottom: 0;
+      color: #343434;
+    }
+  }
+
+  .mat-card-content {
+    border: 1px solid #efefef;
+    border-top: 0;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    padding: 7px 20px;
+  }
+}
+
+.table {
+  tr {
+    th, td {
+      padding: 5px;
+    }
+  }
+}
+
+.table-border-0 {
+  tr {
+    th, td {
+      border: 0;
+    }
+  }
+}
+
+.simple-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    i {
+      margin-right: 10px;
+
+      &.fa-check {
+        color: green;
+      }
+
+      &.fa-times {
+        color: red;
+      }
+    }
+  }
+}
+
+.table-default {
+  border: 1px solid #d8d8d8!important;
+  box-shadow: none !important;
+
+  thead {
+    background-color: #f2f2f2;
+  }
+
+  tr {
+    &.mat-row, &.mat-footer-row, &.mat-header-row {
+      height: auto;
+      padding: 5px;
+    }
+
+    &.mat-header-row {
+     th, tr {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 500;
+      font-size: 12px;
+     }
+    }
+
+    th, td {
+      border: 1px solid #d8d8d8!important;
+    }
+  }
+}
+
+.panel-card {
+  width: 100%;
+  float: left;
+
+  .image-panel {
+    float: left;
+    width: 120px;
+  }
+
+  .panel-body {
+    float: left;
+    width: auto;
+  }
+}
+
+.text-primary {
+  color: #1A73E8 !important;
+}
+
+.custom-table {
+  .mat-header-row {
+    min-height: 32px;
+    height: 32px;
+
+    .mat-header-cell {
+      padding: 10px;
+    }
+  }
+  .mat-row {
+    min-height: 32px;
+    height: 32px;
+
+    .mat-header-cell {
+      padding: 10px;
+    }
+
+    .mat-footer-cell, .mat-button-base {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 400;
+      font-size: 12px;
+    }
+  }
+
+  
+
+  mat-row, mat-header-row, mat-footer-row {
+    border-color: #fff;
+    cursor: pointer;  
+
+    &:hover {
+      background-color: lighten($primarey-color, 10px);
+      border-color: lighten($primarey-color, 10px);
+    }
+  }
+}

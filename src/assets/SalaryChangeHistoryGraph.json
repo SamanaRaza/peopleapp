@@ -1,0 +1,50 @@
+{
+  "draw": 0,
+  "recordsTotal": 400,
+  "recordsFiltered": 400,
+  "data": [
+    {
+      "SalaryChangeHistoryID": 1,
+      "employeeId": 1,
+      "details": [
+        { "salary": 135034, "year": 2012 },
+        { "salary": 180000, "year": 2013 },
+        { "salary": 90000, "year": 2014 },
+        { "salary": 150000, "year": 2015 },
+        { "salary": 160000, "year": 2016 },
+        { "salary": 100000, "year": 2017 },
+        { "salary": 120000, "year": 2018 },
+        { "salary": 140000, "year": 2019 },
+        { "salary": 150000, "year": 2020 }
+      ]
+    },
+    {
+      "SalaryChangeHistoryID": 2,
+      "employeeId": 2,
+      "details": [
+        { "salary": 18000, "year": 2012 },
+        { "salary": 40000, "year": 2013 },
+        { "salary": 20000, "year": 2014 },
+        { "salary": 48000, "year": 2015 },
+        { "salary": 70000, "year": 2016 },
+        { "salary": 50000, "year": 2017 },
+        { "salary": 90000, "year": 2018 },
+        { "salary": 95000, "year": 2019 },
+        { "salary": 96000, "year": 2020 }
+      ]
+    },
+    {
+      "SalaryChangeHistoryID": 2,
+      "employeeId": 2,
+      "details": [
+        { "salary": 90000, "year": 2012 },
+        { "salary": 92000, "year": 2013 },
+        { "salary": 95000, "year": 2014 },
+        { "salary": 99000, "year": 2015 },
+        { "salary": 80000, "year": 2016 },
+        { "salary": 85000, "year": 2017 },
+        { "salary": 70000, "year": 2018 }
+      ]
+    }
+  ]
+}

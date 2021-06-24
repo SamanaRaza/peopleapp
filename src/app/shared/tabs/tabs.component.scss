@@ -1,0 +1,20 @@
+﻿.card {
+    background:none;
+
+}
+.navbar-light .navbar-nav .nav-link {
+  border-radius: 3px;
+  padding: 3px 10px;
+
+  &.active-link {
+    background-color: #2196f3;
+    color: #fff;
+  }
+}
+
+.tabs {
+  display: inline-block;
+  background-color: #eee;
+  border-radius: 4px;
+  margin-top: 1em;
+}
