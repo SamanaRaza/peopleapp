@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxSpinnerModule } from "ngx-spinner";
-
+import { MatBreadcrumbModule } from "mat-breadcrumb";
 
 @NgModule({
   declarations: [
@@ -19,8 +19,10 @@ import { NgxSpinnerModule } from "ngx-spinner";
     NgbModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    MatBreadcrumbModule
   ],
+  exports: [MatBreadcrumbModule],
   providers: [],
   bootstrap: [AppComponent]
 })

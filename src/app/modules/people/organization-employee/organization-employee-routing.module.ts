@@ -27,7 +27,20 @@ const routes: Routes = [
             children: [
               {
                 path: '',
-                component: EmpProfileHostComponent
+                component: EmpProfileHostComponent,
+                data: {
+                  title: 'page1',
+                  breadcrumb: [
+                    {
+                      label: 'HR Services',
+                      url: ''
+                    },
+                    {
+                      label: 'Employee Profile',
+                      url: ''
+                    }
+                  ]
+                },
               },
               {
                 path: 'salary-change',

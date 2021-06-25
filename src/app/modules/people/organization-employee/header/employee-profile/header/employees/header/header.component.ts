@@ -30,11 +30,12 @@ export class EmpHeaderComponent implements OnInit, AfterViewInit {
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-  show : boolean;
+  show: boolean;
   dataSource: MatTableDataSource<Employee>;
   @ViewChild(MatTable) dtable: MatTable<Employee>;
   data: any;
   sortData: any;
+  searchData: any;
   columns: Array<any>;
   displayedColumns: string[];
   activeList = ['Yes', 'No'];
@@ -46,10 +47,17 @@ export class EmpHeaderComponent implements OnInit, AfterViewInit {
     { value: 'Active', status: 'Active Employee' },
     { value: 'Non Active', status: 'Non Active Employee' }
   ]
+  searchBy = [
+    { value: 'empID', search: 'Emp ID' },
+    { value: 'name', search: 'Name' },
+    { value: 'designation', search: 'Designation' },
+    { value: 'department', search: 'Department' },
+    { value: 'band', search: 'Band' },
+  ]
   menuListItems: MatMenuListItem[];
 
   activeVal: any
-  constructor(private employeeService: EmployeesService, private router: Router ,private cdfr: ChangeDetectorRef,) { }
+  constructor(private employeeService: EmployeesService, private router: Router, private cdfr: ChangeDetectorRef,) { }
 
   ngOnInit(): void {
     this.displayedColumns = ['empID', 'name', 'designation', 'department', 'band', 'joiningDate', 'status'];
@@ -67,7 +75,7 @@ export class EmpHeaderComponent implements OnInit, AfterViewInit {
       this.dataSource = new MatTableDataSource((data as any).data);
       this.dataSource.paginator = this.paginator;
     }, error => console.error(error));
-   
+
     this.menuListItems = [
       {
         menuLinkText: 'View Employee Profile',
@@ -113,12 +121,13 @@ export class EmpHeaderComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    
+
   }
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+
   }
 
   changeStatus(e: any) {

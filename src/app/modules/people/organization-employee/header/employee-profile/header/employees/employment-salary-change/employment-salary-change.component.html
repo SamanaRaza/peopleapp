@@ -1,9 +1,26 @@
-<mat-table #tableemployeeProfile [dataSource]="dataSource">
+<mat-table class="custom-table" #tableemployeeProfile [dataSource]="dataSource">
     <div *ngFor="let column of columns">
-        <ng-container [cdkColumnDef]="column.columnDef">
+        <ng-container [cdkColumnDef]="column.columnDef"
+            *ngIf="column.header != 'Variable Components' && column.header != 'Fixed Components'">
             <mat-header-cell *cdkHeaderCellDef>{{ column.header }}</mat-header-cell>
             <mat-cell *cdkCellDef="let row">{{
                 column.cell(row)}}</mat-cell>
+        </ng-container>
+        <ng-container [cdkColumnDef]="column.columnDef" *ngIf="column.header == 'Fixed Components'">
+            <mat-header-cell *cdkHeaderCellDef>{{ column.header }}</mat-header-cell>
+            <mat-cell *cdkCellDef="let element">
+                <button mat-icon-button (click)="openFixed()">
+                    {{column.cell(element)}}
+                </button>
+            </mat-cell>
+        </ng-container>
+        <ng-container [cdkColumnDef]="column.columnDef" *ngIf="column.header == 'Variable Components'">
+            <mat-header-cell *cdkHeaderCellDef>{{ column.header }}</mat-header-cell>
+            <mat-cell *cdkCellDef="let ele">
+                <button mat-icon-button (click)="openVariable()">
+                    {{column.cell(ele)}}
+                </button>
+            </mat-cell>
         </ng-container>
     </div>
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

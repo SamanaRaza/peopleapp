@@ -29,8 +29,7 @@ export class EmploymentChangeHistoryComponent implements OnInit {
     this.employmentChangeHistoryService.getEmployeeChangeHistroy().subscribe(data => {
       this.data = (data as any).data;
       console.log('emp', data)
-      const filteredData = this.data.filter((x: any) => x.EmployeeProfileID === this.queryParams.employeeId);
-      console.log(filteredData);
+      var filteredData = this.data.filter((x: any) => x.EmployeeProfileID == this.queryParams.employeeId);      // console.log('fiter',filteredData);
       this.dataSource = new MatTableDataSource(filteredData);
       this.dataSource.paginator = this.paginator
 

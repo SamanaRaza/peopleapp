@@ -17,8 +17,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BandDesignationGraphComponent } from './header/employee-profile/header/employees/band-designation-graph/band-designation-graph.component';
 import { EmpSalaryHistoryGraphComponent } from './header/employee-profile/header/employees/emp-salary-history-graph/emp-salary-history-graph.component';
 import { PerformanceHistoryGraphComponent } from './header/employee-profile/header/employees/performance-history-graph/performance-history-graph.component';
-
-@NgModule({
+import { MatBreadcrumbModule } from "mat-breadcrumb";
+import { FixedAmountDialogComponent } from './header/employee-profile/header/employees/fixed-amount-dialog/fixed-amount-dialog.component';
+import { VariableComponentsDialogComponent } from './header/employee-profile/header/employees/variable-components-dialog/variable-components-dialog.component';@NgModule({
   declarations: [
     HeaderComponent,
     OrgEmpTabComponent,
@@ -32,13 +33,17 @@ import { PerformanceHistoryGraphComponent } from './header/employee-profile/head
     EmpHistoryComponent,
     BandDesignationGraphComponent,
     EmpSalaryHistoryGraphComponent,
-    PerformanceHistoryGraphComponent
+    PerformanceHistoryGraphComponent,
+    FixedAmountDialogComponent,
+    VariableComponentsDialogComponent
   ],
   imports: [
     CommonModule,
     OrganizationEmployeeRoutingModule,
     SharedModule,
-    FontAwesomeModule
-  ]
+    FontAwesomeModule,
+   
+  ],
+
 })
 export class OrganizationEmployeeModule { }

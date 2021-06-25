@@ -1,22 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
+  pending: string;
+  description: number;
+  approved: number;
+  disapproved: string;
+  total:number
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  { position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
-  { position: 2, name: 'Helium', weight: 4.0026, symbol: 'He' },
-  { position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li' },
-  { position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be' },
-  { position: 5, name: 'Boron', weight: 10.811, symbol: 'B' },
-  { position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C' },
-  { position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N' },
-  { position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O' },
-  { position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F' },
-  { position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne' }
+  { description: 1, pending: 'Hydrogen', approved: 1.0079, disapproved: 'H' ,total:111},
+  { description: 2, pending: 'Helium', approved: 4.0026, disapproved: 'He', total: 111 },
+  { description: 3, pending: 'Lithium', approved: 6.941, disapproved: 'Li', total: 111 },
+  { description: 4, pending: 'Beryllium', approved: 9.0122, disapproved: 'Be', total: 111},
+  { description: 5, pending: 'Boron', approved: 10.811, disapproved: 'B', total: 111},
+  { description: 6, pending: 'Carbon', approved: 12.0107, disapproved: 'C', total: 111},
+  { description: 7, pending: 'Nitrogen', approved: 14.0067, disapproved: 'N', total: 111 },
+  { description: 8, pending: 'Oxygen', approved: 15.9994, disapproved: 'O', total: 111},
+  { description: 9, pending: 'Fluorine', approved: 18.9984, disapproved: 'F', total: 111},
+  { description: 10, pending: 'Neon', approved: 20.1797, disapproved: 'Ne', total: 111 }
 ];
 
 @Component({
@@ -25,7 +26,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  displayedColumns: string[] = ['description', 'pending', 'approved', 'disapproved','total'];
   dataSource = ELEMENT_DATA;
   constructor() {}
 

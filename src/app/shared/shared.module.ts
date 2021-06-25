@@ -25,7 +25,7 @@ import { TabLinkComponent } from '../shared/tabs/tab-link.component';
 import { TabsComponent } from '../shared/tabs/tabs.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
-
+import { MatDialogModule } from '@angular/material/dialog';
 import { ComponentDirective } from './directive/component.directive';
 
 import {
@@ -68,7 +68,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {};
     FormsModule,
     RouterModule,
     PerfectScrollbarModule,
-
+    MatDialogModule,
     MatTableModule,
     MatPaginatorModule,
     MatButtonModule,
@@ -112,7 +112,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {};
     FormsModule,
     ReactiveFormsModule,
 
-
+    MatDialogModule,
     MatButtonModule,
     MatMenuModule,
     MatTabsModule,
