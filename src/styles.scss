@@ -42,6 +42,10 @@ h2,
   font-size: 12px;
 }
 
+.bold-font {
+  font-weight: 700;
+}
+
 p {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
@@ -64,6 +68,13 @@ strong {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 11px;
+}
+
+%light-fonts {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 11px;
+  color: $text-color;
 }
 
 %normal-fonts {
@@ -120,15 +131,17 @@ p {
     background: linear-gradient($bg-color, $bg-color-2);
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
+    height: 32px;
 
     .mat-card-header-text {
-      margin: 7px 20px;
+      margin: 5px 20px;
     }
 
     .mat-card-title {
       font-size: 12px;
       margin-bottom: 0;
       color: $text-color;
+      font-weight: 700;
     }
   }
 
@@ -187,6 +200,9 @@ p {
         $text-color: #343434;
         background: linear-gradient($bg-color, $bg-color-2);
         width: 28px;
+        height: 28px;
+        color: $text-primarey;
+        font-size: 12px;
         margin-right: 10px;
         border-radius: 4px;
         color: $text-primarey;
@@ -324,6 +340,7 @@ p {
 
     .mat-header-cell {
       @extend %heading-fonts;
+      color: $text-primarey;
     }
   }
 
@@ -331,6 +348,19 @@ p {
     min-height: 32px;
     height: 32px;
     background-color: $white;
+
+    &:nth-child(even) {
+      background-color: $bg-color;
+
+      &:hover {
+        background-color: lighten($primarey-color, 10%);
+        border-color: lighten($primarey-color, 20%);
+      }
+    }
+
+    .mat-cell {
+      @extend %light-fonts;
+    }
 
     .mat-footer-cell,
     .mat-button-base,
@@ -345,8 +375,8 @@ p {
     cursor: pointer;
 
     &:hover {
-      background-color: lighten($primarey-color, 10px);
-      border-color: lighten($primarey-color, 10px);
+      background-color: lighten($primarey-color, 10%);
+      border-color: lighten($primarey-color, 20%);
     }
   }
 }
