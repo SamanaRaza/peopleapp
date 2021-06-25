@@ -182,7 +182,6 @@
 }
 
 .graph-container {
-  float: left;
   width: 100%;
   margin: 50px 0;
 }
@@ -194,4 +193,17 @@
     background-color: #2196f3;
     color: #fff;
   }
+}
+
+.pr-50 {
+  padding-right: 50px !important;
+}
+
+.px-50 {
+  padding-right: 50px !important;
+  padding-left: 50px !important;
+}
+
+.ms-1 {
+  margin-left: 5px !important;
 }

@@ -1,82 +1,77 @@
-<div *ngIf="show" class="container mt-5">
-    <h3>Employee History</h3>
-    <div class="graph-container">
-        <div *ngFor="let timeline of employeeTimeline">
-            <div *ngFor="let year of timeline.years">
-                <div class="row gx-100 gy-50">
-                    <div class="
-                        col-md-4
-                        gy-100-x
-                        border-right-line
-                        pb-50
-                        left-arrow
-                        pt-50
-                        ml-2">
-                        ​
-                        <div class="year-container year">
-                            {{year.year}}
-                        </div>
-                        <button class="btn btn-md w-100 btn-warning mb-1 btn-sm">Annual Appraisal:
-                            {{year.appraisalYear}}</button>
-                        <div class="button-group mb-1 d-flex justify-content-between">
-                            <button class="btn btn-sm btn-primary w-100">Self:
-                                {{year.assesment.Self}}</button>
-                            <button class="btn btn-sm mx-1 w-100 btn-primary">LM:{{year.assesment.LM}}</button>
-                            <button class="btn btn-sm btn-primary w-100">HR:{{year.assesment.HR}}</button>
-                        </div>
-                        <button class="btn btn-md w-100 btn-danger btn-sm">
-                            {{year.salary.salaryBefore}} -
-                            {{year.salary.salaryAfter}}
-                            ({{year.salary.incrementPercent}})
-                        </button>
-                    </div>
-                    ​
-                    <div class="col-md-4 right-arrow pb-50 gy-100-x"
-                        *ngIf="year.designation || year.band || year.duties">
-                        <div class="right-container">
-                            <button class="btn btn-md w-100 btn-info mb-1 btn-sm"
-                                *ngIf="year.designation">{{year.designation}}</button>
-                            <button class="btn btn-md w-100 btn-primary mb-1 btn-sm" *ngIf="year.band">
-                                {{year.band}}
-                            </button>
-                            <div class="button-group mb-1 d-flex justify-content-between">
-                                <button class="btn btn-sm btn-primary w-100"
-                                    *ngIf="year.duties">{{year.duties}}</button>
-                                <button class="btn btn-sm ms-1 btn-primary w-100"
-                                    *ngIf="year.city">{{year.city}}</button>
+<div *ngIf="show" class="container-fluid">
+    <mat-card class="example-card">
+        <mat-card-header class="header-center">
+            <mat-card-title>Employee History</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="graph-container mt-4">
+                <div *ngFor="let timeline of employeeTimeline">
+                    <div *ngFor="let year of timeline.years">
+                        <div class="row gx-100 gy-50">
+                            <div class="col-md-4 pr-50 border-right-line pb-50 left-arrow pt-50">
+                                <div class="year-container year">
+                                    {{year.year}}
+                                </div>
+                                <button class="btn btn-md w-100 btn-warning mb-1 btn-sm">Annual Appraisal:
+                                    {{year.appraisalYear}}</button>
+                                <div class="button-group mb-1 d-flex justify-content-between">
+                                    <button class="btn btn-sm btn-primary w-100">Self:
+                                        {{year.assesment.Self}}</button>
+                                    <button class="btn btn-sm mx-1 w-100 btn-primary">LM:{{year.assesment.LM}}</button>
+                                    <button class="btn btn-sm btn-primary w-100">HR:{{year.assesment.HR}}</button>
+                                </div>
+                                <button class="btn btn-md w-100 btn-danger btn-sm">
+                                    {{year.salary.salaryBefore}} -
+                                    {{year.salary.salaryAfter}}
+                                    ({{year.salary.incrementPercent}})
+                                </button>
                             </div>
-                            <div class="button-group mb-1 d-flex justify-content-between">
-                                <button class="btn btn-sm btn-primary w-100"
-                                    *ngIf="year.duration">{{year.duration}}</button>
-                                <button class="btn btn-sm ms-1 btn-primary w-100"
-                                    *ngIf="year.totalWorkMonths">{{year.totalWorkMonths}}</button>
-                            </div>
-                        </div>
-                    </div>
-                    ​
-                    <div *ngIf="year.underPersons?.length > 0" class="col-md-4 right-arrow-center gy-30-x">
-                        <div class="row">
-                            <ng-container *ngFor="let underPerson of year.underPersons">
-                                <div class="col-auto">
-                                    <div class="profil-details text-center mb-1">
-                                        <button class="btn-primary btn-sm btn"
-                                            *ngIf="underPerson.personName">{{underPerson.personName}}</button>
-                                        <div class="w-100">
-                                            <div class="rounded-image text-center">
-                                                <img [src]="underPerson.personImage" />
-                                            </div>
-                                        </div>
-                                        <button class="btn-light btn-sm btn "
-                                            *ngIf="underPerson.duration">{{underPerson.duration}}</button>
+                            <div class="col-md-4 right-arrow pb-50 px-50"
+                                *ngIf="year.designation || year.band || year.duties">
+                                <div class="right-container">
+                                    <button class="btn btn-md w-100 btn-info mb-1 btn-sm"
+                                        *ngIf="year.designation">{{year.designation}}</button>
+                                    <button class="btn btn-md w-100 btn-primary mb-1 btn-sm" *ngIf="year.band">
+                                        {{year.band}}
+                                    </button>
+                                    <div class="button-group mb-1 d-flex justify-content-between">
+                                        <button class="btn btn-sm btn-primary w-100"
+                                            *ngIf="year.duties">{{year.duties}}</button>
+                                        <button class="btn btn-sm ms-1 btn-primary w-100"
+                                            *ngIf="year.city">{{year.city}}</button>
+                                    </div>
+                                    <div class="button-group mb-1 d-flex justify-content-between">
+                                        <button class="btn btn-sm btn-primary w-100"
+                                            *ngIf="year.duration">{{year.duration}}</button>
+                                        <button class="btn btn-sm ms-1 btn-primary w-100"
+                                            *ngIf="year.totalWorkMonths">{{year.totalWorkMonths}}</button>
                                     </div>
                                 </div>
-                            </ng-container>
+                            </div>
+
+                            <div *ngIf="year.underPersons?.length > 0" class="col-md-4 right-arrow-center gy-30-x">
+                                <div class="row">
+                                    <ng-container *ngFor="let underPerson of year.underPersons">
+                                        <div class="col-auto">
+                                            <div class="profil-details text-center mb-1">
+                                                <button class="btn-primary btn-sm btn"
+                                                    *ngIf="underPerson.personName">{{underPerson.personName}}</button>
+                                                <div class="w-100">
+                                                    <div class="rounded-image text-center">
+                                                        <img [src]="underPerson.personImage" />
+                                                    </div>
+                                                </div>
+                                                <button class="btn-light btn-sm btn "
+                                                    *ngIf="underPerson.duration">{{underPerson.duration}}</button>
+                                            </div>
+                                        </div>
+                                    </ng-container>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            ​
-        </div>
-        ​
-    </div>
+        </mat-card-content>
+    </mat-card>
 </div>
