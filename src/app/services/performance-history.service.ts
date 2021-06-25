@@ -11,6 +11,6 @@ export class PerformanceHistoryService {
   }
 
   public getBubble(): Observable<any> {
-    return this.http.get('../../assets/PerformanceHistoryGraph.json');
+    return this.http.get('../../assets/perfomance_history.json');
   }
 }

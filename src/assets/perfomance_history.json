@@ -1,0 +1,41 @@
+{
+  "status": "success",
+  "code": "200",
+  "data": [
+    {
+      "pref_level": "min",
+      "year": "2012",
+      "pref_type": "pref_rewards",
+      "pref_given_user_name": "hr",
+      "color": "green"
+    },
+    {
+      "pref_level": "mid",
+      "year": "2013",
+      "pref_type": "pref_appericiation",
+      "pref_given_user_name": "lm",
+      "color": "yellow"
+    },
+    {
+      "pref_level": "mid",
+      "year": "2012",
+      "pref_type": "pref_warning",
+      "pref_given_user_name": "hr",
+      "color": "red"
+    },
+    {
+      "pref_level": "max",
+      "year": "2013",
+      "pref_type": "pref_training",
+      "pref_given_user_name": "hr",
+      "color": "blue"
+    },
+    {
+      "pref_level": "max",
+      "year": "2014",
+      "pref_type": "pref_rewards",
+      "pref_given_user_name": "lm",
+      "color": "blue"
+    }
+  ]
+}

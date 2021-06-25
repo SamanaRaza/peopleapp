@@ -18,6 +18,8 @@ export class PerformanceHistoryGraphComponent implements OnInit {
   warning: any = [];
   appriciation: any = [];
   queryParams: any = {};
+  performance : any = [];
+  fullData : any =[];
 
   training: any = [];
   @ViewChild('bubbleChartContainer') bubbleChartContainer: ElementRef;
@@ -32,10 +34,67 @@ export class PerformanceHistoryGraphComponent implements OnInit {
     let that = this;
     that.performanceHistoryService.getBubble().subscribe(data => {
       that.data1 = (data as any).data;
-      console.log('bubb',this.data1)
+      const grouped = this.groupBy(that.data1, (d : any) => d.pref_type);
+
+      for (var entry of grouped.entries()) {
+        this.fullData.push( {
+          name: entry[0],
+          type: 'bubble',
+          data : this.loadPerformanceData(entry[1], entry[0])
+      })
+      }
+
+      that.generatePie(this.fullData);
+
       // that.data1 = data.filter((x: any) => x.employeeId == this.queryParams.employeeId);
-     that.generatePie(that.data1[0].employee_performance);
     });
+  }
+  
+  groupBy(list : any, keyGetter : any) {
+    const map = new Map();
+    list.forEach((item : any) => {
+         const key = keyGetter(item);
+         const collection = map.get(key);
+         if (!collection) {
+             map.set(key, [item]);
+         } else {
+             collection.push(item);
+         }
+    });
+    return map;
+}
+
+  loadPerformanceData(pData: any[], pref_type : string) {
+    let that = this;
+    var data = [];
+    for(var j=0; j< pData.length ; j++) {
+      if(pData[j].pref_type == pref_type) {
+        data.push({
+          x: parseInt(pData[j].year),
+          y: pData[j].pref_given_user_name == 'hr' ? 1 : pData[j].pref_given_user_name == 'lm' ? 0 : 2,
+          z: pData[j].pref_level == 'min' ? 5000 : pData[j].pref_level == 'mid' ? 12000 : 25000,
+          name : this.medals(pData[j].pref_type)
+         });
+      }
+    }
+
+    return data;
+  }
+
+  medals(pref_type: string) {
+    let that = this;
+    switch (pref_type) {
+      case 'pref_rewards':
+        return  'R'
+      case 'pref_appericiation':
+        return   'A'
+      case 'pref_warning':
+        return   'W'
+        case 'pref_training':
+          return  'T'
+      default:
+        return '';
+    }
   }
 
   generatePie(data: any) {
