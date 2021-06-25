@@ -424,3 +424,19 @@ mat-footer-cell:first-of-type {
     }
   }
 }
+
+.storyes-card {
+  margin-bottom: 50px;
+
+  .storyes {
+    .arrow.first {
+      display: none;
+    }
+
+    &:first-child {
+      .arrow.first {
+        display: block;
+      }
+    }
+  }
+}

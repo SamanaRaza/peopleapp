@@ -1,18 +1,10 @@
-<div *ngIf="show" class="container mt-5">
+<div *ngIf="show" class="container-fluid mt-5">
     <h3>Employee History</h3>
     <div class="graph-container">
         <div *ngFor="let timeline of employeeTimeline">
             <div *ngFor="let year of timeline.years">
                 <div class="row gx-100 gy-50">
-                    <div class="
-                        col-md-4
-                        gy-100-x
-                        border-right-line
-                        pb-50
-                        left-arrow
-                        pt-50
-                        ml-2">
-                        ​
+                    <div class="col-md-4 gy-100-x border-right-line pb-50 left-arrow pt-50">
                         <div class="year-container year">
                             {{year.year}}
                         </div>
