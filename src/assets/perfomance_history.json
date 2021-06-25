@@ -17,14 +17,14 @@
       "color": "yellow"
     },
     {
-      "pref_level": "mid",
+      "pref_level": "max",
       "year": "2012",
       "pref_type": "pref_warning",
-      "pref_given_user_name": "hr",
+      "pref_given_user_name": "lm",
       "color": "red"
     },
     {
-      "pref_level": "max",
+      "pref_level": "min",
       "year": "2013",
       "pref_type": "pref_training",
       "pref_given_user_name": "hr",
@@ -35,7 +35,7 @@
       "year": "2014",
       "pref_type": "pref_rewards",
       "pref_given_user_name": "lm",
-      "color": "blue"
+      "color": "green"
     }
   ]
 }
