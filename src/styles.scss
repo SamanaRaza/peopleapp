@@ -440,3 +440,10 @@ mat-footer-cell:first-of-type {
     }
   }
 }
+
+.header-center {
+  .mat-card-header-text {
+    width: 100%;
+    text-align: center;
+  }
+}
