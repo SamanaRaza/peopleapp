@@ -133,8 +133,8 @@ export class PerformanceHistoryGraphComponent implements OnInit {
         text: 'Performance History',
         style: {
           color: '#45C23D',
-          'background-color': '#9BE997',
-          'padding': '28px 333px 10px 250px',
+          // 'background-color': '#9BE997',
+          // 'padding': '28px 333px 10px 250px',
           fontWeight: 'bold'
         }
       },
@@ -212,12 +212,6 @@ export class PerformanceHistoryGraphComponent implements OnInit {
       },
       series: [
         {
-          type: "bubble", name: '', data: [{ x: 2012, y: 3, z: 0 }], showInLegend: false, color: '#FFFFFF', enableMouseTracking: false
-        },
-        {
-          type: "bubble", name: '', data: [{ x: 2012, y: 2, z: 0 }], showInLegend: false, color: '#FFFFFF', enableMouseTracking: false
-        },
-        {
           type: "bubble",
           name: "Performance Rewards",
           data: data5.data,
@@ -240,6 +234,18 @@ export class PerformanceHistoryGraphComponent implements OnInit {
           name: "Training",
           data: data8.data,
           color: data8.color
+        },
+        {
+          type: "bubble", name: '', data: [{ x: 2012, y: 3, z: 0 }], showInLegend: false, color: '#DAD7C4', enableMouseTracking: false
+        },
+        {
+          type: "bubble", name: '', data: [{ x: 2012, y: 2, z: 0 }], showInLegend: false, color: '#DAD7C4', enableMouseTracking: false
+        },
+        {
+          type: "bubble", name: '', data: [{ x: 2012, y: 1, z: 0 }], showInLegend: false, color: '#DAD7C4', enableMouseTracking: false
+        },
+        {
+          type: "bubble", name: '', data: [{ x: 2012, y: 0, z: 0, name: '' }], showInLegend: false, color: '#DAD7C4', enableMouseTracking: false
         },
         {
           type: "bubble", name: '', data: [{ x: 2020, y: 0, z: 0 }], showInLegend: false, color: '#FFFFFF', enableMouseTracking: false
