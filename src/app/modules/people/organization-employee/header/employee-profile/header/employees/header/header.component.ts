@@ -1,10 +1,12 @@
-import { Component, OnInit, NgModule, ViewChild, ChangeDetectorRef, AfterViewInit } from '@angular/core';
+import { Component, OnInit, NgModule, ViewChild, ChangeDetectorRef, AfterViewInit, ChangeDetectionStrategy } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { EmployeesService } from "../../../../../../../../services/employees.service";
 import { SharedModule } from '../../../../../../../../shared/shared.module';
+import { Breadcrumb } from '../../../../../../../..//shared/breadcrumb/breadcrumb.model';
+import { BreadcrumbService } from '../../../../../../../../shared/breadcrumb/breadcrumb.service';
 
 export interface Employee {
   empID: number;
@@ -25,6 +27,7 @@ export class MatMenuListItem {
   selector: 'anms-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class EmpHeaderComponent implements OnInit, AfterViewInit {
 
@@ -57,9 +60,10 @@ export class EmpHeaderComponent implements OnInit, AfterViewInit {
   menuListItems: MatMenuListItem[];
 
   activeVal: any
-  constructor(private employeeService: EmployeesService, private router: Router, private cdfr: ChangeDetectorRef,) { }
+  constructor(private employeeService: EmployeesService, private router: Router, private cdf: ChangeDetectorRef, private readonly breadcrumbService: BreadcrumbService) { }
 
   ngOnInit(): void {
+    let that = this;
     this.displayedColumns = ['empID', 'name', 'designation', 'department', 'band', 'joiningDate', 'status'];
     this.columns = [
       { columnDef: 'empID', header: 'Employee ID', cell: (element: any) => `${element['empID'] ? element['empID'] : ``}`, color: 'red' },
@@ -121,6 +125,8 @@ export class EmpHeaderComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
+    let that = this;
+    that.setBreadcrumbs();
 
   }
 
@@ -187,6 +193,23 @@ export class EmpHeaderComponent implements OnInit, AfterViewInit {
         }
       });
     }
+  }
+
+  setBreadcrumbs() {
+    let that = this;
+    let breadcrumbs: Breadcrumb[] = [];
+    breadcrumbs.push({
+      label: 'Employee Profile',
+      url: '/people/organization-employee/hr-services',
+      params: {}
+    });
+    breadcrumbs.push({
+      label: 'Employee',
+      url: '',
+      params: {}
+    });
+    that.breadcrumbService.set(breadcrumbs);
+    this.cdf.detectChanges();
   }
 
 }

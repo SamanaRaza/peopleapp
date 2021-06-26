@@ -1,8 +1,10 @@
-import { Component, OnInit, ChangeDetectionStrategy, ViewChild } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ViewChild, ChangeDetectorRef } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute } from '@angular/router';
+import { Breadcrumb } from 'src/app/shared/breadcrumb/breadcrumb.model';
+import { BreadcrumbService } from 'src/app/shared/breadcrumb/breadcrumb.service';
 import { EmploymentChangeHistoryService } from '../../../../../../../../services/employment-change-history.service';
 
 @Component({
@@ -20,8 +22,8 @@ export class EmploymentChangeHistoryComponent implements OnInit {
   displayedColumns: string[];
   dataSource: MatTableDataSource<any>;
   data: any
-  constructor(private employmentChangeHistoryService: EmploymentChangeHistoryService,
-    private route: ActivatedRoute) { }
+  constructor(private employmentChangeHistoryService: EmploymentChangeHistoryService, private readonly breadcrumbService: BreadcrumbService,
+    private route: ActivatedRoute, private cdf: ChangeDetectorRef) { }
 
   ngOnInit(): void {
 
@@ -35,7 +37,7 @@ export class EmploymentChangeHistoryComponent implements OnInit {
 
     }, error => console.error(error));
 
-    this.displayedColumns = ['EmployeeProfileID', 'Changedby', 'ChangedDate', 'EmployementStatus', 'EmployementType', 'Designation', 'Band', 'LMs', 'Department', 'Branch'];
+    this.displayedColumns = ['Changedby', 'ChangedDate', 'EmployementStatus', 'EmployementType', 'Designation', 'Band', 'LMs', 'Department', 'Branch'];
     this.columns = [
       { columnDef: 'EmployeeProfileID', header: 'Employee Profile Id', cell: (element: any) => `${element['EmployeeProfileID'] ? element['EmployeeProfileID'] : ``}`, color: 'red' },
       { columnDef: 'Changedby', header: 'Changed By', cell: (element: any) => `${element['Changedby'] ? element['Changedby'] : ``}`, color: 'red' },
@@ -49,5 +51,33 @@ export class EmploymentChangeHistoryComponent implements OnInit {
       { columnDef: 'Branch', header: 'Branch', cell: (element: any) => `${element['Branch'] ? element['Branch'] : ``}` }
     ]
 
+  }
+
+  ngAfterViewInit() {
+    let that = this;
+    that.setBreadcrumbs();
+    this.cdf.detectChanges();
+  }
+
+  setBreadcrumbs() {
+    let that = this;
+    let breadcrumbs: Breadcrumb[] = [];
+    breadcrumbs.push({
+      label: 'Employee Profile',
+      url: '/people/organization-employee/hr-services',
+      params: {}
+    });
+    breadcrumbs.push({
+      label: 'Employee',
+      url: '/people/organization-employee/hr-services/emp-profile/employees',
+      params: {
+      }
+    });
+    breadcrumbs.push({
+      label: 'Employment Change',
+      url: '',
+      params: {}
+    });
+    that.breadcrumbService.set(breadcrumbs);
   }
 }

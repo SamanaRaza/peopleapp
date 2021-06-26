@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, ViewChild } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ViewChild, ChangeDetectorRef } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
@@ -7,6 +7,8 @@ import { EmployeeSalaryHistoryService } from '../../../../../../../../services/e
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FixedAmountDialogComponent } from '../fixed-amount-dialog/fixed-amount-dialog.component';
 import { VariableComponentsDialogComponent } from '../variable-components-dialog/variable-components-dialog.component';
+import { Breadcrumb } from 'src/app/shared/breadcrumb/breadcrumb.model';
+import { BreadcrumbService } from 'src/app/shared/breadcrumb/breadcrumb.service';
 @Component({
   selector: 'anms-employment-salary-change',
   templateUrl: './employment-salary-change.component.html',
@@ -23,8 +25,8 @@ export class EmploymentSalaryChangeComponent implements OnInit {
   displayedColumns: string[];
   dataSource: MatTableDataSource<any>;
   data: any
-  constructor(private employeeSaleryHistroyService: EmployeeSalaryHistoryService,
-    private route: ActivatedRoute, public dialog: MatDialog) { }
+  constructor(private employeeSaleryHistroyService: EmployeeSalaryHistoryService, private readonly breadcrumbService: BreadcrumbService,
+    private route: ActivatedRoute, public dialog: MatDialog, private cdf: ChangeDetectorRef) { }
 
 
 
@@ -52,7 +54,7 @@ export class EmploymentSalaryChangeComponent implements OnInit {
 
     }, error => console.error(error));
 
-    this.displayedColumns = ['EmployeeProfileID', 'ChangedBy', 'ChangedDate', 'Reason', 'BasicSalary', 'FixedComponents', 'VariableComponents'];
+    this.displayedColumns = ['ChangedBy', 'ChangedDate', 'Reason', 'BasicSalary', 'FixedComponents', 'VariableComponents'];
     this.columns = [
       { columnDef: 'EmployeeProfileID', header: 'Employee Profile Id', cell: (element: any) => `${element['EmployeeProfileID'] ? element['EmployeeProfileID'] : ``}`, color: 'red' },
       { columnDef: 'ChangedBy', header: 'Changed By', cell: (element: any) => `${element['ChangedBy'] ? element['ChangedBy'] : ``}`, color: 'red' },
@@ -63,6 +65,34 @@ export class EmploymentSalaryChangeComponent implements OnInit {
       { columnDef: 'VariableComponents', header: 'Variable Components', cell: (element: any) => `${element['VariableComponents'] ? element['VariableComponents'] : ``}` },
     ]
 
+  }
+
+  ngAfterViewInit() {
+    let that = this;
+    that.setBreadcrumbs();
+    this.cdf.detectChanges();
+  }
+
+  setBreadcrumbs() {
+    let that = this;
+    let breadcrumbs: Breadcrumb[] = [];
+    breadcrumbs.push({
+      label: 'Employee Profile',
+      url: '/people/organization-employee/hr-services',
+      params: {}
+    });
+    breadcrumbs.push({
+      label: 'Employee',
+      url: '/people/organization-employee/hr-services/emp-profile/employees',
+      params: {
+      }
+    });
+    breadcrumbs.push({
+      label: 'Salary Change',
+      url: '',
+      params: {}
+    });
+    that.breadcrumbService.set(breadcrumbs);
   }
 }
 

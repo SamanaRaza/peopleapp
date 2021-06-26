@@ -27,6 +27,9 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ComponentDirective } from './directive/component.directive';
+import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component'
+import { BreadcrumbService } from './breadcrumb/breadcrumb.service';
+
 
 import {
   FontAwesomeModule,
@@ -95,13 +98,15 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {};
   declarations: [
     TabsComponent,
     TabLinkComponent,
-    ComponentDirective
+    ComponentDirective,
+    BreadcrumbComponent
   ],
   providers: [
     {
       provide: PERFECT_SCROLLBAR_CONFIG,
       useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
-    }
+    },
+    BreadcrumbService
   ],
   exports: [
     CommonModule,
@@ -136,7 +141,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {};
 
     TabsComponent,
     TabLinkComponent,
-    ComponentDirective
+    ComponentDirective,
+    BreadcrumbComponent
   ]
 })
 export class SharedModule {

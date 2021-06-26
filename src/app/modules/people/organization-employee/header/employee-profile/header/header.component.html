@@ -33,17 +33,19 @@
 
             <div class="panel-card">
                 <div class="image-panel">
-                    <img src="../../../../../../../assets/images/image-3.jpg">
+                    <a class="text-primary"
+                        [routerLink]="['/people/organization-employee/hr-services/emp-profile/employees']">
+                        <img src="../../../../../../../assets/images/image-3.jpg">
+                    </a>
                 </div>
                 <div class="panel-body">
-                    <h1 class="text-primary">Employee Profile</h1>
+                    <a class="text-primary"
+                        [routerLink]="['/people/organization-employee/hr-services/emp-profile/employees']">
+                        <h1 class="text-primary">Employee Profile</h1>
+                    </a>
                     <p>
                         Review and manage employee information
                     </p>
-                    <a class="text-primary"
-                        [routerLink]="['/people/organization-employee/hr-services/emp-profile/employees']">
-                        Profile
-                    </a>
                 </div>
             </div>
         </mat-grid-tile>
@@ -56,7 +58,7 @@
                 <div class="panel-body">
                     <h1 class="text-primary">Access Matrix</h1>
                     <p>
-                       Access Matrix with User Role and Employee Portal
+                        Access Matrix with User Role and Employee Portal
                     </p>
                 </div>
             </div>
