@@ -118,7 +118,7 @@ export class PerformanceHistoryGraphComponent implements OnInit {
       chart: {
         backgroundColor: '#F2F3F4',
         type: 'bubble',
-        plotBorderWidth: 1,
+        plotBorderWidth: 0,
         zoomType: 'xy'
       },
       credits: {
@@ -157,11 +157,15 @@ export class PerformanceHistoryGraphComponent implements OnInit {
         labels: {
           useHTML: true,
           style: {
-            'background-color': '#DAD7C4',
-            'box-shadow': '3px 3px',
-            'padding': '5px'
+            color: '#3498DB',
+            'background-color': 'white',
+            'padding': '4px',
+            'box-shadow': '0px 1px',
+            'font-weight': 'bold'
           }
         },
+        lineColor: '#40A6DC',
+        lineWidth: 3,
         categories: ['2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020'],
         gridLineWidth: 0,
         title: {
@@ -176,15 +180,19 @@ export class PerformanceHistoryGraphComponent implements OnInit {
         labels: {
           useHTML: true,
           style: {
-            'background-color': '#DAD7C4',
-            'box-shadow': '3px 3px',
-            'padding': '5px'
+            color: '#3498DB',
+            'background-color': 'white',
+            'padding': '4px',
+            'box-shadow': '0px 1px',
+            'font-weight': 'bold'
           }
         },
         categories: ['LM', 'HR', 'Managment', 'Employee'],
         gridLineWidth: 0,
         startOnTick: false,
         endOnTick: false,
+        lineColor: '#40A6DC',
+        lineWidth: 3,
         title: {
           text: ''
         },

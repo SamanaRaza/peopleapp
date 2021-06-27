@@ -11,7 +11,7 @@ import * as HighCharts from 'highcharts';
 import { HttpClient } from '@angular/common/http';
 import { BandDesignationGraphService } from '../../../../../../../../services/band-designation-graph.service';
 import { ActivatedRoute } from '@angular/router';
-import moment from 'moment';
+import { BaseComponentComponent } from 'src/app/shared/base-component/base-component.component';
 
 interface LegendBand {
   color: string
@@ -25,17 +25,10 @@ interface LegendBand {
   changeDetection: ChangeDetectionStrategy.Default
 
 })
-export class BandDesignationGraphComponent implements OnInit, AfterViewInit {
+export class BandDesignationGraphComponent extends BaseComponentComponent implements OnInit, AfterViewInit {
   @ViewChild('chartContainer') ChartContainer: ElementRef;
   data: any = {};
-  persons: any = {};
-  chartData: any = [];
-  band: any = [];
-  designaiton: any = [];
   queryParams: any = {};
-  years: any = [];
-  yearsBetween: any = [];
-  startYear: any;
   legend: LegendBand;
 
   constructor(
@@ -43,7 +36,7 @@ export class BandDesignationGraphComponent implements OnInit, AfterViewInit {
     private bandDesignationGraphService: BandDesignationGraphService,
     private route: ActivatedRoute,
     private cdf: ChangeDetectorRef
-  ) { }
+  ) { super(); }
   ngOnInit() {
     let that = this;
   }
@@ -51,53 +44,23 @@ export class BandDesignationGraphComponent implements OnInit, AfterViewInit {
     let that = this;
     that.queryParams = that.route.snapshot.queryParams;
     that.bandDesignationGraphService.getGraph().subscribe((data) => {
-      that.chartData = (data as any).data;
-      that.persons = that.chartData.find(
+      var data = (data as any).data;
+      var employees = data.find(
         (x: any) => x.employee_id == that.queryParams.employeeId
       );
-      console.log('data-band', that.chartData);
-      console.log('persons', that.persons);
-      if (that.persons && that.persons.data.length > 0) {
-        that.persons.data.sort(function (a: any, b: any) {
-          return a.year - b.year;
-        });
 
-        that.persons.data.map((per: any) => that.band.push(per.band));
-        that.persons.data.map((per: any) =>
-          that.designaiton.push(per.designation)
-        );
-        that.persons.data.map((per: any) => that.years.push(per.year));
+      that.graphDataCustomization(employees);
+      that.generateBandDesignation(that.band, that.designation, that.startingYear);
 
-        var initialYear = new Date().getFullYear() - 9;
-
-        var Start = new Date(initialYear, 0, 1);
-        var End = new Date(that.years[0], 0, 1);
-
-        var syears = moment(End).diff(Start, 'years');
-
-        for (var year = 0; year < syears; year++)
-          this.yearsBetween.push(Start.getFullYear() + year);
-
-        that.startYear = that.yearsBetween[0]
-          ? that.yearsBetween[0]
-          : new Date().getFullYear() - 9;
-
-        for (var yb = 0; yb < that.yearsBetween.length; yb++) {
-          that.band.unshift(null);
-          that.designaiton.unshift(null);
-        }
-        that.generateBandDesignation(that.designaiton, that.band);
-        this.cdf.detectChanges();
-      }
     });
   }
-  generateBandDesignation(data: any, data1: any) {
+  generateBandDesignation(bands: any, designations: any, startYear: any) {
     let that = this;
     const options: HighCharts.Options = {
       chart: {
         backgroundColor: '#F2F3F4',
         type: 'line',
-        plotBorderWidth: 1,
+        plotBorderWidth: 0,
         zoomType: 'xy'
       },
       credits: {
@@ -115,15 +78,17 @@ export class BandDesignationGraphComponent implements OnInit, AfterViewInit {
       },
       yAxis: {
         title: {
-          text: 'Band'
+          text: ''
         },
         gridLineColor: 'transparent',
         labels: {
           useHTML: true,
           style: {
-            'background-color': '#DAD7C4',
-            'box-shadow': '3px 3px',
-            'padding': '5px'
+            color: '#3498DB',
+            'background-color': 'white',
+            'padding': '4px',
+            'box-shadow': '0px 1px',
+            'font-weight': 'bold'
           }
         },
         min: 5,
@@ -141,9 +106,11 @@ export class BandDesignationGraphComponent implements OnInit, AfterViewInit {
         labels: {
           useHTML: true,
           style: {
-            'background-color': '#DAD7C4',
-            'box-shadow': '3px 3px',
-            'padding': '5px'
+            color: '#3498DB',
+            'background-color': 'white',
+            'padding': '4px',
+            'box-shadow': '0px 1px',
+            'font-weight': 'bold'
           }
         },
         tickInterval: 1000 * 3600 * 24 * 365,
@@ -164,7 +131,7 @@ export class BandDesignationGraphComponent implements OnInit, AfterViewInit {
           label: {
             connectorAllowed: false
           },
-          pointStart: Date.UTC(this.startYear, 0, 1),
+          pointStart: Date.UTC(startYear, 0, 1),
           pointInterval: (365 * 24 * 3600 * 1000) / 1
         }
       },
@@ -174,14 +141,14 @@ export class BandDesignationGraphComponent implements OnInit, AfterViewInit {
           type: 'line',
           color: "#4B63A0",
           lineWidth: 4,
-          data: data
+          data: bands
         },
         {
           name: 'Designations',
           type: 'line',
           color: "#81D8E9",
           lineWidth: 4,
-          data: data1
+          data: designations
         }
       ],
       responsive: {

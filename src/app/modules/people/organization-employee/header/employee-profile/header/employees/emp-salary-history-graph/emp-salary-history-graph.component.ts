@@ -7,10 +7,9 @@ import {
   ChangeDetectionStrategy
 } from '@angular/core';
 import * as HighCharts from 'highcharts';
-import { HttpClient } from '@angular/common/http';
 import { SalaryChangeHistoryGraphService } from '../../../../../../../../services/salary-change-history-graph.service';
 import { ActivatedRoute } from '@angular/router';
-import moment from 'moment';
+import { BaseComponentComponent } from 'src/app/shared/base-component/base-component.component';
 
 @Component({
   selector: 'anms-emp-salary-history-graph',
@@ -19,87 +18,48 @@ import moment from 'moment';
   changeDetection: ChangeDetectionStrategy.Default
 
 })
-export class EmpSalaryHistoryGraphComponent implements OnInit {
+export class EmpSalaryHistoryGraphComponent extends BaseComponentComponent implements OnInit {
   @ViewChild('chartContainer') ChartContainer: ElementRef;
   data: any = {};
   queryParams: any = {};
-  persons: any = [];
-  chartData: any = [];
-  salary: any = [];
-  startYear: any;
-  years: any = [];
-  yearsBetween: any = [];
   constructor(
-    private httpClient: HttpClient,
     private lineChartService: SalaryChangeHistoryGraphService,
     private route: ActivatedRoute
-  ) { }
+  ) { super(); }
   ngOnInit() {
     let that = this;
-    const currentYear = new Date().getFullYear();
   }
   ngAfterViewInit() {
     this.queryParams = this.route.snapshot.queryParams;
 
     let that = this;
     this.lineChartService.getGraph().subscribe((data) => {
-      this.persons = (data as any).data;
-      console.log('Line', this.persons);
-      this.data = this.persons.find(
+      var data = (data as any).data;
+      var employeSalary = data.find(
         (x: any) => x.employeeId == that.queryParams.employeeId
       );
-      if (this.data && this.data.details.length > 0) {
-        this.data.details.sort(function (a: any, b: any) {
-          return a.year - b.year;
-        });
-        this.data.details.map((per: any) => that.salary.push(per.salary));
-        this.data.details.map((per: any) => that.years.push(per.year));
-        var t = new Date().getFullYear() - 9;
-
-        var Start = new Date(t, 0, 1);
-        var End = new Date(that.years[0], 0, 1);
-
-        var syears = moment(End).diff(Start, 'years');
-
-        for (var year = 0; year < syears; year++)
-          this.yearsBetween.push(Start.getFullYear() + year);
-
-        this.startYear = this.yearsBetween[0]
-          ? this.yearsBetween[0]
-          : new Date().getFullYear() - 9;
-
-        for (var yb = 0; yb < this.yearsBetween.length; yb++) {
-          this.salary.unshift(null);
-        }
-
-        //
-
-        this.generatePie(that.salary.slice(0, 9));
-      } else {
-        var t = new Date().getFullYear() - 9;
-        var Start = new Date(t, 0, 1);
-        var End = new Date(new Date().getFullYear(), 0, 1);
-        this.startYear = new Date().getFullYear() - 9;
-        var syears = moment(End).diff(Start, 'years');
-
-        for (var year = 0; year < syears; year++) {
-          this.yearsBetween.push(Start.getFullYear() + year);
-        }
-        for (var yb = 0; yb < this.yearsBetween.length; yb++) {
-          this.salary.unshift(null);
-        }
-
-        console.log('salary', this.salary);
-        console.log('startyear', this.startYear);
-        this.generatePie(that.salary);
-      }
+      that.graphDataCustomization(employeSalary);
+      that.generateSalary(that.salary, that.startingYear);
     });
   }
-  generatePie(data: any) {
+  generateSalary(data: any, startYear: any) {
     let that = this;
     const options: HighCharts.Options = {
+      chart: {
+        backgroundColor: '#F2F3F4',
+        type: 'line',
+        plotBorderWidth: 0,
+        zoomType: 'xy'
+      },
       title: {
-        text: 'Year, 2012-2020'
+        useHTML: true,
+        text: 'Salary Change Histroy',
+        style: {
+          color: '#0B94DE',
+          // 'background-color': '#9BE997',
+          // 'padding': '28px 333px 10px 250px',
+          fontWeight: 'bold'
+        }
       },
       credits: {
         enabled: false
@@ -111,11 +71,21 @@ export class EmpSalaryHistoryGraphComponent implements OnInit {
         gridLineWidth: 0,
         startOnTick: false,
         endOnTick: false,
+        lineColor: '#40A6DC',
+        lineWidth: 3,
         title: {
-          text: 'Salary'
+          text: ''
         },
         labels: {
-          format: '{value:.0f}'
+          format: '{value:.0f}',
+          useHTML: true,
+          style: {
+            color: '#3498DB',
+            'background-color': 'white',
+            'padding': '4px',
+            'box-shadow': '0px 1px',
+            'font-weight': 'bold'
+          }
         },
         maxPadding: 0.2
       },
@@ -123,9 +93,18 @@ export class EmpSalaryHistoryGraphComponent implements OnInit {
         type: 'datetime',
         tickInterval: 1000 * 3600 * 24 * 365,
         units: [['year', [1]]],
-        accessibility: {
-          rangeDescription: 'Range: 2012 to 2020'
-        }
+        lineColor: '#40A6DC',
+        lineWidth: 3,
+        labels: {
+          useHTML: true,
+          style: {
+            color: '#3498DB',
+            'background-color': 'white',
+            'padding': '4px',
+            'box-shadow': '0px 1px',
+            'font-weight': 'bold'
+          }
+        },
       },
       legend: {
         layout: 'vertical',
@@ -137,7 +116,7 @@ export class EmpSalaryHistoryGraphComponent implements OnInit {
           label: {
             connectorAllowed: false
           },
-          pointStart: Date.UTC(this.startYear, 0, 1),
+          pointStart: Date.UTC(startYear, 0, 1),
           pointInterval: (365 * 24 * 3600 * 1000) / 1
         }
       },
@@ -145,7 +124,10 @@ export class EmpSalaryHistoryGraphComponent implements OnInit {
         {
           name: 'Salary',
           type: 'line',
-          data: data
+          data: data,
+          color: "#51AE69",
+          lineWidth: 4,
+          showInLegend: false
         }
       ],
       responsive: {

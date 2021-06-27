@@ -64,6 +64,7 @@ import {
 
 import { CdkTableModule } from '@angular/cdk/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { BaseComponentComponent } from './base-component/base-component.component';
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {};
 @NgModule({
   imports: [
@@ -99,7 +100,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {};
     TabsComponent,
     TabLinkComponent,
     ComponentDirective,
-    BreadcrumbComponent
+    BreadcrumbComponent,
+    BaseComponentComponent
   ],
   providers: [
     {
