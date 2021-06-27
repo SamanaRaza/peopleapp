@@ -116,7 +116,7 @@ export class PerformanceHistoryGraphComponent implements OnInit {
     let that = this;
     const options: Highcharts.Options = {
       chart: {
-        backgroundColor: '#ECEBE8',
+        backgroundColor: '#F2F3F4',
         type: 'bubble',
         plotBorderWidth: 1,
         zoomType: 'xy'
@@ -125,7 +125,14 @@ export class PerformanceHistoryGraphComponent implements OnInit {
         enabled: false
       },
       legend: {
-        enabled: true
+        symbolPadding: 0,
+        symbolWidth: 0,
+        symbolHeight: 0,
+        squareSymbol: false,
+        useHTML: true,
+        labelFormatter: function () {
+          return '<span  style="background: ' + this.options.color + ' ;color: white;padding: 20px 20px;font-size:13px;font-weight: bold">' + this.name + '</span>'
+        }
       },
 
       title: {

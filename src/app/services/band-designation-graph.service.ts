@@ -11,6 +11,6 @@ export class BandDesignationGraphService {
   }
 
   public getGraph(): Observable<any> {
-    return this.http.get('../../assets/BandDesignationGraph.json');
+    return this.http.get('../../assets/band_designation.json');
   }
 }
