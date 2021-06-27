@@ -100,6 +100,9 @@ export class BandDesignationGraphComponent implements OnInit, AfterViewInit {
         plotBorderWidth: 1,
         zoomType: 'xy'
       },
+      credits: {
+        enabled: false
+      },
       title: {
         useHTML: true,
         text: 'Band & Designation year wise',

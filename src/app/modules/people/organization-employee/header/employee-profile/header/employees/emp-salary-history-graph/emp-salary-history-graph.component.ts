@@ -101,8 +101,8 @@ export class EmpSalaryHistoryGraphComponent implements OnInit {
       title: {
         text: 'Year, 2012-2020'
       },
-      subtitle: {
-        text: 'Salary 12K => 1000K'
+      credits: {
+        enabled: false
       },
       yAxis: {
         min: 10000,
