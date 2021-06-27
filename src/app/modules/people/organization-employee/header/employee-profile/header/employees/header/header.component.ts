@@ -27,7 +27,7 @@ export class MatMenuListItem {
   selector: 'anms-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.Default
 })
 export class EmpHeaderComponent implements OnInit, AfterViewInit {
 
@@ -38,9 +38,11 @@ export class EmpHeaderComponent implements OnInit, AfterViewInit {
   @ViewChild(MatTable) dtable: MatTable<Employee>;
   data: any;
   sortData: any;
+  filterData: string;
   searchData: any;
   columns: Array<any>;
   displayedColumns: string[];
+  filter: any
   activeList = ['Yes', 'No'];
   employeeSort = [
     { value: 1, sort: 'A to Z' },
@@ -51,7 +53,8 @@ export class EmpHeaderComponent implements OnInit, AfterViewInit {
     { value: 'Non Active', status: 'Non Active Employee' }
   ]
   searchBy = [
-    { value: 'empID', search: 'Emp ID' },
+    { value: 'all', search: 'All' },
+    { value: 'empID', search: 'Employee Id' },
     { value: 'name', search: 'Name' },
     { value: 'designation', search: 'Designation' },
     { value: 'department', search: 'Department' },
@@ -74,12 +77,8 @@ export class EmpHeaderComponent implements OnInit, AfterViewInit {
       { columnDef: 'joiningDate', header: 'Joining Date', cell: (element: any) => `${element['joiningDate'] ? element['joiningDate'] : ``}` },
       { columnDef: 'status', header: 'Status', cell: (element: any) => `${element['status'] ? element['status'] : ``}` }
     ]
-    this.employeeService.getEmployees().subscribe(data => {
-      this.data = (data as any).data;
-      this.dataSource = new MatTableDataSource((data as any).data);
-      this.dataSource.paginator = this.paginator;
-    }, error => console.error(error));
 
+    this.loadData()
     this.menuListItems = [
       {
         menuLinkText: 'View Employee Profile',
@@ -130,16 +129,51 @@ export class EmpHeaderComponent implements OnInit, AfterViewInit {
 
   }
 
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
+  loadData() {
+    this.employeeService.getEmployees().subscribe(data => {
+      this.data = (data as any).data;
+      this.dataSource = new MatTableDataSource((data as any).data);
+      this.dataSource.paginator = this.paginator;
+    }, error => console.error(error));
+  }
+
+  searchByValues(event: any) {
+    let that = this;
+    if (event != "all") {
+      this.dataSource.filterPredicate = function (data: any, filter: string): boolean {
+        return data[event].toLowerCase().includes(filter);
+      };
+    }
+    else {
+      that.filter = null;
+      const filterValue = this.filter;
+      this.dataSource.filterPredicate = function (data: any, filter: string): boolean {
+        return true;
+      };
+      this.applyFilter();
+
+    }
 
   }
 
-  changeStatus(e: any) {
+  applyFilter() {
+    if (this.filter) {
+      const filterValue = this.filter;
+      this.dataSource.filter = filterValue.trim().toLowerCase();
+      this.cdf.detectChanges();
+    }
+    else {
+      this.loadData();
+      this.changeStatus(null, this.activeVal);
+      this.cdf.detectChanges();
+    }
+  }
+
+  changeStatus(e: any, status: any) {
+    var value = e ? e.value : status;
     this.employeeService.getEmployees().subscribe(data => {
       var newData = (data as any).data;
-      this.data = newData.filter((x: any) => x.status === e.value);
+      this.data = newData.filter((x: any) => x.status === value);
       this.changeOrder(null, this.sortData)
 
     });
@@ -157,10 +191,10 @@ export class EmpHeaderComponent implements OnInit, AfterViewInit {
 
   changeOrder(e: any, sort: any) {
     var value = e ? e.value : sort;
-    if (value === '1') {
+    if (value === 1) {
       this.data.sort(this.compare);
     }
-    else if (value === '2') {
+    else if (value === 2) {
       this.data.sort(this.compare).reverse();
     }
     this.dataSource = new MatTableDataSource(this.data);

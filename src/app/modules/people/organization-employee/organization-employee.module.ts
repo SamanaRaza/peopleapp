@@ -18,7 +18,10 @@ import { BandDesignationGraphComponent } from './header/employee-profile/header/
 import { EmpSalaryHistoryGraphComponent } from './header/employee-profile/header/employees/emp-salary-history-graph/emp-salary-history-graph.component';
 import { PerformanceHistoryGraphComponent } from './header/employee-profile/header/employees/performance-history-graph/performance-history-graph.component';
 import { FixedAmountDialogComponent } from './header/employee-profile/header/employees/fixed-amount-dialog/fixed-amount-dialog.component';
-import { VariableComponentsDialogComponent } from './header/employee-profile/header/employees/variable-components-dialog/variable-components-dialog.component'; @NgModule({
+import { VariableComponentsDialogComponent } from './header/employee-profile/header/employees/variable-components-dialog/variable-components-dialog.component';
+import { FormsModule } from '@angular/forms'
+
+@NgModule({
   declarations: [
     HeaderComponent,
     OrgEmpTabComponent,
@@ -41,7 +44,7 @@ import { VariableComponentsDialogComponent } from './header/employee-profile/hea
     OrganizationEmployeeRoutingModule,
     SharedModule,
     FontAwesomeModule,
-
+    FormsModule
   ],
 
 })

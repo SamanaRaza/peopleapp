@@ -4,13 +4,10 @@
         <mat-card-header>
             <mat-card-title>Employee List</mat-card-title>
             <div class="filters ml-auto">
-                <mat-form-field>
-                    <mat-label>Filter</mat-label>
-                    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
-                </mat-form-field>
+
                 <mat-form-field>
                     <mat-label>Active/Non-Active</mat-label>
-                    <mat-select [(ngModel)]="activeVal" (selectionChange)="changeStatus($event)">
+                    <mat-select [(ngModel)]="activeVal" (selectionChange)="changeStatus($event, null)">
                         <mat-option [value]="active.value" *ngFor="let active of activeEmployees">
                             {{ active.status }}
                         </mat-option>
@@ -26,15 +23,23 @@
                 </mat-form-field>
                 <mat-form-field class="mr-1">
                     <mat-label>Search By</mat-label>
-                    <mat-select [(ngModel)]="searchData" (selectionChange)="changeOrder($event, null)">
+                    <mat-select [(ngModel)]="searchData" (selectionChange)="searchByValues($event.value)">
                         <mat-option *ngFor="let empSearch of searchBy" [value]="empSearch.value">
                             {{empSearch.search}}
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Filter</mat-label>
+                    <input matInput [(ngModel)]="filter" #ngModel placeholder="filter" #input>
+                </mat-form-field>
+
+            </div>
+            <div>
+                <button mat-button (click)="applyFilter()">Search</button>
             </div>
         </mat-card-header>
-        <mat-card-content class="p-0">
+        <mat-card-content class=" p-0">
             <mat-table class="custom-table mb-3" #dtable [dataSource]="dataSource">
                 <div *ngFor="let column of columns">
                     <ng-container [cdkColumnDef]="column.columnDef" *ngIf="column.header != 'Name'">
