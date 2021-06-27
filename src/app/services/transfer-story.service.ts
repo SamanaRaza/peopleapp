@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 export class TransferStoryService {
   constructor(private http: HttpClient) { }
   getTransferStory(): Observable<any> {
-    return this.http.get('../../assets/TransferStory.json');
+    return this.http.get('../../assets/transfer_story.json');
   }
 
 }

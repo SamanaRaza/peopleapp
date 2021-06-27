@@ -5,17 +5,16 @@
         </mat-card-header>
         <mat-card-content>
             <div class="storyes-card row justify-content-center mt-4">
-                <div class="storyes col-auto" *ngFor="let timeline of timelines">
+                <div class="storyes col-auto" *ngFor="let year of this.employeeTimeline?.years">
                     <div class="arrow first">
                         <i class="fa fa-arrow-right"></i>
                     </div>
-
                     <div class="story">
-                        <div class="year">{{timeline.year}}</div>
+                        <div class="year">{{year.year}}</div>
                         <div class="row justify-content-center g-1">
                             <div class="col-auto">
                                 <div class="details">
-                                    <div class="panel primary-panel">{{timeline.department}}</div>
+                                    <div class="panel primary-panel">{{year.department}}</div>
                                     <div class="arrow second">
                                         <i class="fa fa-arrow-right"></i>
                                     </div>
@@ -23,42 +22,33 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="story">
                         <div class="row justify-content-center g-1">
                             <div class="col-auto">
                                 <div class="details">
-                                    <div class="panel warning-panel">{{timeline.office}}</div>
+                                    <div class="panel warning-panel">{{year.office}}</div>
                                 </div>
                             </div>
                             <div class="col-auto">
                                 <div class="details">
-                                    <div class="panel palevioletred-panel">{{timeline.city}} {{timeline.country}}</div>
+                                    <div class="panel palevioletred-panel">{{year.city}} {{year.country}}</div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <div class="story">
-                        <div class="row justify-content-center g-1">
-                            <div class="col-auto">
-                                <div class="details">
-                                    <div class="panel info-panel">{{timeline.position.position1}}</div>
+                    <ng-container *ngIf="year.designations?.length > 0">
+                        <ng-container *ngFor="let designation of year.designations">
+                            <div class="story">
+                                <div class="row justify-content-center g-1">
+                                    <div class="col-auto">
+                                        <div class="details">
+                                            <div class="panel info-panel">{{designation.designation}}</div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="story">
-                        <div class="row justify-content-center g-1">
-                            <div class="col-auto">
-                                <div class="details">
-                                    <div class="panel info-panel" *ngIf="timeline.position.position2">
-                                        {{timeline.position.position2}}</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        </ng-container>
+                    </ng-container>
                 </div>
             </div>
         </mat-card-content>

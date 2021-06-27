@@ -1,0 +1,122 @@
+{
+    "status": "success",
+    "code": "200",
+    "data": [
+        {
+            "employeeId": "1",
+            "years": [
+                {
+                    "year": "2012",
+                    "department": "process outsourcing service",
+                    "office_name": "people head office",
+                    "office": "New Office",
+                    "city": "Karachi",
+                    "country": "Pakistan",
+                    "designations": [
+                        {
+                            "designation": "sr. credit analyst"
+                        }
+                    ]
+                },
+                {
+                    "year": "2013",
+                    "department": "HCM & OD",
+                    "office_name": "people head office",
+                    "office": "New Office",
+                    "city": "Karachi",
+                    "country": "Pakistan",
+                    "designations": [
+                        {
+                            "designation": "HR"
+                        },
+                        {
+                            "designation": "Designer"
+                        }
+                    ]
+                },
+                {
+                    "year": "2014",
+                    "department": "CDC & HOD",
+                    "office_name": "people secret head office",
+                    "office": "12 New Office",
+                    "city": "Islamabd",
+                    "country": "Pakistan",
+                    "designations": [
+                        {
+                            "designation": "HR Mangaer"
+                        },
+                        {
+                            "designation": "Software Enginner"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "employeeId": "2",
+            "years": [
+                {
+                    "year": "2012",
+                    "department": "process outsourcing service",
+                    "office_name": "people head office",
+                    "office": "New Office",
+                    "city": "Karachi",
+                    "country": "Pakistan",
+                    "designations": [
+                        {
+                            "designation": "sr. credit analyst"
+                        }
+                    ]
+                },
+                {
+                    "year": "2013",
+                    "department": "HCM & OD",
+                    "office_name": "people head office",
+                    "office": "New Office",
+                    "city": "Karachi",
+                    "country": "Pakistan",
+                    "designations": [
+                        {
+                            "designation": "HR Mangaer"
+                        },
+                        {
+                            "designation": "Software Enginner"
+                        }
+                    ]
+                },
+                {
+                    "year": "2014",
+                    "department": "CDC & HOD",
+                    "office_name": "people secret head office",
+                    "office": "12 New Office",
+                    "city": "Islamabd",
+                    "country": "Pakistan",
+                    "designations": [
+                        {
+                            "designation": "HR Mangaer"
+                        },
+                        {
+                            "designation": "Software Enginner"
+                        }
+                    ]
+                },
+                {
+                    "year": "2015",
+                    "department": "GPO",
+                    "office_name": "networks office",
+                    "office": "Airport road",
+                    "city": "Mata",
+                    "country": "Turkey",
+                    "designations": [
+                        {
+                            "designation": "Head Officer"
+                        },
+                        {
+                            "designation": " Soft Checker"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

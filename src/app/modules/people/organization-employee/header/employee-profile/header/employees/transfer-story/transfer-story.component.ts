@@ -10,21 +10,20 @@ import { ActivatedRoute } from "@angular/router";
   changeDetection: ChangeDetectionStrategy.Default
 })
 export class TransferStoryComponent implements OnInit {
-  employeeTimeline: any = []
+  employeeTimeline: any = {};
   queryParams: any = {};
-  timelines: any = [];
+  timelines: any = {};
 
   constructor(private httpClient: HttpClient,
-     private transferStoryService: TransferStoryService,
+    private transferStoryService: TransferStoryService,
     private route: ActivatedRoute) { }
   ngOnInit() {
-    this.transferStoryService.getTransferStory().subscribe(data => {
-      console.log(data);
-      this.timelines = data;
+    this.transferStoryService.getTransferStory().subscribe((data: any) => {
+      this.timelines = data.data;
       let id = this.route.snapshot.paramMap.get('id');
       this.queryParams = this.route.snapshot.queryParams;
-      this.employeeTimeline = data.filter((x: any) => x.employeeId === this.queryParams.employeeId);
-      
+      this.employeeTimeline = this.timelines.find((x: any) => x.employeeId === this.queryParams.employeeId);
+
     })
 
   }

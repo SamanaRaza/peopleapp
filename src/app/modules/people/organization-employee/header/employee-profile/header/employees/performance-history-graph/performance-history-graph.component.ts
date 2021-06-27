@@ -23,7 +23,7 @@ interface BubbleChart {
 })
 export class PerformanceHistoryGraphComponent implements OnInit {
 
-  data1: any = [];
+  performanceData: any = [];
   chartData: any = [];
   reward: any = [];
   warning: any = [];
@@ -44,21 +44,32 @@ export class PerformanceHistoryGraphComponent implements OnInit {
   ngAfterViewInit() {
     let that = this;
     that.performanceHistoryService.getBubble().subscribe(data => {
-      that.data1 = (data as any).data;
-      const grouped = this.groupBy(that.data1, (d: any) => d.pref_type);
+      that.performanceData = (data as any).data;
+      var employeeData = that.performanceData.find((x: any) => x.employeeId == that.queryParams.employeeId);
+      if (employeeData && employeeData.values) {
+        const grouped = this.groupBy(employeeData.values, (d: any) => d.pref_type);
 
-      for (var entry of grouped.entries()) {
-        this.fullData.push({
-          name: entry[0],
-          type: 'bubble',
-          data: this.loadPerformanceData(entry[1], entry[0])
-        })
+        for (var entry of grouped.entries()) {
+          this.fullData.push({
+            name: entry[0],
+            type: 'bubble',
+            data: this.loadPerformanceData(entry[1], entry[0])
+          })
+        }
+        var rewards: BubbleChart = { data: this.fullData[0].data, color: this.fullData[0].data[0].color }
+        var appericiation: BubbleChart = { data: this.fullData[1].data, color: this.fullData[1].data[0].color }
+        var warning: BubbleChart = { data: this.fullData[2].data, color: this.fullData[2].data[0].color }
+        var training: BubbleChart = { data: this.fullData[3].data, color: this.fullData[3].data[0].color }
+        that.generatePerformance(rewards, appericiation, warning, training);
       }
-      var data5: BubbleChart = { data: this.fullData[0].data, color: this.fullData[0].data[0].color }
-      var data6: BubbleChart = { data: this.fullData[1].data, color: this.fullData[1].data[0].color }
-      var data7: BubbleChart = { data: this.fullData[2].data, color: this.fullData[2].data[0].color }
-      var data8: BubbleChart = { data: this.fullData[3].data, color: this.fullData[3].data[0].color }
-      that.generatePie(data5, data6, data7, data8);
+      else {
+        var emp_rewards = { data: [] as string[], color: '' };
+        var emp_appericiation = { data: [] as string[], color: '' };
+        var emp_warning = { data: [] as string[], color: '' };
+        var emp_training = { data: [] as string[], color: '' };
+        that.generatePerformance(emp_rewards, emp_appericiation, emp_warning, emp_training);
+      }
+
 
       // that.data1 = data.filter((x: any) => x.employeeId == this.queryParams.employeeId);
     });
@@ -112,7 +123,7 @@ export class PerformanceHistoryGraphComponent implements OnInit {
     }
   }
 
-  generatePie(data5: BubbleChart, data6: BubbleChart, data7: BubbleChart, data8: BubbleChart) {
+  generatePerformance(rewards: BubbleChart, appericiation: BubbleChart, warning: BubbleChart, training: BubbleChart) {
     let that = this;
     const options: Highcharts.Options = {
       chart: {
@@ -229,41 +240,41 @@ export class PerformanceHistoryGraphComponent implements OnInit {
         {
           type: "bubble",
           name: "Performance Rewards",
-          data: data5.data,
-          color: data5.color
+          data: rewards.data,
+          color: rewards.color
         },
         {
           type: "bubble",
           name: "Letter of Appreciation",
-          data: data6.data,
-          color: data6.color
+          data: appericiation.data,
+          color: appericiation.color
         },
         {
           type: "bubble",
           name: "Warning Letter",
-          data: data7.data,
-          color: data7.color
+          data: warning.data,
+          color: warning.color
         },
         {
           type: "bubble",
           name: "Training",
-          data: data8.data,
-          color: data8.color
+          data: training.data,
+          color: training.color
         },
         {
-          type: "bubble", name: '', data: [{ x: 2012, y: 3, z: 0 }], showInLegend: false, color: '#DAD7C4', enableMouseTracking: false
+          type: "bubble", name: '', data: [{ x: 2012, y: 3, z: 0 }], showInLegend: false, color: '#F2F3F4', enableMouseTracking: false
         },
         {
-          type: "bubble", name: '', data: [{ x: 2012, y: 2, z: 0 }], showInLegend: false, color: '#DAD7C4', enableMouseTracking: false
+          type: "bubble", name: '', data: [{ x: 2012, y: 2, z: 0 }], showInLegend: false, color: '#F2F3F4', enableMouseTracking: false
         },
         {
-          type: "bubble", name: '', data: [{ x: 2012, y: 1, z: 0 }], showInLegend: false, color: '#DAD7C4', enableMouseTracking: false
+          type: "bubble", name: '', data: [{ x: 2012, y: 1, z: 0 }], showInLegend: false, color: '#F2F3F4', enableMouseTracking: false
         },
         {
-          type: "bubble", name: '', data: [{ x: 2012, y: 0, z: 0, name: '' }], showInLegend: false, color: '#DAD7C4', enableMouseTracking: false
+          type: "bubble", name: '', data: [{ x: 2012, y: 0, z: 0, name: '' }], showInLegend: false, color: '#F2F3F4', enableMouseTracking: false
         },
         {
-          type: "bubble", name: '', data: [{ x: 2020, y: 0, z: 0 }], showInLegend: false, color: '#FFFFFF', enableMouseTracking: false
+          type: "bubble", name: '', data: [{ x: 2020, y: 0, z: 0 }], showInLegend: false, color: '#F2F3F4', enableMouseTracking: false
         },
       ]
     };
