@@ -132,9 +132,10 @@ p {
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
     height: 32px;
+    padding: 0 5px;
 
     .mat-card-header-text {
-      margin: 5px 20px;
+      margin: 5px 15px;
     }
 
     .mat-card-title {
@@ -382,7 +383,14 @@ p {
 }
 
 .mat-form-field {
-  margin: 1px 10px;
+  margin: 1px 5px;
+
+  &.mt-focused,
+  &.mat-form-field-should-float {
+    .mat-form-field-flex {
+      border-color: $text-primarey;
+    }
+  }
 
   .mat-form-field-wrapper {
     padding-bottom: 0;
@@ -394,6 +402,7 @@ p {
 
   .mat-form-field-flex {
     background-color: $white;
+    border: 1px solid $white;
     border-radius: 4px;
     height: 30px;
 
@@ -411,21 +420,13 @@ p {
     box-sizing: border-box;
 
     .mat-form-field-label-wrapper {
-      top: 0;
-      padding-top: 9px;
-      padding-left: 10px;
-      display: none;
       box-sizing: border-box;
+      @extend %bold-fonts;
 
       .mat-form-field-label {
-        position: static;
+        top: 19px;
+        left: 6px;
       }
-    }
-  }
-
-  &.mat-form-field-hide-placeholder {
-    .mat-form-field-label-wrapper {
-      display: inline;
     }
   }
 
@@ -434,6 +435,19 @@ p {
     margin-top: 4px;
     display: block;
     @extend %bold-fonts;
+  }
+}
+
+.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+  display: inline-block !important;
+  width: auto !important;
+  background-color: $white;
+  padding: 0 5px;
+  @extend %light-fonts;
+  color: $text-primarey;
+
+  .filters & {
+    display: none !important;
   }
 }
 
@@ -451,6 +465,29 @@ mat-footer-cell:first-of-type {
 
     &:hover {
       background-color: $btn-hover;
+    }
+  }
+}
+
+.mat-select-panel {
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16) !important;
+
+  .mat-option,
+  .mat-optgroup-label {
+    padding: 5px 20px;
+    height: 30px !important;
+
+    &:nth-child(odd) {
+      background: #fafafb;
+    }
+
+    &.active {
+      background: #d8dcdf;
+    }
+
+    .mat-option-text {
+      line-height: normal;
+      @extend %light-fonts;
     }
   }
 }
