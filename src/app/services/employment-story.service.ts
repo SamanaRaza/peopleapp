@@ -8,6 +8,6 @@ export class EmploymentStoryService {
 
   constructor(private http: HttpClient) { }
   public getEmploymentStory(): Observable<any> {
-    return this.http.get('../../assets/EmploymentStory.json');
+    return this.http.get('../../assets/employment_story.json');
   }
 }

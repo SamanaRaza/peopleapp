@@ -11,6 +11,6 @@ export class SalaryChangeHistoryGraphService {
   }
 
   public getGraph(): Observable<any> {
-    return this.http.get('../../assets/SalaryChangeHistoryGraph.json');
+    return this.http.get('../../assets/salary_change_history.json');
   }
 }

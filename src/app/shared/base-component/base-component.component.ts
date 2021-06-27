@@ -21,11 +21,11 @@ export class BaseComponentComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  graphDataCustomization(employees: any) {
+  graphDataCustomization(employees: any = {}) {
     let that = this;
     var yearsBetween = [];
     that.employeData = employees;
-    that.employeData.data = employees.data ? employees.data : employees.details;
+    that.employeData.data = employees && employees.data ? employees.data : employees && employees.details ? employees.details : [];
     if (that.employeData && that.employeData.data.length > 0) {
       that.employeData.data.sort(function (a: any, b: any) {
         return a.year - b.year;
