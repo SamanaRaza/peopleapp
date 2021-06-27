@@ -3,37 +3,39 @@
     <mat-card class="example-card">
         <mat-card-header>
             <mat-card-title>Employee List</mat-card-title>
-            <mat-form-field class="ml-auto">
-                <mat-label>Filter</mat-label>
-                <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
-            </mat-form-field>
-            <mat-form-field>
-                <mat-label>Active/Non-Active</mat-label>
-                <mat-select [(ngModel)]="activeVal" (selectionChange)="changeStatus($event)">
-                    <mat-option [value]="active.value" *ngFor="let active of activeEmployees">
-                        {{ active.status }}
-                    </mat-option>
-                </mat-select>
-            </mat-form-field>
-            <mat-form-field>
-                <mat-label>Sort By</mat-label>
-                <mat-select [(ngModel)]="sortData" (selectionChange)="changeOrder($event, null)">
-                    <mat-option *ngFor="let empSort of employeeSort" [value]="empSort.value">
-                        {{empSort.sort}}
-                    </mat-option>
-                </mat-select>
-            </mat-form-field>
-            <mat-form-field>
-                <mat-label>Search By</mat-label>
-                <mat-select [(ngModel)]="searchData" (selectionChange)="changeOrder($event, null)">
-                    <mat-option *ngFor="let empSearch of searchBy" [value]="empSearch.value">
-                        {{empSearch.search}}
-                    </mat-option>
-                </mat-select>
-            </mat-form-field>
+            <div class="filters ml-auto">
+                <mat-form-field>
+                    <mat-label>Filter</mat-label>
+                    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Active/Non-Active</mat-label>
+                    <mat-select [(ngModel)]="activeVal" (selectionChange)="changeStatus($event)">
+                        <mat-option [value]="active.value" *ngFor="let active of activeEmployees">
+                            {{ active.status }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Sort By</mat-label>
+                    <mat-select [(ngModel)]="sortData" (selectionChange)="changeOrder($event, null)">
+                        <mat-option *ngFor="let empSort of employeeSort" [value]="empSort.value">
+                            {{empSort.sort}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field class="mr-1">
+                    <mat-label>Search By</mat-label>
+                    <mat-select [(ngModel)]="searchData" (selectionChange)="changeOrder($event, null)">
+                        <mat-option *ngFor="let empSearch of searchBy" [value]="empSearch.value">
+                            {{empSearch.search}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
         </mat-card-header>
-        <mat-card-content>
-            <mat-table class="custom-table" #dtable [dataSource]="dataSource">
+        <mat-card-content class="p-0">
+            <mat-table class="custom-table mb-3" #dtable [dataSource]="dataSource">
                 <div *ngFor="let column of columns">
                     <ng-container [cdkColumnDef]="column.columnDef" *ngIf="column.header != 'Name'">
                         <mat-header-cell *cdkHeaderCellDef>{{ column.header }}</mat-header-cell>
