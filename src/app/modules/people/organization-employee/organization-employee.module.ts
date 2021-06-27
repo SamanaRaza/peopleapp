@@ -19,7 +19,8 @@ import { EmpSalaryHistoryGraphComponent } from './header/employee-profile/header
 import { PerformanceHistoryGraphComponent } from './header/employee-profile/header/employees/performance-history-graph/performance-history-graph.component';
 import { FixedAmountDialogComponent } from './header/employee-profile/header/employees/fixed-amount-dialog/fixed-amount-dialog.component';
 import { VariableComponentsDialogComponent } from './header/employee-profile/header/employees/variable-components-dialog/variable-components-dialog.component';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+import { EmployeeTimelineSummaryComponent } from './header/employee-profile/header/employees/employee-timeline-summary/employee-timeline-summary.component'
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { FormsModule } from '@angular/forms'
     EmpSalaryHistoryGraphComponent,
     PerformanceHistoryGraphComponent,
     FixedAmountDialogComponent,
-    VariableComponentsDialogComponent
+    VariableComponentsDialogComponent,
+    EmployeeTimelineSummaryComponent
   ],
   imports: [
     CommonModule,

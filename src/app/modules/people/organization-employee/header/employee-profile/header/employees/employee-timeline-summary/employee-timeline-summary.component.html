@@ -1,0 +1,45 @@
+<div class="story " *ngFor="let group of persons">
+    <div class="row mb-5">
+        <div class="col-md-2">
+            <div class="details">
+                <img src={{group.imgUrl}} alt="" height="130px" width="150px" style=" border-radius:50%;">
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="row">
+                <div class="col-md-12 mb-3">
+                    <div class="panel warning-panel">{{group.name}}</div>
+                </div>
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="panel palevioletred-panel">{{group.designation}}</div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="panel palevioletred-panel">{{group.department}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="row">
+                <div class="col-md-12 mb-3">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="panel palevioletred-panel">{{group.joiningYear}} - {{group.currentYear}}
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="panel palevioletred-panel">{{group.band}} - {{group.currentBand}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="panel palevioletred-panel">{{group.designation}} - {{group.currentDesignation}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

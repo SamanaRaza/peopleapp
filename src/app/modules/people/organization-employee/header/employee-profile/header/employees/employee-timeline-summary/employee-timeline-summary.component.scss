@@ -1,0 +1,28 @@
+.details {
+    margin-bottom: 10px;
+    position: relative;
+  }
+  .story {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .panel {
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 4px #8a8888;
+    text-align: center;
+    min-width: 175px;
+  }
+  .warning-panel {
+    background-color: #dc9877;
+    color: #fff;
+    font-size: 16px;
+  }
+  
+  .palevioletred-panel {
+    background-color: #c1b0dd;
+    color: #fff;
+    font-size: 16px;
+  }
+  
