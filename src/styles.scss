@@ -333,12 +333,17 @@ p {
 
   .image-panel {
     float: left;
-    width: 120px;
+    width: 20%;
+
+    img {
+      max-width: 100%;
+    }
   }
 
   .panel-body {
     float: left;
-    width: auto;
+    width: 80%;
+    padding-left: 15px;
   }
 }
 
@@ -398,8 +403,11 @@ p {
     }
   }
 }
-.header-nave .mat-tab-nav-bar {
+
+.header-nave {
   margin-top: 60px;
+  float: left;
+  width: 100%;
 }
 
 .spacer + .content {
