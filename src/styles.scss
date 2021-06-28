@@ -488,10 +488,11 @@ mat-footer-cell:first-of-type {
   .mat-menu-item {
     height: 30px;
     line-height: 30px;
-    @extend %bold-fonts;
+    padding: 0 20px;
+    @extend %light-fonts;
 
     &:hover {
-      background-color: $btn-hover;
+      background-color: $bg-color;
     }
   }
 }
