@@ -141,7 +141,13 @@ export class EmpHeaderComponent implements OnInit, AfterViewInit {
     let that = this;
     if (event != "all") {
       this.dataSource.filterPredicate = function (data: any, filter: string): boolean {
-        return data[event].toLowerCase().includes(filter);
+        if(event == "empID") {
+          return data[event] ==filter ;
+        }
+        else {
+          return data[event].toLowerCase().includes(filter);
+        }
+        
       };
     }
     else {
