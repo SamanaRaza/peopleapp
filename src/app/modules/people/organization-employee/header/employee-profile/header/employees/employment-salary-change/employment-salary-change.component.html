@@ -16,7 +16,7 @@
                     <ng-container [cdkColumnDef]="column.columnDef" *ngIf="column.header == 'Fixed Components'">
                         <mat-header-cell *cdkHeaderCellDef>{{ column.header }}</mat-header-cell>
                         <mat-cell *cdkCellDef="let element">
-                            <button mat-icon-button (click)="openFixed()">
+                            <button class="grid-button" mat-icon-button (click)="openFixed()">
                                 {{column.cell(element)}}
                             </button>
                         </mat-cell>
@@ -24,7 +24,7 @@
                     <ng-container [cdkColumnDef]="column.columnDef" *ngIf="column.header == 'Variable Components'">
                         <mat-header-cell *cdkHeaderCellDef>{{ column.header }}</mat-header-cell>
                         <mat-cell *cdkCellDef="let ele">
-                            <button mat-icon-button (click)="openVariable()">
+                            <button class="grid-button" mat-icon-button (click)="openVariable()">
                                 {{column.cell(ele)}}
                             </button>
                         </mat-cell>

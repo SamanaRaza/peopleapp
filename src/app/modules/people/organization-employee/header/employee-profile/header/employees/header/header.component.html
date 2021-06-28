@@ -51,7 +51,7 @@
                                 {{column.cell(element)}}
                                 <mat-menu #clickmenu="matMenu">
                                     <ng-container *ngFor="let item of menuListItems">
-                                        <button mat-menu-item (click)="navigate(item.path, element.empID)">{{
+                                        <button mat-menu-item (click)="navigate(item.path, element.empID)" class="grid-button">{{
                                             item.menuLinkText
                                             }}</button>
                                     </ng-container>
