@@ -23,7 +23,7 @@
                 </mat-form-field>
                 <mat-form-field class="mr-1">
                     <mat-label>Search By</mat-label>
-                    <mat-select [(ngModel)]="searchData" (selectionChange)="searchByValues($event.value)">
+                    <mat-select [(ngModel)]="searchData" (selectionChange)="searchByValues($event.value)" disableOptionCentering panelClass="myPanelClass">
                         <mat-option *ngFor="let empSearch of searchBy" [value]="empSearch.value">
                             {{empSearch.search}}
                         </mat-option>
