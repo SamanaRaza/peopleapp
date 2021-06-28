@@ -42,6 +42,7 @@ export class EmpHeaderComponent implements OnInit, AfterViewInit {
   searchData: any;
   columns: Array<any>;
   displayedColumns: string[];
+  highlightedRows:any=[]
   filter: any
   activeList = ['Yes', 'No'];
   employeeSort = [
@@ -147,7 +148,7 @@ export class EmpHeaderComponent implements OnInit, AfterViewInit {
         else {
           return data[event].toLowerCase().includes(filter);
         }
-        
+
       };
     }
     else {

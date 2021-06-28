@@ -11,6 +11,7 @@ import { BreadcrumbService } from 'src/app/shared/breadcrumb/breadcrumb.service'
   styleUrls: ['./employment-story.component.scss'],
 })
 export class EmploymentStoryComponent implements OnInit {
+  
   employeeTimeline: any = []
   queryParams: any = {};
   isLoading = true;
@@ -23,7 +24,7 @@ export class EmploymentStoryComponent implements OnInit {
     this.queryParams = this.route.snapshot.queryParams;
     this.employmentStoryService.getEmploymentStory().subscribe((result: any) => {
       this.employeeTimeline = result.filter((x: any) => x.employeeId == this.queryParams.employeeId);
-      // data is ready show view.
+      console.log(this.employeeTimeline)
 
     })
   }

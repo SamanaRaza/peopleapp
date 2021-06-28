@@ -53,134 +53,260 @@
         }
       ]
     },
+  {
+    "band_designation_id": 2,
+    "employee_id": 2,
+    "data": [
+      {
+        "band": 6,
+        "designation": null,
+        "year": 2012
+      },
+      {
+        "band": 6.2,
+        "designation": 5.7,
+        "year": 2013
+      },
+      {
+        "band": 5.8,
+        "designation": 5.9,
+        "year": 2014
+      },
+      {
+        "band": 5,
+        "designation": 5,
+        "year": 2015
+      },
+      {
+        "band": 6.3,
+        "designation": 5.5,
+        "year": 2016
+      },
+      {
+        "band": 6.1,
+        "designation": 6.4,
+        "year": 2017
+      },
+      {
+        "band": 6.5,
+        "designation": 5,
+        "year": 2018
+      },
+      {
+        "band": 5.2,
+        "designation": 7.7,
+        "year": 2019
+      },
+      {
+        "band": 5.2,
+        "designation": 6.9,
+        "year": 2020
+      }
+    ]
+  },
+      {
+        "band_designation_id": 3,
+        "employee_id": 3,
+        "data": [
+          {
+            "band": 5,
+            "designation": null,
+            "year": 2012
+          },
+          {
+            "band": 6.2,
+            "designation": 5.7,
+            "year": 2013
+          },
+          {
+            "band": 5.8,
+            "designation": 5.9,
+            "year": 2014
+          },
+          {
+            "band": 7,
+            "designation": 5,
+            "year": 2015
+          },
+          {
+            "band": 6.3,
+            "designation": 5.5,
+            "year": 2016
+          },
+          {
+            "band": 6.1,
+            "designation": 6.4,
+            "year": 2017
+          },
+          {
+            "band": 7,
+            "designation": 8,
+            "year": 2018
+          },
+          {
+            "band": 6.2,
+            "designation": 7.7,
+            "year": 2019
+          },
+          {
+            "band": 5.2,
+            "designation": 6.9,
+            "year": 2020
+          }
+        ]
+      },
     {
-      "band_designation_id": 2,
-      "employee_id": 2,
+      "band_designation_id": 4,
+      "employee_id": 4,
       "data": [
         {
-          "band": 4.7,
-          "designation": 5.3,
-          "year": 2017
+          "band": 7,
+          "designation": null,
+          "year": 2012
         },
         {
-          "band": 4.9,
-          "designation": 3.4,
-          "year": 2018
+          "band": 6.2,
+          "designation": 5.7,
+          "year": 2013
         },
         {
-          "band": 5,
-          "designation": 5.2,
-          "year": 2019
+          "band": 5.8,
+          "designation": 5.9,
+          "year": 2014
         },
         {
-          "band": 6,
-          "designation": 4.4,
-          "year": 2020
-        }
-      ]
-    },
-    {
-      "band_designation_id": 3,
-      "employee_id": 3,
-      "data": [
+          "band": 7,
+          "designation": 5,
+          "year": 2015
+        },
         {
-          "band": 4.8,
-          "designation": 6.2,
+          "band": 6.3,
+          "designation": 5.5,
           "year": 2016
         },
         {
-          "band": 2.7,
-          "designation": 5.3,
+          "band": 6.1,
+          "designation": 6.4,
           "year": 2017
         },
         {
-          "band": 4.9,
-          "designation": 3.4,
+          "band": 7,
+          "designation": 8,
           "year": 2018
         },
         {
-          "band": 4,
-          "designation": 4.2,
+          "band": 6.2,
+          "designation": 7.7,
           "year": 2019
         },
         {
-          "band": 6,
-          "designation": 4.4,
+          "band": 5.2,
+          "designation": 6.9,
           "year": 2020
         }
       ]
     },
     {
       "band_designation_id": 4,
-      "employee_id": 4,
+      "employee_id": 5,
       "data": [
         {
-          "band": 1.2,
-          "designation": 6.2,
+          "band": 6.5,
+          "designation": null,
           "year": 2012
         },
         {
-          "band": 1.5,
-          "designation": 4.2,
+          "band": 6.2,
+          "designation": 5.7,
           "year": 2013
         },
         {
-          "band": 3.3,
-          "designation": 6.2,
+          "band": 5.8,
+          "designation": 5.9,
           "year": 2014
         },
         {
-          "band": 4.2,
-          "designation": 2.2,
+          "band": 7,
+          "designation": 5,
           "year": 2015
         },
         {
-          "band": 4.5,
-          "designation": 3.2,
+          "band": 6.3,
+          "designation": 5.5,
           "year": 2016
         },
         {
-          "band": 4.7,
-          "designation": 5.3,
+          "band": 6.1,
+          "designation": 6.4,
           "year": 2017
         },
         {
-          "band": 4.9,
-          "designation": 3.4,
+          "band": 7,
+          "designation": 8,
           "year": 2018
         },
         {
-          "band": 5,
-          "designation": 5.2,
+          "band": 6.2,
+          "designation": 7.7,
           "year": 2019
         },
         {
-          "band": 6,
-          "designation": 4.4,
+          "band": 5.2,
+          "designation": 6.9,
           "year": 2020
         }
       ]
     },
-    {
-      "band_designation_id": 5,
-      "employee_id": 5,
-      "data": [
-        {
-          "band": 6.1,
-          "designation": 4.4,
-          "year": 2018
-        },
-        {
-          "band": 4,
-          "designation": 6.2,
-          "year": 2019
-        },
-        {
-          "band": 5,
-          "designation": 6.4,
-          "year": 2020
-        }
-      ]
-    }
+  {
+    "band_designation_id": 6,
+    "employee_id": 6,
+    "data": [
+      {
+        "band": 5.5,
+        "designation": null,
+        "year": 2012
+      },
+      {
+        "band": 6.2,
+        "designation": 5.7,
+        "year": 2013
+      },
+      {
+        "band": 5.8,
+        "designation": 5.9,
+        "year": 2014
+      },
+      {
+        "band": 7,
+        "designation": 5,
+        "year": 2015
+      },
+      {
+        "band": 6.3,
+        "designation": 5.5,
+        "year": 2016
+      },
+      {
+        "band": 6.1,
+        "designation": 6.4,
+        "year": 2017
+      },
+      {
+        "band": 7,
+        "designation": 8,
+        "year": 2018
+      },
+      {
+        "band": 6.2,
+        "designation": 7.7,
+        "year": 2019
+      },
+      {
+        "band": 5.2,
+        "designation": 6.9,
+        "year": 2020
+      }
+    ]
+  }
   ]
 }

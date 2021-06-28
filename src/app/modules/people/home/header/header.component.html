@@ -1,5 +1,5 @@
 <div class="container-fluid mt-5">
-    <app-breadcrumb></app-breadcrumb>
+    <!-- <app-breadcrumb></app-breadcrumb> -->
     <mat-grid-list cols="3" rowHeight="160px" style="height: 600px;" gutterSize="5">
         <mat-grid-tile>
             <mat-card class="example-card w-100">
@@ -11,18 +11,18 @@
                         <tbody>
                             <tr>
                                 <td scope="row">Name</td>
-                                <td><strong>Muhammad</strong></td>
+                                <td><strong>Muhammad Waqas Nasir</strong></td>
                             </tr>
                             <tr>
                                 <td scope="row">Company</td>
-                                <td><strong>Probase</strong></td>
+                                <td><strong>Professional Employees Pvt. Ltd.</strong></td>
                             </tr>
                             <tr>
                                 <td scope="row">Department</td>
-                                <td><strong>Development</strong></td>
+                                <td><strong>HR</strong></td>
                             </tr>
                             <tr>
-                                <td scope="row">Last login</td>
+                                <td scope="row">Last Login</td>
                                 <td><strong>06-oct=2020 05:07 PM</strong></td>
                             </tr>
                         </tbody>
@@ -39,10 +39,10 @@
 
                 <mat-card-content>
                     <ul class="simple-list">
-                        <li><i class="fas fa-check"></i> 866 Leave </li>
-                        <li><i class="fas fa-times"></i> text here</li>
-                        <li><i class="fas fa-check"></i> text here</li>
-                        <li><i class="fas fa-check"></i> text here</li>
+                        <li><i class="fas fa-check"></i> 866 Leave Applications are approved </li>
+                        <li><i class="fas fa-times"></i> 11 Leave Applications are disapproved</li>
+                        <li><i class="fas fa-check"></i> 5 Expose Applications have been approved by Line Manager</li>
+                        <li><i class="fas fa-check"></i> 1 Travel Application have been received</li>
                     </ul>
                 </mat-card-content>
             </mat-card>
@@ -63,7 +63,6 @@
                         </thead>
                         <tbody>
                             No records Found
-
                         </tbody>
                     </table>
                 </mat-card-content>
@@ -75,7 +74,7 @@
         <mat-grid-tile>
             <mat-card class="example-card w-100">
                 <mat-card-header>
-                    <mat-card-title>Shiba Inu</mat-card-title>
+                    <mat-card-title>Application Status</mat-card-title>
                 </mat-card-header>
                 <mat-card-content>
                     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 w-100 table-default">

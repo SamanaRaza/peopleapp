@@ -1,11 +1,10 @@
 {
     "draw": 0,
-    "recordsTotal": 500,
-    "recordsFiltered": 500,
+    "recordsTotal": 3,
+    "recordsFiltered": 3,
     "data":[
     {
         "employeeId": "1",
-        "name": "Hassan",
         "employee_performance": [
             {
                 "name": "LetterOfAppreciation",
@@ -113,7 +112,6 @@
     },
     {
         "employeeId": "2",
-        "name": "Aurangzaib",
         "employee_performance": [
             {
                 "name": "LetterOfAppreciation",
@@ -218,5 +216,114 @@
                 ]
             }
         ]
+    },
+    {
+        "employeeId": "3",
+        "employee_performance": [
+            {
+                "name": "LetterOfAppreciation",
+                "type": "bubble",
+                "data": [
+                    {
+                        "x": 2011,
+                        "y": 1,
+                        "z": 25000,
+                        "name": "R"
+                    },
+                    {
+                        "x": 2014,
+                        "y": 0,
+                        "z": 300,
+                        "name": "R"
+                    },
+                    {
+                        "x": 2017,
+                        "y": 2,
+                        "z": 2500,
+                        "name": "R"
+                    },
+                    {
+                        "x": 2021,
+                        "y": 1,
+                        "z": 4432,
+                        "name": "R"
+                    }
+                ]
+            },
+            {
+                "name": "PerformanceRewards",
+                "type": "bubble",
+                "data": [
+                    {
+                        "x": 2011,
+                        "y": 0,
+                        "z": 5500,
+                        "name": "L"
+                    },
+                    {
+                        "x": 2015,
+                        "y": 1,
+                        "z": 4983,
+                        "name": "L"
+                    },
+                    {
+                        "x": 2010,
+                        "y": 0,
+                        "z": 5500,
+                        "name": "L"
+                    }
+                ]
+            },
+            {
+                "name": "WarningLetter",
+                "type": "bubble",
+                "data": [
+                    {
+                        "x": 2012,
+                        "y": 2,
+                        "z": 4432,
+                        "name": "W"
+                    },
+                    {
+                        "x": 2013,
+                        "y": 1,
+                        "z": 11678,
+                        "name": "W"
+                    }
+                ]
+            },
+            {
+                "name": "Training",
+                "type": "bubble",
+                "data": [
+                    {
+                        "x": 2020,
+                        "y": 1,
+                        "z": 3200,
+                        "name": "T"
+                    },
+                    {
+                        "x": 2012,
+                        "y": 0,
+                        "z": 4432,
+                        "name": "T"
+                    },
+                    {
+                        "x": 2019,
+                        "y": 2,
+                        "z": 3456,
+                        "name": "T"
+                    },
+                    {
+                        "x": 2020,
+                        "y": 0,
+                        "z": 2213,
+                        "name": "T"
+                    }
+                ]
+            }
+        ]
     }
+
+
 ]}
