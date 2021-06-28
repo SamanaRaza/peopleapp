@@ -82,6 +82,11 @@
   align-self: flex-end !important;
 }
 
+.graph-container div > div:last-child .row .right-arrow-center {
+  padding-bottom: 0 !important;
+  align-self: flex-end !important;
+}
+
 .right-arrow::after {
   position: absolute;
   left: 0;
