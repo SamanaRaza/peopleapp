@@ -398,9 +398,17 @@ p {
     }
   }
 }
+.header-nave .mat-tab-nav-bar {
+  margin-top: 60px;
+}
+
+.spacer + .content {
+  display: none !important;
+}
 
 .mat-form-field {
   margin: 0 5px;
+  float: left;
 
   &.mt-focused,
   &.mat-form-field-should-float {
