@@ -42,7 +42,7 @@ export class EmpHeaderComponent implements OnInit, AfterViewInit {
   searchData: any;
   columns: Array<any>;
   displayedColumns: string[];
-  highlightedRows:any=[]
+
   filter: any
   activeList = ['Yes', 'No'];
   employeeSort = [
@@ -150,7 +150,7 @@ export class EmpHeaderComponent implements OnInit, AfterViewInit {
             return data1[that.searchData].toLowerCase().includes(filter);
           }
         }
-        
+
       };
 
     }, error => console.error(error));
@@ -159,7 +159,7 @@ export class EmpHeaderComponent implements OnInit, AfterViewInit {
   searchByValues(event: any) {
     let that = this;
     if (event != "all") {
-      
+
     }
     else {
       that.filter = null;
@@ -249,12 +249,12 @@ export class EmpHeaderComponent implements OnInit, AfterViewInit {
     let that = this;
     let breadcrumbs: Breadcrumb[] = [];
     breadcrumbs.push({
-      label: 'Employee Profile',
+      label: 'HR Services',
       url: '/people/organization-employee/hr-services',
       params: {}
     });
     breadcrumbs.push({
-      label: 'Employee',
+      label: 'Employee Profile',
       url: '',
       params: {}
     });

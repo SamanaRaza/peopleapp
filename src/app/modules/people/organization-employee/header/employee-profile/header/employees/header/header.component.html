@@ -63,8 +63,7 @@
                     </ng-container>
                 </div>
                 <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-                <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="highlightedRows.push(row)"
-                    [style.background]="highlightedRows.indexOf(row) != -1 ? 'lightblue' : ''"></mat-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
             </mat-table>
         </mat-card-content>
         <mat-card-actions>

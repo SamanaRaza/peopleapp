@@ -11,7 +11,7 @@ import { BreadcrumbService } from 'src/app/shared/breadcrumb/breadcrumb.service'
   styleUrls: ['./employment-story.component.scss'],
 })
 export class EmploymentStoryComponent implements OnInit {
-  
+
   employeeTimeline: any = []
   queryParams: any = {};
   isLoading = true;
@@ -39,18 +39,18 @@ export class EmploymentStoryComponent implements OnInit {
     let that = this;
     let breadcrumbs: Breadcrumb[] = [];
     breadcrumbs.push({
-      label: 'Employee Profile',
+      label: 'Org & Employee Profile',
       url: '/people/organization-employee/hr-services',
       params: {}
     });
     breadcrumbs.push({
-      label: 'Employee',
+      label: 'Employee Profile',
       url: '/people/organization-employee/hr-services/emp-profile/employees',
       params: {
       }
     });
     breadcrumbs.push({
-      label: 'Employee Histroy',
+      label: 'Employees',
       url: '',
       params: {}
     });
