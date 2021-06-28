@@ -540,6 +540,8 @@ mat-footer-cell:first-of-type {
   margin-bottom: 50px;
 
   .storyes {
+    margin-bottom: 50px;
+
     .arrow.first {
       display: none;
     }
@@ -548,6 +550,17 @@ mat-footer-cell:first-of-type {
       .arrow.first {
         display: block;
       }
+    }
+  }
+
+  .details {
+    width: auto;
+    border-radius: 0;
+    height: auto;
+    overflow: visible;
+
+    .panel {
+      min-width: 130px;
     }
   }
 }
@@ -613,4 +626,9 @@ mat-footer-cell:first-of-type {
 
 .col-md-3 {
   max-width: 407px;
+}
+
+.mat-card {
+  height: auto !important;
+  margin-bottom: 30px;
 }

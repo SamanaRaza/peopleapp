@@ -2,8 +2,8 @@
     <mat-card-header class="header-center">
         <mat-card-title>Employee History</mat-card-title>
     </mat-card-header>
-    <mat-card-content>
-        <div class="graph-container mt-4">
+    <mat-card-content class="h-auto">
+        <div class="graph-container mt-4 pb-3">
             <div *ngFor="let timeline of employeeTimeline">
                 <div *ngFor="let year of timeline.years">
                     <div class="row gx-100 gy-50">
@@ -43,7 +43,8 @@
                                 </div>
                                 <div class="button-group mb-1 d-flex justify-content-between">
                                     <button class="btn btn-sm btn-primary w-100"
-                                        *ngIf="year?.employment_information?.duration">{{year?.employment_information?.starting_date}} - {{year?.employment_information?.ending_band}}</button>
+                                        *ngIf="year?.employment_information?.duration">{{year?.employment_information?.starting_date}}
+                                        - {{year?.employment_information?.ending_band}}</button>
                                     <button class="btn btn-sm ms-1 btn-primary w-100"
                                         *ngIf="year?.employment_information?.duration">{{year?.employment_information?.duration}}</button>
                                 </div>
