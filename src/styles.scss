@@ -168,17 +168,19 @@ p {
     }
   }
 
-  .mat-button-base {
-    background: transparent !important;
-    border: 0 !important;
-    cursor: pointer;
-
-    &:hover,
-    &:focus,
-    &:active,
-    &:active:focus {
+  .mat-row {
+    .mat-button-base {
       background: transparent !important;
       border: 0 !important;
+      cursor: pointer;
+
+      &:hover,
+      &:focus,
+      &:active,
+      &:active:focus {
+        background: transparent !important;
+        border: 0 !important;
+      }
     }
   }
 }
