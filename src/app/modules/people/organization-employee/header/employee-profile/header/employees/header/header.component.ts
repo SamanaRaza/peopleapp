@@ -164,7 +164,9 @@ export class EmpHeaderComponent implements OnInit, AfterViewInit {
     }
     else {
       this.loadData();
-      this.changeStatus(null, this.activeVal);
+      if(this.activeVal) {
+        this.changeStatus(null, this.activeVal);
+      }
       this.cdf.detectChanges();
     }
   }
@@ -174,7 +176,9 @@ export class EmpHeaderComponent implements OnInit, AfterViewInit {
     this.employeeService.getEmployees().subscribe(data => {
       var newData = (data as any).data;
       this.data = newData.filter((x: any) => x.status === value);
-      this.changeOrder(null, this.sortData)
+      if(this.sortData) {
+        this.changeOrder(null, this.sortData)
+      }
 
     });
   }
