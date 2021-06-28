@@ -167,6 +167,20 @@ p {
       background-color: transparent;
     }
   }
+
+  .mat-button-base {
+    background: transparent !important;
+    border: 0 !important;
+    cursor: pointer;
+
+    &:hover,
+    &:focus,
+    &:active,
+    &:active:focus {
+      background: transparent !important;
+      border: 0 !important;
+    }
+  }
 }
 
 .mat-paginator-outer-container {
