@@ -1,11 +1,11 @@
 <div class="story " *ngFor="let group of persons">
     <div class="row mb-5">
-        <div class="col-md-2">
+        <div class="col-auto">
             <div class="details">
-                <img src={{group.imgUrl}} alt="" height="130px" width="150px" style=" border-radius:50%;">
+                <img src={{group.imgUrl}} alt="">
             </div>
         </div>
-        <div class="col-md-5">
+        <div class="col-xl-3 col-md-4">
             <div class="row">
                 <div class="col-md-12 mb-3">
                     <div class="panel warning-panel">{{group.name}}</div>
@@ -22,7 +22,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-5">
+        <div class="col-xl-3 col-md-4 ml-auto">
             <div class="row">
                 <div class="col-md-12 mb-3">
                     <div class="row">
