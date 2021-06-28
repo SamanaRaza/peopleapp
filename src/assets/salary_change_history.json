@@ -152,19 +152,19 @@
       "employeeId": 5,
       "details": [
         {
-          "salary": 10000,
+          "salary": 40000,
           "year": 2012
         },
         {
-          "salary": 82000,
+          "salary": 51000,
           "year": 2013
         },
         {
-          "salary": 85000,
+          "salary": 70000,
           "year": 2014
         },
         {
-          "salary": 99000,
+          "salary": 89000,
           "year": 2015
         },
         {
@@ -176,7 +176,7 @@
           "year": 2017
         },
         {
-          "salary": 170000,
+          "salary": 160000,
           "year": 2018
         }
       ]

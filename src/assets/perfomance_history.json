@@ -121,6 +121,86 @@
           "color": "green"
         }
       ]
+    },
+    {
+      "employeeId": 4,
+      "values": [
+        {
+          "pref_level": "min",
+          "year": "2015",
+          "pref_type": "pref_rewards",
+          "pref_given_user_name": "hr",
+          "color": "green"
+        },
+        {
+          "pref_level": "mid",
+          "year": "2017",
+          "pref_type": "pref_appericiation",
+          "pref_given_user_name": "lm",
+          "color": "yellow"
+        },
+        {
+          "pref_level": "max",
+          "year": "2018",
+          "pref_type": "pref_warning",
+          "pref_given_user_name": "lm",
+          "color": "red"
+        },
+        {
+          "pref_level": "min",
+          "year": "2019",
+          "pref_type": "pref_training",
+          "pref_given_user_name": "hr",
+          "color": "blue"
+        },
+        {
+          "pref_level": "min",
+          "year": "2020",
+          "pref_type": "pref_rewards",
+          "pref_given_user_name": "lm",
+          "color": "green"
+        }
+      ]
+    },
+    {
+      "employeeId": 5,
+      "values": [
+        {
+          "pref_level": "min",
+          "year": "2015",
+          "pref_type": "pref_rewards",
+          "pref_given_user_name": "hr",
+          "color": "green"
+        },
+        {
+          "pref_level": "mid",
+          "year": "2017",
+          "pref_type": "pref_appericiation",
+          "pref_given_user_name": "lm",
+          "color": "yellow"
+        },
+        {
+          "pref_level": "max",
+          "year": "2018",
+          "pref_type": "pref_warning",
+          "pref_given_user_name": "lm",
+          "color": "red"
+        },
+        {
+          "pref_level": "min",
+          "year": "2019",
+          "pref_type": "pref_training",
+          "pref_given_user_name": "hr",
+          "color": "blue"
+        },
+        {
+          "pref_level": "min",
+          "year": "2020",
+          "pref_type": "pref_rewards",
+          "pref_given_user_name": "lm",
+          "color": "green"
+        }
+      ]
     }
   ]
 }
