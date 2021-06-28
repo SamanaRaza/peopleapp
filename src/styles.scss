@@ -196,42 +196,6 @@ p {
         color: $text-color;
         @extend %bold-fonts;
       }
-
-      .mat-button-base {
-        $text-color: #343434;
-        background: linear-gradient($bg-color, $bg-color-2);
-        width: 28px;
-        height: 28px;
-        color: $text-primarey;
-        font-size: 12px;
-        margin-right: 10px;
-        border-radius: 4px;
-        color: $text-primarey;
-        border: 1px solid #fff;
-        cursor: pointer;
-
-        &:hover,
-        &:focus,
-        &:active,
-        &:active:focus {
-          $text-color: #343434;
-          background: linear-gradient($btn-hover, $bg-color);
-          width: 28px;
-          margin-right: 10px;
-          border-radius: 4px;
-          color: $text-color;
-          border: 1px solid #fff;
-          cursor: pointer;
-        }
-
-        .mat-button-wrapper {
-          .mat-paginator-icon {
-            path {
-              color: $text-primarey;
-            }
-          }
-        }
-      }
     }
 
     .mat-button .mat-button-wrapper > *,
@@ -242,6 +206,39 @@ p {
     .mat-fab .mat-button-wrapper > *,
     .mat-mini-fab .mat-button-wrapper > * {
       vertical-align: top;
+    }
+  }
+}
+
+.mat-button-base {
+  background: linear-gradient($bg-color, $bg-color-2);
+  height: 28px !important;
+  border-radius: 4px !important;
+  color: $text-primarey !important;
+  cursor: pointer !important;
+  line-height: normal !important;
+  @extend %bold-fonts;
+
+  * {
+    @extend %bold-fonts;
+  }
+
+  &:hover,
+  &:focus,
+  &:active,
+  &:active:focus {
+    background: linear-gradient($btn-hover, $bg-color);
+    height: 28px;
+    border-radius: 4px;
+    color: $text-color;
+    cursor: pointer;
+  }
+
+  .mat-button-wrapper {
+    .mat-paginator-icon {
+      path {
+        color: $text-primarey;
+      }
     }
   }
 }
@@ -372,7 +369,8 @@ p {
 
   mat-row,
   mat-footer-row {
-    border-color: $white;
+    border-top: 1px solid transparent;
+    border-bottom: 0;
     cursor: pointer;
 
     &:hover {
@@ -383,7 +381,7 @@ p {
 }
 
 .mat-form-field {
-  margin: 1px 5px;
+  margin: 0 5px;
 
   &.mt-focused,
   &.mat-form-field-should-float {
@@ -448,6 +446,16 @@ p {
 
   .filters & {
     display: none !important;
+  }
+}
+
+.filters {
+  margin-top: 1px;
+  padding-right: 15px;
+
+  .mat-button-base {
+    top: -1px;
+    border: 1px solid $white;
   }
 }
 
