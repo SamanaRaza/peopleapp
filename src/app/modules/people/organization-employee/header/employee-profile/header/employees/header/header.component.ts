@@ -131,34 +131,39 @@ export class EmpHeaderComponent implements OnInit, AfterViewInit {
   }
 
   loadData() {
+    let that = this;
     this.employeeService.getEmployees().subscribe(data => {
       this.data = (data as any).data;
       this.dataSource = new MatTableDataSource((data as any).data);
       this.dataSource.paginator = this.paginator;
+
+      this.dataSource.filterPredicate = function(data1 : any, filter: string): boolean {
+        if(that.searchData == "empID") {
+          return data1[that.searchData] ==filter ;
+        }
+        else {
+          if(that.searchData == "all"){
+            return true;
+          }
+          else
+          {
+            return data1[that.searchData].toLowerCase().includes(filter);
+          }
+        }
+        
+      };
+
     }, error => console.error(error));
   }
 
   searchByValues(event: any) {
     let that = this;
     if (event != "all") {
-      this.dataSource.filterPredicate = function (data: any, filter: string): boolean {
-        if(event == "empID") {
-          return data[event] ==filter ;
-        }
-        else {
-          return data[event].toLowerCase().includes(filter);
-        }
-
-      };
+      
     }
     else {
       that.filter = null;
-      const filterValue = this.filter;
-      this.dataSource.filterPredicate = function (data: any, filter: string): boolean {
-        return true;
-      };
       this.applyFilter();
-
     }
 
   }
