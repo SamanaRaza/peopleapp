@@ -522,3 +522,10 @@ mat-footer-cell:first-of-type {
     text-align: center;
   }
 }
+
+.mat-paginator-container {
+  .mat-button-base {
+    margin: 0 5px;
+    border: 1px solid $white;
+  }
+}
