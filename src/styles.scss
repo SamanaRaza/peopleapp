@@ -331,6 +331,9 @@ p {
 }
 
 .custom-table {
+  margin-left: -20px;
+  margin-right: -20px;
+
   .mat-header-row {
     min-height: 32px;
     height: 32px;
@@ -527,5 +530,29 @@ mat-footer-cell:first-of-type {
   .mat-button-base {
     margin: 0 5px;
     border: 1px solid $white;
+  }
+}
+
+.mat-dialog-container {
+  padding: 0 !important;
+  border-radius: 4px;
+
+  .mat-dialog-title {
+    background: linear-gradient($bg-color, $bg-color-2);
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    height: 32px;
+    padding: 0 5px;
+    @extend %bold-fonts;
+    padding: 0 10px;
+  }
+
+  .mat-dialog-content {
+    padding: 0 10px;
+    margin: 0;
+
+    p {
+      @extend %bold-fonts;
+    }
   }
 }

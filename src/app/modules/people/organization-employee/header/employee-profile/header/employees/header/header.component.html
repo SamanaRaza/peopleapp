@@ -36,7 +36,7 @@
                 <button mat-button (click)="applyFilter()">Search</button>
             </div>
         </mat-card-header>
-        <mat-card-content class=" p-0">
+        <mat-card-content>
             <mat-table class="custom-table mb-3" #dtable [dataSource]="dataSource">
                 <div *ngFor="let column of columns">
                     <ng-container [cdkColumnDef]="column.columnDef" *ngIf="column.header != 'Name'">
@@ -51,7 +51,8 @@
                                 {{column.cell(element)}}
                                 <mat-menu #clickmenu="matMenu">
                                     <ng-container *ngFor="let item of menuListItems">
-                                        <button mat-menu-item (click)="navigate(item.path, element.empID)" class="grid-button">{{
+                                        <button mat-menu-item (click)="navigate(item.path, element.empID)"
+                                            class="grid-button">{{
                                             item.menuLinkText
                                             }}</button>
                                     </ng-container>
