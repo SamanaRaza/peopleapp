@@ -39,7 +39,7 @@ export class EmploymentStoryComponent implements OnInit {
     let that = this;
     let breadcrumbs: Breadcrumb[] = [];
     breadcrumbs.push({
-      label: 'Org & Employee Profile',
+      label: 'Org & Emp',
       url: '/people/organization-employee/hr-services',
       params: {}
     });

@@ -77,12 +77,12 @@ export class EmploymentSalaryChangeComponent implements OnInit {
     let that = this;
     let breadcrumbs: Breadcrumb[] = [];
     breadcrumbs.push({
-      label: 'Employee Profile',
+      label: 'Org & Emp',
       url: '/people/organization-employee/hr-services',
       params: {}
     });
     breadcrumbs.push({
-      label: 'Employee',
+      label: 'Employee Profile',
       url: '/people/organization-employee/hr-services/emp-profile/employees',
       params: {
       }
