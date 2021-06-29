@@ -9,10 +9,9 @@ import {
 } from '@angular/core';
 import * as HighCharts from 'highcharts';
 import { HttpClient } from '@angular/common/http';
-import { BandDesignationGraphService } from '../../../../../../../../services/band-designation-graph.service';
 import { ActivatedRoute } from '@angular/router';
 import { BaseComponentComponent } from 'src/app/shared/base-component/base-component.component';
-
+import { AllServicesService } from 'src/app/services/all-services.service';
 interface LegendBand {
   color: string;
   name: string;
@@ -35,7 +34,7 @@ export class BandDesignationGraphComponent
 
   constructor(
     private httpClient: HttpClient,
-    private bandDesignationGraphService: BandDesignationGraphService,
+    private allServicesService: AllServicesService,
     private route: ActivatedRoute,
     private cdf: ChangeDetectorRef
   ) {
@@ -47,7 +46,7 @@ export class BandDesignationGraphComponent
   ngAfterViewInit() {
     let that = this;
     that.queryParams = that.route.snapshot.queryParams;
-    that.bandDesignationGraphService.getGraph().subscribe((data) => {
+    that.allServicesService.getBandGraph().subscribe((data) => {
       var data = (data as any).data;
       var employees = data.find(
         (x: any) => x.employee_id == that.queryParams.employeeId
@@ -77,7 +76,8 @@ export class BandDesignationGraphComponent
         useHTML: true,
         text: 'Band & Designation year wise',
         style: {
-          styledMode: true,
+          color: '#3B63C8',
+          fontWeight: 'bold',
         },
       },
       yAxis: {

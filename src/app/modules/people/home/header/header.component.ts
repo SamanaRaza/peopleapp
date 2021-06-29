@@ -1,6 +1,6 @@
 import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { Breadcrumb } from '../../../../shared/breadcrumb/breadcrumb.model';
-import { BreadcrumbService } from '../../../../shared/breadcrumb/breadcrumb.service';
+import { Breadcrumb } from 'src/app/shared/breadcrumb/breadcrumb.model';
+import { BreadcrumbService } from 'src/app/shared/breadcrumb/breadcrumb.service';
 
 export interface PeriodicElement {
   pending: number;

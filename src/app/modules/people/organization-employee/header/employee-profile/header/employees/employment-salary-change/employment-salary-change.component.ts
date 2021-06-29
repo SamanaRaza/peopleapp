@@ -3,12 +3,12 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute } from '@angular/router';
-import { EmployeeSalaryHistoryService } from '../../../../../../../../services/employee-salary-history.service';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FixedAmountDialogComponent } from '../fixed-amount-dialog/fixed-amount-dialog.component';
 import { VariableComponentsDialogComponent } from '../variable-components-dialog/variable-components-dialog.component';
 import { Breadcrumb } from 'src/app/shared/breadcrumb/breadcrumb.model';
 import { BreadcrumbService } from 'src/app/shared/breadcrumb/breadcrumb.service';
+import { AllServicesService } from 'src/app/services/all-services.service'
 @Component({
   selector: 'anms-employment-salary-change',
   templateUrl: './employment-salary-change.component.html',
@@ -25,7 +25,7 @@ export class EmploymentSalaryChangeComponent implements OnInit {
   displayedColumns: string[];
   dataSource: MatTableDataSource<any>;
   data: any
-  constructor(private employeeSaleryHistroyService: EmployeeSalaryHistoryService, private readonly breadcrumbService: BreadcrumbService,
+  constructor(private allServicesService: AllServicesService, private readonly breadcrumbService: BreadcrumbService,
     private route: ActivatedRoute, public dialog: MatDialog, private cdf: ChangeDetectorRef) { }
 
 
@@ -45,7 +45,7 @@ export class EmploymentSalaryChangeComponent implements OnInit {
   ngOnInit(): void {
 
     this.queryParams = this.route.snapshot.queryParams;
-    this.employeeSaleryHistroyService.getEmployeeSalaryHistroy().subscribe(data => {
+    this.allServicesService.getEmployeeSalaryHistroy().subscribe(data => {
       this.data = (data as any).data;
       var filteredData = this.data.filter((x: any) => x.EmployeeProfileID == this.queryParams.employeeId);
       console.log(filteredData);

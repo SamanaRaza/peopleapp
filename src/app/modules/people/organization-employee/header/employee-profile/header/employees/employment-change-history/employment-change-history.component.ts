@@ -5,8 +5,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute } from '@angular/router';
 import { Breadcrumb } from 'src/app/shared/breadcrumb/breadcrumb.model';
 import { BreadcrumbService } from 'src/app/shared/breadcrumb/breadcrumb.service';
-import { EmploymentChangeHistoryService } from '../../../../../../../../services/employment-change-history.service';
-
+import {AllServicesService} from 'src/app/services/all-services.service'
 @Component({
   selector: 'anms-employment-change-history',
   templateUrl: './employment-change-history.component.html',
@@ -22,13 +21,13 @@ export class EmploymentChangeHistoryComponent implements OnInit {
   displayedColumns: string[];
   dataSource: MatTableDataSource<any>;
   data: any
-  constructor(private employmentChangeHistoryService: EmploymentChangeHistoryService, private readonly breadcrumbService: BreadcrumbService,
+  constructor(private allServicesService: AllServicesService, private readonly breadcrumbService: BreadcrumbService,
     private route: ActivatedRoute, private cdf: ChangeDetectorRef) { }
 
   ngOnInit(): void {
 
     this.queryParams = this.route.snapshot.queryParams;
-    this.employmentChangeHistoryService.getEmployeeChangeHistroy().subscribe(data => {
+    this.allServicesService.getEmployeeChangeHistroy().subscribe(data => {
       this.data = (data as any).data;
       console.log('emp', data)
       var filteredData = this.data.filter((x: any) => x.EmployeeProfileID == this.queryParams.employeeId);      // console.log('fiter',filteredData);
