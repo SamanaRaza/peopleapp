@@ -645,9 +645,18 @@ mat-footer-cell:first-of-type {
   max-width: 407px;
 }
 
+.g-10,
+.gy-10 {
+  --bs-gutter-y: 10px;
+}
+.g-10,
+.gx-10 {
+  --bs-gutter-x: 10px;
+}
+
 .mat-card {
   height: auto !important;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .bg-light-blue {
