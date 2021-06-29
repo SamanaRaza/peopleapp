@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy, NgModule } from '@angular/core';
-import { Tab } from '../../../../../../shared/tabs/tab';
+import { Tab } from 'src/app/shared/tabs/tab';
 
 @Component({
   selector: 'anms-employee-profile-tab',

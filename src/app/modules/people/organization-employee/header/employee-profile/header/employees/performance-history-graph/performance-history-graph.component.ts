@@ -2,9 +2,10 @@ import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angula
 import * as Highcharts from 'highcharts'; // load core
 import HC_more from 'highcharts/highcharts-more'; // load highcharts-more
 import { HttpClient } from "@angular/common/http";
-import { PerformanceHistoryService } from "../../../../../../../../services/performance-history.service";
 import { ActivatedRoute } from '@angular/router';
+import { AllServicesService } from 'src/app/services/all-services.service'
 HC_more(Highcharts);
+
 
 interface ExtendedPointOptionsObject extends Highcharts.PointOptionsObject {
   country: string;
@@ -35,7 +36,7 @@ export class PerformanceHistoryGraphComponent implements OnInit {
   training: any = [];
   @ViewChild('bubbleChartContainer') bubbleChartContainer: ElementRef;
   data: any = [];
-  constructor(private httpClient: HttpClient, private performanceHistoryService: PerformanceHistoryService, private route: ActivatedRoute) { }
+  constructor(private httpClient: HttpClient, private allServicesService: AllServicesService, private route: ActivatedRoute) { }
   ngOnInit() {
     let that = this;
     this.queryParams = this.route.snapshot.queryParams;
@@ -43,7 +44,7 @@ export class PerformanceHistoryGraphComponent implements OnInit {
 
   ngAfterViewInit() {
     let that = this;
-    that.performanceHistoryService.getBubble().subscribe(data => {
+    that.allServicesService.getPerformance().subscribe(data => {
       that.performanceData = (data as any).data;
       var employeeData = that.performanceData.find((x: any) => x.employeeId == that.queryParams.employeeId);
       if (employeeData && employeeData.values) {

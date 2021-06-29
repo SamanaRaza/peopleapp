@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { TransferStoryService } from './transfer-story.service';
+import { AllServicesService } from './all-services.service';
 
-describe('TransferStoryService', () => {
-  let service: TransferStoryService;
+describe('AllServicesService', () => {
+  let service: AllServicesService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(TransferStoryService);
+    service = TestBed.inject(AllServicesService);
   });
 
   it('should be created', () => {

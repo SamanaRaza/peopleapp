@@ -7,9 +7,9 @@ import {
   ChangeDetectionStrategy
 } from '@angular/core';
 import * as HighCharts from 'highcharts';
-import { SalaryChangeHistoryGraphService } from '../../../../../../../../services/salary-change-history-graph.service';
 import { ActivatedRoute } from '@angular/router';
 import { BaseComponentComponent } from 'src/app/shared/base-component/base-component.component';
+import { AllServicesService } from 'src/app/services/all-services.service'
 
 @Component({
   selector: 'anms-emp-salary-history-graph',
@@ -23,7 +23,7 @@ export class EmpSalaryHistoryGraphComponent extends BaseComponentComponent imple
   data: any = {};
   queryParams: any = {};
   constructor(
-    private lineChartService: SalaryChangeHistoryGraphService,
+    private allServicesService: AllServicesService,
     private route: ActivatedRoute
   ) { super(); }
   ngOnInit() {
@@ -33,7 +33,7 @@ export class EmpSalaryHistoryGraphComponent extends BaseComponentComponent imple
     this.queryParams = this.route.snapshot.queryParams;
 
     let that = this;
-    this.lineChartService.getGraph().subscribe((data) => {
+    this.allServicesService.getSalaryGraph().subscribe((data) => {
       var data = (data as any).data;
       var employeSalary = data.find(
         (x: any) => x.employeeId == that.queryParams.employeeId

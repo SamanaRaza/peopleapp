@@ -10,14 +10,9 @@ import { TransferStoryService } from '../../../../../../../services/transfer-sto
 
 })
 export class EmployeesComponent implements OnInit {
-  timelines: any = [];
-  constructor(private httpClient: HttpClient, private transferStoryService: TransferStoryService) { }
+  constructor() { }
   ngOnInit() {
-    this.transferStoryService.getTransferStory().subscribe(data => {
-      console.log(data);
-      this.timelines = data;
-    })
+
   }
 }
-
 

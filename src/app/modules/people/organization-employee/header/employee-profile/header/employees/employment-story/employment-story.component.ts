@@ -1,9 +1,9 @@
 import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { ActivatedRoute } from '@angular/router';
-import { EmploymentStoryService } from '../../../../../../../../services/employment-story.service';
 import { Breadcrumb } from 'src/app/shared/breadcrumb/breadcrumb.model';
 import { BreadcrumbService } from 'src/app/shared/breadcrumb/breadcrumb.service';
+import { AllServicesService } from 'src/app/services/all-services.service';
 
 @Component({
   selector: 'anms-employment-story',
@@ -17,12 +17,12 @@ export class EmploymentStoryComponent implements OnInit {
   isLoading = true;
 
   constructor(private httpClient: HttpClient, private readonly breadcrumbService: BreadcrumbService, private route: ActivatedRoute,
-    private employmentStoryService: EmploymentStoryService, private cdf: ChangeDetectorRef) { }
+    private allServicesService: AllServicesService, private cdf: ChangeDetectorRef) { }
 
   ngOnInit() {
     let that = this;
     this.queryParams = this.route.snapshot.queryParams;
-    this.employmentStoryService.getEmploymentStory().subscribe((result: any) => {
+    this.allServicesService.getEmploymentStory().subscribe((result: any) => {
       this.employeeTimeline = result.filter((x: any) => x.employeeId == this.queryParams.employeeId);
       console.log(this.employeeTimeline)
 

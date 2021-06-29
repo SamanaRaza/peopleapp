@@ -9,10 +9,9 @@ import {
 } from '@angular/core';
 import * as HighCharts from 'highcharts';
 import { HttpClient } from '@angular/common/http';
-import { BandDesignationGraphService } from '../../../../../../../../services/band-designation-graph.service';
 import { ActivatedRoute } from '@angular/router';
 import { BaseComponentComponent } from 'src/app/shared/base-component/base-component.component';
-
+import { AllServicesService } from 'src/app/services/all-services.service'
 interface LegendBand {
   color: string
   name: string
@@ -33,7 +32,7 @@ export class BandDesignationGraphComponent extends BaseComponentComponent implem
 
   constructor(
     private httpClient: HttpClient,
-    private bandDesignationGraphService: BandDesignationGraphService,
+    private allServicesService: AllServicesService,
     private route: ActivatedRoute,
     private cdf: ChangeDetectorRef
   ) { super(); }
@@ -43,7 +42,7 @@ export class BandDesignationGraphComponent extends BaseComponentComponent implem
   ngAfterViewInit() {
     let that = this;
     that.queryParams = that.route.snapshot.queryParams;
-    that.bandDesignationGraphService.getGraph().subscribe((data) => {
+    that.allServicesService.getBandGraph().subscribe((data) => {
       var data = (data as any).data;
       var employees = data.find(
         (x: any) => x.employee_id == that.queryParams.employeeId
@@ -61,7 +60,7 @@ export class BandDesignationGraphComponent extends BaseComponentComponent implem
         backgroundColor: '#F2F3F4',
         type: 'line',
         plotBorderWidth: 0,
-        zoomType: 'xy'
+        zoomType: 'xy',
       },
       credits: {
         enabled: false
@@ -71,8 +70,6 @@ export class BandDesignationGraphComponent extends BaseComponentComponent implem
         text: 'Band & Designation year wise',
         style: {
           color: '#3B63C8',
-          // 'background-color': '#9BE997',
-          // 'padding': '28px 333px 10px 250px',
           fontWeight: 'bold'
         }
       },

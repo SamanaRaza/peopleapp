@@ -1,7 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { HttpClient } from '@angular/common/http';
-import { TransferStoryService } from '../../../../../../../../services/transfer-story.service';
-
+import { AllServicesService } from 'src/app/services/all-services.service'
 import { ActivatedRoute } from "@angular/router";
 @Component({
   selector: 'anms-transfer-story',
@@ -15,10 +14,10 @@ export class TransferStoryComponent implements OnInit {
   timelines: any = {};
 
   constructor(private httpClient: HttpClient,
-    private transferStoryService: TransferStoryService,
+    private allServicesService: AllServicesService,
     private route: ActivatedRoute) { }
   ngOnInit() {
-    this.transferStoryService.getTransferStory().subscribe((data: any) => {
+    this.allServicesService.getTransferStory().subscribe((data: any) => {
       this.timelines = data.data;
       let id = this.route.snapshot.paramMap.get('id');
       this.queryParams = this.route.snapshot.queryParams;

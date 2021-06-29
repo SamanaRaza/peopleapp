@@ -3,10 +3,11 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
-import { EmployeesService } from "../../../../../../../../services/employees.service";
-import { SharedModule } from '../../../../../../../../shared/shared.module';
-import { Breadcrumb } from '../../../../../../../..//shared/breadcrumb/breadcrumb.model';
-import { BreadcrumbService } from '../../../../../../../../shared/breadcrumb/breadcrumb.service';
+// import { EmployeesService } from "src/app/services/employees.service";
+import { SharedModule } from 'src/app/shared/shared.module';
+import { Breadcrumb } from 'src/app/shared/breadcrumb/breadcrumb.model';
+import { BreadcrumbService } from 'src/app/shared/breadcrumb/breadcrumb.service';
+import {AllServicesService} from 'src/app/services/all-services.service'
 
 export interface Employee {
   empID: number;
@@ -64,7 +65,7 @@ export class EmpHeaderComponent implements OnInit, AfterViewInit {
   menuListItems: MatMenuListItem[];
 
   activeVal: any
-  constructor(private employeeService: EmployeesService, private router: Router, private cdf: ChangeDetectorRef, private readonly breadcrumbService: BreadcrumbService) { }
+  constructor(private allServicesService: AllServicesService, private router: Router, private cdf: ChangeDetectorRef, private readonly breadcrumbService: BreadcrumbService) { }
 
   ngOnInit(): void {
     let that = this;
@@ -132,7 +133,7 @@ export class EmpHeaderComponent implements OnInit, AfterViewInit {
 
   loadData() {
     let that = this;
-    this.employeeService.getEmployees().subscribe(data => {
+    this.allServicesService.getEmployees().subscribe((data:any) => {
       this.data = (data as any).data;
       this.dataSource = new MatTableDataSource((data as any).data);
       this.dataSource.paginator = this.paginator;
@@ -185,7 +186,7 @@ export class EmpHeaderComponent implements OnInit, AfterViewInit {
 
   changeStatus(e: any, status: any) {
     var value = e ? e.value : status;
-    this.employeeService.getEmployees().subscribe(data => {
+    this.allServicesService.getEmployees().subscribe((data:any) => {
       var newData = (data as any).data;
       this.data = newData.filter((x: any) => x.status === value);
       if(this.sortData) {
