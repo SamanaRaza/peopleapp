@@ -113,11 +113,23 @@ export class BandDesignationGraphComponent
         squareSymbol: false,
         useHTML: true,
         labelFormatter: function () {
-          return (
-            '<span class="btn btn-xs btn-width btn-rounded btn-primary">' +
-            this.name +
-            '</span>'
-          );
+      if (this.name == 'Bands') {
+        return (
+          '<span class="btn btn-xs btn-width btn-rounded btn-primary">' +
+          this.name +
+          '</span>'
+        );
+      }
+      else(this.name == 'Designations')
+      {
+        return (
+          '<span class="btn btn-xs btn-width btn-rounded btn-danger">' +
+          this.name +
+          '</span>'
+        );
+      }
+
+
         },
       },
       plotOptions: {
