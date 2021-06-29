@@ -5,7 +5,7 @@ import {
   ElementRef,
   AfterViewInit,
   ChangeDetectionStrategy,
-  ChangeDetectorRef
+  ChangeDetectorRef,
 } from '@angular/core';
 import * as HighCharts from 'highcharts';
 import { HttpClient } from '@angular/common/http';
@@ -14,18 +14,20 @@ import { ActivatedRoute } from '@angular/router';
 import { BaseComponentComponent } from 'src/app/shared/base-component/base-component.component';
 
 interface LegendBand {
-  color: string
-  name: string
+  color: string;
+  name: string;
 }
 
 @Component({
   selector: 'anms-band-designation-graph',
   templateUrl: './band-designation-graph.component.html',
   styleUrls: ['./band-designation-graph.component.scss'],
-  changeDetection: ChangeDetectionStrategy.Default
-
+  changeDetection: ChangeDetectionStrategy.Default,
 })
-export class BandDesignationGraphComponent extends BaseComponentComponent implements OnInit, AfterViewInit {
+export class BandDesignationGraphComponent
+  extends BaseComponentComponent
+  implements OnInit, AfterViewInit
+{
   @ViewChild('chartContainer') ChartContainer: ElementRef;
   data: any = {};
   queryParams: any = {};
@@ -36,7 +38,9 @@ export class BandDesignationGraphComponent extends BaseComponentComponent implem
     private bandDesignationGraphService: BandDesignationGraphService,
     private route: ActivatedRoute,
     private cdf: ChangeDetectorRef
-  ) { super(); }
+  ) {
+    super();
+  }
   ngOnInit() {
     let that = this;
   }
@@ -50,8 +54,11 @@ export class BandDesignationGraphComponent extends BaseComponentComponent implem
       );
 
       that.graphDataCustomization(employees);
-      that.generateBandDesignation(that.band, that.designation, that.startingYear);
-
+      that.generateBandDesignation(
+        that.band,
+        that.designation,
+        that.startingYear
+      );
     });
   }
   generateBandDesignation(bands: any, designations: any, startYear: any) {
@@ -61,24 +68,21 @@ export class BandDesignationGraphComponent extends BaseComponentComponent implem
         backgroundColor: '#F2F3F4',
         type: 'line',
         plotBorderWidth: 0,
-        zoomType: 'xy'
+        zoomType: 'xy',
       },
       credits: {
-        enabled: false
+        enabled: false,
       },
       title: {
         useHTML: true,
         text: 'Band & Designation year wise',
         style: {
-          color: '#3B63C8',
-          // 'background-color': '#9BE997',
-          // 'padding': '28px 333px 10px 250px',
-          fontWeight: 'bold'
-        }
+          styledMode: true,
+        },
       },
       yAxis: {
         title: {
-          text: ''
+          text: '',
         },
         gridLineColor: 'transparent',
         labels: {
@@ -86,10 +90,10 @@ export class BandDesignationGraphComponent extends BaseComponentComponent implem
           style: {
             color: '#3498DB',
             'background-color': 'white',
-            'padding': '4px',
+            padding: '4px',
             'box-shadow': '0px 1px',
-            'font-weight': 'bold'
-          }
+            'font-weight': 'bold',
+          },
         },
         min: 5,
         max: 8,
@@ -108,13 +112,13 @@ export class BandDesignationGraphComponent extends BaseComponentComponent implem
           style: {
             color: '#3498DB',
             'background-color': 'white',
-            'padding': '4px',
+            padding: '4px',
             'box-shadow': '0px 1px',
-            'font-weight': 'bold'
-          }
+            'font-weight': 'bold',
+          },
         },
         tickInterval: 1000 * 3600 * 24 * 365,
-        units: [['year', [1]]]
+        units: [['year', [1]]],
       },
       legend: {
         symbolPadding: 0,
@@ -123,50 +127,56 @@ export class BandDesignationGraphComponent extends BaseComponentComponent implem
         squareSymbol: false,
         useHTML: true,
         labelFormatter: function () {
-          return '<span  style="background: ' + this.options.color + ' ;color: white;padding: 20px 20px;font-size:16px;font-weight: bold">' + this.name + '</span>'
-        }
+          return (
+            '<span  style="background: ' +
+            this.options.color +
+            ' ;color: white;padding: 20px 20px;font-size:16px;font-weight: bold">' +
+            this.name +
+            '</span>'
+          );
+        },
       },
       plotOptions: {
         series: {
           label: {
-            connectorAllowed: false
+            connectorAllowed: false,
           },
           pointStart: Date.UTC(startYear, 0, 1),
-          pointInterval: (365 * 24 * 3600 * 1000) / 1
-        }
+          pointInterval: (365 * 24 * 3600 * 1000) / 1,
+        },
       },
       series: [
         {
           name: 'Bands',
           type: 'line',
-          color: "#4B63A0",
+          color: '#4B63A0',
           lineWidth: 4,
-          data: bands
+          data: bands,
         },
         {
           name: 'Designations',
           type: 'line',
-          color: "#81D8E9",
+          color: '#81D8E9',
           lineWidth: 4,
-          data: designations
-        }
+          data: designations,
+        },
       ],
       responsive: {
         rules: [
           {
             condition: {
-              maxWidth: 500
+              maxWidth: 500,
             },
             chartOptions: {
               legend: {
                 layout: 'horizontal',
                 align: 'center',
-                verticalAlign: 'bottom'
-              }
-            }
-          }
-        ]
-      }
+                verticalAlign: 'bottom',
+              },
+            },
+          },
+        ],
+      },
     };
     HighCharts.chart(that.ChartContainer.nativeElement, options);
   }
