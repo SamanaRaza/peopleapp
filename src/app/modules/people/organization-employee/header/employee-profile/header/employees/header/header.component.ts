@@ -45,7 +45,7 @@ export class EmpHeaderComponent implements OnInit, AfterViewInit {
   searchData: any;
   columns: Array<any>;
   displayedColumns: string[];
-
+  highlighted:any;
   filter: any
   activeList = ['Yes', 'No'];
   employeeSort = [

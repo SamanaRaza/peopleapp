@@ -1,43 +1,4 @@
-.highlight{
-  background: #42A948; /* green */
-}
-.example-container {
-  display: flex;
-  flex-direction: column;
-  max-height: 500px;
-  min-width: 300px;
-}
-
-.mat-table {
-  overflow: auto;
-  max-height: 500px;
-}
-.loading-spinner{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-  .buttons-spacer {
-    flex: 1 1 auto;
-  }
-
-  .mat-dialog-actions {
-    justify-content: flex-end;
-  }
-
-  .basic-container {
-    padding: 5px;
-  }
-
-  .mat-row.hovered {
-    background: #eee;
-  }
-
-  .mat-row.highlighted {
+.mat-row.highlighted {
     background: #999;
   }
-
-  mat-cell.mat-cell, mat-header-cell.mat-header-cell {
-    overflow: visible;
-  }
+  
