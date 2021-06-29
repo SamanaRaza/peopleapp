@@ -1,7 +1,7 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @use '~@angular/material' as mat;
-// @import "https://code.highcharts.com/css/highcharts.css";
+@import "https://code.highcharts.com/css/highcharts.css";
 @import "styles-variables";
 
 @import "../node_modules/font-awesome/css/font-awesome.css";
@@ -95,6 +95,16 @@ strong {
   font-weight: 500;
   font-size: 12px;
   color: $primarey-color;
+}
+
+.btn-warning {
+  background-color: #fe8f2d;
+  border-color: #fe8f2d;
+}
+
+.btn-primary {
+  background-color: #5a89ff;
+  border-color: #5a89ff;
 }
 
 code {
@@ -697,4 +707,19 @@ mat-footer-cell:first-of-type {
   .highcharts-background {
     fill: #e9edee !important;
   }
+}
+
+.btn-xs {
+  padding: 2px 15px;
+  font-family: "Roboto", sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 11px !important;
+}
+
+.btn-width {
+  min-width: 120px;
+}
+
+.highcharts-grid-line {
+  stroke: transparent !important;
 }

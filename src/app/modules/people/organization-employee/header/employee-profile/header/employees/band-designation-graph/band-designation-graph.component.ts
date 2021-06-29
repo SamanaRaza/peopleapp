@@ -64,7 +64,6 @@ export class BandDesignationGraphComponent
     let that = this;
     const options: HighCharts.Options = {
       chart: {
-        backgroundColor: '#F2F3F4',
         type: 'line',
         plotBorderWidth: 0,
         zoomType: 'xy',
@@ -76,8 +75,7 @@ export class BandDesignationGraphComponent
         useHTML: true,
         text: 'Band & Designation year wise',
         style: {
-          color: '#3B63C8',
-          fontWeight: 'bold',
+          styledMode: true,
         },
       },
       yAxis: {
@@ -87,35 +85,23 @@ export class BandDesignationGraphComponent
         gridLineColor: 'transparent',
         labels: {
           useHTML: true,
-          style: {
-            color: '#3498DB',
-            'background-color': 'white',
-            padding: '4px',
-            'box-shadow': '0px 1px',
-            'font-weight': 'bold',
-          },
+          style: {},
         },
         min: 5,
         max: 8,
         tickInterval: 0.5,
-        lineColor: '#53EA78',
+
         lineWidth: 3,
         startOnTick: false,
         endOnTick: false,
       },
       xAxis: {
         type: 'datetime',
-        lineColor: '#53EA78',
+
         lineWidth: 3,
         labels: {
           useHTML: true,
-          style: {
-            color: '#3498DB',
-            'background-color': 'white',
-            padding: '4px',
-            'box-shadow': '0px 1px',
-            'font-weight': 'bold',
-          },
+          style: {},
         },
         tickInterval: 1000 * 3600 * 24 * 365,
         units: [['year', [1]]],
@@ -128,9 +114,7 @@ export class BandDesignationGraphComponent
         useHTML: true,
         labelFormatter: function () {
           return (
-            '<span  style="background: ' +
-            this.options.color +
-            ' ;color: white;padding: 20px 20px;font-size:16px;font-weight: bold">' +
+            '<span class="btn btn-xs btn-width btn-rounded btn-primary">' +
             this.name +
             '</span>'
           );
@@ -149,14 +133,14 @@ export class BandDesignationGraphComponent
         {
           name: 'Bands',
           type: 'line',
-          color: '#4B63A0',
+
           lineWidth: 4,
           data: bands,
         },
         {
           name: 'Designations',
           type: 'line',
-          color: '#81D8E9',
+
           lineWidth: 4,
           data: designations,
         },
