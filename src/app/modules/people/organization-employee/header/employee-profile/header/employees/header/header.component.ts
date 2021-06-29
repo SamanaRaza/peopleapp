@@ -8,6 +8,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { Breadcrumb } from 'src/app/shared/breadcrumb/breadcrumb.model';
 import { BreadcrumbService } from 'src/app/shared/breadcrumb/breadcrumb.service';
 import {AllServicesService} from 'src/app/services/all-services.service'
+import { PeriodicElement } from 'src/app/modules/people/home/header/header.component';
+import { SelectionModel } from '@angular/cdk/collections';
 
 export interface Employee {
   empID: number;
@@ -192,7 +194,9 @@ export class EmpHeaderComponent implements OnInit, AfterViewInit {
       if(this.sortData) {
         this.changeOrder(null, this.sortData)
       }
-
+      this.dataSource = new MatTableDataSource(this.data);
+      this.dataSource.paginator = this.paginator;
+      this.dtable.renderRows();
     });
   }
 
@@ -218,7 +222,12 @@ export class EmpHeaderComponent implements OnInit, AfterViewInit {
     this.dataSource.paginator = this.paginator;
     this.dtable.renderRows();
   }
-
+  rowClick(index: string | number) {
+    for (var i = 0; i < this.data.length; i++) {
+      this.data[i].highlighted = false
+    }
+    this.data[index].highlighted = true
+  }
   navigate(path?: any, id?: any) {
     let that = this;
     console.log(id);
