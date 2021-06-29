@@ -138,7 +138,7 @@ p {
   height: 100%;
 
   .mat-card-header {
-    background: linear-gradient($bg-color, $bg-color-2);
+    background: linear-gradient($bg-color-2, $bg-color);
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
     height: 32px;
@@ -382,11 +382,15 @@ p {
     background-color: $white;
 
     &:nth-child(even) {
-      background-color: $bg-color;
+      background-color: #fafafb;
 
       &:hover {
-        background-color: lighten($primarey-color, 10%);
-        border-color: lighten($primarey-color, 20%);
+        background-color: #fafafb !important;
+      }
+
+      &.highlighted {
+        background-color: lighten($primarey-color, 30%) !important;
+        border-color: lighten($primarey-color, 20%) !important;
       }
     }
 
@@ -403,13 +407,16 @@ p {
 
   mat-row,
   mat-footer-row {
-    border-top: 1px solid transparent;
-    border-bottom: 0;
+    border-color: #d8dcdf;
     cursor: pointer;
 
     &:hover {
-      background-color: lighten($primarey-color, 10%);
-      border-color: lighten($primarey-color, 20%);
+      background-color: $white !important;
+    }
+
+    &.highlighted {
+      background-color: lighten($primarey-color, 30%) !important;
+      border-color: lighten($primarey-color, 20%) !important;
     }
   }
 }

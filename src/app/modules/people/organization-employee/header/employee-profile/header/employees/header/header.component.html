@@ -3,8 +3,7 @@
     <mat-card class="example-card">
         <mat-card-header>
             <mat-card-title>Employee List</mat-card-title>
-            <div class="filters ml-auto">
-
+            <div class="filters ms-auto">
                 <mat-form-field>
                     <mat-label>Active/Non-Active</mat-label>
                     <mat-select [(ngModel)]="activeVal" (selectionChange)="changeStatus($event, null)">
@@ -41,7 +40,7 @@
             <mat-table class="custom-table mb-3" #dtable [dataSource]="dataSource">
                 <div *ngFor="let column of columns">
 
-                    <ng-container [cdkColumnDef]="column.columnDef" >
+                    <ng-container [cdkColumnDef]="column.columnDef">
                         <mat-header-cell *cdkHeaderCellDef>{{ column.header }}</mat-header-cell>
                         <mat-cell *cdkCellDef="let element">
                             <button mat-icon-button [matMenuTriggerFor]="clickmenu">
@@ -60,9 +59,10 @@
                 </div>
                 <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
                 <!-- <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row> -->
-            <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="rowClick(row)"
-                [ngClass]="{hovered: row.hovered, highlighted: row.highlighted}" (click)="row.highlighted = !row.highlighted"
-                (mouseover)="row.hovered = true" (mouseout)="row.hovered = false"></mat-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="rowClick(row)"
+                    [ngClass]="{hovered: row.hovered, highlighted: row.highlighted}"
+                    (click)="row.highlighted = !row.highlighted" (mouseover)="row.hovered = true"
+                    (mouseout)="row.hovered = false"></mat-row>
             </mat-table>
         </mat-card-content>
         <mat-card-actions>
