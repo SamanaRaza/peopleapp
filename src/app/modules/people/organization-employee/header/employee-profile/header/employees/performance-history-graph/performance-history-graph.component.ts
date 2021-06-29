@@ -143,7 +143,26 @@ export class PerformanceHistoryGraphComponent implements OnInit {
         squareSymbol: false,
         useHTML: true,
         labelFormatter: function () {
-          return '<span  style="background: ' + this.options.color + ' ;color: white;padding: 20px 20px;font-size:13px;font-weight: bold">' + this.name + '</span>'
+          switch (this.name) {
+            case 'Performance Rewards':
+              return '<span  style="background: ' + this.options.color + ' ;color: white;padding: 20px 20px;font-size:13px;font-weight: bold">' +
+                this.name +
+                '</span>'
+            case 'Letter of Appreciation':
+              return '<span  style="background: ' + this.options.color + ' ;color: white;padding: 20px 20px;font-size:13px;font-weight: bold">' +
+                this.name +
+                '</span>'
+            case 'Warning Letter':
+              return '<span  style="background: ' + this.options.color + ' ;color: white;padding: 20px 20px;font-size:13px;font-weight: bold">' +
+                this.name +
+                '</span>'
+            case 'Training':
+              return '<span  style="background: ' + this.options.color + ' ;color: white;padding: 20px 20px;font-size:13px;font-weight: bold">' +
+                this.name +
+                '</span>'
+            default:
+              return '';
+          }
         }
       },
 
