@@ -12,6 +12,7 @@ import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { BaseComponentComponent } from 'src/app/shared/base-component/base-component.component';
 import { AllServicesService } from 'src/app/services/all-services.service';
+import * as Highcharts from 'highcharts';
 interface LegendBand {
   color: string;
   name: string;
@@ -31,7 +32,7 @@ export class BandDesignationGraphComponent
   data: any = {};
   queryParams: any = {};
   legend: LegendBand;
-
+  processedYData:any=[]
   constructor(
     private httpClient: HttpClient,
     private allServicesService: AllServicesService,
@@ -59,6 +60,7 @@ export class BandDesignationGraphComponent
         that.startingYear
       );
     });
+
   }
   generateBandDesignation(bands: any, designations: any, startYear: any) {
     let that = this;
@@ -126,37 +128,45 @@ export class BandDesignationGraphComponent
           '<span class="btn btn-xs btn-width btn-rounded btn-danger">' +
           this.name +
           '</span>'
+
         );
       }
-
 
         },
       },
       plotOptions: {
+
         series: {
           label: {
             connectorAllowed: false,
+
+          },
+          dataLabels: {
+            enabled: true
           },
           pointStart: Date.UTC(startYear, 0, 1),
           pointInterval: (365 * 24 * 3600 * 1000) / 1,
+
         },
       },
       series: [
         {
           name: 'Bands',
           type: 'line',
-
+          allowPointSelect: true,
           lineWidth: 4,
           data: bands,
         },
         {
           name: 'Designations',
           type: 'line',
-
+          allowPointSelect: true,
           lineWidth: 4,
           data: designations,
         },
+
       ],
+
       responsive: {
         rules: [
           {
@@ -174,6 +184,7 @@ export class BandDesignationGraphComponent
         ],
       },
     };
+
     HighCharts.chart(that.ChartContainer.nativeElement, options);
   }
 }
