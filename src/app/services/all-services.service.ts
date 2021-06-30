@@ -36,4 +36,7 @@ export class AllServicesService {
   public getEmpDetails(): Observable<any> {
     return this.http.get("assets/EmployeesData.json");
   }
+  public getColors(): Observable<any> {
+    return this.http.get("assets/employee_his_colors.json");
+  }
 }
