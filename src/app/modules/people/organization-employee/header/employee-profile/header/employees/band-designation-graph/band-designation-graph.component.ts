@@ -141,7 +141,7 @@ export class BandDesignationGraphComponent
 
           },
           dataLabels: {
-            enabled: true
+            enabled: false
           },
           pointStart: Date.UTC(startYear, 0, 1),
           pointInterval: (365 * 24 * 3600 * 1000) / 1,
@@ -173,7 +173,7 @@ export class BandDesignationGraphComponent
             events: {
               select: function () {
                 var text = this.y + ' was last selected',
-                  chart = this.series.chart;
+                  chart = this.series.chart;  
                 console.log(text)
               }
             }

@@ -33,8 +33,35 @@ export class EmploymentStoryComponent implements OnInit {
     this.cdf.detectChanges();
   }
   BandClick(event: any){
-    console.log(event.target.innerHTML)
+    console.log('Band',event.target.innerHTML)
   }
+  AppriasalName(event: any){
+    console.log('AppriasalName',event.target.innerHTML)
+  }
+   assesment(event: any){
+    console.log('assesment',event.target.innerHTML)
+  }
+  salary(event: any){
+     console.log('Old Salary & New Salary',event.target.innerHTML)
+   }
+   currentDesignation(event: any){
+     console.log('currentDesignation',event.target.innerHTML)
+   }
+   currentDepartment (event: any){
+     console.log('currentDepartment',event.target.innerHTML)
+   }
+   currentBranch (event: any){
+     console.log('currentBranch',event.target.innerHTML)
+   }
+   startingDate(event: any){
+    console.log('startingDate',event.target.innerHTML)
+  }
+  duration(event: any){
+     console.log('duration',event.target.innerHTML)
+   }
+   LMInfo(event: any){
+     console.log('LM Info',event.target.innerHTML)
+   }
   setBreadcrumbs() {
     let that = this;
     let breadcrumbs: Breadcrumb[] = [];

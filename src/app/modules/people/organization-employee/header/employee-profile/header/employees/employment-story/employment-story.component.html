@@ -11,17 +11,17 @@
                             <div class="year-container year">
                                 {{year?.starting_year}}
                             </div>
-                            <button class="btn btn-md w-100 btn-warning mb-1 btn-sm">
+                            <button class="btn btn-md w-100 btn-warning mb-1 btn-sm" (click)="AppriasalName($event)">
                                 {{year?.appriasal_salary_change?.appriasal_name}}</button>
                             <div class="button-group mb-1 d-flex justify-content-between">
-                                <button class="btn btn-sm btn-primary w-100">Self:
+                                <button class="btn btn-sm btn-primary w-100" (click)="assesment($event)">Self:
                                     {{year?.appriasal_salary_change?.assesment?.Self}}</button>
                                 <button
-                                    class="btn btn-sm mx-1 w-100 btn-primary">LM:{{year?.appriasal_salary_change?.assesment?.LM}}</button>
+                                    class="btn btn-sm mx-1 w-100 btn-primary" (click)="assesment($event)">LM:{{year?.appriasal_salary_change?.assesment?.LM}}</button>
                                 <button
-                                    class="btn btn-sm btn-primary w-100">HR:{{year?.appriasal_salary_change?.assesment?.HR}}</button>
+                                    class="btn btn-sm btn-primary w-100" (click)="assesment($event)">HR:{{year?.appriasal_salary_change?.assesment?.HR}}</button>
                             </div>
-                            <button class="btn btn-md w-100 btn-danger btn-sm">
+                            <button class="btn btn-md w-100 btn-danger btn-sm" (click)="salary($event)">
                                 {{year?.appriasal_salary_change?.old_salary}} -
                                 {{year?.appriasal_salary_change?.new_salary}}
                                 ({{year?.appriasal_salary_change?.change_in_salary}})
@@ -30,24 +30,26 @@
                         <div *ngIf="year?.employment_information" class="col-md-4 right-arrow pb-50 px-50">
                             <div class="right-container">
                                 <button class="btn btn-md w-100 btn-info mb-1 btn-sm"
-                                    *ngIf="year?.employment_information?.current_designation">{{year?.employment_information?.current_designation}}</button>
+                                    *ngIf="year?.employment_information?.current_designation"
+                                    (click)="currentDesignation($event)">
+                                    {{year?.employment_information?.current_designation}}</button>
                                 <button class="btn btn-md w-100 btn-primary mb-1 btn-sm"
-                                    *ngIf="year?.employment_information?.current_band" #local
+                                    *ngIf="year?.employment_information?.current_band"
                                     (click)="BandClick($event)">
                                     {{year?.employment_information?.current_band}}
                                 </button>
                                 <div class="button-group mb-1 d-flex justify-content-between">
                                     <button class="btn btn-sm btn-primary w-100"
-                                        *ngIf="year?.employment_information?.current_department">{{year?.employment_information?.current_department}}</button>
+                                        *ngIf="year?.employment_information?.current_department" (click)="currentDepartment($event)">{{year?.employment_information?.current_department}}</button>
                                     <button class="btn btn-sm ms-1 btn-primary w-100"
-                                        *ngIf="year?.employment_information?.current_branch">{{year?.employment_information?.current_branch}}</button>
+                                        *ngIf="year?.employment_information?.current_branch" (click)="currentBranch($event)" >{{year?.employment_information?.current_branch}}</button>
                                 </div>
                                 <div class="button-group mb-1 d-flex justify-content-between">
                                     <button class="btn btn-sm btn-primary w-100"
-                                        *ngIf="year?.employment_information?.duration">{{year?.employment_information?.starting_date}}
+                                        *ngIf="year?.employment_information?.duration" (click)="startingDate($event)">{{year?.employment_information?.starting_date}}
                                         - {{year?.employment_information?.ending_band}}</button>
                                     <button class="btn btn-sm ms-1 btn-primary w-100"
-                                        *ngIf="year?.employment_information?.duration">{{year?.employment_information?.duration}}</button>
+                                        *ngIf="year?.employment_information?.duration" (click)="duration($event)">{{year?.employment_information?.duration}}</button>
                                 </div>
                             </div>
                         </div>
@@ -58,14 +60,14 @@
                                     <div class="col-auto">
                                         <div class="profil-details text-center mb-1">
                                             <button class="btn-primary btn-sm btn"
-                                                *ngIf="underPerson.name">{{underPerson?.name}}</button>
+                                                *ngIf="underPerson.name" (click)="LMInfo($event)">{{underPerson?.name}}</button>
                                             <div class="w-100">
                                                 <div class="rounded-image text-center">
                                                     <img [src]="underPerson.pic" />
                                                 </div>
                                             </div>
                                             <button class="btn-light btn-sm btn "
-                                                *ngIf="underPerson.duration">{{underPerson?.duration}}</button>
+                                                *ngIf="underPerson.duration" (click)="LMInfo($event)">{{underPerson?.duration}}</button>
                                         </div>
                                     </div>
                                 </ng-container>
