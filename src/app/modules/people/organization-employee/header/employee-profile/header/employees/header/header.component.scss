@@ -1,4 +1,6 @@
 .mat-row.highlighted {
     background: #999;
   }
-  
+  ::ng-deep .mat-tab-header-pagination {
+    display: none !important;
+}

@@ -24,8 +24,6 @@ export class EmploymentStoryComponent implements OnInit {
     this.queryParams = this.route.snapshot.queryParams;
     this.allServicesService.getEmploymentStory().subscribe((result: any) => {
       this.employeeTimeline = result.filter((x: any) => x.employeeId == this.queryParams.employeeId);
-      console.log(this.employeeTimeline)
-
     })
   }
 
@@ -34,7 +32,9 @@ export class EmploymentStoryComponent implements OnInit {
     that.setBreadcrumbs();
     this.cdf.detectChanges();
   }
-
+  BandClick(event: any){
+    console.log(event.target.innerHTML)
+  }
   setBreadcrumbs() {
     let that = this;
     let breadcrumbs: Breadcrumb[] = [];

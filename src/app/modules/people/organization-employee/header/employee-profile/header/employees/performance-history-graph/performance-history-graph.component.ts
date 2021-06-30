@@ -325,24 +325,64 @@ export class PerformanceHistoryGraphComponent implements OnInit {
           name: 'Performance Rewards',
           data: rewards.data,
           color: rewards.color,
+          allowPointSelect: true,
+          point: {
+            events: {
+              select: function () {
+                var text = this.y + ' was last selected',
+                  chart = this.series.chart;
+                console.log(text)
+              }
+            }
+          },
         },
         {
           type: 'bubble',
           name: 'Letter of Appreciation',
           data: appericiation.data,
           color: appericiation.color,
+          allowPointSelect: true,
+          point: {
+            events: {
+              select: function () {
+                var text = this.y + ' was last selected',
+                  chart = this.series.chart;
+                console.log(text)
+              }
+            }
+          },
         },
         {
           type: 'bubble',
           name: 'Warning Letter',
           data: warning.data,
           color: warning.color,
+          allowPointSelect: true,
+          point: {
+            events: {
+              select: function () {
+                var text = this.y + ' was last selected',
+                  chart = this.series.chart;
+                console.log(text)
+              }
+            }
+          },
         },
         {
           type: 'bubble',
           name: 'Training',
           data: training.data,
           color: training.color,
+          allowPointSelect: true,
+          point: {
+            events: {
+              select: function () {
+                var text = this.y + ' was last selected',
+                  chart = this.series.chart;
+                console.log(text)
+              }
+            }
+          },
         },
         {
           type: 'bubble',
