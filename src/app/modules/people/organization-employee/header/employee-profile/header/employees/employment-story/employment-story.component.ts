@@ -32,6 +32,9 @@ export class EmploymentStoryComponent implements OnInit {
     that.setBreadcrumbs();
     this.cdf.detectChanges();
   }
+  currentYear(event: any){
+    console.log('year',event.target.innerHTML)
+  }
   BandClick(event: any){
     console.log('Band',event.target.innerHTML)
   }
