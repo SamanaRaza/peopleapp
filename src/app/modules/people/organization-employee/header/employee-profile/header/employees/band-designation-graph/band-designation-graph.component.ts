@@ -26,13 +26,12 @@ interface LegendBand {
 })
 export class BandDesignationGraphComponent
   extends BaseComponentComponent
-  implements OnInit, AfterViewInit
-{
+  implements OnInit, AfterViewInit {
   @ViewChild('chartContainer') ChartContainer: ElementRef;
   data: any = {};
   queryParams: any = {};
   legend: LegendBand;
-  processedYData:any=[]
+  processedYData: any = []
   constructor(
     private httpClient: HttpClient,
     private allServicesService: AllServicesService,
@@ -115,22 +114,22 @@ export class BandDesignationGraphComponent
         squareSymbol: false,
         useHTML: true,
         labelFormatter: function () {
-      if (this.name == 'Bands') {
-        return (
-          '<span class="btn btn-xs btn-width btn-rounded btn-primary">' +
-          this.name +
-          '</span>'
-        );
-      }
-      else(this.name == 'Designations')
-      {
-        return (
-          '<span class="btn btn-xs btn-width btn-rounded btn-danger">' +
-          this.name +
-          '</span>'
+          if (this.name == 'Bands') {
+            return (
+              '<span class="btn btn-xs btn-width btn-rounded btn-primary">' +
+              this.name +
+              '</span>'
+            );
+          }
+          else (this.name == 'Designations')
+          {
+            return (
+              '<span class="btn btn-xs btn-width btn-rounded btn-danger">' +
+              this.name +
+              '</span>'
 
-        );
-      }
+            );
+          }
 
         },
       },
@@ -154,6 +153,15 @@ export class BandDesignationGraphComponent
           name: 'Bands',
           type: 'line',
           allowPointSelect: true,
+          point: {
+            events: {
+              select: function () {
+                var text = this.y + ' was last selected',
+                  chart = this.series.chart;
+                console.log(text)
+              }
+            }
+          },
           lineWidth: 4,
           data: bands,
         },
@@ -161,6 +169,15 @@ export class BandDesignationGraphComponent
           name: 'Designations',
           type: 'line',
           allowPointSelect: true,
+          point: {
+            events: {
+              select: function () {
+                var text = this.y + ' was last selected',
+                  chart = this.series.chart;
+                console.log(text)
+              }
+            }
+          },
           lineWidth: 4,
           data: designations,
         },

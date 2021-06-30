@@ -124,6 +124,16 @@ export class EmpSalaryHistoryGraphComponent extends BaseComponentComponent imple
         {
           name: 'Salary',
           type: 'line',
+          allowPointSelect: true,
+          point: {
+            events: {
+              select: function () {
+                var text = this.y + ' was last selected',
+                  chart = this.series.chart;
+                console.log(text)
+              }
+            }
+          },
           data: data,
           color: "#51AE69",
           lineWidth: 4,

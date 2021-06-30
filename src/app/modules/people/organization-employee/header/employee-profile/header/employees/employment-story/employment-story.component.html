@@ -11,7 +11,7 @@
                             <div class="year-container year">
                                 {{year?.starting_year}}
                             </div>
-                            <button class="btn btn-md w-100 btn-warning mb-1 btn-sm">Annual Appraisal:
+                            <button class="btn btn-md w-100 btn-warning mb-1 btn-sm">
                                 {{year?.appriasal_salary_change?.appriasal_name}}</button>
                             <div class="button-group mb-1 d-flex justify-content-between">
                                 <button class="btn btn-sm btn-primary w-100">Self:
@@ -32,7 +32,8 @@
                                 <button class="btn btn-md w-100 btn-info mb-1 btn-sm"
                                     *ngIf="year?.employment_information?.current_designation">{{year?.employment_information?.current_designation}}</button>
                                 <button class="btn btn-md w-100 btn-primary mb-1 btn-sm"
-                                    *ngIf="year?.employment_information?.current_band">
+                                    *ngIf="year?.employment_information?.current_band" #local
+                                    (click)="BandClick($event)">
                                     {{year?.employment_information?.current_band}}
                                 </button>
                                 <div class="button-group mb-1 d-flex justify-content-between">
