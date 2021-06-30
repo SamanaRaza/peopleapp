@@ -87,13 +87,13 @@ strong {
 %bold-fonts {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
-  font-size: 12px;
+  font-size: 13px;
 }
 
 %heading-fonts {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
-  font-size: 12px;
+  font-size: 13px;
   color: $primarey-color;
 }
 
@@ -147,17 +147,18 @@ p {
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
     height: 32px;
-    padding: 0 5px;
+    padding: 0 20px;
 
     .mat-card-header-text {
-      margin: 5px 15px;
+      margin: 0;
     }
 
     .mat-card-title {
-      font-size: 12px;
+      font-size: 13px;
       margin-bottom: 0;
       color: $text-color;
       font-weight: 700;
+      line-height: 32px;
     }
   }
 
@@ -213,17 +214,18 @@ p {
         @extend %bold-fonts;
       }
       .mat-paginator-page-size-select {
-        margin: 0;
+        margin: 0 10px;
       }
     }
 
     .mat-icon-button {
       height: 30px;
+      width: auto;
     }
 
     .mat-paginator-range-actions {
       .mat-paginator-range-label {
-        margin: 0 10px;
+        margin: 0 15px 0 10px;
         color: $text-color;
         @extend %bold-fonts;
       }
@@ -241,14 +243,19 @@ p {
   }
 }
 
+.mat-select-arrow-wrapper {
+  padding-top: 1px;
+}
+
 .mat-button-base {
-  background: linear-gradient($bg-color, $bg-color-2);
   height: 28px !important;
   border-radius: 4px !important;
+  padding: 0 10px !important;
+  @extend %bold-fonts;
+  background: linear-gradient($bg-color, $bg-color-2);
   color: $text-primarey !important;
   cursor: pointer !important;
   line-height: normal !important;
-  @extend %bold-fonts;
 
   * {
     @extend %bold-fonts;
@@ -258,9 +265,9 @@ p {
   &:focus,
   &:active,
   &:active:focus {
-    background: linear-gradient($btn-hover, $bg-color);
     height: 28px;
     border-radius: 4px;
+    background: linear-gradient($btn-hover, $bg-color);
     color: $text-color;
     cursor: pointer;
   }
@@ -371,8 +378,8 @@ p {
   margin-right: -20px;
 
   .mat-header-row {
-    min-height: 32px;
-    height: 32px;
+    min-height: 30px;
+    height: 30px;
     border: 0;
 
     .mat-header-cell {
@@ -382,8 +389,8 @@ p {
   }
 
   .mat-row {
-    min-height: 32px;
-    height: 32px;
+    min-height: 30px;
+    height: 30px;
     background-color: $white;
 
     &:nth-child(even) {
@@ -394,8 +401,8 @@ p {
       }
 
       &.highlighted {
-        background-color: lighten($primarey-color, 30%) !important;
-        border-color: lighten($primarey-color, 20%) !important;
+        background-color: lighten($primarey-color, 29%) !important;
+        border-color: lighten($primarey-color, 24%) !important;
       }
     }
 
@@ -412,7 +419,7 @@ p {
 
   mat-row,
   mat-footer-row {
-    border-color: #d8dcdf;
+    border: 1px solid transparent;
     cursor: pointer;
 
     &:hover {
@@ -420,8 +427,8 @@ p {
     }
 
     &.highlighted {
-      background-color: lighten($primarey-color, 30%) !important;
-      border-color: lighten($primarey-color, 20%) !important;
+      background-color: lighten($primarey-color, 29%) !important;
+      border-color: lighten($primarey-color, 24%) !important;
     }
   }
 }
@@ -437,7 +444,8 @@ p {
 }
 
 .mat-form-field {
-  margin: 0 5px;
+  margin-left: 10px;
+  margin-right: 10px;
   float: left;
 
   &.mt-focused,
@@ -487,7 +495,7 @@ p {
 
   .mat-input-element,
   .mat-select-min-line {
-    margin-top: 4px;
+    margin-top: 3px;
     display: block;
     @extend %bold-fonts;
   }
@@ -508,7 +516,6 @@ p {
 
 .filters {
   margin-top: 1px;
-  padding-right: 15px;
 
   .mat-button-base {
     top: 2px;
@@ -743,4 +750,40 @@ mat-footer-cell:first-of-type {
 
 .highcharts-grid-line {
   stroke: transparent !important;
+}
+
+.highcharts-axis-labels {
+  > span {
+    padding: 2px 5px !important;
+    font-family: "Roboto", sans-serif !important;
+    font-weight: 500 !important;
+    font-size: 11px !important;
+  }
+}
+
+.btn-panel {
+  margin-left: 10px;
+  margin-right: 10px;
+  display: inline-block;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  > .btn {
+    margin-left: 5px;
+    margin-right: 5px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
 }

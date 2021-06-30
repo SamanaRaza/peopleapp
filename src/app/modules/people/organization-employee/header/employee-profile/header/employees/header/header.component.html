@@ -33,7 +33,9 @@
                     <mat-label>Filter</mat-label>
                     <input matInput [(ngModel)]="filter" #ngModel placeholder="filter" #input>
                 </mat-form-field>
-                <button mat-button (click)="applyFilter()">Search</button>
+                <div class="btn-panel">
+                    <button mat-button (click)="applyFilter()">Search</button>
+                </div>
             </div>
         </mat-card-header>
         <mat-card-content>
