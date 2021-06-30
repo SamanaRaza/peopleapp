@@ -4,28 +4,32 @@ import {
   ViewChild,
   ElementRef,
   AfterViewInit,
-  ChangeDetectionStrategy
+  ChangeDetectionStrategy,
 } from '@angular/core';
 import * as HighCharts from 'highcharts';
 import { ActivatedRoute } from '@angular/router';
 import { BaseComponentComponent } from 'src/app/shared/base-component/base-component.component';
-import { AllServicesService } from 'src/app/services/all-services.service'
+import { AllServicesService } from 'src/app/services/all-services.service';
 
 @Component({
   selector: 'anms-emp-salary-history-graph',
   templateUrl: './emp-salary-history-graph.component.html',
   styleUrls: ['./emp-salary-history-graph.component.scss'],
-  changeDetection: ChangeDetectionStrategy.Default
-
+  changeDetection: ChangeDetectionStrategy.Default,
 })
-export class EmpSalaryHistoryGraphComponent extends BaseComponentComponent implements OnInit {
+export class EmpSalaryHistoryGraphComponent
+  extends BaseComponentComponent
+  implements OnInit
+{
   @ViewChild('chartContainer') ChartContainer: ElementRef;
   data: any = {};
   queryParams: any = {};
   constructor(
     private allServicesService: AllServicesService,
     private route: ActivatedRoute
-  ) { super(); }
+  ) {
+    super();
+  }
   ngOnInit() {
     let that = this;
   }
@@ -49,7 +53,7 @@ export class EmpSalaryHistoryGraphComponent extends BaseComponentComponent imple
         backgroundColor: '#F2F3F4',
         type: 'line',
         plotBorderWidth: 0,
-        zoomType: 'xy'
+        zoomType: 'xy',
       },
       title: {
         useHTML: true,
@@ -58,11 +62,11 @@ export class EmpSalaryHistoryGraphComponent extends BaseComponentComponent imple
           color: '#0B94DE',
           // 'background-color': '#9BE997',
           // 'padding': '28px 333px 10px 250px',
-          fontWeight: 'bold'
-        }
+          fontWeight: 'bold',
+        },
       },
       credits: {
-        enabled: false
+        enabled: false,
       },
       yAxis: {
         min: 10000,
@@ -74,20 +78,13 @@ export class EmpSalaryHistoryGraphComponent extends BaseComponentComponent imple
         lineColor: '#40A6DC',
         lineWidth: 3,
         title: {
-          text: ''
+          text: '',
         },
         labels: {
           format: '{value:.0f}',
           useHTML: true,
-          style: {
-            color: '#3498DB',
-            'background-color': 'white',
-            'padding': '4px',
-            'box-shadow': '0px 1px',
-            'font-weight': 'bold'
-          }
         },
-        maxPadding: 0.2
+        maxPadding: 0.2,
       },
       xAxis: {
         type: 'datetime',
@@ -97,28 +94,21 @@ export class EmpSalaryHistoryGraphComponent extends BaseComponentComponent imple
         lineWidth: 3,
         labels: {
           useHTML: true,
-          style: {
-            color: '#3498DB',
-            'background-color': 'white',
-            'padding': '4px',
-            'box-shadow': '0px 1px',
-            'font-weight': 'bold'
-          }
         },
       },
       legend: {
         layout: 'vertical',
         align: 'right',
-        verticalAlign: 'middle'
+        verticalAlign: 'middle',
       },
       plotOptions: {
         series: {
           label: {
-            connectorAllowed: false
+            connectorAllowed: false,
           },
           pointStart: Date.UTC(startYear, 0, 1),
-          pointInterval: (365 * 24 * 3600 * 1000) / 1
-        }
+          pointInterval: (365 * 24 * 3600 * 1000) / 1,
+        },
       },
       series: [
         {
@@ -130,32 +120,32 @@ export class EmpSalaryHistoryGraphComponent extends BaseComponentComponent imple
               select: function () {
                 var text = this.y + ' was last selected',
                   chart = this.series.chart;
-                console.log(text)
-              }
-            }
+                console.log(text);
+              },
+            },
           },
           data: data,
-          color: "#51AE69",
+          color: '#51AE69',
           lineWidth: 4,
-          showInLegend: false
-        }
+          showInLegend: false,
+        },
       ],
       responsive: {
         rules: [
           {
             condition: {
-              maxWidth: 500
+              maxWidth: 500,
             },
             chartOptions: {
               legend: {
                 layout: 'horizontal',
                 align: 'center',
-                verticalAlign: 'bottom'
-              }
-            }
-          }
-        ]
-      }
+                verticalAlign: 'bottom',
+              },
+            },
+          },
+        ],
+      },
     };
     HighCharts.chart(that.ChartContainer.nativeElement, options);
   }

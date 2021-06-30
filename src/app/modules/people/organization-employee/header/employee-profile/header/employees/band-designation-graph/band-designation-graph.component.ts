@@ -26,12 +26,13 @@ interface LegendBand {
 })
 export class BandDesignationGraphComponent
   extends BaseComponentComponent
-  implements OnInit, AfterViewInit {
+  implements OnInit, AfterViewInit
+{
   @ViewChild('chartContainer') ChartContainer: ElementRef;
   data: any = {};
   queryParams: any = {};
   legend: LegendBand;
-  processedYData: any = []
+  processedYData: any = [];
   constructor(
     private httpClient: HttpClient,
     private allServicesService: AllServicesService,
@@ -59,7 +60,6 @@ export class BandDesignationGraphComponent
         that.startingYear
       );
     });
-
   }
   generateBandDesignation(bands: any, designations: any, startYear: any) {
     let that = this;
@@ -120,32 +120,26 @@ export class BandDesignationGraphComponent
               this.name +
               '</span>'
             );
-          }
-          else (this.name == 'Designations')
+          } else this.name == 'Designations';
           {
             return (
               '<span class="btn btn-xs btn-width btn-rounded btn-danger">' +
               this.name +
               '</span>'
-
             );
           }
-
         },
       },
       plotOptions: {
-
         series: {
           label: {
             connectorAllowed: false,
-
           },
           dataLabels: {
-            enabled: false
+            enabled: false,
           },
           pointStart: Date.UTC(startYear, 0, 1),
           pointInterval: (365 * 24 * 3600 * 1000) / 1,
-
         },
       },
       series: [
@@ -158,9 +152,9 @@ export class BandDesignationGraphComponent
               select: function () {
                 var text = this.y + ' was last selected',
                   chart = this.series.chart;
-                console.log(text)
-              }
-            }
+                console.log(text);
+              },
+            },
           },
           lineWidth: 4,
           data: bands,
@@ -173,15 +167,14 @@ export class BandDesignationGraphComponent
             events: {
               select: function () {
                 var text = this.y + ' was last selected',
-                  chart = this.series.chart;  
-                console.log(text)
-              }
-            }
+                  chart = this.series.chart;
+                console.log(text);
+              },
+            },
           },
           lineWidth: 4,
           data: designations,
         },
-
       ],
 
       responsive: {

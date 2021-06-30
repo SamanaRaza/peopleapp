@@ -238,13 +238,6 @@ export class PerformanceHistoryGraphComponent implements OnInit {
         type: 'datetime',
         labels: {
           useHTML: true,
-          style: {
-            color: '#3498DB',
-            'background-color': 'white',
-            padding: '4px',
-            'box-shadow': '0px 1px',
-            'font-weight': 'bold',
-          },
         },
         lineColor: '#40A6DC',
         lineWidth: 3,
@@ -273,13 +266,6 @@ export class PerformanceHistoryGraphComponent implements OnInit {
       yAxis: {
         labels: {
           useHTML: true,
-          style: {
-            color: '#3498DB',
-            'background-color': 'white',
-            padding: '4px',
-            'box-shadow': '0px 1px',
-            'font-weight': 'bold',
-          },
         },
         categories: ['LM', 'HR', 'Managment', 'Employee'],
         gridLineWidth: 0,
@@ -331,9 +317,9 @@ export class PerformanceHistoryGraphComponent implements OnInit {
               select: function () {
                 var text = this.y + ' was last selected',
                   chart = this.series.chart;
-                console.log(text)
-              }
-            }
+                console.log(text);
+              },
+            },
           },
         },
         {
@@ -347,9 +333,9 @@ export class PerformanceHistoryGraphComponent implements OnInit {
               select: function () {
                 var text = this.y + ' was last selected',
                   chart = this.series.chart;
-                console.log(text)
-              }
-            }
+                console.log(text);
+              },
+            },
           },
         },
         {
@@ -363,9 +349,9 @@ export class PerformanceHistoryGraphComponent implements OnInit {
               select: function () {
                 var text = this.y + ' was last selected',
                   chart = this.series.chart;
-                console.log(text)
-              }
-            }
+                console.log(text);
+              },
+            },
           },
         },
         {
@@ -379,9 +365,9 @@ export class PerformanceHistoryGraphComponent implements OnInit {
               select: function () {
                 var text = this.y + ' was last selected',
                   chart = this.series.chart;
-                console.log(text)
-              }
-            }
+                console.log(text);
+              },
+            },
           },
         },
         {
