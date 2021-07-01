@@ -6,6 +6,8 @@ import { BreadcrumbService } from 'src/app/shared/breadcrumb/breadcrumb.service'
 import { AllServicesService } from 'src/app/services/all-services.service';
 import { ComParentChildService } from 'src/app/services/com-parent-child.service';
 import { Subscription } from 'rxjs';
+import cssVars from 'css-vars-ponyfill';
+
 @Component({
   selector: 'anms-employment-story',
   templateUrl: './employment-story.component.html',
@@ -16,15 +18,56 @@ export class EmploymentStoryComponent implements OnInit {
   employeeTimeline: any = []
   queryParams: any = {};
   isLoading = true;
+  color:any=[];
   private subscription: Subscription;
   constructor(private httpClient: HttpClient, private readonly breadcrumbService: BreadcrumbService,
     private route: ActivatedRoute, private comParentChildService: ComParentChildService,
     private allServicesService: AllServicesService, private cdf: ChangeDetectorRef,
   ) {
-    this.subscription = this.comParentChildService.on('colors').subscribe(color => {
-      console.log('Color2',color)
+    this.subscription = this.comParentChildService.on('colors').subscribe(data => {
+
+      this.color = data;
+      console.log('Color2',this.color);
+      cssVars({
+        rootElement:document,
+        shadowDOM: false,
+        include: 'link[rel=stylesheet],style',
+        exclude: '',
+        variables: {
+          '--designation': this.color.designation,
+          '--band': this.color.band,
+          '--department': this.color.department,
+          '--name': this.color.name,
+          '--duration_date': this.color.duration_date,
+          '--location': this.color.location,
+          '--office_name': this.color.office_name,
+          '--foreground': this.color.foreground,
+          '--background': this.color.background,
+          '--graph_foreground':this.color.graph_foreground,
+          '--graph_background':this.color.graph_background,
+          '--appriasal_name': this.color.appriasal_name,
+          '--appriasal_rating': this.color.appriasal_rating,
+          '----salary_change': this.color.salary_change,
+          '--rewards': this.color.rewards,
+          '--appericiation': this.color.appericiation,
+          '--warning': this.color.warning,
+          '--perfomance_department': this.color.perfomance_department,
+          '--appriasal_name_year': this.color.appriasal_name_year,
+          '--arrow_designation': this.color.arrow_designation,
+          '--arrow_name': this.color.arrow_name,
+          '--arrow_department': this.color.arrow_department,
+          '--font_color': this.color.font_color,
+          '--title_background_color': this.color.title_background_color,
+          '--title_font_color': this.color.title_font_color,
+          '--background_color': this.color.background_color
+
+        },
+      });
+
+
     });
   }
+
 
 
   ngOnInit() {
@@ -40,6 +83,7 @@ export class EmploymentStoryComponent implements OnInit {
     that.setBreadcrumbs();
     this.cdf.detectChanges();
   }
+
   currentYear(event: any) {
     console.log('year', event.target.innerHTML)
   }
@@ -94,4 +138,5 @@ export class EmploymentStoryComponent implements OnInit {
     });
     that.breadcrumbService.set(breadcrumbs);
   }
+
 }

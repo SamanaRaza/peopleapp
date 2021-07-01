@@ -4,6 +4,8 @@ import { AllServicesService } from 'src/app/services/all-services.service'
 import { ActivatedRoute } from "@angular/router";
 import { ComParentChildService } from 'src/app/services/com-parent-child.service';
 import { Subscription } from 'rxjs';
+import cssVars from 'css-vars-ponyfill';
+
 
 @Component({
   selector: 'anms-transfer-story',
