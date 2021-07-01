@@ -43,7 +43,7 @@ $btn-hover: #8addff;
 
   // Year
   --foreground: #5a89ff;
-  --background: #5a89ff;
+  --background: lighter(#5a89ff, 10%);
 
   // Graph Values
   --graph_foreground: #5a89ff;
@@ -53,7 +53,7 @@ $btn-hover: #8addff;
   --appriasal_rating: #827dec;
   --salary_change: #0b9694;
 
-  // perfomance_history
+  // perfomance history
   --rewards: #00a651;
   --appericiation: #edbb07;
   --warning: #50627d;

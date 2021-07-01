@@ -253,7 +253,6 @@ p {
   padding: 0 10px !important;
   @extend %bold-fonts;
   background: linear-gradient($bg-color, $bg-color-2);
-  color: $text-primarey !important;
   cursor: pointer !important;
   line-height: normal !important;
 
@@ -779,4 +778,193 @@ mat-footer-cell:first-of-type {
       margin-left: 0;
     }
   }
+}
+
+.designation_btn {
+  background: var(--designation);
+  border-color: var(--designation);
+  color: $white;
+
+  &:hover,
+  &:focus,
+  &:focus,
+  &:active:focus,
+  &.cdk-focused,
+  &.cdk-mouse-focused {
+    background: none;
+    background-color: var(--designation);
+    border-color: var(--designation);
+  }
+}
+
+.band_btn {
+  background: var(--band);
+  color: $white;
+
+  &:hover,
+  &:focus,
+  &:focus,
+  &:active:focus,
+  &.cdk-focused,
+  &.cdk-mouse-focused {
+    background: var(--band);
+    color: $white;
+  }
+}
+
+.department_btn {
+  background: var(--department);
+  color: $white;
+
+  &:hover,
+  &:focus,
+  &:focus,
+  &:active:focus,
+  &.cdk-focused,
+  &.cdk-mouse-focused {
+    background: var(--department);
+    color: $white;
+  }
+}
+
+.name_btn {
+  background: var(--name);
+  color: $white;
+
+  &:hover,
+  &:focus,
+  &:focus,
+  &:active:focus,
+  &.cdk-focused,
+  &.cdk-mouse-focused {
+    background: var(--name);
+    color: $white;
+  }
+}
+
+.duration_date_btn {
+  background: var(--duration_date);
+  color: $white;
+
+  &:hover,
+  &:focus,
+  &:focus,
+  &:active:focus,
+  &.cdk-focused,
+  &.cdk-mouse-focused {
+    background: var(--duration_date);
+    color: $white;
+  }
+}
+
+.location_btn {
+  background: var(--location);
+  color: $white;
+
+  &:hover,
+  &:focus,
+  &:focus,
+  &:active:focus,
+  &.cdk-focused,
+  &.cdk-mouse-focused {
+    background: var(--location);
+    color: $white;
+  }
+}
+
+.office_name_btn {
+  background: var(--office_name);
+  color: $white;
+
+  &:hover,
+  &:focus,
+  &:focus,
+  &:active:focus,
+  &.cdk-focused,
+  &.cdk-mouse-focused {
+    background: var(--office_name);
+    color: $white;
+  }
+}
+
+.year-btn {
+  background: var(--background);
+  color: $white;
+
+  &:hover,
+  &:focus,
+  &:focus,
+  &:active:focus,
+  &.cdk-focused,
+  &.cdk-mouse-focused {
+    background: var(--background);
+    color: $white;
+  }
+}
+
+.appriasal_name {
+  background: var(--appriasal_name);
+  color: $white;
+
+  &:hover,
+  &:focus,
+  &:focus,
+  &:active:focus,
+  &.cdk-focused,
+  &.cdk-mouse-focused {
+    background: var(--appriasal_name);
+    color: $white;
+  }
+}
+
+.appriasal_rating {
+  background: var(--appriasal_rating);
+  color: $white;
+
+  &:hover,
+  &:focus,
+  &:focus,
+  &:active:focus,
+  &.cdk-focused,
+  &.cdk-mouse-focused {
+    background: var(--appriasal_rating);
+    color: $white;
+  }
+}
+
+.salary_change {
+  background: var(--salary_change);
+  color: $white;
+
+  &:hover,
+  &:focus,
+  &:focus,
+  &:active:focus,
+  &.cdk-focused,
+  &.cdk-mouse-focused {
+    background: var(--salary_change);
+    color: $white;
+  }
+}
+
+.grid-row {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(var(--bs-gutter-y) * -1);
+  margin-right: calc(var(--bs-gutter-x) / -2);
+  margin-left: calc(var(--bs-gutter-x) / -2);
+}
+
+.grid-4 {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-right: calc(var(--bs-gutter-x) / 2);
+  padding-left: calc(var(--bs-gutter-x) / 2);
+  margin-top: var(--bs-gutter-y);
+  flex: 0 0 auto;
+  width: 33.3333333333%;
 }
