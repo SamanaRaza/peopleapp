@@ -1,6 +1,7 @@
-{"status": "pass",
-"message": "success",
-"data":[ {
+{
+  "status": "pass",
+  "message": "success",
+  "data": {
     "designation": "#5A89FF",
     "band": "#14B5DO",
     "department": "#00A651",
@@ -9,35 +10,35 @@
     "location": "#29CB97",
     "office_name": "#6E6C8F",
     "year": {
-        "foreground": "#5A89FF",
-        "background": "#5A89FF",
-        "background_opacity": "20"
+      "foreground": "#5A89FF",
+      "background": "#5A89FF",
+      "background_opacity": "20"
     },
     "graph_values": {
-        "foreground": "#5A89FF",
-        "background": "#5A89FF",
-        "background_opacity": "20"
+      "foreground": "#5A89FF",
+      "background": "#5A89FF",
+      "background_opacity": "20"
     },
     "appriasal_name": "#FE8F2D",
     "appriasal_rating": "#827DEC",
     "salary_change": "#0B9694",
     "perfomance_history": {
-        "rewards": "#00A651",
-        "appericiation": "#EDBB07",
-        "warning": "#FE5F2D",
-        "training": "#5A89FF"
+      "rewards": "#00A651",
+      "appericiation": "#EDBB07",
+      "warning": "#FE5F2D",
+      "training": "#5A89FF"
     },
     "Arrows": {
-        "appriasal_name_year": "#FE8F2D",
-        "designation": "#5A89FF",
-        "name": "#50627D",
-        "department": "#00A651"
+      "appriasal_name_year": "#FE8F2D",
+      "designation": "#5A89FF",
+      "name": "#50627D",
+      "department": "#00A651"
     },
     "Common": {
-        "font_color": "#FFFFFF",
-        "title_background_color": "#D8DCDF",
-        "title_font_color": "#343434",
-        "background_color": "#FAFBFB"
+      "font_color": "#FFFFFF",
+      "title_background_color": "#D8DCDF",
+      "title_font_color": "#343434",
+      "background_color": "#FAFBFB"
     }
+  }
 }
-]}
