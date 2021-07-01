@@ -31,3 +31,76 @@ $border-color-2: #d8d8d8;
 $footer-bg: $bg-color;
 
 $btn-hover: #8addff;
+
+:root {
+  --designation: #5fa931;
+  --band: #14b5d0;
+  --department: #00a651;
+  --name: #50627d;
+  --duration_date: #edbb07;
+  --location: #29cb97;
+  --office_name: #6e6c8f;
+
+  // Year
+  --foreground: #5a89ff;
+  --background: #5a89ff;
+
+  // Graph Values
+  --graph_foreground: #5a89ff;
+  --graph_background: #5a89ff;
+
+  --appriasal_name: #fe8f2d;
+  --appriasal_rating: #827dec;
+  --salary_change: #0b9694;
+
+  // perfomance_history
+  --rewards: #00a651;
+  --appericiation: #edbb07;
+  --warning: #50627d;
+  --perfomance_department: #00a651;
+
+  // Arrows
+  --appriasal_name_year: #fe8f2d;
+  --arrow_designation: #5a89ff;
+  --arrow_name: #50627d;
+  --arrow_department: #00a651;
+
+  // Common
+  --font_color: #ffffff;
+  --title_background_color: #d8dcdf;
+  --title_font_color: #343434;
+  --background_color: #fafbfb;
+}
+// pass variables into a sass map
+$variables: (
+  --designation: var(--designation),
+  --band: var(--band),
+  --department: var(--department),
+  --name: var(--name),
+  --duration_date: var(--duration_date),
+  --location: var(--location),
+  --office_name: var(--office_name),
+  // Arrows
+  --foreground: var(--foreground),
+  --background: var(--background),
+  // Graph Values
+  --graph_foreground: var(--graph_foreground),
+  --graph_background: var(--graph_background),
+  --appriasal_name: var(--appriasal_name),
+  --appriasal_rating: var(--appriasal_rating),
+  --salary_change: var(--salary_change),
+  // perfomance_history
+  --rewards: var(--rewards),
+  --appericiation: var(--appericiation),
+  --warning: var(--warning),
+  --perfomance_department: var(--perfomance_department),
+  // Arrows
+  --appriasal_name_year: var(--appriasal_name_year),
+  --arrow_designation: var(--arrow_designation),
+  --arrow_department: var(--arrow_department),
+  // Common
+  --font_color: var(--font_color),
+  --title_background_color: var(--title_background_color),
+  --title_font_color: var(--title_font_color),
+  --background_color: var(--background_color),
+);
