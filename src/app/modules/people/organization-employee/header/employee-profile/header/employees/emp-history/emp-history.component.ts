@@ -1,6 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { HttpClient } from '@angular/common/http';
 import { AllServicesService } from 'src/app/services/all-services.service'
+import { ComParentChildService } from 'src/app/services/com-parent-child.service'
 import { ActivatedRoute } from "@angular/router";
 
 @Component({
@@ -16,12 +17,14 @@ export class EmpHistoryComponent implements OnInit {
 
   constructor(private httpClient: HttpClient,
     private allServicesService: AllServicesService,
+    private comParentChildService: ComParentChildService,
     private route: ActivatedRoute) { }
   ngOnInit() {
     this.allServicesService.getColors().subscribe((data: any) => {
       this.his_color = data.data;
       console.log('colors',this.his_color)
-      
+     let that = this
+      that.comParentChildService.publish('colors', this.his_color);
     })
 
   }

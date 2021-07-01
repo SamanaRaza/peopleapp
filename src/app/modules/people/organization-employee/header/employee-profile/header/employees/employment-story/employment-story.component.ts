@@ -4,7 +4,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Breadcrumb } from 'src/app/shared/breadcrumb/breadcrumb.model';
 import { BreadcrumbService } from 'src/app/shared/breadcrumb/breadcrumb.service';
 import { AllServicesService } from 'src/app/services/all-services.service';
-
+import { ComParentChildService } from 'src/app/services/com-parent-child.service';
+import { Subscription } from 'rxjs';
 @Component({
   selector: 'anms-employment-story',
   templateUrl: './employment-story.component.html',
@@ -15,9 +16,16 @@ export class EmploymentStoryComponent implements OnInit {
   employeeTimeline: any = []
   queryParams: any = {};
   isLoading = true;
+  private subscription: Subscription;
+  constructor(private httpClient: HttpClient, private readonly breadcrumbService: BreadcrumbService,
+    private route: ActivatedRoute, private comParentChildService: ComParentChildService,
+    private allServicesService: AllServicesService, private cdf: ChangeDetectorRef,
+  ) {
+    this.subscription = this.comParentChildService.on('colors').subscribe(color => {
+      console.log('Color2',color)
+    });
+  }
 
-  constructor(private httpClient: HttpClient, private readonly breadcrumbService: BreadcrumbService, private route: ActivatedRoute,
-    private allServicesService: AllServicesService, private cdf: ChangeDetectorRef) { }
 
   ngOnInit() {
     let that = this;
@@ -32,39 +40,39 @@ export class EmploymentStoryComponent implements OnInit {
     that.setBreadcrumbs();
     this.cdf.detectChanges();
   }
-  currentYear(event: any){
-    console.log('year',event.target.innerHTML)
+  currentYear(event: any) {
+    console.log('year', event.target.innerHTML)
   }
-  BandClick(event: any){
-    console.log('Band',event.target.innerHTML)
+  BandClick(event: any) {
+    console.log('Band', event.target.innerHTML)
   }
-  AppriasalName(event: any){
-    console.log('AppriasalName',event.target.innerHTML)
+  AppriasalName(event: any) {
+    console.log('AppriasalName', event.target.innerHTML)
   }
-   assesment(event: any){
-    console.log('assesment',event.target.innerHTML)
+  assesment(event: any) {
+    console.log('assesment', event.target.innerHTML)
   }
-  salary(event: any){
-     console.log('Old Salary & New Salary',event.target.innerHTML)
-   }
-   currentDesignation(event: any){
-     console.log('currentDesignation',event.target.innerHTML)
-   }
-   currentDepartment (event: any){
-     console.log('currentDepartment',event.target.innerHTML)
-   }
-   currentBranch (event: any){
-     console.log('currentBranch',event.target.innerHTML)
-   }
-   startingDate(event: any){
-    console.log('startingDate',event.target.innerHTML)
+  salary(event: any) {
+    console.log('Old Salary & New Salary', event.target.innerHTML)
   }
-  duration(event: any){
-     console.log('duration',event.target.innerHTML)
-   }
-   LMInfo(event: any){
-     console.log('LM Info',event.target.innerHTML)
-   }
+  currentDesignation(event: any) {
+    console.log('currentDesignation', event.target.innerHTML)
+  }
+  currentDepartment(event: any) {
+    console.log('currentDepartment', event.target.innerHTML)
+  }
+  currentBranch(event: any) {
+    console.log('currentBranch', event.target.innerHTML)
+  }
+  startingDate(event: any) {
+    console.log('startingDate', event.target.innerHTML)
+  }
+  duration(event: any) {
+    console.log('duration', event.target.innerHTML)
+  }
+  LMInfo(event: any) {
+    console.log('LM Info', event.target.innerHTML)
+  }
   setBreadcrumbs() {
     let that = this;
     let breadcrumbs: Breadcrumb[] = [];

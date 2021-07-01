@@ -21,6 +21,7 @@ import { FixedAmountDialogComponent } from './header/employee-profile/header/emp
 import { VariableComponentsDialogComponent } from './header/employee-profile/header/employees/variable-components-dialog/variable-components-dialog.component';
 import { FormsModule } from '@angular/forms';
 import { EmployeeTimelineSummaryComponent } from './header/employee-profile/header/employees/employee-timeline-summary/employee-timeline-summary.component'
+import { ComParentChildService } from 'src/app/services/com-parent-child.service';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,9 @@ import { EmployeeTimelineSummaryComponent } from './header/employee-profile/head
     FontAwesomeModule,
     FormsModule
   ],
+  providers: [
+    ComParentChildService
+  ]
 
 })
 export class OrganizationEmployeeModule { }
