@@ -968,3 +968,22 @@ mat-footer-cell:first-of-type {
   flex: 0 0 auto;
   width: 33.3333333333%;
 }
+
+.button-group {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  --bs-gutter-x: 10px;
+  --bs-gutter-y: 10px;
+  margin-top: calc(var(--bs-gutter-y) * -1);
+  margin-right: calc(var(--bs-gutter-x) * -0.5);
+  margin-left: calc(var(--bs-gutter-x) * -0.5);
+
+  .mat-button-base {
+    flex: 1 0 0%;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+}
