@@ -248,7 +248,7 @@ p {
 }
 
 .mat-button-base {
-  height: 28px !important;
+  height: 28px;
   border-radius: 4px !important;
   padding: 0 10px !important;
   @extend %bold-fonts;
@@ -970,20 +970,33 @@ mat-footer-cell:first-of-type {
 }
 
 .button-group {
+  margin-left: -5px;
+  margin-right: -5px;
+  margin-bottom: 5px;
   display: flex;
-  width: 100%;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  --bs-gutter-x: 10px;
-  --bs-gutter-y: 10px;
-  margin-top: calc(var(--bs-gutter-y) * -1);
-  margin-right: calc(var(--bs-gutter-x) * -0.5);
-  margin-left: calc(var(--bs-gutter-x) * -0.5);
 
   .mat-button-base {
+    margin-left: 5px;
+    margin-right: 5px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-direction: row;
     flex: 1 0 0%;
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
+    @extend %bold-fonts;
+    height: 40px !important;
   }
+}
+
+.self-center {
+  align-self: center;
+}
+
+.pb-60 {
+  padding-bottom: 60px !important;
 }

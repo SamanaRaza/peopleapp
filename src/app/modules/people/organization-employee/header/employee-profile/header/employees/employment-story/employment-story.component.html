@@ -6,8 +6,8 @@
         <div class="graph-container mt-4 pb-3">
             <div *ngFor="let timeline of employeeTimeline">
                 <div *ngFor="let year of timeline.years">
-                    <div class="grid-row gx-100 gy-50">
-                        <div class="grid-4 border-right-line left-arrow">
+                    <div class="grid-row gx-100">
+                        <div class="grid-4 border-right-line left-arrow self-center">
                             <div class="year-container year" (click)="currentYear($event)">
                                 {{year?.starting_year}}
                             </div>
@@ -31,7 +31,7 @@
                                 </button>
                             </div>
                         </div>
-                        <div *ngIf="year?.employment_information" class="grid-4 right-arrow">
+                        <div *ngIf="year?.employment_information" class="grid-4 border-left-line right-arrow pb-60">
                             <div class="right-container">
                                 <div class="button-group">
                                     <button class="designation_btn" mat-raised-button
@@ -70,15 +70,20 @@
                                 <ng-container *ngFor="let underPerson of year.LM">
                                     <div class="col-auto">
                                         <div class="profil-details text-center mb-1">
-                                            <button class="duration_date_btn" mat-raised-button *ngIf="underPerson.name"
-                                                (click)="LMInfo($event)">{{underPerson?.name}}</button>
+                                            <div class="button-group">
+                                                <button class="duration_date_btn" mat-raised-button
+                                                    *ngIf="underPerson.name"
+                                                    (click)="LMInfo($event)">{{underPerson?.name}}</button>
+                                            </div>
                                             <div class="w-100">
                                                 <div class="rounded-image text-center">
                                                     <img [src]="underPerson.pic" />
                                                 </div>
                                             </div>
-                                            <button class="name_btn" mat-raised-button *ngIf="underPerson.duration"
-                                                (click)="LMInfo($event)">{{underPerson?.duration}}</button>
+                                            <div class="button-group">
+                                                <button class="name_btn" mat-raised-button *ngIf="underPerson.duration"
+                                                    (click)="LMInfo($event)">{{underPerson?.duration}}</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </ng-container>
