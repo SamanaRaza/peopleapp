@@ -267,7 +267,7 @@ p {
     height: 28px;
     border-radius: 4px;
     background: linear-gradient($btn-hover, $bg-color);
-    color: $text-color;
+    color: $white;
     cursor: pointer;
   }
 
@@ -956,6 +956,7 @@ mat-footer-cell:first-of-type {
   margin-right: calc(var(--bs-gutter-x) / -2);
   margin-left: calc(var(--bs-gutter-x) / -2);
   align-items: stretch;
+  width: 100%;
 
   .grid-4 {
     box-sizing: border-box;
@@ -966,6 +967,20 @@ mat-footer-cell:first-of-type {
     margin-top: var(--bs-gutter-y);
     flex: 0 0 auto;
     width: 33.3333333333%;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .grid-6 {
+    box-sizing: border-box;
+    flex-shrink: 0;
+    max-width: 100%;
+    padding-right: calc(var(--bs-gutter-x) / 2);
+    padding-left: calc(var(--bs-gutter-x) / 2);
+    margin-top: var(--bs-gutter-y);
+    flex: 0 0 auto;
+    width: 50%;
     position: relative;
     display: flex;
     flex-wrap: wrap;
@@ -1004,4 +1019,16 @@ mat-footer-cell:first-of-type {
 
 .pb-60 {
   padding-bottom: 60px !important;
+}
+
+.container-fluid {
+  width: 80%;
+}
+
+.right-container {
+  width: 100%;
+}
+
+.profil-details {
+  width: 100%;
 }

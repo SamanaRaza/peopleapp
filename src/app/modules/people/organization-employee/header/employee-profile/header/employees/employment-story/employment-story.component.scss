@@ -88,27 +88,29 @@
 }
 
 .right-arrow-center {
-  position: relative;
+  position: absolute;
+  top: 50%;
+  bottom: auto;
+
+  &::before {
+    position: absolute;
+    left: -5px;
+    border-color: transparent transparent transparent var(--name);
+    border-width: 6px 0px 6px 11px;
+    border-style: solid;
+    content: "";
+    display: block;
+    top: 0;
+  }
 
   &::after {
     position: absolute;
     left: -33px;
-    border-bottom: 4px solid #000;
+    border-bottom: 1px solid var(--name);
     width: 34px;
     content: "";
     display: block;
-    top: 50px;
-    margin-top: 0;
-  }
-  &::before {
-    position: absolute;
-    left: -5px;
-    border-color: transparent transparent transparent #000;
-    border-width: 8px;
-    border-style: solid;
-    content: "";
-    display: block;
-    top: 44px;
+    top: 5px;
   }
 }
 
