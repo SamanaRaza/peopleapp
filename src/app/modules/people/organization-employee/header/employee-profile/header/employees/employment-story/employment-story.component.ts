@@ -116,8 +116,14 @@ export class EmploymentStoryComponent implements OnInit {
   duration(event: any) {
     console.log('duration', event.target.innerHTML);
   }
+  LMDuration(event: any) {
+    console.log('LM Duration', event.target.innerHTML);
+  }
+  LMName(event: any) {
+    console.log('LM Name', event.target.innerHTML);
+  }
   LMInfo(event: any) {
-    console.log('LM Info', event.target.innerHTML);
+    console.log('LM Info', event.name + '' + event.duration);
   }
   setBreadcrumbs() {
     let that = this;
