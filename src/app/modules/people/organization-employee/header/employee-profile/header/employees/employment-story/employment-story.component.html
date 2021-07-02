@@ -73,16 +73,16 @@
                                             <div class="button-group">
                                                 <button class="duration_date_btn" mat-raised-button
                                                     *ngIf="underPerson.name"
-                                                    (click)="LMInfo($event)">{{underPerson?.name}}</button>
+                                                    (click)="LMName($event)">{{underPerson?.name}}</button>
                                             </div>
                                             <div class="w-100">
                                                 <div class="rounded-image text-center">
-                                                    <img [src]="underPerson.pic" />
+                                                    <img [src]="underPerson.pic" (click)="LMInfo(underPerson)"/>
                                                 </div>
                                             </div>
                                             <div class="button-group">
                                                 <button class="name_btn" mat-raised-button *ngIf="underPerson.duration"
-                                                    (click)="LMInfo($event)">{{underPerson?.duration}}</button>
+                                                    (click)="LMDuration($event)">{{underPerson?.duration}}</button>
                                             </div>
                                         </div>
                                     </div>
