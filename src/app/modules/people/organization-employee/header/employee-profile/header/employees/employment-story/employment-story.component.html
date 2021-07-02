@@ -6,7 +6,7 @@
         <div class="graph-container mt-4 pb-3">
             <div *ngFor="let timeline of employeeTimeline">
                 <div *ngFor="let year of timeline.years">
-                    <div class="grid-row gx-100">
+                    <div class="grid-row">
                         <div class="grid-4">
                             <span class="border-right-line"></span>
                             <div class="self-center">
@@ -35,7 +35,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div *ngIf="year?.employment_information" class="grid-4  pb-60">
+                        <div *ngIf="year?.employment_information" class="grid-3 pb-60">
                             <span class="right-arrow"></span>
                             <div class="right-container">
                                 <div class="button-group">
@@ -70,7 +70,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div *ngIf="year.LM?.length > 0" class="grid-4 ">
+                        <div *ngIf="year.LM?.length > 0" class="grid-4 profile-grid">
                             <div class="grid-row">
                                 <div class="right-arrow-center"></div>
                                 <ng-container *ngFor="let underPerson of year.LM">

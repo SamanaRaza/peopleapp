@@ -33,6 +33,7 @@ $footer-bg: $bg-color;
 $btn-hover: #8addff;
 
 :root {
+  --l: 50%; /*the initial lightness*/
   --designation: #5fa931;
   --band: #14b5d0;
   --department: #00a651;
@@ -43,7 +44,7 @@ $btn-hover: #8addff;
 
   // Year
   --foreground: #5a89ff;
-  --background: lighter(#5a89ff, 10%);
+  --background: hsl(223deg 100% 68% / 20%);
 
   // Graph Values
   --graph_foreground: #5a89ff;
