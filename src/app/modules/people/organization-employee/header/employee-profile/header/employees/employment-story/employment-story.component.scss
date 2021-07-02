@@ -22,131 +22,94 @@
   --bs-gutter-x: 150px;
 }
 
-// .border-right-line {
-//   border-right: 4px solid blue;
-// }
+.border-right-line {
+  border-right: 1px solid var(--designation);
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
 
 // .border-left-line {
 //   border-left: 4px solid blue;
 // }
 
 .left-arrow {
-  position: relative;
-}
-
-.left-arrow::after {
   position: absolute;
-  right: 0;
-  border-bottom: 4px solid #000;
-  width: 30px;
-  content: "";
-  display: block;
-  top: 65px;
-}
+  right: -74px;
+  bottom: 30px;
 
-.left-arrow::before {
-  position: absolute;
-  right: 30px;
-  border-color: transparent #000 transparent transparent;
-  border-width: 8px;
-  border-style: solid;
-  content: "";
-  display: block;
-  top: 59px;
-}
+  &::before {
+    position: absolute;
+    right: 50px;
+    border-color: transparent var(--appriasal_name) transparent transparent;
+    border-width: 6px 11px 6px 0px;
+    border-style: solid;
+    content: "";
+    display: block;
+  }
 
-.graph-container div > div:first-child .row .right-arrow::after {
-  top: 0px;
-  bottom: auto;
-}
-
-.graph-container div > div:first-child .row .right-arrow::before {
-  top: -5px;
-  bottom: auto;
+  &::after {
+    position: absolute;
+    right: 0;
+    border-bottom: 1px solid var(--appriasal_name);
+    width: 50px;
+    content: "";
+    display: block;
+    top: 5px;
+  }
 }
 
 .right-arrow {
-  position: relative;
-}
-
-.graph-container div > div:first-child .row .right-container {
-  margin-top: -10px;
-}
-
-.graph-container div > div:last-child .row {
-  align-self: flex-end !important;
-}
-
-.graph-container div > div:last-child .row .right-container {
-  margin-bottom: -10px;
-}
-
-.graph-container div > div:last-child .row .right-arrow {
-  padding-bottom: 0 !important;
-  align-self: flex-end !important;
-}
-
-.graph-container div > div:last-child .row .right-arrow-center {
-  padding-bottom: 0 !important;
-  align-self: flex-end !important;
-}
-
-.right-arrow::after {
   position: absolute;
   left: 0;
-  border-bottom: 4px solid #000;
-  width: 30px;
-  content: "";
-  display: block;
-  top: 15px;
-  margin-top: 0;
-}
 
-.right-arrow::before {
-  position: absolute;
-  left: 30px;
-  border-color: transparent transparent transparent #000;
-  border-width: 8px;
-  border-style: solid;
-  content: "";
-  display: block;
-  top: 9px;
-}
+  &::after {
+    position: absolute;
+    left: 0;
+    border-bottom: 1px solid var(--designation);
+    width: 30px;
+    content: "";
+    display: block;
+    top: 15px;
+    margin-top: 0;
+  }
 
-.graph-container div > div:last-child .row .right-arrow::after {
-  bottom: 0px;
-  top: auto;
-}
-
-.graph-container div > div:last-child .row .right-arrow::before {
-  bottom: -5px;
-  top: auto;
+  &::before {
+    position: absolute;
+    left: 30px;
+    border-color: transparent transparent transparent var(--designation);
+    border-width: 6px 0px 6px 11px;
+    border-style: solid;
+    content: "";
+    display: block;
+    top: 10px;
+  }
 }
 
 .right-arrow-center {
   position: relative;
-}
 
-.right-arrow-center::after {
-  position: absolute;
-  left: -33px;
-  border-bottom: 4px solid #000;
-  width: 34px;
-  content: "";
-  display: block;
-  top: 50px;
-  margin-top: 0;
-}
-
-.right-arrow-center::before {
-  position: absolute;
-  left: -5px;
-  border-color: transparent transparent transparent #000;
-  border-width: 8px;
-  border-style: solid;
-  content: "";
-  display: block;
-  top: 44px;
+  &::after {
+    position: absolute;
+    left: -33px;
+    border-bottom: 4px solid #000;
+    width: 34px;
+    content: "";
+    display: block;
+    top: 50px;
+    margin-top: 0;
+  }
+  &::before {
+    position: absolute;
+    left: -5px;
+    border-color: transparent transparent transparent #000;
+    border-width: 8px;
+    border-style: solid;
+    content: "";
+    display: block;
+    top: 44px;
+  }
 }
 
 .pb-50 {
@@ -164,12 +127,12 @@
   overflow: hidden;
   margin-top: 10px;
   display: inline-block;
-}
 
-.rounded-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
 .year-container {
@@ -182,8 +145,8 @@
   margin-bottom: 5px;
   font-weight: bold;
   position: absolute;
-  right: 5px;
-  top: 15px;
+  right: -65px;
+  bottom: 35px;
 }
 
 .btn-sm {
@@ -193,6 +156,26 @@
 .graph-container {
   width: 100%;
   margin: 50px 0;
+
+  > div {
+    > div {
+      &:first-child {
+        .grid-row {
+          .border-right-line {
+            top: 15px;
+          }
+        }
+      }
+
+      // &:last-child {
+      //   .grid-row {
+      //     .border-right-line {
+      //       bottom: 56px;
+      //     }
+      //   }
+      // }
+    }
+  }
 }
 .navbar-light .navbar-nav .nav-link {
   border-radius: 3px;

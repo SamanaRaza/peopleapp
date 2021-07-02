@@ -955,18 +955,21 @@ mat-footer-cell:first-of-type {
   margin-top: calc(var(--bs-gutter-y) * -1);
   margin-right: calc(var(--bs-gutter-x) / -2);
   margin-left: calc(var(--bs-gutter-x) / -2);
-}
+  align-items: stretch;
 
-.grid-4 {
-  box-sizing: border-box;
-  flex-shrink: 0;
-  width: 100%;
-  max-width: 100%;
-  padding-right: calc(var(--bs-gutter-x) / 2);
-  padding-left: calc(var(--bs-gutter-x) / 2);
-  margin-top: var(--bs-gutter-y);
-  flex: 0 0 auto;
-  width: 33.3333333333%;
+  .grid-4 {
+    box-sizing: border-box;
+    flex-shrink: 0;
+    max-width: 100%;
+    padding-right: calc(var(--bs-gutter-x) / 2);
+    padding-left: calc(var(--bs-gutter-x) / 2);
+    margin-top: var(--bs-gutter-y);
+    flex: 0 0 auto;
+    width: 33.3333333333%;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
 .button-group {
@@ -995,6 +998,8 @@ mat-footer-cell:first-of-type {
 
 .self-center {
   align-self: center;
+  width: 100%;
+  position: relative;
 }
 
 .pb-60 {

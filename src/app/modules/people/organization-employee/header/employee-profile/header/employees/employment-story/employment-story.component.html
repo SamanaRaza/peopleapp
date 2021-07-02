@@ -7,31 +7,36 @@
             <div *ngFor="let timeline of employeeTimeline">
                 <div *ngFor="let year of timeline.years">
                     <div class="grid-row gx-100">
-                        <div class="grid-4 border-right-line left-arrow self-center">
-                            <div class="year-container year" (click)="currentYear($event)">
-                                {{year?.starting_year}}
-                            </div>
-                            <div class="button-group">
-                                <button mat-raised-button class="appriasal_name"
-                                    (click)="AppriasalName($event)">{{year?.appriasal_salary_change?.appriasal_name}}</button>
-                            </div>
-                            <div class="button-group" color="accent">
-                                <button class="appriasal_rating" mat-raised-button (click)="assesment($event)">Self:
-                                    {{year?.appriasal_salary_change?.assesment?.Self}}</button>
-                                <button class="appriasal_rating" mat-raised-button
-                                    (click)="assesment($event)">LM:{{year?.appriasal_salary_change?.assesment?.LM}}</button>
-                                <button class="appriasal_rating" mat-raised-button
-                                    (click)="assesment($event)">HR:{{year?.appriasal_salary_change?.assesment?.HR}}</button>
-                            </div>
-                            <div class="button-group">
-                                <button class="salary_change" mat-raised-button (click)="salary($event)">
-                                    {{year?.appriasal_salary_change?.old_salary}} -
-                                    {{year?.appriasal_salary_change?.new_salary}}
-                                    ({{year?.appriasal_salary_change?.change_in_salary}})
-                                </button>
+                        <div class="grid-4">
+                            <span class="border-right-line"></span>
+                            <div class="self-center">
+                                <span class="left-arrow"></span>
+                                <div class="year-container year" (click)="currentYear($event)">
+                                    {{year?.starting_year}}
+                                </div>
+                                <div class="button-group">
+                                    <button mat-raised-button class="appriasal_name"
+                                        (click)="AppriasalName($event)">{{year?.appriasal_salary_change?.appriasal_name}}</button>
+                                </div>
+                                <div class="button-group" color="accent">
+                                    <button class="appriasal_rating" mat-raised-button (click)="assesment($event)">Self:
+                                        {{year?.appriasal_salary_change?.assesment?.Self}}</button>
+                                    <button class="appriasal_rating" mat-raised-button
+                                        (click)="assesment($event)">LM:{{year?.appriasal_salary_change?.assesment?.LM}}</button>
+                                    <button class="appriasal_rating" mat-raised-button
+                                        (click)="assesment($event)">HR:{{year?.appriasal_salary_change?.assesment?.HR}}</button>
+                                </div>
+                                <div class="button-group">
+                                    <button class="salary_change" mat-raised-button (click)="salary($event)">
+                                        {{year?.appriasal_salary_change?.old_salary}} -
+                                        {{year?.appriasal_salary_change?.new_salary}}
+                                        ({{year?.appriasal_salary_change?.change_in_salary}})
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                        <div *ngIf="year?.employment_information" class="grid-4 border-left-line right-arrow pb-60">
+                        <div *ngIf="year?.employment_information" class="grid-4  pb-60">
+                            <span class="right-arrow"></span>
                             <div class="right-container">
                                 <div class="button-group">
                                     <button class="designation_btn" mat-raised-button
