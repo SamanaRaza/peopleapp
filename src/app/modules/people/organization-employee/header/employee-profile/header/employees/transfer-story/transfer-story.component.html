@@ -6,7 +6,7 @@
         <div class="mdc-layout-grid">
             <div class="storyes-card mdc-layout-grid__inner justify-content-center mt-4">
                 <div class="storyes mdc-layout-grid__cell" *ngFor="let year of this.years">
-                    <div *ngIf="year.department"  class="story">
+                    <div  class="story">
                         <div class="year">{{year.year}}</div>
                         <div *ngIf="year.department" class="button-group">
                             <button class="designation_btn" mat-raised-button>{{year.department}}</button>
