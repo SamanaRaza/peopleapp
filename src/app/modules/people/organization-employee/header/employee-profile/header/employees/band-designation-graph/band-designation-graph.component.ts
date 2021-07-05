@@ -80,6 +80,7 @@ export class BandDesignationGraphComponent
         },
       },
       yAxis: {
+        reversed: true,
         title: {
           text: '',
         },
