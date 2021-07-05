@@ -1085,6 +1085,10 @@ mat-footer-cell:first-of-type {
   position: relative;
 }
 
+.mdc-layout-grid__cell-auto {
+  grid-column-end: auto;
+}
+
 .pb-60 {
   padding-bottom: 60px !important;
 }
