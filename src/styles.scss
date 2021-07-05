@@ -722,10 +722,9 @@ mat-footer-cell:first-of-type {
 
     span {
       text-align: center;
-      color: #3498db !important;
-      background-color: white !important;
+      color: #5a89ff !important;
+      background-color: lighten(#5a89ff, 20%) !important;
       padding: 4px !important;
-      box-shadow: 0px 0px 4px 1px #c5c9cc;
       font-weight: bold;
     }
 
