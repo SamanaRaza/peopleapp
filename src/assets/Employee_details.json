@@ -1,0 +1,18 @@
+{"draw":0,"recordsTotal":500,"recordsFiltered":500,"data":[
+    {
+        "status": "pass",
+        "message": "success",
+        "ending_band": "5.1",
+        "latest_band": "6",
+        "starting_designation": "Sr. Credit Analyst",
+        "ending_designation": "Unit Head SD-MIS",
+        "ending_department": "Service Delivery - MIS",
+        "emp_name": "Ahmad Hassan",
+        "emp_pic": "https://images.unsplash.com/photo-1589386417686-0d34b5903d23?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "starting_year": "2012",
+        "ending_year": "2020",
+        "salary_hide": 1,
+        "information": 1
+    }
+]
+}

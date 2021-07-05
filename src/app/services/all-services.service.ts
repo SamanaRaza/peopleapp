@@ -34,7 +34,7 @@ export class AllServicesService {
     return this.http.get('assets/perfomance_history.json');
   }
   public getEmpDetails(): Observable<any> {
-    return this.http.get("assets/EmployeesData.json");
+    return this.http.get("assets/Employee_details.json");
   }
   public getColors(): Observable<any> {
     return this.http.get("assets/employee_his_colors.json");

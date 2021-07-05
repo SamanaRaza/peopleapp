@@ -15,6 +15,7 @@ import cssVars from 'css-vars-ponyfill';
 })
 export class TransferStoryComponent implements OnInit {
   employeeTimeline: any = {};
+  isData : boolean = false;
   year: any = {};
   years: Array<any> = [];
   designations: Array<string> = [];
@@ -37,6 +38,7 @@ export class TransferStoryComponent implements OnInit {
       // this.employeeTimeline = this.timelines.find((x: any) => x.employeeId === this.queryParams.employeeId);
       for(var i = 0; i < propertyValues1.length; i++){
         this.year =  {};
+        this.isData = false;
         this.designations = [];
         this.year.year = parseInt(propertyValues1[i]);
         var value = propertyValues[i];
@@ -44,20 +46,24 @@ export class TransferStoryComponent implements OnInit {
         // this.year.employee_transfer__histories = value[0].employee_transfer__histories;
         for(var j=0; j< employeeDetail.length; j++){
           if(employeeDetail[j].employee_event_name.name == 'Department') {
+            this.isData = true;
             this.year.department = employeeDetail[j].new_label;
           }
           else if(employeeDetail[j].employee_event_name.name == 'Designation') {
-
+            this.isData = true;
             employeeDetail[j].old_label ? this.designations.push(employeeDetail[j].old_label) : null;
             employeeDetail[j].new_label  ? this.designations.push(employeeDetail[j].new_label) : null;
             this.year.designations = this.designations;
           }
           else if(employeeDetail[j].employee_event_name.name == 'Office') {
+            this.isData = true;
             this.year.office = employeeDetail[j].new_label;
             this.year.city = employeeDetail[j].old_label;
           }
         }
-        this.years.push(this.year);
+        if(this.isData == true) {
+          this.years.push(this.year);
+        }
       }
 
     })

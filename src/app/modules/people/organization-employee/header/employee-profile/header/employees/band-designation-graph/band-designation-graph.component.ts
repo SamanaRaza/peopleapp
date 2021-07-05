@@ -80,6 +80,7 @@ export class BandDesignationGraphComponent
         },
       },
       yAxis: {
+        reversed: true,
         title: {
           text: '',
         },
@@ -132,6 +133,18 @@ export class BandDesignationGraphComponent
       },
       plotOptions: {
         series: {
+          events: {
+            legendItemClick: function(event) {
+                var s = this.chart.series;
+                for(var i = 0; i < s.length; i++) {
+                    if(this.name == 'Show All' || this == s[i])
+                        s[i].setVisible(true);
+                    else
+                        s[i].setVisible(false);
+                }
+                return false;
+            }
+        },
           label: {
             connectorAllowed: false,
           },

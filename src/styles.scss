@@ -722,10 +722,10 @@ mat-footer-cell:first-of-type {
 
     span {
       text-align: center;
-      color: #3498db;
-      background-color: white;
-      padding: 4px;
-      box-shadow: 0px 1px;
+      color: #3498db !important;
+      background-color: white !important;
+      padding: 4px !important;
+      box-shadow: 0px 0px 4px 1px #c5c9cc;
       font-weight: bold;
     }
 
@@ -1234,5 +1234,16 @@ mat-footer-cell:first-of-type {
   &:focus:active {
     background: lighten($info-btn, 10%);
     color: $white;
+  }
+}
+
+.highcharts-bubble-series {
+  .highcharts-point {
+    fill-opacity: 1;
+  }
+
+  tspan.highcharts-text-outline {
+    stroke: none;
+    fill: #fff;
   }
 }

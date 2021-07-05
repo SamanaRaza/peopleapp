@@ -294,11 +294,24 @@ export class PerformanceHistoryGraphComponent implements OnInit {
       },
 
       plotOptions: {
+        
         bubble: {
           minSize: 3,
           maxSize: 50,
         },
         series: {
+          events: {
+            legendItemClick: function(event) {
+                var s = this.chart.series;
+                for(var i = 0; i < s.length; i++) {
+                    if(this.name == 'Show All' || this == s[i])
+                        s[i].setVisible(true);
+                    else
+                        s[i].setVisible(false);
+                }
+                return false;
+            }
+        },
           dataLabels: {
             enabled: true,
             format: '{point.name}',

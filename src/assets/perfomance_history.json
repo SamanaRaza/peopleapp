@@ -10,35 +10,35 @@
           "year": "2012",
           "pref_type": "pref_rewards",
           "pref_given_user_name": "hr",
-          "color": "green"
+          "color": "rgb(0 166 81)"
         },
         {
           "pref_level": "mid",
           "year": "2013",
           "pref_type": "pref_appericiation",
           "pref_given_user_name": "lm",
-          "color": "yellow"
+          "color": "rgb(237 187 7)"
         },
         {
           "pref_level": "max",
           "year": "2012",
           "pref_type": "pref_warning",
           "pref_given_user_name": "lm",
-          "color": "red"
+          "color": "rgb(254 95 45)"
         },
         {
           "pref_level": "min",
           "year": "2013",
           "pref_type": "pref_training",
           "pref_given_user_name": "hr",
-          "color": "blue"
+          "color": "rgb(90 137 255)"
         },
         {
           "pref_level": "max",
           "year": "2014",
           "pref_type": "pref_rewards",
           "pref_given_user_name": "lm",
-          "color": "green"
+          "color": "rgb(0 166 81)"
         }
       ]
     },
@@ -50,35 +50,35 @@
           "year": "2016",
           "pref_type": "pref_rewards",
           "pref_given_user_name": "hr",
-          "color": "green"
+          "color": "rgb(0 166 81)"
         },
         {
           "pref_level": "mid",
           "year": "2017",
           "pref_type": "pref_appericiation",
           "pref_given_user_name": "lm",
-          "color": "yellow"
+          "color": "rgb(237 187 7)"
         },
         {
           "pref_level": "max",
           "year": "2018",
           "pref_type": "pref_warning",
           "pref_given_user_name": "lm",
-          "color": "red"
+          "color": "rgb(254 95 45)"
         },
         {
           "pref_level": "min",
           "year": "2019",
           "pref_type": "pref_training",
           "pref_given_user_name": "hr",
-          "color": "blue"
+          "color": "rgb(90 137 255)"
         },
         {
           "pref_level": "min",
           "year": "2020",
           "pref_type": "pref_rewards",
           "pref_given_user_name": "lm",
-          "color": "green"
+          "color": "rgb(0 166 81)"
         }
       ]
     },
@@ -90,35 +90,35 @@
           "year": "2015",
           "pref_type": "pref_rewards",
           "pref_given_user_name": "hr",
-          "color": "green"
+          "color": "rgb(0 166 81)"
         },
         {
           "pref_level": "mid",
           "year": "2017",
           "pref_type": "pref_appericiation",
           "pref_given_user_name": "lm",
-          "color": "yellow"
+          "color": "rgb(237 187 7)"
         },
         {
           "pref_level": "max",
           "year": "2018",
           "pref_type": "pref_warning",
           "pref_given_user_name": "lm",
-          "color": "red"
+          "color": "rgb(254 95 45)"
         },
         {
           "pref_level": "min",
           "year": "2019",
           "pref_type": "pref_training",
           "pref_given_user_name": "hr",
-          "color": "blue"
+          "color": "rgb(90 137 255)"
         },
         {
           "pref_level": "min",
           "year": "2020",
           "pref_type": "pref_rewards",
           "pref_given_user_name": "lm",
-          "color": "green"
+          "color": "rgb(0 166 81)"
         }
       ]
     },
@@ -130,35 +130,35 @@
           "year": "2015",
           "pref_type": "pref_rewards",
           "pref_given_user_name": "hr",
-          "color": "green"
+          "color": "rgb(0 166 81)"
         },
         {
           "pref_level": "mid",
           "year": "2017",
           "pref_type": "pref_appericiation",
           "pref_given_user_name": "lm",
-          "color": "yellow"
+          "color": "rgb(237 187 7)"
         },
         {
           "pref_level": "max",
           "year": "2018",
           "pref_type": "pref_warning",
           "pref_given_user_name": "lm",
-          "color": "red"
+          "color": "rgb(254 95 45)"
         },
         {
           "pref_level": "min",
           "year": "2019",
           "pref_type": "pref_training",
           "pref_given_user_name": "hr",
-          "color": "blue"
+          "color": "rgb(90 137 255)"
         },
         {
           "pref_level": "min",
           "year": "2020",
           "pref_type": "pref_rewards",
           "pref_given_user_name": "lm",
-          "color": "green"
+          "color": "rgb(0 166 81)"
         }
       ]
     },
@@ -170,35 +170,35 @@
           "year": "2015",
           "pref_type": "pref_rewards",
           "pref_given_user_name": "hr",
-          "color": "green"
+          "color": "rgb(0 166 81)"
         },
         {
           "pref_level": "mid",
           "year": "2017",
           "pref_type": "pref_appericiation",
           "pref_given_user_name": "lm",
-          "color": "yellow"
+          "color": "rgb(237 187 7)"
         },
         {
           "pref_level": "max",
           "year": "2018",
           "pref_type": "pref_warning",
           "pref_given_user_name": "lm",
-          "color": "red"
+          "color": "rgb(254 95 45)"
         },
         {
           "pref_level": "min",
           "year": "2019",
           "pref_type": "pref_training",
           "pref_given_user_name": "hr",
-          "color": "blue"
+          "color": "rgb(90 137 255)"
         },
         {
           "pref_level": "min",
           "year": "2020",
           "pref_type": "pref_rewards",
           "pref_given_user_name": "lm",
-          "color": "green"
+          "color": "rgb(0 166 81)"
         }
       ]
     }
