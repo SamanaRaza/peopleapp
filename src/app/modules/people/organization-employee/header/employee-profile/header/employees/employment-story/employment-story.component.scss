@@ -24,10 +24,6 @@
 
 .border-right-line {
   border-right: 1px solid var(--designation);
-  position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 0;
 }
 
 // .border-left-line {
@@ -118,26 +114,46 @@
   width: 100%;
   margin: 50px 0;
 
+  .mdc-layout-grid__cell {
+    position: relative;
+  }
+
+  .right-arrow {
+    margin-left: -24px;
+  }
+
   > div {
     > div {
       &:first-child {
-        .grid-row {
+        .mdc-layout-grid {
           .border-right-line {
             top: 15px;
           }
         }
       }
-
-      // &:last-child {
-      //   .grid-row {
-      //     .border-right-line {
-      //       bottom: 56px;
-      //     }
-      //   }
-      // }
     }
   }
 }
+
+.px-24 {
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+}
+
+.pr-93 {
+  padding-right: 92px;
+}
+
+.right-arrow {
+  &::after {
+    border-bottom: 1px solid var(--designation);
+  }
+
+  &::before {
+    border-color: transparent transparent transparent var(--designation);
+  }
+}
+
 .navbar-light .navbar-nav .nav-link {
   border-radius: 3px;
   padding: 3px 10px;
