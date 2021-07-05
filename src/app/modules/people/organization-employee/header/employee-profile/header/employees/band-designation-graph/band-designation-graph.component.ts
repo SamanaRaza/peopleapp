@@ -116,16 +116,16 @@ export class BandDesignationGraphComponent
         labelFormatter: function () {
           if (this.name == 'Bands') {
             return (
-              '<span class="btn btn-xs btn-width btn-rounded btn-primary">' +
+              '<button class="mat-focus-indicator designation_btn mat-raised-button mat-button-base btn-width"> <span class="mat-button-wrapper">' +
               this.name +
-              '</span>'
+              '</span></button>'
             );
           } else this.name == 'Designations';
           {
             return (
-              '<span class="btn btn-xs btn-width btn-rounded btn-danger">' +
+              '<button class="mat-focus-indicator name_btn mat-raised-button mat-button-base btn-width"> <span class="mat-button-wrapper">' +
               this.name +
-              '</span>'
+              '</span></button>'
             );
           }
         },

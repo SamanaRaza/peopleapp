@@ -188,27 +188,27 @@ export class PerformanceHistoryGraphComponent implements OnInit {
           switch (this.name) {
             case 'Performance Rewards':
               return (
-                '<span  class="btn btn-xs btn-width btn-rounded btn-success rounded-pill">' +
+                '<button class="mat-focus-indicator success-btn mat-raised-button mat-button-base btn-width"> <span class="mat-button-wrapper">' +
                 this.name +
-                '</span>'
+                '</span></button>'
               );
             case 'Letter of Appreciation':
               return (
-                '<span  class="btn btn-xs btn-width btn-rounded btn-light rounded-pill">' +
+                '<button class="mat-focus-indicator warning-btn mat-raised-button mat-button-base btn-width"> <span class="mat-button-wrapper">' +
                 this.name +
-                '</span>'
+                '</span></button>'
               );
             case 'Warning Letter':
               return (
-                '<span  class="btn btn-xs btn-width btn-rounded btn-warning rounded-pill">' +
+                '<button class="mat-focus-indicator danger-btn mat-raised-button mat-button-base btn-width"> <span class="mat-button-wrapper">' +
                 this.name +
-                '</span>'
+                '</span></button>'
               );
             case 'Training':
               return (
-                '<span  class="btn btn-xs btn-width btn-rounded btn-info rounded-pill">' +
+                '<button class="mat-focus-indicator info-btn mat-raised-button mat-button-base btn-width"> <span class="mat-button-wrapper">' +
                 this.name +
-                '</span>'
+                '</span></button>'
               );
             default:
               return '';
