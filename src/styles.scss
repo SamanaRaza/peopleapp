@@ -1063,6 +1063,22 @@ mat-footer-cell:first-of-type {
   }
 }
 
+.align-right {
+  justify-content: flex-end;
+
+  .button-group {
+    justify-content: flex-end;
+  }
+}
+
+.align-left {
+  justify-content: flex-start;
+
+  .button-group {
+    justify-content: flex-start;
+  }
+}
+
 .self-center {
   align-self: center;
   width: 100%;
@@ -1081,7 +1097,7 @@ mat-footer-cell:first-of-type {
   }
 
   @media (max-width: 1199px) {
-    width: 100%;
+    width: 95%;
   }
 }
 
