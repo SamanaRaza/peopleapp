@@ -1,304 +1,255 @@
 {
-    "status": "success",
-    "code": "200",
-    "data": [
-        {
-            "employeeId": "1",
-            "years": [
-                {
-                    "year": "2017",
-                    "department": "process outsourcing service",
-                    "office_name": "people head office",
-                    "office": "New Office",
-                    "city": "Karachi",
-                    "country": "Pakistan",
-                    "designations": [
-                        {
-                            "designation": "sr. credit analyst"
-                        }
-                    ]
-                },
-                {
-                    "year": "2018",
-                    "department": "HCM & OD",
-                    "office_name": "people head office",
-                    "office": "New Office",
-                    "city": "Karachi",
-                    "country": "Pakistan",
-                    "designations": [
-                        {
-                            "designation": "HR"
-                        },
-                        {
-                            "designation": "Designer"
-                        }
-                    ]
-                },
-                {
-                    "year": "2019",
-                    "department": "CDC & HOD",
-                    "office_name": "people secret head office",
-                    "office": "12 New Office",
-                    "city": "Islamabd",
-                    "country": "Pakistan",
-                    "designations": [
-                        {
-                            "designation": "HR Mangaer"
-                        },
-                        {
-                            "designation": "Software Enginner"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "employeeId": "2",
-            "years": [
-                {
-                    "year": "2015",
-                    "department": "process outsourcing service",
-                    "office_name": "people head office",
-                    "office": "New Office",
-                    "city": "Karachi",
-                    "country": "Pakistan",
-                    "designations": [
-                        {
-                            "designation": "sr. credit analyst"
-                        }
-                    ]
-                },
-                {
-                    "year": "2016",
-                    "department": "HCM & OD",
-                    "office_name": "people head office",
-                    "office": "New Office",
-                    "city": "Karachi",
-                    "country": "Pakistan",
-                    "designations": [
-                        {
-                            "designation": "HR Mangaer"
-                        },
-                        {
-                            "designation": "Software Enginner"
-                        }
-                    ]
-                },
-                {
-                    "year": "2017",
-                    "department": "CDC & HOD",
-                    "office_name": "people secret head office",
-                    "office": "12 New Office",
-                    "city": "Islamabd",
-                    "country": "Pakistan",
-                    "designations": [
-                        {
-                            "designation": "HR Mangaer"
-                        },
-                        {
-                            "designation": "Software Enginner"
-                        }
-                    ]
-                },
-                {
-                    "year": "2018",
-                    "department": "GPO",
-                    "office_name": "networks office",
-                    "office": "Airport road",
-                    "city": "Mata",
-                    "country": "Turkey",
-                    "designations": [
-                        {
-                            "designation": "Head Officer"
-                        },
-                        {
-                            "designation": " Soft Checker"
-                        }
-                    ]
-                },
+    "status": "pass",
+    "message": "success",
+    "data": {
+        "2012": [
+            {
+                "id": 1,
+                "starting_date": "2012-06-26",
+                "ending_date": "2013-06-27",
+                "employee_transfer__histories": [
                     {
-                        "year": "2019",
-                        "department": "GPO",
-                        "office_name": "networks office",
-                        "office": "Airport road",
-                        "city": "Mata",
-                        "country": "Turkey",
-                        "designations": [
-                            {
-                                "designation": "Head Officer"
-                            },
-                            {
-                                "designation": " Soft Checker"
-                            }
-                        ]
+                        "event_group_id": 1,
+                        "event_type_id": 3,
+                        "new_label": "Sr. Credit Analyst",
+                        "old_label": null,
+                        "starting_date": "2012-05-25",
+                        "duration": "12 months",
+                        "employee_event_name": {
+                            "id": 3,
+                            "name": "Designation"
+                        }
                     },
-                        {
-                            "year": "2020",
-                            "department": "GPO",
-                            "office_name": "networks office",
-                            "office": "Airport road",
-                            "city": "Mata",
-                            "country": "Turkey",
-                            "designations": [
-                                {
-                                    "designation": "Head Officer"
-                                },
-                                {
-                                    "designation": " Soft Checker"
-                                }
-                            ]
+                    {
+                        "event_group_id": 1,
+                        "event_type_id": 4,
+                        "new_label": "Process Outsorcing Service",
+                        "old_label": null,
+                        "starting_date": "2012-05-25",
+                        "duration": "12 months",
+                        "employee_event_name": {
+                            "id": 4,
+                            "name": "Department"
                         }
-            ]
-        },
-        {
-            "employeeId": "3",
-            "years": [
-                {
-                    "year": "2017",
-                    "department": "process outsourcing service",
-                    "office_name": "people head office",
-                    "office": "New Office",
-                    "city": "Karachi",
-                    "country": "Pakistan",
-                    "designations": [
-                        {
-                            "designation": "sr. credit analyst"
+                    },
+                    {
+                        "event_group_id": 1,
+                        "event_type_id": 7,
+                        "new_label": "Lahore",
+                        "old_label": null,
+                        "starting_date": "2012-05-25",
+                        "duration": "12 months",
+                        "employee_event_name": {
+                            "id": 7,
+                            "name": "Office"
                         }
-                    ]
-                },
-                {
-                    "year": "2018",
-                    "department": "HCM & OD",
-                    "office_name": "people head office",
-                    "office": "New Office",
-                    "city": "Karachi",
-                    "country": "Pakistan",
-                    "designations": [
-                        {
-                            "designation": "HR"
-                        },
-                        {
-                            "designation": "Designer"
+                    }
+                ]
+            }
+        ],
+        "2013": [
+            {
+                "id": 2,
+                "starting_date": "2013-06-26",
+                "ending_date": "2014-06-27",
+                "employee_transfer__histories": []
+            }
+        ],
+        "2014": [
+            {
+                "id": 3,
+                "starting_date": "2014-06-26",
+                "ending_date": "2015-06-27",
+                "employee_transfer__histories": [
+                    {
+                        "event_group_id": 3,
+                        "event_type_id": 3,
+                        "new_label": "Sr. Credit Analyst",
+                        "old_label": "Sr. Credit Analyst",
+                        "starting_date": "2012-06-25",
+                        "duration": "24 months",
+                        "employee_event_name": {
+                            "id": 3,
+                            "name": "Designation"
                         }
-                    ]
-                },
-                {
-                    "year": "2019",
-                    "department": "CDC & HOD",
-                    "office_name": "people secret head office",
-                    "office": "12 New Office",
-                    "city": "Islamabd",
-                    "country": "Pakistan",
-                    "designations": [
-                        {
-                            "designation": "HR Mangaer"
-                        },
-                        {
-                            "designation": "Software Enginner"
+                    },
+                    {
+                        "event_group_id": 3,
+                        "event_type_id": 4,
+                        "new_label": "Process Outsorcing Service",
+                        "old_label": "Process Outsorcing Service",
+                        "starting_date": "2012-06-25",
+                        "duration": "24 months",
+                        "employee_event_name": {
+                            "id": 4,
+                            "name": "Department"
                         }
-                    ]
-                }
-            ]
-        },
-        {
-            "employeeId": "4",
-            "years": [
-                {
-                    "year": "2016",
-                    "department": "process outsourcing service",
-                    "office_name": "people head office",
-                    "office": "New Office",
-                    "city": "Karachi",
-                    "country": "Pakistan",
-                    "designations": [
-                        {
-                            "designation": "sr. credit analyst"
+                    },
+                    {
+                        "event_group_id": 3,
+                        "event_type_id": 7,
+                        "new_label": "People Head Office",
+                        "old_label": "Lahore",
+                        "starting_date": "2012-06-25",
+                        "duration": "24 months",
+                        "employee_event_name": {
+                            "id": 7,
+                            "name": "Office"
                         }
-                    ]
-                },
-                {
-                    "year": "2017",
-                    "department": "HCM & OD",
-                    "office_name": "people head office",
-                    "office": "New Office",
-                    "city": "Karachi",
-                    "country": "Pakistan",
-                    "designations": [
-                        {
-                            "designation": "HR"
-                        },
-                        {
-                            "designation": "Designer"
+                    }
+                ]
+            }
+        ],
+        "2015": [
+            {
+                "id": 4,
+                "starting_date": "2015-06-26",
+                "ending_date": "2016-06-27",
+                "employee_transfer__histories": []
+            }
+        ],
+        "2016": [
+            {
+                "id": 5,
+                "starting_date": "2016-06-26",
+                "ending_date": "2017-06-27",
+                "employee_transfer__histories": [
+                    {
+                        "event_group_id": 5,
+                        "event_type_id": 3,
+                        "new_label": "Sr. Executive HCM & OD",
+                        "old_label": "Sr. Credit Analyst",
+                        "starting_date": "2014-06-25",
+                        "duration": "24 months",
+                        "employee_event_name": {
+                            "id": 3,
+                            "name": "Designation"
                         }
-                    ]
-                },
-                {
-                    "year": "2018",
-                    "department": "CDC & HOD",
-                    "office_name": "people secret head office",
-                    "office": "12 New Office",
-                    "city": "Islamabd",
-                    "country": "Pakistan",
-                    "designations": [
-                        {
-                            "designation": "HR Mangaer"
-                        },
-                        {
-                            "designation": "Software Enginner"
+                    },
+                    {
+                        "event_group_id": 5,
+                        "event_type_id": 4,
+                        "new_label": "HCM & OD",
+                        "old_label": "Process Outsorcing Service",
+                        "starting_date": "2014-06-25",
+                        "duration": "24 months",
+                        "employee_event_name": {
+                            "id": 4,
+                            "name": "Department"
                         }
-                    ]
-                }
-            ]
-        },
-        {
-            "employeeId": "5",
-            "years": [
-                {
-                    "year": "2013",
-                    "department": "process outsourcing service",
-                    "office_name": "people head office",
-                    "office": "New Office",
-                    "city": "Karachi",
-                    "country": "Pakistan",
-                    "designations": [
-                        {
-                            "designation": "sr. credit analyst"
+                    },
+                    {
+                        "event_group_id": 5,
+                        "event_type_id": 7,
+                        "new_label": "Lahore",
+                        "old_label": "Lahore",
+                        "starting_date": "2014-06-25",
+                        "duration": "20 months",
+                        "employee_event_name": {
+                            "id": 7,
+                            "name": "Office"
                         }
-                    ]
-                },
-                {
-                    "year": "2014",
-                    "department": "HCM & OD",
-                    "office_name": "people head office",
-                    "office": "New Office",
-                    "city": "Karachi",
-                    "country": "Pakistan",
-                    "designations": [
-                        {
-                            "designation": "HR"
-                        },
-                        {
-                            "designation": "Designer"
+                    }
+                ]
+            }
+        ],
+        "2017": [
+            {
+                "id": 6,
+                "starting_date": "2017-06-26",
+                "ending_date": "2018-06-27",
+                "employee_transfer__histories": []
+            }
+        ],
+        "2018": [
+            {
+                "id": 7,
+                "starting_date": "2018-06-26",
+                "ending_date": "2019-06-27",
+                "employee_transfer__histories": [
+                    {
+                        "event_group_id": 7,
+                        "event_type_id": 3,
+                        "new_label": "Asst. Manager SD-MIS",
+                        "old_label": "Sr. Executive HCM & OD",
+                        "starting_date": "2016-06-25",
+                        "duration": "28 months",
+                        "employee_event_name": {
+                            "id": 3,
+                            "name": "Designation"
                         }
-                    ]
-                },
-                {
-                    "year": "2015",
-                    "department": "CDC & HOD",
-                    "office_name": "people secret head office",
-                    "office": "12 New Office",
-                    "city": "Islamabd",
-                    "country": "Pakistan",
-                    "designations": [
-                        {
-                            "designation": "HR Mangaer"
-                        },
-                        {
-                            "designation": "Software Enginner"
+                    },
+                    {
+                        "event_group_id": 7,
+                        "event_type_id": 4,
+                        "new_label": "Service Delivery - MIS",
+                        "old_label": "HCM & OD",
+                        "starting_date": "2016-06-25",
+                        "duration": "28 months",
+                        "employee_event_name": {
+                            "id": 4,
+                            "name": "Department"
                         }
-                    ]
-                }
-            ]
-        }
-    ]
+                    },
+                    {
+                        "event_group_id": 7,
+                        "event_type_id": 6,
+                        "new_label": "Lahore",
+                        "old_label": "Lahore",
+                        "starting_date": "2016-06-25",
+                        "duration": "20 months",
+                        "employee_event_name": {
+                            "id": 6,
+                            "name": "Location"
+                        }
+                    }
+                ]
+            }
+        ],
+        "2019": [
+            {
+                "id": 8,
+                "starting_date": "2019-06-26",
+                "ending_date": "2020-06-27",
+                "employee_transfer__histories": [
+                    {
+                        "event_group_id": 8,
+                        "event_type_id": 3,
+                        "new_label": "Unit Head SD-MIS",
+                        "old_label": "Asst. Manager SD-MIS",
+                        "starting_date": "2018-10-25",
+                        "duration": "20 months",
+                        "employee_event_name": {
+                            "id": 3,
+                            "name": "Designation"
+                        }
+                    },
+                    {
+                        "event_group_id": 8,
+                        "event_type_id": 4,
+                        "new_label": "Service Delivery - MIS",
+                        "old_label": "Service Delivery - MIS",
+                        "starting_date": "2018-10-25",
+                        "duration": "20 months",
+                        "employee_event_name": {
+                            "id": 4,
+                            "name": "Department"
+                        }
+                    },
+                    {
+                        "event_group_id": 8,
+                        "event_type_id": 6,
+                        "new_label": "Lahore",
+                        "old_label": "Lahore",
+                        "starting_date": "2018-10-25",
+                        "duration": "20 months",
+                        "employee_event_name": {
+                            "id": 6,
+                            "name": "Location"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
 }
