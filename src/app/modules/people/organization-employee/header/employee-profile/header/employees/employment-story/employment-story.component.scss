@@ -33,7 +33,7 @@
 .left-arrow {
   position: absolute;
   right: -74px;
-  bottom: 30px;
+  bottom: 25px;
 
   &::before {
     position: absolute;
@@ -47,7 +47,7 @@
 
   &::after {
     position: absolute;
-    right: -19px;
+    right: -17px;
     border-bottom: 1px solid var(--appriasal_name);
     width: 70px;
     content: "";
@@ -60,6 +60,7 @@
   position: absolute;
   top: 50%;
   margin-top: -7px;
+  right: 0;
 
   &::before {
     position: absolute;
@@ -121,27 +122,15 @@
   .right-arrow {
     margin-left: -24px;
   }
-
-  > div {
-    > div {
-      &:first-child {
-        .mdc-layout-grid {
-          .border-right-line {
-            top: 15px;
-          }
-        }
-      }
-    }
-  }
 }
 
-.px-24 {
-  padding-left: 24px !important;
-  padding-right: 24px !important;
+.px-center {
+  padding-left: 35px !important;
+  padding-right: 55px !important;
 }
 
-.pr-93 {
-  padding-right: 92px;
+.pr-90 {
+  padding-right: 90px;
 }
 
 .right-arrow {
