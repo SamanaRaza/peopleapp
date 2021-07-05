@@ -1,9 +1,9 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
+@use "@material/layout-grid/mdc-layout-grid";
 @use '~@angular/material' as mat;
 @import "https://code.highcharts.com/css/highcharts.css";
 @import "styles-variables";
-
 @import "../node_modules/font-awesome/css/font-awesome.css";
 @import "~bootstrap/scss/bootstrap-reboot";
 @import "~bootstrap/scss/bootstrap-grid";
@@ -569,14 +569,30 @@ mat-footer-cell:first-of-type {
 
   .storyes {
     margin-bottom: 50px;
+    position: relative;
 
-    .arrow.first {
-      display: none;
+    .right-arrow {
+      position: absolute;
+      right: -30px;
+      top: 45px;
+      left: auto;
+      width: 100px;
+
+      @media (max-width: 1600px) {
+        right: -60px;
+      }
+
+      &::after {
+        right: 0;
+        left: 0;
+        width: 40px;
+        top: 15px;
+      }
     }
 
-    &:first-child {
-      .arrow.first {
-        display: block;
+    &:last-child {
+      .right-arrow {
+        display: none;
       }
     }
   }
@@ -1053,6 +1069,10 @@ mat-footer-cell:first-of-type {
 
 .container-fluid {
   width: 80%;
+
+  @media (max-width: 1199px) {
+    width: 90%;
+  }
 }
 
 .right-container,
@@ -1068,4 +1088,58 @@ mat-footer-cell:first-of-type {
 
 .profil-details {
   width: 100%;
+}
+
+.year {
+  display: inline-flex;
+  background-color: var(--background);
+  color: var(--foreground);
+  padding: 5px 10px 4px;
+  @extend %bold-fonts;
+  margin-bottom: 10px;
+}
+
+.year-container {
+  border-radius: 2px;
+  margin-bottom: 5px;
+  position: absolute;
+  right: -65px;
+  bottom: 35px;
+  margin-bottom: 0;
+}
+
+.story {
+  .button-group {
+    .mat-button-base {
+      flex: 0 0 auto;
+      min-width: 100px;
+    }
+  }
+}
+
+.right-arrow {
+  position: absolute;
+  left: 0;
+
+  &::after {
+    position: absolute;
+    left: 0;
+    border-bottom: 1px solid var(--designation);
+    width: 30px;
+    content: "";
+    display: block;
+    top: 15px;
+    margin-top: 0;
+  }
+
+  &::before {
+    position: absolute;
+    left: 30px;
+    border-color: transparent transparent transparent var(--designation);
+    border-width: 6px 0px 6px 11px;
+    border-style: solid;
+    content: "";
+    display: block;
+    top: 10px;
+  }
 }

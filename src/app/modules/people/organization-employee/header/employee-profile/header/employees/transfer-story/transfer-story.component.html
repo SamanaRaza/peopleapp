@@ -3,51 +3,33 @@
         <mat-card-title>Employee Transfer</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-        <div class="storyes-card row justify-content-center mt-4">
-            <div class="storyes col-auto" *ngFor="let year of this.employeeTimeline?.years">
-                <div class="arrow first">
-                    <i class="fa fa-arrow-right"></i>
-                </div>
-                <div class="story">
-                    <div class="year">{{year.year}}</div>
-                    <div class="row justify-content-center g-1">
-                        <div class="col-auto">
-                            <div class="details">
-                                <div class="panel primary-panel">{{year.department}}</div>
-                                <div class="arrow second">
-                                    <i class="fa fa-arrow-right"></i>
-                                </div>
-                            </div>
+        <div class="mdc-layout-grid">
+            <div class="storyes-card mdc-layout-grid__inner justify-content-center mt-4">
+                <div class="storyes mdc-layout-grid__cell" *ngFor="let year of this.employeeTimeline?.years">
+                    <div class="story">
+                        <div class="year">{{year.year}}</div>
+                        <div class="button-group">
+                            <button class="designation_btn" mat-raised-button>{{year.department}}</button>
+
                         </div>
                     </div>
-                </div>
-                <div class="story">
-                    <div class="row justify-content-center g-1">
-                        <div class="col-auto">
-                            <div class="details">
-                                <div class="panel warning-panel">{{year.office}}</div>
-                            </div>
-                        </div>
-                        <div class="col-auto">
-                            <div class="details">
-                                <div class="panel palevioletred-panel">{{year.city}} {{year.country}}</div>
-                            </div>
+                    <div class="story">
+                        <div class="button-group">
+                            <button mat-raised-button class="appriasal_name">{{year.office}}</button>
+                            <button mat-raised-button class="appriasal_rating">{{year.city}} {{year.country}}</button>
                         </div>
                     </div>
-                </div>
-                <ng-container *ngIf="year.designations?.length > 0">
-                    <ng-container *ngFor="let designation of year.designations">
-                        <div class="story">
-                            <div class="row justify-content-center g-1">
-                                <div class="col-auto">
-                                    <div class="details">
-                                        <div class="panel info-panel">{{designation.designation}}</div>
-                                    </div>
+                    <ng-container *ngIf="year.designations?.length > 0">
+                        <ng-container *ngFor="let designation of year.designations">
+                            <div class="story">
+                                <div class="button-group">
+                                    <button mat-raised-button class="band_btn">{{designation.designation}}</button>
                                 </div>
                             </div>
-                        </div>
+                        </ng-container>
                     </ng-container>
-                </ng-container>
+                    <div class="right-arrow"></div>
+                </div>
             </div>
         </div>
     </mat-card-content>
