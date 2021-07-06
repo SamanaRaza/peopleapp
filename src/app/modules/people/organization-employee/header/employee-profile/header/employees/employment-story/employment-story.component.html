@@ -5,7 +5,7 @@
     <mat-card-content class="h-auto bg-light-blue">
         <div class="graph-container mt-4 pb-3">
             <div *ngFor="let timeline of employeeTimeline">
-                <div *ngFor="let year of timeline.years">
+                <div>
                     <div class="mdc-layout-grid padding-0">
                         <div class="mdc-layout-grid__inner">
                             <div class="mdc-layout-grid__cell border-right-line pr-90">
@@ -13,26 +13,26 @@
                                     <div class="self-center">
                                         <span class="left-arrow"></span>
                                         <div class="year-container year" (click)="currentYear($event)">
-                                            {{year?.starting_year}}
+                                            {{timeline?.year}}
                                         </div>
                                         <div class="button-group">
                                             <button mat-raised-button class="appriasal_name"
-                                                (click)="AppriasalName($event)">{{year?.appriasal_salary_change?.appriasal_name}}</button>
+                                                (click)="AppriasalName($event)">{{timeline?.employee_history_salary_change?.salary_change_label}}</button>
                                         </div>
                                         <div class="button-group" color="accent">
                                             <button class="appriasal_rating" mat-raised-button
                                                 (click)="assesment($event)">Self:
-                                                {{year?.appriasal_salary_change?.assesment?.Self}}</button>
+                                                {{timeline?.employee_history_salary_change?.emp_rating}}</button>
                                             <button class="appriasal_rating" mat-raised-button
-                                                (click)="assesment($event)">LM:{{year?.appriasal_salary_change?.assesment?.LM}}</button>
+                                                (click)="assesment($event)">LM:{{timeline?.employee_history_salary_change?.lm_rating}}</button>
                                             <button class="appriasal_rating" mat-raised-button
-                                                (click)="assesment($event)">HR:{{year?.appriasal_salary_change?.assesment?.HR}}</button>
+                                                (click)="assesment($event)">HR:{{timeline?.employee_history_salary_change?.hr_rating}}</button>
                                         </div>
                                         <div class="button-group">
                                             <button class="salary_change" mat-raised-button (click)="salary($event)">
-                                                {{year?.appriasal_salary_change?.old_salary}} -
-                                                {{year?.appriasal_salary_change?.new_salary}}
-                                                ({{year?.appriasal_salary_change?.change_in_salary}})
+                                                {{timeline?.employee_history_salary_change?.old_salary}} -
+                                                {{timeline?.employee_history_salary_change?.new_salary}}
+                                                ({{timeline?.employee_history_salary_change?.change_in_salary}})
                                             </button>
                                         </div>
                                     </div>
@@ -40,65 +40,65 @@
                             </div>
                             <div class="mdc-layout-grid__cell px-center pb-60">
                                 <span class="right-arrow"
-                                    *ngIf="year?.employment_information?.current_designation"></span>
+                                    *ngIf="timeline?.employee__histories_without_lm_group.length > 0"></span>
                                 <div class="right-container">
                                     <div class="button-group">
                                         <button class="designation_btn" mat-raised-button
-                                            *ngIf="year?.employment_information?.current_designation"
+                                            *ngIf="timeline?.employee__histories_without_lm_group[0]?.new_label"
                                             (click)="currentDesignation($event)">
-                                            {{year?.employment_information?.current_designation}}</button>
+                                            {{timeline?.employee__histories_without_lm_group[0]?.new_label}}</button>
 
                                     </div>
                                     <div class="button-group">
                                         <button class="band_btn" mat-raised-button
-                                            *ngIf="year?.employment_information?.current_band"
+                                            *ngIf="timeline?.employee__histories_without_lm_group[1]?.new_label"
                                             (click)="BandClick($event)">
-                                            {{year?.employment_information?.current_band}}
+                                            {{timeline?.employee__histories_without_lm_group[1]?.new_label}}
                                         </button>
                                     </div>
                                     <div class="button-group">
                                         <button class="department_btn" mat-raised-button
-                                            *ngIf="year?.employment_information?.current_department"
-                                            (click)="currentDepartment($event)">{{year?.employment_information?.current_department}}</button>
+                                            *ngIf="timeline?.employee__histories_without_lm_group[2]?.new_label"
+                                            (click)="currentDepartment($event)">{{timeline?.employee__histories_without_lm_group[2]?.new_label}}</button>
                                         <button class="location_btn" mat-raised-button
-                                            *ngIf="year?.employment_information?.current_branch"
-                                            (click)="currentBranch($event)">{{year?.employment_information?.current_branch}}</button>
+                                            *ngIf="timeline?.employee__histories_without_lm_group[3]?.new_label"
+                                            (click)="currentBranch($event)">{{timeline?.employee__histories_without_lm_group[3]?.new_label}}</button>
                                     </div>
                                     <div class="button-group">
                                         <button class="duration_date_btn" mat-raised-button
-                                            *ngIf="year?.employment_information?.duration"
-                                            (click)="startingDate($event)">{{year?.employment_information?.starting_date}}
-                                            - {{year?.employment_information?.ending_band}}</button>
+                                            *ngIf="timeline?.employee__histories_without_lm_group[0]?.duration"
+                                            (click)="startingDate($event)">{{timeline?.employee__histories_without_lm_group[1]?.starting_date}}
+                                            - {{timeline?.employee__histories_without_lm_group[3]?.old_label}}</button>
                                         <button class="duration_date_btn" mat-raised-button
-                                            *ngIf="year?.employment_information?.duration"
-                                            (click)="duration($event)">{{year?.employment_information?.duration}}</button>
+                                            *ngIf="timeline?.employee__histories_without_lm_group[0]?.duration"
+                                            (click)="duration($event)">{{timeline?.employee__histories_without_lm_group[1]?.duration}}</button>
                                     </div>
                                 </div>
                                 <div class="right-arrow-center"
-                                    *ngIf="year?.employment_information?.current_designation"></div>
+                                    *ngIf="timeline?.employee__histories_without_lm_group[0]?.new_label"></div>
                             </div>
                             <div class="mdc-layout-grid__cell">
                                 <ng-container>
                                     <div class="mdc-layout-grid padding-0">
                                         <div class="mdc-layout-grid__inner">
                                             <div class="mdc-layout-grid__cell self-center"
-                                                *ngFor="let underPerson of year.LM">
+                                                *ngFor="let lm of timeline.employee__histories_with_lm_group">
                                                 <div class="profil-details text-center mb-1">
                                                     <div class="button-group">
                                                         <button class="duration_date_btn" mat-raised-button
-                                                            *ngIf="underPerson.name"
-                                                            (click)="LMName($event)">{{underPerson?.name}}</button>
+                                                            *ngIf="lm.new_label"
+                                                            (click)="LMName($event)">{{lm?.new_label}}</button>
                                                     </div>
                                                     <div class="w-100">
                                                         <div class="rounded-image text-center">
-                                                            <img [src]="underPerson.pic"
-                                                                (click)="LMInfo(underPerson)" />
+                                                            <img [src]="lm.file_path"
+                                                                (click)="LMInfo(lm)" />
                                                         </div>
                                                     </div>
                                                     <div class="button-group">
                                                         <button class="name_btn" mat-raised-button
-                                                            *ngIf="underPerson.duration"
-                                                            (click)="LMDuration($event)">{{underPerson?.duration}}</button>
+                                                            *ngIf="lm.duration"
+                                                            (click)="LMDuration($event)">{{lm?.duration}}</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -108,96 +108,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="grid-row">
-                        <div class="grid-4">
-                            <span class="border-right-line"></span>
-                            <div class="self-center">
-                                <span class="left-arrow"></span>
-                                <div class="year-container year" (click)="currentYear($event)">
-                                    {{year?.starting_year}}
-                                </div>
-                                <div class="button-group">
-                                    <button mat-raised-button class="appriasal_name"
-                                        (click)="AppriasalName($event)">{{year?.appriasal_salary_change?.appriasal_name}}</button>
-                                </div>
-                                <div class="button-group" color="accent">
-                                    <button class="appriasal_rating" mat-raised-button (click)="assesment($event)">Self:
-                                        {{year?.appriasal_salary_change?.assesment?.Self}}</button>
-                                    <button class="appriasal_rating" mat-raised-button
-                                        (click)="assesment($event)">LM:{{year?.appriasal_salary_change?.assesment?.LM}}</button>
-                                    <button class="appriasal_rating" mat-raised-button
-                                        (click)="assesment($event)">HR:{{year?.appriasal_salary_change?.assesment?.HR}}</button>
-                                </div>
-                                <div class="button-group">
-                                    <button class="salary_change" mat-raised-button (click)="salary($event)">
-                                        {{year?.appriasal_salary_change?.old_salary}} -
-                                        {{year?.appriasal_salary_change?.new_salary}}
-                                        ({{year?.appriasal_salary_change?.change_in_salary}})
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div *ngIf="year?.employment_information" class="grid-3 pb-60">
-                            <span class="right-arrow"></span>
-                            <div class="right-container">
-                                <div class="button-group">
-                                    <button class="designation_btn" mat-raised-button
-                                        *ngIf="year?.employment_information?.current_designation"
-                                        (click)="currentDesignation($event)">
-                                        {{year?.employment_information?.current_designation}}</button>
-
-                                </div>
-                                <div class="button-group">
-                                    <button class="band_btn" mat-raised-button
-                                        *ngIf="year?.employment_information?.current_band" (click)="BandClick($event)">
-                                        {{year?.employment_information?.current_band}}
-                                    </button>
-                                </div>
-                                <div class="button-group">
-                                    <button class="department_btn" mat-raised-button
-                                        *ngIf="year?.employment_information?.current_department"
-                                        (click)="currentDepartment($event)">{{year?.employment_information?.current_department}}</button>
-                                    <button class="location_btn" mat-raised-button
-                                        *ngIf="year?.employment_information?.current_branch"
-                                        (click)="currentBranch($event)">{{year?.employment_information?.current_branch}}</button>
-                                </div>
-                                <div class="button-group">
-                                    <button class="duration_date_btn" mat-raised-button
-                                        *ngIf="year?.employment_information?.duration"
-                                        (click)="startingDate($event)">{{year?.employment_information?.starting_date}}
-                                        - {{year?.employment_information?.ending_band}}</button>
-                                    <button class="duration_date_btn" mat-raised-button
-                                        *ngIf="year?.employment_information?.duration"
-                                        (click)="duration($event)">{{year?.employment_information?.duration}}</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div *ngIf="year.LM?.length > 0" class="grid-4 profile-grid">
-                            <div class="grid-row">
-                                <div class="right-arrow-center"></div>
-                                <ng-container *ngFor="let underPerson of year.LM">
-                                    <div class="grid-6 self-center">
-                                        <div class="profil-details text-center mb-1">
-                                            <div class="button-group">
-                                                <button class="duration_date_btn" mat-raised-button
-                                                    *ngIf="underPerson.name"
-                                                    (click)="LMName($event)">{{underPerson?.name}}</button>
-                                            </div>
-                                            <div class="w-100">
-                                                <div class="rounded-image text-center">
-                                                    <img [src]="underPerson.pic" (click)="LMInfo(underPerson)" />
-                                                </div>
-                                            </div>
-                                            <div class="button-group">
-                                                <button class="name_btn" mat-raised-button *ngIf="underPerson.duration"
-                                                    (click)="LMDuration($event)">{{underPerson?.duration}}</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </ng-container>
-                            </div>
-                        </div>
-                    </div> -->
                 </div>
             </div>
         </div>

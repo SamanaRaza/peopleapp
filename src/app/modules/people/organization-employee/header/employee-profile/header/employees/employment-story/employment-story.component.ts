@@ -12,6 +12,7 @@ import { AllServicesService } from 'src/app/services/all-services.service';
 import { ComParentChildService } from 'src/app/services/com-parent-child.service';
 import { Subscription } from 'rxjs';
 import cssVars from 'css-vars-ponyfill';
+import { ValueTransformer } from '@angular/compiler/src/util';
 
 @Component({
   selector: 'anms-employment-story',
@@ -23,6 +24,7 @@ export class EmploymentStoryComponent implements OnInit {
   queryParams: any = {};
   isLoading = true;
   color: any = [];
+  years : any = [];
   private subscription: Subscription;
   constructor(
     private httpClient: HttpClient,
@@ -75,9 +77,18 @@ export class EmploymentStoryComponent implements OnInit {
     let that = this;
     this.queryParams = this.route.snapshot.queryParams;
     this.allServicesService.getEmploymentStory().subscribe((result: any) => {
-      this.employeeTimeline = result.filter(
-        (x: any) => x.employeeId == this.queryParams.employeeId
-      );
+      // this.employeeTimeline = result.filter(
+      //   (x: any) => x.employeeId == this.queryParams.employeeId
+      // );
+      const employee_data_year = Object.keys(result.data[0]);
+      const employee_data : any = Object.values(result.data[0]);
+      employee_data.map((result: any, index: any) => {
+        var data : any = {};
+        data = result[0];
+        data.year = parseInt(employee_data_year[index])
+        this.employeeTimeline.push(data);
+
+      })
     });
   }
 

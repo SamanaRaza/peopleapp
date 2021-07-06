@@ -1,603 +1,397 @@
-[
-    {
-        "employeeId": "1",
-        "years": [
-            {
-                "starting_year": 2019,
-                "ending_year": 2020,
-                "appriasal_salary_change": {
-                    "appriasal_name": "Annual Appriasal 18 - 19",
-                    "assesment": {
-                        "Self": "2.7",
-                        "LM": "1.8",
-                        "HR": "1.5"
-                    },
-                    "new_salary": 1100000,
-                    "old_salary": 1000000,
-                    "change_in_salary": "20%"
-                },
-                "employment_information": {
-                    "current_designation": "Unit Head",
-                    "current_band": "6.2",
-                    "old_band": "5.5",
-                    "current_department": "marketing",
-                    "current_branch": "Lahore",
-                    "starting_date": "10/10/12",
-                    "ending_band": "10/10/14",
-                    "duration": "10 months"
-                },
-                "LM": [
-                    {
-                        "name": "Ali",
-                        "pic": "https://images.unsplash.com/photo-1589386417686-0d34b5903d23?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
-                        "duration": "13 months"
-                    },
-                    {
-                        "name": "Usman",
-                        "pic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpaMfkALsKeGcO5G6uTBH0AtbYJ2gK8jypbJ9ogVVZ5BZCbBLsr5senzJm3q63JPPf3zw&usqp=CAU",
-                        "duration": "8 months"
+{
+    "status": "pass",
+    "message": "success",
+    "data": [
+        {
+            "2012": [
+                {
+                    "id": 1,
+                    "starting_date": "2012-06-26",
+                    "ending_date": "2013-06-27",
+                    "employee__histories_without_lm_group": [
+                        {
+                            "event_group_id": 1,
+                            "new_label": "Sr. Credit Analyst",
+                            "old_label": null,
+                            "starting_date": "2012-05-25",
+                            "duration": "12 months"
+                        },
+                        {
+                            "event_group_id": 1,
+                            "new_label": "6",
+                            "old_label": null,
+                            "starting_date": "2012-05-25",
+                            "duration": "12 months"
+                        },
+                        {
+                            "event_group_id": 1,
+                            "new_label": "Process Outsorcing Service",
+                            "old_label": null,
+                            "starting_date": "2012-05-25",
+                            "duration": "12 months"
+                        },
+                        {
+                            "event_group_id": 1,
+                            "new_label": "Lahore",
+                            "old_label": null,
+                            "starting_date": "2012-05-25",
+                            "duration": "12 months"
+                        }
+                    ],
+                    "employee__histories_with_lm_group": [],
+                    "employee_history_salary_change": {
+                        "event_group_id": 1,
+                        "lm_rating": "1.7",
+                        "hr_rating": "1.8",
+                        "emp_rating": "1.9",
+                        "old_salary": null,
+                        "new_salary": "10000",
+                        "change_in_salary": "0%",
+                        "event_type_id": 2,
+                        "salary_change_label": "Probation 2012",
+                        "employee_event_name": {
+                            "id": 2,
+                            "name": "Appriasal"
+                        }
                     }
-                ]
-            },
-            {
-                "starting_year": 2018,
-                "ending_year": 2019,
-                "appriasal_salary_change": {
-                    "appriasal_name": "Annual Appriasal 17 - 18",
-                    "assesment": {
-                        "Self": "1.7",
-                        "LM": "1.8",
-                        "HR": "1.3"
-                    },
-                    "new_salary": 1000000,
-                    "old_salary": 950000,
-                    "change_in_salary": "7%"
-                },
-                "employment_information": {
-                    "current_designation": "Team Lead",
-                    "current_band": "5.2",
-                    "old_band": "5.5",
-                    "current_department": "service delivery",
-                    "current_branch": "Karachi",
-                    "starting_date": "10/10/12",
-                    "ending_band": "10/10/14",
-                    "duration": "22 months"
-                },
-                "LM": [
-                    {
-                        "name": "Arslan",
-                        "pic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpaMfkALsKeGcO5G6uTBH0AtbYJ2gK8jypbJ9ogVVZ5BZCbBLsr5senzJm3q63JPPf3zw&usqp=CAU",
-                        "duration": "12 months"
-                    },
-                    {
-                        "name": "Waqas",
-                        "pic": "https://images.unsplash.com/photo-1589386417686-0d34b5903d23?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
-                        "duration": "6 months"
-                    }
-                ]
-            },
-            {
-                "starting_year": 2017,
-                "ending_year": 2018,
-                "appriasal_salary_change": {
-                    "appriasal_name": "Annual Appriasal 16 - 17",
-                    "assesment": {
-                        "Self": "1.3",
-                        "LM": "1.4",
-                        "HR": "2.9"
-                    },
-                    "new_salary": 9500000,
-                    "old_salary": 850000,
-                    "change_in_salary": "12%"
                 }
-
-            },
-            {
-                "starting_year": 2016,
-                "ending_year": 2017,
-                "appriasal_salary_change": {
-                    "appriasal_name": "Annual Appriasal 15 - 16",
-                    "assesment": {
-                        "Self": "1.1",
-                        "LM": "1.3",
-                        "HR": "1.7"
-                    },
-                    "new_salary": 850000,
-                    "old_salary": 700000,
-                    "change_in_salary": "20%"
-                },
-                "employment_information": {
-                    "current_designation": "Dept Manager",
-                    "current_band": "6.2",
-                    "old_band": "7.5",
-                    "current_department": "accounts",
-                    "current_branch": "Islamabad",
-                    "starting_date": "10/10/12",
-                    "ending_band": "10/10/14",
-                    "duration": "14 months"
-                },
-                "LM": [
-                    {
-                        "name": "Adil",
-                        "pic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpaMfkALsKeGcO5G6uTBH0AtbYJ2gK8jypbJ9ogVVZ5BZCbBLsr5senzJm3q63JPPf3zw&usqp=CAU",
-                        "duration": "11 months"
-                    },
-                    {
-                        "name": "Ashfaq",
-                        "pic": "https://images.unsplash.com/photo-1589386417686-0d34b5903d23?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
-                        "duration": "17 months"
+            ],
+            "2013": [
+                {
+                    "id": 2,
+                    "starting_date": "2013-06-26",
+                    "ending_date": "2014-06-27",
+                    "employee__histories_without_lm_group": [],
+                    "employee__histories_with_lm_group": [],
+                    "employee_history_salary_change": {
+                        "event_group_id": 2,
+                        "lm_rating": "1.2",
+                        "hr_rating": "1.3",
+                        "emp_rating": "1.4",
+                        "old_salary": "10000",
+                        "new_salary": "13000",
+                        "change_in_salary": "30%",
+                        "event_type_id": 2,
+                        "salary_change_label": "Annular Appriasal 12-13",
+                        "employee_event_name": {
+                            "id": 2,
+                            "name": "Appriasal"
+                        }
                     }
-                ]
-            },
-            {
-                "starting_year": 2015,
-                "ending_year": 2016,
-                "appriasal_salary_change": {
-                    "appriasal_name": "Annual Appriasal 14 - 15",
-                    "assesment": {
-                        "Self": "1.3",
-                        "LM": "1.5",
-                        "HR": "1.9"
-                    },
-                    "new_salary": 600000,
-                    "old_salary": 500000,
-                    "change_in_salary": "10%"
                 }
-            },
-            {
-                "starting_year": 2014,
-                "ending_year": 2015,
-                "appriasal_salary_change": {
-                    "appriasal_name": "Annual Appriasal 13 - 14",
-                    "assesment": {
-                        "Self": "1.7",
-                        "LM": "1.8",
-                        "HR": "1.3"
-                    },
-                    "new_salary": 500000,
-                    "old_salary": 400000,
-                    "change_in_salary": "10%"
-                },
-                "employment_information": {
-                    "current_designation": "Unit Head",
-                    "current_band": "6.3",
-                    "old_band": "5.5",
-                    "current_department": "service delivery",
-                    "current_branch": "Lahore"
-                    
+            ],
+            "2014": [
+                {
+                    "id": 3,
+                    "starting_date": "2014-06-26",
+                    "ending_date": "2015-06-27",
+                    "employee__histories_without_lm_group": [
+                        {
+                            "event_group_id": 3,
+                            "new_label": "Sr. Credit Analyst",
+                            "old_label": "Sr. Credit Analyst",
+                            "starting_date": "2012-06-25",
+                            "duration": "24 months"
+                        },
+                        {
+                            "event_group_id": 3,
+                            "new_label": "6",
+                            "old_label": "6",
+                            "starting_date": "2012-06-25",
+                            "duration": "24 months"
+                        },
+                        {
+                            "event_group_id": 3,
+                            "new_label": "Process Outsorcing Service",
+                            "old_label": "Process Outsorcing Service",
+                            "starting_date": "2012-06-25",
+                            "duration": "24 months"
+                        },
+                        {
+                            "event_group_id": 3,
+                            "new_label": "People Head Office",
+                            "old_label": "Lahore",
+                            "starting_date": "2012-06-25",
+                            "duration": "24 months"
+                        }
+                    ],
+                    "employee__histories_with_lm_group": [
+                        {
+                            "event_group_id": 3,
+                            "new_label": "Gohar Butt",
+                            "old_label": null,
+                            "duration": "13 months",
+                            "file_path": "url of file"
+                        },
+                        {
+                            "event_group_id": 3,
+                            "new_label": "Kamran Khalid",
+                            "old_label": null,
+                            "duration": "11 months",
+                            "file_path": ""
+                        }
+                    ],
+                    "employee_history_salary_change": {
+                        "event_group_id": 3,
+                        "lm_rating": "1.7",
+                        "hr_rating": "1.8",
+                        "emp_rating": "1.8",
+                        "old_salary": "13000",
+                        "new_salary": "40000",
+                        "change_in_salary": "208%",
+                        "event_type_id": 2,
+                        "salary_change_label": "Annular Appriasal 13-14",
+                        "employee_event_name": {
+                            "id": 2,
+                            "name": "Appriasal"
+                        }
+                    }
                 }
-           
-            }
-        ]
-    },
-    {
-        "employeeId": "2",
-        "years": [
-            {
-                "starting_year": 2019,
-                "ending_year": 2020,
-                "appriasal_salary_change": {
-                    "appriasal_name": "Annual Appriasal 18 - 19",
-                    "assesment": {
-                        "Self": "1.7",
-                        "LM": "1.8",
-                        "HR": "1.3"
-                    },
-                    "new_salary": 500000,
-                    "old_salary": 400000,
-                    "change_in_salary": "10%"
-                },
-                "employment_information": {
-                    "current_designation": "Unit Head",
-                    "current_band": "5.2",
-                    "old_band": "5.5",
-                    "current_department": "service_delivery",
-                    "current_branch": "Lahore",
-                    "starting_date": "10/10/12",
-                    "ending_band": "10/10/14",
-                    "duration": "24 months"
-                },
-                "LM": [
-                    {
-                        "name": "David",
-                        "pic": "https://images.unsplash.com/photo-1589386417686-0d34b5903d23?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
-                        "duration": "12 months"
-                    },
-                    {
-                        "name": "Babar",
-                        "pic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpaMfkALsKeGcO5G6uTBH0AtbYJ2gK8jypbJ9ogVVZ5BZCbBLsr5senzJm3q63JPPf3zw&usqp=CAU",
-                        "duration": "6 months"
+            ],
+            "2015": [
+                {
+                    "id": 4,
+                    "starting_date": "2015-06-26",
+                    "ending_date": "2016-06-27",
+                    "employee__histories_without_lm_group": [],
+                    "employee__histories_with_lm_group": [],
+                    "employee_history_salary_change": {
+                        "event_group_id": 4,
+                        "lm_rating": "1.7",
+                        "hr_rating": "1.8",
+                        "emp_rating": "1.6",
+                        "old_salary": "40000",
+                        "new_salary": "50000",
+                        "change_in_salary": "25%",
+                        "event_type_id": 2,
+                        "salary_change_label": "Annular Appriasal 14-15",
+                        "employee_event_name": {
+                            "id": 2,
+                            "name": "Appriasal"
+                        }
                     }
-                ]
-            },
-            {
-                "starting_year": 2018,
-                "ending_year": 2019,
-                "appriasal_salary_change": {
-                    "appriasal_name": "Annual Appriasal 19 - 20",
-                    "assesment": {
-                        "Self": "1.7",
-                        "LM": "1.8",
-                        "HR": "1.3"
-                    },
-                    "new_salary": 500000,
-                    "old_salary": 400000,
-                    "change_in_salary": "10%"
                 }
-            },
-            {
-                "starting_year": 2017,
-                "ending_year": 2018,
-                "appriasal_salary_change": {
-                    "appriasal_name": "Annual Appriasal 19 - 20",
-                    "assesment": {
-                        "Self": "1.7",
-                        "LM": "1.8",
-                        "HR": "1.3"
-                    },
-                    "new_salary": 500000,
-                    "old_salary": 400000,
-                    "change_in_salary": "10%"
-                },
-                "employment_information": {
-                    "current_designation": "Unit Head",
-                    "current_band": "5.2",
-                    "old_band": "5.5",
-                    "current_department": "service_delivery",
-                    "current_branch": "Lahore",
-                    "starting_date": "10/10/12",
-                    "ending_band": "10/10/14",
-                    "duration": "24 months"
-                },
-                "LM": [
-                    {
-                        "name": "Ahmad",
-                        "pic": "https://images.unsplash.com/photo-1544717297-fa95b6ee9643?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
-                        "duration": "12 months"
-                    },
-                    {
-                        "name": "Usama",
-                        "pic": "https://images.unsplash.com/photo-1589386417686-0d34b5903d23?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
-                        "duration": "6 months"
+            ],
+            "2016": [
+                {
+                    "id": 5,
+                    "starting_date": "2016-06-26",
+                    "ending_date": "2017-06-27",
+                    "employee__histories_without_lm_group": [
+                        {
+                            "event_group_id": 5,
+                            "new_label": "Sr. Executive HCM & OD",
+                            "old_label": "Sr. Credit Analyst",
+                            "starting_date": "2014-06-25",
+                            "duration": "24 months"
+                        },
+                        {
+                            "event_group_id": 5,
+                            "new_label": "5.2",
+                            "old_label": "6",
+                            "starting_date": "2014-06-25",
+                            "duration": "24 months"
+                        },
+                        {
+                            "event_group_id": 5,
+                            "new_label": "HCM & OD",
+                            "old_label": "Process Outsorcing Service",
+                            "starting_date": "2014-06-25",
+                            "duration": "24 months"
+                        },
+                        {
+                            "event_group_id": 5,
+                            "new_label": "Lahore",
+                            "old_label": "Lahore",
+                            "starting_date": "2014-06-25",
+                            "duration": "20 months"
+                        }
+                    ],
+                    "employee__histories_with_lm_group": [
+                        {
+                            "event_group_id": 5,
+                            "new_label": "Irfan Bhatti",
+                            "old_label": "Kamran Khalid",
+                            "duration": "3 months",
+                            "file_path": ""
+                        },
+                        {
+                            "event_group_id": 5,
+                            "new_label": "Jawad Iqbal",
+                            "old_label": "Irfan Bhatti",
+                            "duration": "13 months",
+                            "file_path": ""
+                        },
+                        {
+                            "event_group_id": 5,
+                            "new_label": "Gohar Butt",
+                            "old_label": "Jawad Iqbal",
+                            "duration": "8 months",
+                            "file_path": ""
+                        }
+                    ],
+                    "employee_history_salary_change": {
+                        "event_group_id": 5,
+                        "lm_rating": "1.7",
+                        "hr_rating": "1.8",
+                        "emp_rating": "1.6",
+                        "old_salary": "50000",
+                        "new_salary": "55000",
+                        "change_in_salary": "10%",
+                        "event_type_id": 2,
+                        "salary_change_label": "Annular Appriasal 15-16",
+                        "employee_event_name": {
+                            "id": 2,
+                            "name": "Appriasal"
+                        }
                     }
-                ]
-            },
-            {
-                "starting_year": 2016,
-                "ending_year": 2017,
-                "appriasal_salary_change": {
-                    "appriasal_name": "Annual Appriasal 19 - 20",
-                    "assesment": {
-                        "Self": "1.7",
-                        "LM": "1.8",
-                        "HR": "1.3"
-                    },
-                    "new_salary": 500000,
-                    "old_salary": 400000,
-                    "change_in_salary": "10%"
                 }
-            },
-            {
-                "starting_year": 2015,
-                "ending_year": 2016,
-                "appriasal_salary_change": {
-                    "appriasal_name": "Annual Appriasal 19 - 20",
-                    "assesment": {
-                        "Self": "1.7",
-                        "LM": "1.8",
-                        "HR": "1.3"
-                    },
-                    "new_salary": 500000,
-                    "old_salary": 400000,
-                    "change_in_salary": "10%"
-                },
-                "employment_information": {
-                    "current_designation": "Unit Head",
-                    "current_band": "5.2",
-                    "old_band": "5.5",
-                    "current_department": "service_delivery",
-                    "current_branch": "Lahore",
-                    "starting_date": "10/10/12",
-                    "ending_band": "10/10/14",
-                    "duration": "24 months"
-                },
-                "LM": [
-                    {
-                        "name": "Asad",
-                        "pic": "https://images.unsplash.com/photo-1589386417686-0d34b5903d23?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
-                        "duration": "12 months"
-                    },
-                    {
-                        "name": "Hassan",
-                        "pic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpaMfkALsKeGcO5G6uTBH0AtbYJ2gK8jypbJ9ogVVZ5BZCbBLsr5senzJm3q63JPPf3zw&usqp=CAU",
-                        "duration": "6 months"
+            ],
+            "2017": [
+                {
+                    "id": 6,
+                    "starting_date": "2017-06-26",
+                    "ending_date": "2018-06-27",
+                    "employee__histories_without_lm_group": [],
+                    "employee__histories_with_lm_group": [],
+                    "employee_history_salary_change": {
+                        "event_group_id": 6,
+                        "lm_rating": "1.7",
+                        "hr_rating": "1.8",
+                        "emp_rating": "1.6",
+                        "old_salary": "55000",
+                        "new_salary": "70000",
+                        "change_in_salary": "27%",
+                        "event_type_id": 2,
+                        "salary_change_label": "Annular Appriasal 16-17",
+                        "employee_event_name": {
+                            "id": 2,
+                            "name": "Appriasal"
+                        }
                     }
-                ]
-            },
-            {
-                "starting_year": 2014,
-                "ending_year": 2015,
-                "appriasal_salary_change": {
-                    "appriasal_name": "Annual Appriasal 19 - 20",
-                    "assesment": {
-                        "Self": "1.7",
-                        "LM": "1.8",
-                        "HR": "1.3"
-                    },
-                    "new_salary": 500000,
-                    "old_salary": 400000,
-                    "change_in_salary": "10%"
-                },
-                "employment_information": {
-                    "current_designation": "Unit Head",
-                    "current_band": "5.2",
-                    "old_band": "5.5",
-                    "current_department": "service_delivery",
-                    "current_branch": "Lahore",
-                    "starting_date": "10/10/12",
-                    "ending_band": "10/10/14",
-                    "duration": "24 months"
-                },
-                "LM": [
-                    {
-                        "name": "Rizwan",
-                        "pic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpaMfkALsKeGcO5G6uTBH0AtbYJ2gK8jypbJ9ogVVZ5BZCbBLsr5senzJm3q63JPPf3zw&usqp=CAU",
-                        "duration": "12 months"
-                    },
-                    {
-                        "name": "Faizan",
-                        "pic": "https://images.unsplash.com/photo-1589386417686-0d34b5903d23?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
-                        "duration": "6 months"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "employeeId": "3",
-        "years": [
-            {
-                "starting_year": 2019,
-                "ending_year": 2020,
-                "appriasal_salary_change": {
-                    "appriasal_name": "Annual Appriasal 18 - 19",
-                    "assesment": {
-                        "Self": "1.7",
-                        "LM": "1.8",
-                        "HR": "1.3"
-                    },
-                    "new_salary": 500000,
-                    "old_salary": 400000,
-                    "change_in_salary": "10%"
-                },
-                "employment_information": {
-                    "current_designation": "Unit Head",
-                    "current_band": "5.2",
-                    "old_band": "5.5",
-                    "current_department": "service_delivery",
-                    "current_branch": "Lahore",
-                    "starting_date": "10/10/12",
-                    "ending_band": "10/10/14",
-                    "duration": "24 months"
-                },
-                "LM": [
-                    {
-                        "name": "David",
-                        "pic": "https://images.unsplash.com/photo-1589386417686-0d34b5903d23?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
-                        "duration": "12 months"
-                    },
-                    {
-                        "name": "Babar",
-                        "pic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpaMfkALsKeGcO5G6uTBH0AtbYJ2gK8jypbJ9ogVVZ5BZCbBLsr5senzJm3q63JPPf3zw&usqp=CAU",
-                        "duration": "6 months"
-                    }
-                ]
-            },
-            {
-                "starting_year": 2018,
-                "ending_year": 2019,
-                "appriasal_salary_change": {
-                    "appriasal_name": "Annual Appriasal 19 - 20",
-                    "assesment": {
-                        "Self": "1.7",
-                        "LM": "1.8",
-                        "HR": "1.3"
-                    },
-                    "new_salary": 500000,
-                    "old_salary": 400000,
-                    "change_in_salary": "10%"
                 }
-            },
-            {
-                "starting_year": 2017,
-                "ending_year": 2018,
-                "appriasal_salary_change": {
-                    "appriasal_name": "Annual Appriasal 19 - 20",
-                    "assesment": {
-                        "Self": "1.7",
-                        "LM": "1.8",
-                        "HR": "1.3"
-                    },
-                    "new_salary": 500000,
-                    "old_salary": 400000,
-                    "change_in_salary": "10%"
-                },
-                "employment_information": {
-                    "current_designation": "Unit Head",
-                    "current_band": "5.2",
-                    "old_band": "5.5",
-                    "current_department": "service_delivery",
-                    "current_branch": "Lahore",
-                    "starting_date": "10/10/12",
-                    "ending_band": "10/10/14",
-                    "duration": "24 months"
-                },
-                "LM": [
-                    {
-                        "name": "Ahmad",
-                        "pic": "https://images.unsplash.com/photo-1544717297-fa95b6ee9643?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
-                        "duration": "12 months"
-                    },
-                    {
-                        "name": "Usama",
-                        "pic": "https://images.unsplash.com/photo-1589386417686-0d34b5903d23?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
-                        "duration": "6 months"
+            ],
+            "2018": [
+                {
+                    "id": 7,
+                    "starting_date": "2018-06-26",
+                    "ending_date": "2019-06-27",
+                    "employee__histories_without_lm_group": [
+                        {
+                            "event_group_id": 7,
+                            "new_label": "5.1",
+                            "old_label": "5.2",
+                            "starting_date": "2016-06-25",
+                            "duration": "28 months"
+                        },
+                        {
+                            "event_group_id": 7,
+                            "new_label": "Asst. Manager SD-MIS",
+                            "old_label": "Sr. Executive HCM & OD",
+                            "starting_date": "2016-06-25",
+                            "duration": "28 months"
+                        },
+                        {
+                            "event_group_id": 7,
+                            "new_label": "Service Delivery - MIS",
+                            "old_label": "HCM & OD",
+                            "starting_date": "2016-06-25",
+                            "duration": "28 months"
+                        },
+                        {
+                            "event_group_id": 7,
+                            "new_label": "Lahore",
+                            "old_label": "Lahore",
+                            "starting_date": "2016-06-25",
+                            "duration": "20 months"
+                        }
+                    ],
+                    "employee__histories_with_lm_group": [
+                        {
+                            "event_group_id": 7,
+                            "new_label": "Tahir Raza",
+                            "old_label": "Gohar Butt",
+                            "duration": "8 months",
+                            "file_path": ""
+                        },
+                        {
+                            "event_group_id": 7,
+                            "new_label": "Gohar Butt",
+                            "old_label": "Tahir Raza",
+                            "duration": "20 months",
+                            "file_path": ""
+                        },
+                        {
+                            "event_group_id": 7,
+                            "new_label": "Abrahim Butt",
+                            "old_label": "Gohar Butt",
+                            "duration": "12 months",
+                            "file_path": ""
+                        },
+                        {
+                            "event_group_id": 7,
+                            "new_label": "Tahir Raza",
+                            "old_label": "Abrahim Butt",
+                            "duration": "12 months",
+                            "file_path": ""
+                        }
+                    ],
+                    "employee_history_salary_change": {
+                        "event_group_id": 7,
+                        "lm_rating": "1.7",
+                        "hr_rating": "1.8",
+                        "emp_rating": "1.6",
+                        "old_salary": "70000",
+                        "new_salary": "80000",
+                        "change_in_salary": "14%",
+                        "event_type_id": 2,
+                        "salary_change_label": "Annular Appriasal 17-18",
+                        "employee_event_name": {
+                            "id": 2,
+                            "name": "Appriasal"
+                        }
                     }
-                ]
-            },
-            {
-                "starting_year": 2016,
-                "ending_year": 2017,
-                "appriasal_salary_change": {
-                    "appriasal_name": "Annual Appriasal 19 - 20",
-                    "assesment": {
-                        "Self": "1.7",
-                        "LM": "1.8",
-                        "HR": "1.3"
-                    },
-                    "new_salary": 500000,
-                    "old_salary": 400000,
-                    "change_in_salary": "10%"
                 }
-            }
-        ]
-    },
-    {
-        "employeeId": "4",
-        "years": [
-            {
-                "starting_year": 2019,
-                "ending_year": 2020,
-                "appriasal_salary_change": {
-                    "appriasal_name": "Annual Appriasal 18 - 19",
-                    "assesment": {
-                        "Self": "1.7",
-                        "LM": "1.8",
-                        "HR": "1.3"
-                    },
-                    "new_salary": 500000,
-                    "old_salary": 400000,
-                    "change_in_salary": "10%"
-                },
-                "employment_information": {
-                    "current_designation": "Unit Head",
-                    "current_band": "5.2",
-                    "old_band": "5.5",
-                    "current_department": "service_delivery",
-                    "current_branch": "Lahore",
-                    "starting_date": "10/10/12",
-                    "ending_band": "10/10/14",
-                    "duration": "24 months"
-                },
-                "LM": [
-                    {
-                        "name": "David",
-                        "pic": "https://images.unsplash.com/photo-1589386417686-0d34b5903d23?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
-                        "duration": "12 months"
-                    },
-                    {
-                        "name": "Babar",
-                        "pic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpaMfkALsKeGcO5G6uTBH0AtbYJ2gK8jypbJ9ogVVZ5BZCbBLsr5senzJm3q63JPPf3zw&usqp=CAU",
-                        "duration": "6 months"
-                    }
-                ]
-            },
-            {
-                "starting_year": 2018,
-                "ending_year": 2019,
-                "appriasal_salary_change": {
-                    "appriasal_name": "Annual Appriasal 19 - 20",
-                    "assesment": {
-                        "Self": "1.7",
-                        "LM": "1.8",
-                        "HR": "1.3"
-                    },
-                    "new_salary": 500000,
-                    "old_salary": 400000,
-                    "change_in_salary": "10%"
+            ],
+            "2019": [
+                {
+                    "id": 8,
+                    "starting_date": "2019-06-26",
+                    "ending_date": "2020-06-27",
+                    "employee__histories_without_lm_group": [
+                        {
+                            "event_group_id": 8,
+                            "new_label": "Unit Head SD-MIS",
+                            "old_label": "Asst. Manager SD-MIS",
+                            "starting_date": "2018-10-25",
+                            "duration": "20 months"
+                        },
+                        {
+                            "event_group_id": 8,
+                            "new_label": "5.1",
+                            "old_label": "5.1",
+                            "starting_date": "2018-10-25",
+                            "duration": "20 months"
+                        },
+                        {
+                            "event_group_id": 8,
+                            "new_label": "Service Delivery - MIS",
+                            "old_label": "Service Delivery - MIS",
+                            "starting_date": "2018-10-25",
+                            "duration": "20 months"
+                        },
+                        {
+                            "event_group_id": 8,
+                            "new_label": "Lahore",
+                            "old_label": "Lahore",
+                            "starting_date": "2018-10-25",
+                            "duration": "20 months"
+                        }
+                    ],
+                    "employee__histories_with_lm_group": [],
+                    "employee_history_salary_change": null
                 }
-            },
-            {
-                "starting_year": 2017,
-                "ending_year": 2018,
-                "appriasal_salary_change": {
-                    "appriasal_name": "Annual Appriasal 19 - 20",
-                    "assesment": {
-                        "Self": "1.7",
-                        "LM": "1.8",
-                        "HR": "1.3"
-                    },
-                    "new_salary": 500000,
-                    "old_salary": 400000,
-                    "change_in_salary": "10%"
-                },
-                "employment_information": {
-                    "current_designation": "Unit Head",
-                    "current_band": "5.2",
-                    "old_band": "5.5",
-                    "current_department": "service_delivery",
-                    "current_branch": "Lahore",
-                    "starting_date": "10/10/12",
-                    "ending_band": "10/10/14",
-                    "duration": "24 months"
-                },
-                "LM": [
-                    {
-                        "name": "Ahmad",
-                        "pic": "https://images.unsplash.com/photo-1544717297-fa95b6ee9643?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
-                        "duration": "12 months"
-                    },
-                    {
-                        "name": "Usama",
-                        "pic": "https://images.unsplash.com/photo-1589386417686-0d34b5903d23?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
-                        "duration": "6 months"
-                    }
-                ]
-            }
-
-        ]
-    },
-    {
-        "employeeId": "5",
-        "years": [
-            {
-                "starting_year": 2020,
-                "ending_year": 2020,
-                "appriasal_salary_change": {
-                    "appriasal_name": "Annual Appriasal 18 - 19",
-                    "assesment": {
-                        "Self": "1.7",
-                        "LM": "1.8",
-                        "HR": "1.3"
-                    },
-                    "new_salary": 500000,
-                    "old_salary": 400000,
-                    "change_in_salary": "10%"
-                },
-                "employment_information": {
-                    "current_designation": "Unit Head",
-                    "current_band": "5.2",
-                    "old_band": "5.5",
-                    "current_department": "service_delivery",
-                    "current_branch": "Lahore",
-                    "starting_date": "10/10/12",
-                    "ending_band": "10/10/14",
-                    "duration": "24 months"
-                },
-                "LM": [
-                    {
-                        "name": "David",
-                        "pic": "https://images.unsplash.com/photo-1589386417686-0d34b5903d23?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
-                        "duration": "12 months"
-                    },
-                    {
-                        "name": "Babar",
-                        "pic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpaMfkALsKeGcO5G6uTBH0AtbYJ2gK8jypbJ9ogVVZ5BZCbBLsr5senzJm3q63JPPf3zw&usqp=CAU",
-                        "duration": "6 months"
-                    }
-                ]
-            }
-        ]
-    }
-
-]
+            ]
+        }
+    ]
+}
