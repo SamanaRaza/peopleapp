@@ -60,7 +60,7 @@ export class EmploymentStoryComponent implements OnInit {
             '--warning': this.color.perfomance_history.warning,
             '--perfomance_department': this.color.perfomance_department,
             '--appriasal_name_year': this.color.appriasal_name_year,
-            '--arrow_designation': this.color.arrows.arrow_designation,
+            '--arrow_designation': this.color.Arrows.arrow_designation,
             '--arrow_name': this.color.Arrows.arrow_name,
             '--arrow_department': this.color.arrow_department,
             '--font_color': this.color.Common.font_color,

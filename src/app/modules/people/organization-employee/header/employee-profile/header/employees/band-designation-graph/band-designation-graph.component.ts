@@ -26,8 +26,7 @@ interface LegendBand {
 })
 export class BandDesignationGraphComponent
   extends BaseComponentComponent
-  implements OnInit, AfterViewInit
-{
+  implements OnInit, AfterViewInit {
   @ViewChild('chartContainer') ChartContainer: ElementRef;
   data: any = {};
   queryParams: any = {};
@@ -49,11 +48,7 @@ export class BandDesignationGraphComponent
     that.queryParams = that.route.snapshot.queryParams;
     that.allServicesService.getBandGraph().subscribe((data) => {
       var data = (data as any).data;
-      var employees = data.find(
-        (x: any) => x.employee_id == that.queryParams.employeeId
-      );
-
-      that.graphDataCustomization(employees);
+      that.graphDataCustomization(data.band_events);
       that.generateBandDesignation(
         that.band,
         that.designation,
@@ -89,24 +84,31 @@ export class BandDesignationGraphComponent
           useHTML: true,
           style: {},
         },
-        min: 5,
-        max: 8,
-        tickInterval: 0.5,
+        categories: [
+          '5',
+          '5.1',
+          '5.2',
+          '6',
+          '7',
+          '8'
+        ],
+        min: 0,
+        max: 5,
 
         lineWidth: 3,
         startOnTick: false,
         endOnTick: false,
       },
       xAxis: {
-        type: 'datetime',
-
+        min: 0,
+        max: 8,
+        categories: that.years,
         lineWidth: 3,
         labels: {
           useHTML: true,
           style: {},
         },
-        tickInterval: 1000 * 3600 * 24 * 365,
-        units: [['year', [1]]],
+
       },
       legend: {
         symbolPadding: 0,
@@ -134,25 +136,25 @@ export class BandDesignationGraphComponent
       plotOptions: {
         series: {
           events: {
-            legendItemClick: function(event) {
-                var s = this.chart.series;
-                for(var i = 0; i < s.length; i++) {
-                    if(this.name == 'Show All' || this == s[i])
-                        s[i].setVisible(true);
-                    else
-                        s[i].setVisible(false);
-                }
-                return false;
+            legendItemClick: function (event) {
+              var s = this.chart.series;
+              for (var i = 0; i < s.length; i++) {
+                if (this.name == 'Show All' || this == s[i])
+                  s[i].setVisible(true);
+                else
+                  s[i].setVisible(false);
+              }
+              return false;
             }
-        },
+          },
           label: {
             connectorAllowed: false,
           },
           dataLabels: {
             enabled: false,
           },
-          pointStart: Date.UTC(startYear, 0, 1),
-          pointInterval: (365 * 24 * 3600 * 1000) / 1,
+          // pointStart: Date.UTC(startYear, 0, 1),
+          // pointInterval: (365 * 24 * 3600 * 1000) / 1,
         },
       },
       series: [
@@ -172,22 +174,22 @@ export class BandDesignationGraphComponent
           lineWidth: 4,
           data: bands,
         },
-        {
-          name: 'Designations',
-          type: 'line',
-          allowPointSelect: true,
-          point: {
-            events: {
-              select: function () {
-                var text = this.y + ' was last selected',
-                  chart = this.series.chart;
-                console.log(text);
-              },
-            },
-          },
-          lineWidth: 4,
-          data: designations,
-        },
+        // {
+        //   name: 'Designations',
+        //   type: 'line',
+        //   allowPointSelect: true,
+        //   point: {
+        //     events: {
+        //       select: function () {
+        //         var text = this.y + ' was last selected',
+        //           chart = this.series.chart;
+        //         console.log(text);
+        //       },
+        //     },
+        //   },
+        //   lineWidth: 4,
+        //   data: designations,
+        // },
       ],
 
       responsive: {

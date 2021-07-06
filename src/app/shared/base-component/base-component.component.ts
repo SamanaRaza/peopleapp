@@ -13,6 +13,53 @@ export class BaseComponentComponent implements OnInit {
   salary: any[] = [];
   years: any = [];
   employeData: any = {};
+  values: any = {
+    "5": 0,
+    "5.0": 0,
+    "5.1": 1,
+    "5.2": 2,
+    "5.3": 2.3,
+    "5.4": 2.4,
+    "5.5": 2.5,
+    "5.6": 2.6,
+    "5.7": 2.7,
+    "5.8": 2.8,
+    "5.9": 2.9,
+    "6": 3,
+    "6.0": 3,
+    "6.1": 3.1,
+    "6.2": 3.2,
+    "6.3": 3.3,
+    "6.4": 3.4,
+    "6.5": 3.5,
+    "6.6": 3.6,
+    "6.7": 3.7,
+    "6.8": 3.8,
+    "6.9": 3.9,
+    "7": 4,
+    "7.0": 4,
+    "7.1": 4.1,
+    "7.2": 4.2,
+    "7.3": 4.3,
+    "7.4": 4.4,
+    "7.5": 4.5,
+    "7.6": 4.6,
+    "7.7": 4.7,
+    "7.8": 4.8,
+    "7.9": 4.9,
+    "8": 5,
+    "8.0": 5,
+    "8.1": 5.1,
+    "8.2": 5.2,
+    "8.3": 5.3,
+    "8.4": 5.4,
+    "8.5": 5.5,
+    "8.6": 5.6,
+    "8.7": 5.7,
+    "8.8": 5.8,
+    "8.9": 5.9,
+
+  };
 
   startingYear: any = new Date().getFullYear() - 9
 
@@ -21,59 +68,46 @@ export class BaseComponentComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  graphDataCustomization(employees: any = {}) {
+  graphDataCustomization(employees: any = {}, salary: any = {}) {
     let that = this;
-    var yearsBetween = [];
-    that.employeData = employees;
-    that.employeData.data = employees && employees.data ? employees.data : employees && employees.details ? employees.details : [];
-    if (that.employeData && that.employeData.data.length > 0) {
-      that.employeData.data.sort(function (a: any, b: any) {
-        return a.year - b.year;
+
+    this.startingYear = new Date().getFullYear() - 9;
+
+    var startYear = new Date(this.startingYear, 0, 1);
+    var endYear = new Date(new Date().getFullYear(), 0, 1);
+
+    var allYears = moment(endYear).diff(startYear, 'years');
+    for (var year = 0; year < allYears; year++)
+      that.years.push((startYear.getFullYear() + year).toString());
+
+    if (employees) {
+      const employee_band_year = Object.keys(employees);
+      const employee_band_data: any = Object.values(employees);
+      employee_band_data.map((result: any, index: any) => {
+        var data: any[] = result[0] && result[0].employee__histories_group;
+        if (data && data.length > 0) {
+          data.map((band: any, index: any) => {
+            that.band.push(that.values[band.new_label])
+          })
+        }
+        else {
+          that.band.push(null)
+        }
       });
-
-      that.employeData.data.map((per: any) => that.band.push(per.band));
-      that.employeData.data.map((per: any) =>
-        that.designation.push(per.designation)
-      );
-      that.employeData.data.map((per: any) =>
-        that.salary.push(per.salary)
-      );
-      that.employeData.data.map((per: any) => that.years.push(per.year));
-
-      var startYear = new Date(this.startingYear, 0, 1);
-      var endYear = new Date(that.years[0], 0, 1);
-
-      var allYears = moment(endYear).diff(startYear, 'years');
-
-      for (var year = 0; year < allYears; year++)
-        yearsBetween.push(startYear.getFullYear() + year);
-
-      this.startingYear = yearsBetween[0]
-        ? yearsBetween[0]
-        : new Date().getFullYear() - 9;
-
-      for (var yb = 0; yb < yearsBetween.length; yb++) {
-        that.band.unshift(null);
-        that.designation.unshift(null);
-        that.salary.unshift(null);
-      }
     }
-    else {
+    if (salary) {
+      const employee_salary_year = Object.keys(salary);
+      const employee_salary_data: any = Object.values(salary);
+      employee_salary_data.map((result: any, index: any) => {
 
-      var startyear = new Date(this.startingYear, 0, 1);
-      var endyear = new Date(new Date().getFullYear(), 0, 1);
-
-      var allYears = moment(endyear).diff(startyear, 'years');
-
-      for (var year = 0; year < allYears; year++) {
-        yearsBetween.push(startyear.getFullYear() + year);
-      }
-      for (var yb = 0; yb < yearsBetween.length; yb++) {
-        that.band.unshift(null);
-        that.designation.unshift(null);
-        that.salary.unshift(null);
-      }
+        var data: any = result[0] && result[0].employee_salary_history;
+        if (data) {
+          that.salary.push(parseInt(data.new_salary))
+        }
+        else {
+          that.salary.push(null)
+        }
+      });
     }
   }
-
 }

@@ -34,7 +34,12 @@ export class PerformanceHistoryGraphComponent implements OnInit {
   appriciation: any = [];
   queryParams: any = {};
   performance: any = [];
-  fullData: any = [];
+  appericiationData: any = [];
+  rewardsData: any = [];
+  warningData: any = [];
+  trainingData: any = [];
+  yAxisCatogories: any = [];
+  legendLabels: any = [];
 
   training: any = [];
   @ViewChild('bubbleChartContainer') bubbleChartContainer: ElementRef;
@@ -43,7 +48,7 @@ export class PerformanceHistoryGraphComponent implements OnInit {
     private httpClient: HttpClient,
     private allServicesService: AllServicesService,
     private route: ActivatedRoute
-  ) {}
+  ) { }
   ngOnInit() {
     let that = this;
     this.queryParams = this.route.snapshot.queryParams;
@@ -53,44 +58,76 @@ export class PerformanceHistoryGraphComponent implements OnInit {
     let that = this;
     that.allServicesService.getPerformance().subscribe((data) => {
       that.performanceData = (data as any).data;
-      var employeeData = that.performanceData.find(
-        (x: any) => x.employeeId == that.queryParams.employeeId
-      );
-      if (employeeData && employeeData.values) {
-        const grouped = this.groupBy(
-          employeeData.values,
-          (d: any) => d.pref_type
-        );
+      that.yAxisCatogories = that.performanceData.roles;
+      that.legendLabels = that.performanceData.pref_types;
+      const performance_year = Object.keys(that.performanceData.perfomance_history);
+      const performance_data: any = Object.values(that.performanceData.perfomance_history);
+      performance_data.map((result: any, index: any) => {
+        var data = result[0].employee_pref_record_history;
+        for (var k = 0; k < data.length; k++) {
+          if (data[k].pref_type == 'appericiation') {
+            if (this.appericiationData.length > 0) {
+              var newdata = this.loadPerformanceData(data, data[k].pref_type, performance_year[index]);
+              this.appericiationData[0].data = this.appericiationData[0].data.concat(newdata);
+            }
+            else {
+              this.appericiationData.push({
+                name: data[k].pref_type,
+                type: 'bubble',
+                data: this.loadPerformanceData(data, data[k].pref_type, performance_year[index]),
+              });
+            }
 
-        for (var entry of grouped.entries()) {
-          this.fullData.push({
-            name: entry[0],
-            type: 'bubble',
-            data: this.loadPerformanceData(entry[1], entry[0]),
-          });
+          }
+          else if (data[k].pref_type == 'rewards') {
+            if (this.rewardsData.length > 0) {
+              var newdata = this.loadPerformanceData(data, data[k].pref_type, performance_year[index]);
+              this.rewardsData[0].data = this.rewardsData[0].data.concat(newdata);
+            }
+            else {
+              this.rewardsData.push({
+                name: data[k].pref_type,
+                type: 'bubble',
+                data: this.loadPerformanceData(data, data[k].pref_type, performance_year[index]),
+              });
+            }
+          }
+          else if (data[k].pref_type == 'warning') {
+            if (this.warningData.length > 0) {
+              var newdata = this.loadPerformanceData(data, data[k].pref_type, performance_year[index]);
+              this.warningData[0].data = this.warningData[0].data.concat(newdata);
+            }
+            else {
+              this.warningData.push({
+                name: data[k].pref_type,
+                type: 'bubble',
+                data: this.loadPerformanceData(data, data[k].pref_type, performance_year[index]),
+              });
+            }
+          }
+          else if (data[k].pref_type == 'training') {
+            if (this.trainingData.length > 0) {
+              var newdata = this.loadPerformanceData(data, data[k].pref_type, performance_year[index]);
+              this.trainingData[0].data = this.trainingData[0].data.concat(newdata);
+            }
+            else {
+              this.trainingData.push({
+                name: data[k].pref_type,
+                type: 'bubble',
+                data: this.loadPerformanceData(data, data[k].pref_type, performance_year[index]),
+              });
+            }
+          }
         }
-        var rewards: BubbleChart = {
-          data: this.fullData[0].data,
-          color: this.fullData[0].data[0].color,
-        };
-        var appericiation: BubbleChart = {
-          data: this.fullData[1].data,
-          color: this.fullData[1].data[0].color,
-        };
-        var warning: BubbleChart = {
-          data: this.fullData[2].data,
-          color: this.fullData[2].data[0].color,
-        };
-        var training: BubbleChart = {
-          data: this.fullData[3].data,
-          color: this.fullData[3].data[0].color,
-        };
-        that.generatePerformance(rewards, appericiation, warning, training);
+
+      })
+      if (performance_data.length > 0) {
+        that.generatePerformance(this.rewardsData[0].data, this.appericiationData[0].data, this.warningData[0].data, this.trainingData[0].data);
       } else {
-        var emp_rewards = { data: [] as string[], color: '' };
-        var emp_appericiation = { data: [] as string[], color: '' };
-        var emp_warning = { data: [] as string[], color: '' };
-        var emp_training = { data: [] as string[], color: '' };
+        var emp_rewards: any = [];
+        var emp_appericiation: any = [];
+        var emp_warning: any = [];
+        var emp_training: any = [];
         that.generatePerformance(
           emp_rewards,
           emp_appericiation,
@@ -117,27 +154,26 @@ export class PerformanceHistoryGraphComponent implements OnInit {
     return map;
   }
 
-  loadPerformanceData(pData: any[], pref_type: string) {
+  loadPerformanceData(pData: any[], pref_type: string, year: any) {
     let that = this;
     var data = [];
     for (var j = 0; j < pData.length; j++) {
       if (pData[j].pref_type == pref_type) {
         data.push({
-          x: parseInt(pData[j].year),
+          x: parseInt(year),
           y:
-            pData[j].pref_given_user_name == 'hr'
+            pData[j].pref_level == 'hr'
               ? 1
-              : pData[j].pref_given_user_name == 'lm'
-              ? 0
-              : 2,
+              : pData[j].pref_level == 'lm'
+                ? 0
+                : pData[j].pref_level == 'employee' ? 3 : 2,
           z:
-            pData[j].pref_level == 'min'
+            pData[j].pref_size == 'min'
               ? 40
-              : pData[j].pref_level == 'mid'
-              ? 65
-              : 80,
+              : pData[j].pref_size == 'mid'
+                ? 65
+                : 80,
           name: this.medals(pData[j].pref_type),
-          color: pData[j].color,
         });
       }
     }
@@ -148,13 +184,13 @@ export class PerformanceHistoryGraphComponent implements OnInit {
   medals(pref_type: string) {
     let that = this;
     switch (pref_type) {
-      case 'pref_rewards':
+      case 'rewards':
         return 'R';
-      case 'pref_appericiation':
+      case 'appericiation':
         return 'A';
-      case 'pref_warning':
+      case 'warning':
         return 'W';
-      case 'pref_training':
+      case 'training':
         return 'T';
       default:
         return '';
@@ -162,16 +198,16 @@ export class PerformanceHistoryGraphComponent implements OnInit {
   }
 
   generatePerformance(
-    rewards: BubbleChart,
-    appericiation: BubbleChart,
-    warning: BubbleChart,
-    training: BubbleChart
+    rewards: any,
+    appericiation: any,
+    warning: any,
+    training: any
   ) {
     let that = this;
     const options: Highcharts.Options = {
       chart: {
         animation: false,
-        backgroundColor: '#F2F3F4',
+        backgroundColor: '#FAFAFB',
         type: 'bubble',
         plotBorderWidth: 0,
         zoomType: 'xy',
@@ -187,25 +223,25 @@ export class PerformanceHistoryGraphComponent implements OnInit {
         useHTML: true,
         labelFormatter: function () {
           switch (this.name) {
-            case 'Performance Rewards':
+            case that.legendLabels[0]:
               return (
                 '<button class="mat-focus-indicator success-btn mat-raised-button mat-button-base btn-width"> <span class="mat-button-wrapper">' +
                 this.name +
                 '</span></button>'
               );
-            case 'Letter of Appreciation':
+            case that.legendLabels[1]:
               return (
                 '<button class="mat-focus-indicator warning-btn mat-raised-button mat-button-base btn-width"> <span class="mat-button-wrapper">' +
                 this.name +
                 '</span></button>'
               );
-            case 'Warning Letter':
+            case that.legendLabels[2]:
               return (
                 '<button class="mat-focus-indicator danger-btn mat-raised-button mat-button-base btn-width"> <span class="mat-button-wrapper">' +
                 this.name +
                 '</span></button>'
               );
-            case 'Training':
+            case that.legendLabels[3]:
               return (
                 '<button class="mat-focus-indicator info-btn mat-raised-button mat-button-base btn-width"> <span class="mat-button-wrapper">' +
                 this.name +
@@ -225,7 +261,7 @@ export class PerformanceHistoryGraphComponent implements OnInit {
           // 'background-color': '#9BE997',
           // 'padding': '28px 333px 10px 250px',
           fontWeight: 'bold',
-          
+
         },
       },
 
@@ -237,12 +273,13 @@ export class PerformanceHistoryGraphComponent implements OnInit {
       },
 
       xAxis: {
-        type: 'datetime',
         labels: {
           useHTML: true,
         },
         lineColor: '#40A6DC',
         lineWidth: 3,
+        min: 2010,
+        max: 2020,
         categories: [
           '2010',
           '2011',
@@ -266,11 +303,13 @@ export class PerformanceHistoryGraphComponent implements OnInit {
       },
 
       yAxis: {
-        
+
         labels: {
           useHTML: true,
         },
-        categories: ['LM', 'HR', 'Managment', 'Employee'],
+        min: 0,
+        categories: that.yAxisCatogories,
+        max: 3,
         gridLineWidth: 0,
         startOnTick: false,
         endOnTick: false,
@@ -290,34 +329,33 @@ export class PerformanceHistoryGraphComponent implements OnInit {
         formatter: function () {
           return `
           <tr><th>Year</th><td> ${this.x}</td></tr><br />
-          <tr><th>Role:</th><td> ${
-            this.y == 0 ? 'LM' : this.y == 1 ? 'HR' : 'Managment'
-          }</td></tr><br />
+          <tr><th>Role:</th><td> ${this.y == 0 ? 'LM' : this.y == 1 ? 'HR' : 'Managment'
+            }</td></tr><br />
           <tr><th>Performance: </th><td>${this.color}</td></tr></table>`;
         },
       },
 
       plotOptions: {
-        
+
         bubble: {
           minSize: '30px',
           maxSize: '40px',
-          
+
         },
         series: {
-          
+
           events: {
-            legendItemClick: function(event) {
-                var s = this.chart.series;
-                for(var i = 0; i < s.length; i++) {
-                    if(this.name == 'Show All' || this == s[i])
-                        s[i].setVisible(true);
-                    else
-                        s[i].setVisible(false);
-                }
-                return false;
+            legendItemClick: function (event) {
+              var s = this.chart.series;
+              for (var i = 0; i < s.length; i++) {
+                if (this.name == 'Show All' || this == s[i])
+                  s[i].setVisible(true);
+                else
+                  s[i].setVisible(false);
+              }
+              return false;
             }
-        },
+          },
           dataLabels: {
             enabled: true,
             format: '{point.name}',
@@ -329,9 +367,9 @@ export class PerformanceHistoryGraphComponent implements OnInit {
           enableMouseTracking: false,
           animation: false,
           type: 'bubble',
-          name: 'Performance Rewards',
-          data: rewards.data,
-          color: rewards.color,
+          name: that.legendLabels[0],
+          data: rewards,
+          color: 'rgb(0 166 81)',
           allowPointSelect: true,
           point: {
             events: {
@@ -341,30 +379,14 @@ export class PerformanceHistoryGraphComponent implements OnInit {
                 console.log(text);
               },
             },
-            
+
           },
         },
         {
           type: 'bubble',
-          name: 'Letter of Appreciation',
-          data: appericiation.data,
-          color: appericiation.color,
-          allowPointSelect: true,
-          point: {
-            events: {
-              select: function () {
-                var text = this.y + ' was last selected',
-                  chart = this.series.chart;
-                console.log(text);
-              },
-            },
-          },
-        },
-        {
-          type: 'bubble',
-          name: 'Warning Letter',
-          data: warning.data,
-          color: warning.color,
+          name: that.legendLabels[1],
+          data: appericiation,
+          color: 'rgb(237 187 7)',
           allowPointSelect: true,
           point: {
             events: {
@@ -378,9 +400,9 @@ export class PerformanceHistoryGraphComponent implements OnInit {
         },
         {
           type: 'bubble',
-          name: 'Training',
-          data: training.data,
-          color: training.color,
+          name: that.legendLabels[2],
+          data: warning,
+          color: 'rgb(254 95 45)',
           allowPointSelect: true,
           point: {
             events: {
@@ -394,44 +416,20 @@ export class PerformanceHistoryGraphComponent implements OnInit {
         },
         {
           type: 'bubble',
-          name: '',
-          data: [{ x: 2012, y: 3, z: 30 }],
-          showInLegend: true,
-          color: '#F2F3F4',
-          enableMouseTracking: false,
-        },
-        {
-          type: 'bubble',
-          name: '',
-          data: [{ x: 2012, y: 2, z: 30 }],
-          showInLegend: false,
-          color: '#F2F3F4',
-          enableMouseTracking: false,
-        },
-        {
-          type: 'bubble',
-          name: '',
-          data: [{ x: 2012, y: 1, z: 30 }],
-          showInLegend: false,
-          color: '#F2F3F4',
-          enableMouseTracking: false,
-        },
-        {
-          type: 'bubble',
-          name: '',
-          data: [{ x: 2012, y: 0, z: 30, name: '' }],
-          showInLegend: false,
-          color: '#F2F3F4',
-          enableMouseTracking: false,
-        },
-        {
-          type: 'bubble',
-          name: '',
-          data: [{ x: 2020, y: 0, z: 30 }],
-          showInLegend: false,
-          color: '#F2F3F4',
-          enableMouseTracking: false,
-        },
+          name: that.legendLabels[3],
+          data: training,
+          color: 'rgb(90 137 255)',
+          allowPointSelect: true,
+          point: {
+            events: {
+              select: function () {
+                var text = this.y + ' was last selected',
+                  chart = this.series.chart;
+                console.log(text);
+              },
+            },
+          },
+        }
       ],
     };
     Highcharts.chart(that.bubbleChartContainer.nativeElement, options);

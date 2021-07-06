@@ -19,8 +19,7 @@ import { AllServicesService } from 'src/app/services/all-services.service';
 })
 export class EmpSalaryHistoryGraphComponent
   extends BaseComponentComponent
-  implements OnInit
-{
+  implements OnInit {
   @ViewChild('chartContainer') ChartContainer: ElementRef;
   data: any = {};
   queryParams: any = {};
@@ -32,20 +31,15 @@ export class EmpSalaryHistoryGraphComponent
   }
   ngOnInit() {
     let that = this;
-  }
-  ngAfterViewInit() {
     this.queryParams = this.route.snapshot.queryParams;
 
-    let that = this;
     this.allServicesService.getSalaryGraph().subscribe((data) => {
       var data = (data as any).data;
-      var employeSalary = data.find(
-        (x: any) => x.employeeId == that.queryParams.employeeId
-      );
-      that.graphDataCustomization(employeSalary);
+      that.graphDataCustomization(null, data.salary_history);
       that.generateSalary(that.salary, that.startingYear);
     });
   }
+
   generateSalary(data: any, startYear: any) {
     let that = this;
     const options: HighCharts.Options = {
@@ -87,9 +81,9 @@ export class EmpSalaryHistoryGraphComponent
         maxPadding: 0.2,
       },
       xAxis: {
-        type: 'datetime',
-        tickInterval: 1000 * 3600 * 24 * 365,
-        units: [['year', [1]]],
+        min: 0,
+        max: 8,
+        categories: that.years,
         lineColor: '#40A6DC',
         lineWidth: 3,
         labels: {
@@ -106,8 +100,6 @@ export class EmpSalaryHistoryGraphComponent
           label: {
             connectorAllowed: false,
           },
-          pointStart: Date.UTC(startYear, 0, 1),
-          pointInterval: (365 * 24 * 3600 * 1000) / 1,
         },
       },
       series: [

@@ -1,185 +1,109 @@
 {
-  "draw": 0,
-  "recordsTotal": 400,
-  "recordsFiltered": 400,
-  "data": [
-      {
-        "SalaryChangeHistoryID": 1,
-        "employeeId": 1,
-        "details": [
-          {
-            "salary": 60000,
-            "year": 2012
-          },
-          {
-            "salary": 72000,
-            "year": 2013
-          },
-          {
-            "salary": 85000,
-            "year": 2014
-          },
-          {
-            "salary": 99000,
-            "year": 2015
-          },
-          {
-            "salary": 100000,
-            "year": 2016
-          },
-          {
-            "salary": 1100000,
-            "year": 2017
-          },
-          {
-            "salary": 170000,
-            "year": 2018
+  "status": "pass",
+  "message": "success",
+  "data": {
+    "salary_history": {
+      "2012": [
+        {
+          "id": 1,
+          "starting_date": "2012-06-26",
+          "ending_date": "2013-06-27",
+          "employee_salary_history": {
+            "event_group_id": 1,
+            "old_salary": null,
+            "new_salary": "10000",
+            "id": 1
           }
-        ]
-      },
-    {
-      "SalaryChangeHistoryID": 2,
-      "employeeId": 2,
-      "details": [
+        }
+      ],
+      "2013": [
         {
-          "salary": 18000,
-          "year": 2012
-        },
+          "id": 2,
+          "starting_date": "2013-06-26",
+          "ending_date": "2014-06-27",
+          "employee_salary_history": {
+            "event_group_id": 2,
+            "old_salary": "10000",
+            "new_salary": "13000",
+            "id": 2
+          }
+        }
+      ],
+      "2014": [
         {
-          "salary": 40000,
-          "year": 2013
-        },
+          "id": 3,
+          "starting_date": "2014-06-26",
+          "ending_date": "2015-06-27",
+          "employee_salary_history": {
+            "event_group_id": 3,
+            "old_salary": "13000",
+            "new_salary": "40000",
+            "id": 3
+          }
+        }
+      ],
+      "2015": [
         {
-          "salary": 20000,
-          "year": 2014
-        },
+          "id": 4,
+          "starting_date": "2015-06-26",
+          "ending_date": "2016-06-27",
+          "employee_salary_history": {
+            "event_group_id": 4,
+            "old_salary": "40000",
+            "new_salary": "50000",
+            "id": 4
+          }
+        }
+      ],
+      "2016": [
         {
-          "salary": 48000,
-          "year": 2015
-        },
+          "id": 5,
+          "starting_date": "2016-06-26",
+          "ending_date": "2017-06-27",
+          "employee_salary_history": {
+            "event_group_id": 5,
+            "old_salary": "50000",
+            "new_salary": "55000",
+            "id": 5
+          }
+        }
+      ],
+      "2017": [
         {
-          "salary": 70000,
-          "year": 2016
-        },
+          "id": 6,
+          "starting_date": "2017-06-26",
+          "ending_date": "2018-06-27",
+          "employee_salary_history": {
+            "event_group_id": 6,
+            "old_salary": "55000",
+            "new_salary": "70000",
+            "id": 6
+          }
+        }
+      ],
+      "2018": [
         {
-          "salary": 50000,
-          "year": 2017
-        },
+          "id": 7,
+          "starting_date": "2018-06-26",
+          "ending_date": "2019-06-27",
+          "employee_salary_history": {
+            "event_group_id": 7,
+            "old_salary": "70000",
+            "new_salary": "80000",
+            "id": 7
+          }
+        }
+      ],
+      "2019": [
         {
-          "salary": 90000,
-          "year": 2018
-        },
-        {
-          "salary": 95000,
-          "year": 2019
-        },
-        {
-          "salary": 96000,
-          "year": 2020
+          "id": 8,
+          "starting_date": "2019-06-26",
+          "ending_date": "2020-06-27",
+          "employee_salary_history": null
         }
       ]
     },
-    {
-      "SalaryChangeHistoryID": 3,
-      "employeeId": 3,
-      "details": [
-        {
-          "salary": 90000,
-          "year": 2012
-        },
-        {
-          "salary": 92000,
-          "year": 2013
-        },
-        {
-          "salary": 95000,
-          "year": 2014
-        },
-        {
-          "salary": 99000,
-          "year": 2015
-        },
-        {
-          "salary": 80000,
-          "year": 2016
-        },
-        {
-          "salary": 85000,
-          "year": 2017
-        },
-        {
-          "salary": 70000,
-          "year": 2018
-        }
-      ]
-    },
-    {
-      "SalaryChangeHistoryID": 4,
-      "employeeId": 4,
-      "details": [
-        {
-          "salary": 50000,
-          "year": 2012
-        },
-        {
-          "salary": 60000,
-          "year": 2013
-        },
-        {
-          "salary": 70000,
-          "year": 2014
-        },
-        {
-          "salary": 80000,
-          "year": 2015
-        },
-        {
-          "salary": 85000,
-          "year": 2016
-        },
-        {
-          "salary": 95000,
-          "year": 2017
-        },
-        {
-          "salary": 100000,
-          "year": 2018
-        }
-      ]
-    },
-    {
-      "SalaryChangeHistoryID": 5,
-      "employeeId": 5,
-      "details": [
-        {
-          "salary": 40000,
-          "year": 2012
-        },
-        {
-          "salary": 51000,
-          "year": 2013
-        },
-        {
-          "salary": 70000,
-          "year": 2014
-        },
-        {
-          "salary": 89000,
-          "year": 2015
-        },
-        {
-          "salary": 100000,
-          "year": 2016
-        },
-        {
-          "salary": 1100000,
-          "year": 2017
-        },
-        {
-          "salary": 160000,
-          "year": 2018
-        }
-      ]
-    }
-  ]
+    "min_salary": "10000",
+    "max_salary": "80000"
+  }
 }
