@@ -67,8 +67,8 @@
                                     <div class="button-group">
                                         <button class="duration_date_btn" mat-raised-button
                                             *ngIf="timeline?.employee__histories_without_lm_group[0]?.duration"
-                                            (click)="startingDate($event)">{{timeline?.employee__histories_without_lm_group[1]?.starting_date}}
-                                            - {{timeline?.employee__histories_without_lm_group[3]?.old_label}}</button>
+                                            (click)="startingDate($event)">{{timeline?.starting_date}}
+                                            - {{timeline?.ending_date}}</button>
                                         <button class="duration_date_btn" mat-raised-button
                                             *ngIf="timeline?.employee__histories_without_lm_group[0]?.duration"
                                             (click)="duration($event)">{{timeline?.employee__histories_without_lm_group[1]?.duration}}</button>
