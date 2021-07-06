@@ -1,227 +1,94 @@
 {
-  "status": "success",
-  "code": "200",
-  "data": [
-    {
-      "employeeId": 1,
-      "values": [
-        {
-          "pref_level": "min",
-          "year": "2012",
-          "pref_type": "pref_rewards",
-          "pref_given_user_name": "hr",
-          "color": "rgb(0 166 81)"
-        },
-        {
-          "pref_level": "min",
-          "year": "2013",
-          "pref_type": "pref_appericiation",
-          "pref_given_user_name": "lm",
-          "color": "rgb(237 187 7)"
-        },
-        {
-          "pref_level": "mid",
-          "year": "2014",
-          "pref_type": "pref_appericiation",
-          "pref_given_user_name": "lm",
-          "color": "rgb(237 187 7)"
-        },
-        {
-          "pref_level": "max",
-          "year": "2015",
-          "pref_type": "pref_appericiation",
-          "pref_given_user_name": "lm",
-          "color": "rgb(237 187 7)"
-        },
-        {
-          "pref_level": "max",
-          "year": "2012",
-          "pref_type": "pref_warning",
-          "pref_given_user_name": "lm",
-          "color": "rgb(254 95 45)"
-        },
-        {
-          "pref_level": "min",
-          "year": "2013",
-          "pref_type": "pref_training",
-          "pref_given_user_name": "hr",
-          "color": "rgb(90 137 255)"
-        },
-        {
-          "pref_level": "max",
-          "year": "2014",
-          "pref_type": "pref_training",
-          "pref_given_user_name": "hr",
-          "color": "rgb(90 137 255)"
-        },
-        {
-          "pref_level": "max",
-          "year": "2015",
-          "pref_type": "pref_rewards",
-          "pref_given_user_name": "lm",
-          "color": "rgb(0 166 81)"
-        }
+  "status": "pass",
+  "message": "success",
+  "data": {
+      "perfomance_history": {
+          "2012": [
+              {
+                  "id": 1,
+                  "starting_date": "2012-06-26",
+                  "ending_date": "2013-06-27",
+                  "employee_pref_record_history": [
+                      {
+                          "event_group_id": 1,
+                          "pref_type": "training",
+                          "pref_level": "lm",
+                          "pref_size": "min",
+                          "color": "blue"
+                      },
+                      {
+                          "event_group_id": 1,
+                          "pref_type": "rewards",
+                          "pref_level": "lm",
+                          "pref_size": "max",
+                          "color": "green"
+                      },
+                      {
+                          "event_group_id": 1,
+                          "pref_type": "warning",
+                          "pref_level": "lm",
+                          "pref_size": "mid",
+                          "color": "red"
+                      },
+                      {
+                          "event_group_id": 1,
+                          "pref_type": "appericiation",
+                          "pref_level": "hr",
+                          "pref_size": "max",
+                          "color": "yellow"
+                      }
+                  ]
+              }
+          ],
+          "2013": [
+              {
+                  "id": 2,
+                  "starting_date": "2013-06-26",
+                  "ending_date": "2014-06-27",
+                  "employee_pref_record_history": [
+                      {
+                          "event_group_id": 2,
+                          "pref_type": "appericiation",
+                          "pref_level": "management",
+                          "pref_size": "max",
+                          "color": "yellow"
+                      },
+                      {
+                          "event_group_id": 2,
+                          "pref_type": "rewards",
+                          "pref_level": "management",
+                          "pref_size": "max",
+                          "color": "green"
+                      },
+                      {
+                          "event_group_id": 2,
+                          "pref_type": "warning",
+                          "pref_level": "lm",
+                          "pref_size": "max",
+                          "color": "red"
+                      },
+                      {
+                          "event_group_id": 2,
+                          "pref_type": "training",
+                          "pref_level": "lm",
+                          "pref_size": "mid",
+                          "color": "blue"
+                      }
+                  ]
+              }
+          ]
+      },
+      "roles": [
+          "lm",
+          "hr",
+          "management",
+          "employee"
+      ],
+      "pref_types": [
+          "Perfomance Rewards",
+          "Letter of Appericiations",
+          "Warning Letter",
+          "Training"
       ]
-    },
-    {
-      "employeeId": 2,
-      "values": [
-        {
-          "pref_level": "min",
-          "year": "2016",
-          "pref_type": "pref_rewards",
-          "pref_given_user_name": "hr",
-          "color": "rgb(0 166 81)"
-        },
-        {
-          "pref_level": "mid",
-          "year": "2017",
-          "pref_type": "pref_appericiation",
-          "pref_given_user_name": "lm",
-          "color": "rgb(237 187 7)"
-        },
-        {
-          "pref_level": "max",
-          "year": "2018",
-          "pref_type": "pref_warning",
-          "pref_given_user_name": "lm",
-          "color": "rgb(254 95 45)"
-        },
-        {
-          "pref_level": "min",
-          "year": "2019",
-          "pref_type": "pref_training",
-          "pref_given_user_name": "hr",
-          "color": "rgb(90 137 255)"
-        },
-        {
-          "pref_level": "min",
-          "year": "2020",
-          "pref_type": "pref_rewards",
-          "pref_given_user_name": "lm",
-          "color": "rgb(0 166 81)"
-        }
-      ]
-    },
-    {
-      "employeeId": 3,
-      "values": [
-        {
-          "pref_level": "min",
-          "year": "2015",
-          "pref_type": "pref_rewards",
-          "pref_given_user_name": "hr",
-          "color": "rgb(0 166 81)"
-        },
-        {
-          "pref_level": "mid",
-          "year": "2017",
-          "pref_type": "pref_appericiation",
-          "pref_given_user_name": "lm",
-          "color": "rgb(237 187 7)"
-        },
-        {
-          "pref_level": "max",
-          "year": "2018",
-          "pref_type": "pref_warning",
-          "pref_given_user_name": "lm",
-          "color": "rgb(254 95 45)"
-        },
-        {
-          "pref_level": "min",
-          "year": "2019",
-          "pref_type": "pref_training",
-          "pref_given_user_name": "hr",
-          "color": "rgb(90 137 255)"
-        },
-        {
-          "pref_level": "min",
-          "year": "2020",
-          "pref_type": "pref_rewards",
-          "pref_given_user_name": "lm",
-          "color": "rgb(0 166 81)"
-        }
-      ]
-    },
-    {
-      "employeeId": 4,
-      "values": [
-        {
-          "pref_level": "min",
-          "year": "2015",
-          "pref_type": "pref_rewards",
-          "pref_given_user_name": "hr",
-          "color": "rgb(0 166 81)"
-        },
-        {
-          "pref_level": "mid",
-          "year": "2017",
-          "pref_type": "pref_appericiation",
-          "pref_given_user_name": "lm",
-          "color": "rgb(237 187 7)"
-        },
-        {
-          "pref_level": "max",
-          "year": "2018",
-          "pref_type": "pref_warning",
-          "pref_given_user_name": "lm",
-          "color": "rgb(254 95 45)"
-        },
-        {
-          "pref_level": "min",
-          "year": "2019",
-          "pref_type": "pref_training",
-          "pref_given_user_name": "hr",
-          "color": "rgb(90 137 255)"
-        },
-        {
-          "pref_level": "min",
-          "year": "2020",
-          "pref_type": "pref_rewards",
-          "pref_given_user_name": "lm",
-          "color": "rgb(0 166 81)"
-        }
-      ]
-    },
-    {
-      "employeeId": 5,
-      "values": [
-        {
-          "pref_level": "min",
-          "year": "2015",
-          "pref_type": "pref_rewards",
-          "pref_given_user_name": "hr",
-          "color": "rgb(0 166 81)"
-        },
-        {
-          "pref_level": "mid",
-          "year": "2017",
-          "pref_type": "pref_appericiation",
-          "pref_given_user_name": "lm",
-          "color": "rgb(237 187 7)"
-        },
-        {
-          "pref_level": "max",
-          "year": "2018",
-          "pref_type": "pref_warning",
-          "pref_given_user_name": "lm",
-          "color": "rgb(254 95 45)"
-        },
-        {
-          "pref_level": "min",
-          "year": "2019",
-          "pref_type": "pref_training",
-          "pref_given_user_name": "hr",
-          "color": "rgb(90 137 255)"
-        },
-        {
-          "pref_level": "min",
-          "year": "2020",
-          "pref_type": "pref_rewards",
-          "pref_given_user_name": "lm",
-          "color": "rgb(0 166 81)"
-        }
-      ]
-    }
-  ]
+  }
 }

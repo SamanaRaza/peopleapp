@@ -34,7 +34,10 @@ export class PerformanceHistoryGraphComponent implements OnInit {
   appriciation: any = [];
   queryParams: any = {};
   performance: any = [];
-  fullData: any = [];
+  appericiationData: any = [];
+  rewardsData: any = [];
+  warningData: any = [];
+  trainingData: any = [];
 
   training: any = [];
   @ViewChild('bubbleChartContainer') bubbleChartContainer: ElementRef;
@@ -53,38 +56,65 @@ export class PerformanceHistoryGraphComponent implements OnInit {
     let that = this;
     that.allServicesService.getPerformance().subscribe((data) => {
       that.performanceData = (data as any).data;
+
+      
+      // const grouped = this.groupBy(
+      //   data.employee_pref_record_history,
+      //   (d: any) => d.pref_type
+      // );
+
+      const performance_year = Object.keys(that.performanceData.perfomance_history);
+      const performance_data : any = Object.values(that.performanceData.perfomance_history);
+      performance_data.map((result: any, index: any) => {
+        var data : any = {};
+      data = result[0].mployee_pref_record_history;
+      for(var k = 0; k < data.employee_pref_record_history.length ; k++){
+         if(data[k].pref_type == 'appericiation')
+         {
+          this.appericiationData.push({
+            name: data[k].pref_type,
+            type: 'bubble',
+            data: this.loadPerformanceData(data[k], data[k].pref_type, performance_year[index]),
+          });
+         }
+         else if(data.pref_type == 'rewards')
+         {
+
+         }
+         else if(data.pref_type == 'warning')
+         {
+
+         }
+         else if(data.pref_type == 'training')
+         {
+
+         }
+      }
+        
+      })
       var employeeData = that.performanceData.find(
         (x: any) => x.employeeId == that.queryParams.employeeId
       );
       if (employeeData && employeeData.values) {
-        const grouped = this.groupBy(
-          employeeData.values,
-          (d: any) => d.pref_type
-        );
+        
 
-        for (var entry of grouped.entries()) {
-          this.fullData.push({
-            name: entry[0],
-            type: 'bubble',
-            data: this.loadPerformanceData(entry[1], entry[0]),
-          });
-        }
-        var rewards: BubbleChart = {
-          data: this.fullData[0].data,
-          color: this.fullData[0].data[0].color,
-        };
-        var appericiation: BubbleChart = {
-          data: this.fullData[1].data,
-          color: this.fullData[1].data[0].color,
-        };
-        var warning: BubbleChart = {
-          data: this.fullData[2].data,
-          color: this.fullData[2].data[0].color,
-        };
-        var training: BubbleChart = {
-          data: this.fullData[3].data,
-          color: this.fullData[3].data[0].color,
-        };
+        
+        // var rewards: BubbleChart = {
+        //   data: this.fullData[0].data,
+        //   color: this.fullData[0].data[0].color,
+        // };
+        // var appericiation: BubbleChart = {
+        //   data: this.fullData[1].data,
+        //   color: this.fullData[1].data[0].color,
+        // };
+        // var warning: BubbleChart = {
+        //   data: this.fullData[2].data,
+        //   color: this.fullData[2].data[0].color,
+        // };
+        // var training: BubbleChart = {
+        //   data: this.fullData[3].data,
+        //   color: this.fullData[3].data[0].color,
+        // };
         that.generatePerformance(rewards, appericiation, warning, training);
       } else {
         var emp_rewards = { data: [] as string[], color: '' };
@@ -117,23 +147,23 @@ export class PerformanceHistoryGraphComponent implements OnInit {
     return map;
   }
 
-  loadPerformanceData(pData: any[], pref_type: string) {
+  loadPerformanceData(pData: any[], pref_type: string, year : any) {
     let that = this;
     var data = [];
     for (var j = 0; j < pData.length; j++) {
       if (pData[j].pref_type == pref_type) {
         data.push({
-          x: parseInt(pData[j].year),
+          x: parseInt(year),
           y:
-            pData[j].pref_given_user_name == 'hr'
+            pData[j].pref_level == 'hr'
               ? 1
-              : pData[j].pref_given_user_name == 'lm'
+              : pData[j].pref_level == 'lm'
               ? 0
               : 2,
           z:
-            pData[j].pref_level == 'min'
+            pData[j].pref_size == 'min'
               ? 40
-              : pData[j].pref_level == 'mid'
+              : pData[j].pref_size == 'mid'
               ? 65
               : 80,
           name: this.medals(pData[j].pref_type),
