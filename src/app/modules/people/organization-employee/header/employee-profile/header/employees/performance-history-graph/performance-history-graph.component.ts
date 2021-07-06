@@ -170,6 +170,7 @@ export class PerformanceHistoryGraphComponent implements OnInit {
     let that = this;
     const options: Highcharts.Options = {
       chart: {
+        animation: false,
         backgroundColor: '#F2F3F4',
         type: 'bubble',
         plotBorderWidth: 0,
@@ -224,6 +225,7 @@ export class PerformanceHistoryGraphComponent implements OnInit {
           // 'background-color': '#9BE997',
           // 'padding': '28px 333px 10px 250px',
           fontWeight: 'bold',
+          
         },
       },
 
@@ -264,6 +266,7 @@ export class PerformanceHistoryGraphComponent implements OnInit {
       },
 
       yAxis: {
+        
         labels: {
           useHTML: true,
         },
@@ -282,6 +285,7 @@ export class PerformanceHistoryGraphComponent implements OnInit {
         },
       },
       tooltip: {
+        shared: true,
         useHTML: true,
         formatter: function () {
           return `
@@ -296,10 +300,12 @@ export class PerformanceHistoryGraphComponent implements OnInit {
       plotOptions: {
         
         bubble: {
-          minSize: 3,
-          maxSize: 50,
+          minSize: '30px',
+          maxSize: '40px',
+          
         },
         series: {
+          
           events: {
             legendItemClick: function(event) {
                 var s = this.chart.series;
@@ -320,6 +326,8 @@ export class PerformanceHistoryGraphComponent implements OnInit {
       },
       series: [
         {
+          enableMouseTracking: false,
+          animation: false,
           type: 'bubble',
           name: 'Performance Rewards',
           data: rewards.data,
@@ -333,6 +341,7 @@ export class PerformanceHistoryGraphComponent implements OnInit {
                 console.log(text);
               },
             },
+            
           },
         },
         {
@@ -386,7 +395,15 @@ export class PerformanceHistoryGraphComponent implements OnInit {
         {
           type: 'bubble',
           name: '',
-          data: [{ x: 2012, y: 3, z: 0 }],
+          data: [{ x: 2012, y: 3, z: 30 }],
+          showInLegend: true,
+          color: '#F2F3F4',
+          enableMouseTracking: false,
+        },
+        {
+          type: 'bubble',
+          name: '',
+          data: [{ x: 2012, y: 2, z: 30 }],
           showInLegend: false,
           color: '#F2F3F4',
           enableMouseTracking: false,
@@ -394,7 +411,7 @@ export class PerformanceHistoryGraphComponent implements OnInit {
         {
           type: 'bubble',
           name: '',
-          data: [{ x: 2012, y: 2, z: 0 }],
+          data: [{ x: 2012, y: 1, z: 30 }],
           showInLegend: false,
           color: '#F2F3F4',
           enableMouseTracking: false,
@@ -402,7 +419,7 @@ export class PerformanceHistoryGraphComponent implements OnInit {
         {
           type: 'bubble',
           name: '',
-          data: [{ x: 2012, y: 1, z: 0 }],
+          data: [{ x: 2012, y: 0, z: 30, name: '' }],
           showInLegend: false,
           color: '#F2F3F4',
           enableMouseTracking: false,
@@ -410,15 +427,7 @@ export class PerformanceHistoryGraphComponent implements OnInit {
         {
           type: 'bubble',
           name: '',
-          data: [{ x: 2012, y: 0, z: 0, name: '' }],
-          showInLegend: false,
-          color: '#F2F3F4',
-          enableMouseTracking: false,
-        },
-        {
-          type: 'bubble',
-          name: '',
-          data: [{ x: 2020, y: 0, z: 0 }],
+          data: [{ x: 2020, y: 0, z: 30 }],
           showInLegend: false,
           color: '#F2F3F4',
           enableMouseTracking: false,
