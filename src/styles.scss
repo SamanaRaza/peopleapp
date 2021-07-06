@@ -692,6 +692,8 @@ mat-footer-cell:first-of-type {
 }
 
 .graph-card {
+  border: 1px solid #d8dcdf;
+  background: #fafafb;
   margin-bottom: 10px;
   padding-top: 40px;
   float: left;
@@ -727,11 +729,12 @@ mat-footer-cell:first-of-type {
   }
 
   .highcharts-background {
-    fill: #f0f2ed !important;
+    fill: transparent !important;
   }
 
   .highcharts-axis-labels {
     width: 100px;
+    z-index: -1;
 
     span {
       text-align: center;
