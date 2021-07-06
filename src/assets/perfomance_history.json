@@ -1,94 +1,94 @@
 {
-  "status": "pass",
-  "message": "success",
-  "data": {
-      "perfomance_history": {
-          "2012": [
-              {
-                  "id": 1,
-                  "starting_date": "2012-06-26",
-                  "ending_date": "2013-06-27",
-                  "employee_pref_record_history": [
-                      {
-                          "event_group_id": 1,
-                          "pref_type": "training",
-                          "pref_level": "lm",
-                          "pref_size": "min",
-                          "color": "blue"
-                      },
-                      {
-                          "event_group_id": 1,
-                          "pref_type": "rewards",
-                          "pref_level": "lm",
-                          "pref_size": "max",
-                          "color": "green"
-                      },
-                      {
-                          "event_group_id": 1,
-                          "pref_type": "warning",
-                          "pref_level": "lm",
-                          "pref_size": "mid",
-                          "color": "red"
-                      },
-                      {
-                          "event_group_id": 1,
-                          "pref_type": "appericiation",
-                          "pref_level": "hr",
-                          "pref_size": "max",
-                          "color": "yellow"
-                      }
-                  ]
-              }
-          ],
-          "2013": [
-              {
-                  "id": 2,
-                  "starting_date": "2013-06-26",
-                  "ending_date": "2014-06-27",
-                  "employee_pref_record_history": [
-                      {
-                          "event_group_id": 2,
-                          "pref_type": "appericiation",
-                          "pref_level": "management",
-                          "pref_size": "max",
-                          "color": "yellow"
-                      },
-                      {
-                          "event_group_id": 2,
-                          "pref_type": "rewards",
-                          "pref_level": "management",
-                          "pref_size": "max",
-                          "color": "green"
-                      },
-                      {
-                          "event_group_id": 2,
-                          "pref_type": "warning",
-                          "pref_level": "lm",
-                          "pref_size": "max",
-                          "color": "red"
-                      },
-                      {
-                          "event_group_id": 2,
-                          "pref_type": "training",
-                          "pref_level": "lm",
-                          "pref_size": "mid",
-                          "color": "blue"
-                      }
-                  ]
-              }
-          ]
-      },
-      "roles": [
-          "lm",
-          "hr",
-          "management",
-          "employee"
-      ],
-      "pref_types": [
-          "Perfomance Rewards",
-          "Letter of Appericiations",
-          "Warning Letter",
-          "Training"
-      ]
-  }
+    "status": "pass",
+    "message": "success",
+    "data": {
+        "perfomance_history": {
+            "2012": [
+                {
+                    "id": 1,
+                    "starting_date": "2012-06-26",
+                    "ending_date": "2013-06-27",
+                    "employee_pref_record_history": [
+                        {
+                            "event_group_id": 1,
+                            "pref_type": "training",
+                            "pref_level": "employee",
+                            "pref_size": "min",
+                            "color": "blue"
+                        },
+                        {
+                            "event_group_id": 1,
+                            "pref_type": "rewards",
+                            "pref_level": "lm",
+                            "pref_size": "max",
+                            "color": "green"
+                        },
+                        {
+                            "event_group_id": 1,
+                            "pref_type": "warning",
+                            "pref_level": "management",
+                            "pref_size": "mid",
+                            "color": "red"
+                        },
+                        {
+                            "event_group_id": 1,
+                            "pref_type": "appericiation",
+                            "pref_level": "hr",
+                            "pref_size": "max",
+                            "color": "yellow"
+                        }
+                    ]
+                }
+            ],
+            "2013": [
+                {
+                    "id": 2,
+                    "starting_date": "2013-06-26",
+                    "ending_date": "2014-06-27",
+                    "employee_pref_record_history": [
+                        {
+                            "event_group_id": 2,
+                            "pref_type": "appericiation",
+                            "pref_level": "lm",
+                            "pref_size": "max",
+                            "color": "yellow"
+                        },
+                        {
+                            "event_group_id": 2,
+                            "pref_type": "rewards",
+                            "pref_level": "management",
+                            "pref_size": "max",
+                            "color": "green"
+                        },
+                        {
+                            "event_group_id": 2,
+                            "pref_type": "warning",
+                            "pref_level": "hr",
+                            "pref_size": "max",
+                            "color": "red"
+                        },
+                        {
+                            "event_group_id": 2,
+                            "pref_type": "training",
+                            "pref_level": "employee",
+                            "pref_size": "mid",
+                            "color": "blue"
+                        }
+                    ]
+                }
+            ]
+        },
+        "roles": [
+            "lm",
+            "hr",
+            "management",
+            "employee"
+        ],
+        "pref_types": [
+            "Perfomance Rewards",
+            "Letter of Appericiations",
+            "Warning Letter",
+            "Training"
+        ]
+    }
 }
