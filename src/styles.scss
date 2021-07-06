@@ -692,10 +692,24 @@ mat-footer-cell:first-of-type {
 }
 
 .graph-card {
-  margin-bottom: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
+  padding-top: 40px;
   float: left;
   width: 100%;
+
+  #chart {
+    > div {
+      overflow: visible !important;
+
+      > .highcharts-container {
+        overflow: visible !important;
+
+        .highcharts-title {
+          top: -40px !important;
+        }
+      }
+    }
+  }
 
   .highcharts-title {
     background-color: $bg-color;
@@ -708,7 +722,6 @@ mat-footer-cell:first-of-type {
     white-space: nowrap;
     text-align: center;
     padding: 10px 10px 0 !important;
-    top: 0 !important;
     width: 100% !important;
     left: 0 !important;
   }
