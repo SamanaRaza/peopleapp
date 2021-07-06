@@ -38,6 +38,8 @@ export class PerformanceHistoryGraphComponent implements OnInit {
   rewardsData: any = [];
   warningData: any = [];
   trainingData: any = [];
+  yAxisCatogories: any = [];
+  legendLabels: any = [];
 
   training: any = [];
   @ViewChild('bubbleChartContainer') bubbleChartContainer: ElementRef;
@@ -56,7 +58,8 @@ export class PerformanceHistoryGraphComponent implements OnInit {
     let that = this;
     that.allServicesService.getPerformance().subscribe((data) => {
       that.performanceData = (data as any).data;
-
+      that.yAxisCatogories = that.performanceData.roles;
+      that.legendLabels = that.performanceData.pref_types;
       const performance_year = Object.keys(that.performanceData.perfomance_history);
       const performance_data: any = Object.values(that.performanceData.perfomance_history);
       performance_data.map((result: any, index: any) => {
@@ -220,25 +223,25 @@ export class PerformanceHistoryGraphComponent implements OnInit {
         useHTML: true,
         labelFormatter: function () {
           switch (this.name) {
-            case 'Performance Rewards':
+            case that.legendLabels[0]:
               return (
                 '<button class="mat-focus-indicator success-btn mat-raised-button mat-button-base btn-width"> <span class="mat-button-wrapper">' +
                 this.name +
                 '</span></button>'
               );
-            case 'Letter of Appreciation':
+            case that.legendLabels[1]:
               return (
                 '<button class="mat-focus-indicator warning-btn mat-raised-button mat-button-base btn-width"> <span class="mat-button-wrapper">' +
                 this.name +
                 '</span></button>'
               );
-            case 'Warning Letter':
+            case that.legendLabels[2]:
               return (
                 '<button class="mat-focus-indicator danger-btn mat-raised-button mat-button-base btn-width"> <span class="mat-button-wrapper">' +
                 this.name +
                 '</span></button>'
               );
-            case 'Training':
+            case that.legendLabels[3]:
               return (
                 '<button class="mat-focus-indicator info-btn mat-raised-button mat-button-base btn-width"> <span class="mat-button-wrapper">' +
                 this.name +
@@ -305,7 +308,7 @@ export class PerformanceHistoryGraphComponent implements OnInit {
           useHTML: true,
         },
         min: 0,
-        categories: ['LM', 'HR', 'Managment', 'Employee'],
+        categories: that.yAxisCatogories,
         max: 3,
         gridLineWidth: 0,
         startOnTick: false,
@@ -364,7 +367,7 @@ export class PerformanceHistoryGraphComponent implements OnInit {
           enableMouseTracking: false,
           animation: false,
           type: 'bubble',
-          name: 'Performance Rewards',
+          name: that.legendLabels[0],
           data: rewards,
           color: 'rgb(0 166 81)',
           allowPointSelect: true,
@@ -381,7 +384,7 @@ export class PerformanceHistoryGraphComponent implements OnInit {
         },
         {
           type: 'bubble',
-          name: 'Letter of Appreciation',
+          name: that.legendLabels[1],
           data: appericiation,
           color: 'rgb(237 187 7)',
           allowPointSelect: true,
@@ -397,7 +400,7 @@ export class PerformanceHistoryGraphComponent implements OnInit {
         },
         {
           type: 'bubble',
-          name: 'Warning Letter',
+          name: that.legendLabels[2],
           data: warning,
           color: 'rgb(254 95 45)',
           allowPointSelect: true,
@@ -413,7 +416,7 @@ export class PerformanceHistoryGraphComponent implements OnInit {
         },
         {
           type: 'bubble',
-          name: 'Training',
+          name: that.legendLabels[3],
           data: training,
           color: 'rgb(90 137 255)',
           allowPointSelect: true,
