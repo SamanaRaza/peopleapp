@@ -4,22 +4,22 @@
             <div
                 class="mdc-layout-grid__cell mdc-layout-grid__cell--span-1-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
                 <div class="details">
-                    <img src={{group.imgUrl}} alt="">
+                    <img src={{group.emp_pic}} alt="">
                 </div>
             </div>
             <div
                 class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
                 <div class="button-group">
                     <button class="designation_btn" mat-raised-button>
-                        {{group.name}}
+                        {{group.emp_name}}
                     </button>
                 </div>
                 <div class="button-group">
                     <button class="band_btn" mat-raised-button>
-                        {{group.designation}}
+                        {{group.ending_designation}}
                     </button>
                     <button class="department_btn" mat-raised-button>
-                        {{group.department}}
+                        {{group.ending_department}}
                     </button>
                 </div>
             </div>
@@ -27,17 +27,17 @@
                 class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop align-right mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
                 <div class="button-group">
                     <button class="department_btn" mat-raised-button>
-                        {{group.joiningYear}} - {{group.currentYear}}
+                        {{group.starting_year}} - {{group.ending_year}}
 
                     </button>
                     <button class="band_btn" mat-raised-button>
-                        {{group.band}} - {{group.currentBand}}
+                        {{group.ending_band}} - {{group.latest_band}}
                     </button>
                 </div>
                 <div class="button-group">
                     <button class="band_btn" mat-raised-button>
-                        {{group.designation}} -
-                        {{group.currentDesignation}}
+                        {{group.starting_designation}} -
+                        {{group.ending_designation}}
                     </button>
                 </div>
             </div>

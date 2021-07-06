@@ -20,6 +20,8 @@ export class EmployeeTimelineSummaryComponent implements OnInit {
     this.allServicesService.getEmpDetails().subscribe((data:any) => {
       this.persons = (data as any).data;
       // this.persons = this.persons.filter((x: any) => x.empID == this.queryParams.employeeId);
+
+      
     });
   }
 

@@ -13,8 +13,22 @@
           "color": "rgb(0 166 81)"
         },
         {
-          "pref_level": "mid",
+          "pref_level": "min",
           "year": "2013",
+          "pref_type": "pref_appericiation",
+          "pref_given_user_name": "lm",
+          "color": "rgb(237 187 7)"
+        },
+        {
+          "pref_level": "mid",
+          "year": "2014",
+          "pref_type": "pref_appericiation",
+          "pref_given_user_name": "lm",
+          "color": "rgb(237 187 7)"
+        },
+        {
+          "pref_level": "max",
+          "year": "2015",
           "pref_type": "pref_appericiation",
           "pref_given_user_name": "lm",
           "color": "rgb(237 187 7)"
@@ -36,6 +50,13 @@
         {
           "pref_level": "max",
           "year": "2014",
+          "pref_type": "pref_training",
+          "pref_given_user_name": "hr",
+          "color": "rgb(90 137 255)"
+        },
+        {
+          "pref_level": "max",
+          "year": "2015",
           "pref_type": "pref_rewards",
           "pref_given_user_name": "lm",
           "color": "rgb(0 166 81)"
