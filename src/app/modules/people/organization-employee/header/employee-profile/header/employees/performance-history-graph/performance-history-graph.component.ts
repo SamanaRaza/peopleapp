@@ -197,6 +197,22 @@ export class PerformanceHistoryGraphComponent implements OnInit {
     }
   }
 
+  medalsReverse(key: string) {
+    let that = this;
+    switch (key) {
+      case 'R':
+        return 'Performance Reward';
+      case 'A':
+        return 'Letter of Appericiations';
+      case 'W':
+        return 'Warning';
+      case 'T':
+        return 'Training';
+      default:
+        return '';
+    }
+  }
+
   generatePerformance(
     rewards: any,
     appericiation: any,
@@ -271,19 +287,17 @@ export class PerformanceHistoryGraphComponent implements OnInit {
             '{index}. {point.name}, fat: {point.x}g, sugar: {point.y}g, obesity: {point.z}%.',
         },
       },
-    
+
       xAxis: {
         zoomEnabled: false,
         labels: {
-          useHTML: true,  
+          useHTML: true,
         },
         lineColor: '#40A6DC',
         lineWidth: 3,
-        min: 2010,
+        min: 2012,
         max: 2020,
         categories: [
-          '2010',
-          '2011',
           '2012',
           '2013',
           '2014',
@@ -304,11 +318,9 @@ export class PerformanceHistoryGraphComponent implements OnInit {
       },
 
       yAxis: {
-        opposite: true,
         zoomEnabled: false,
         labels: {
           useHTML: true,
-          
         },
         min: 0,
         categories: that.yAxisCatogories,
@@ -321,7 +333,6 @@ export class PerformanceHistoryGraphComponent implements OnInit {
         title: {
           text: '',
         },
-        maxPadding: 0.2,
         accessibility: {
           rangeDescription: 'Range: 0 to 160 grams.',
         },
@@ -330,11 +341,12 @@ export class PerformanceHistoryGraphComponent implements OnInit {
         shared: true,
         useHTML: true,
         formatter: function () {
+          var key: any = this.key;
           return `
           <tr><th>Year</th><td> ${this.x}</td></tr><br />
           <tr><th>Role:</th><td> ${this.y == 0 ? 'LM' : this.y == 1 ? 'HR' : this.y == 2 ? 'Managment' : 'Employee'
             }</td></tr><br />
-          <tr><th>Performance: </th><td>${this.color}</td></tr></table>`;
+          <tr><td>${that.medalsReverse(key)}</td></tr></table>`;
         },
       },
 
@@ -367,7 +379,7 @@ export class PerformanceHistoryGraphComponent implements OnInit {
       },
       series: [
         {
-          
+
           animation: false,
           type: 'bubble',
           name: that.legendLabels[0],

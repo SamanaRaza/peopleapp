@@ -13,7 +13,7 @@ import { ActivatedRoute } from '@angular/router';
 import { BaseComponentComponent } from 'src/app/shared/base-component/base-component.component';
 import { AllServicesService } from 'src/app/services/all-services.service';
 import * as Highcharts from 'highcharts';
-import { Designations } from 'src/app/constants/constants';
+import { Designations, DesignationsValues } from 'src/app/constants/constants';
 interface LegendBand {
   color: string;
   name: string;
@@ -33,6 +33,10 @@ export class BandDesignationGraphComponent
   queryParams: any = {};
   legend: LegendBand;
   processedYData: any = [];
+  seriesNameConverter: any = {
+    'Seriesonename': 'Series One Name',
+    'Seriestwoname': 'Series Two Name'
+  };
   constructor(
     private httpClient: HttpClient,
     private allServicesService: AllServicesService,
@@ -77,12 +81,16 @@ export class BandDesignationGraphComponent
       },
       yAxis: [
         { // left y axis
-         reversed: true,
+          reversed: true,
           title: {
             text: '',
           },
+          labels: {
+            useHTML: true,
+          },
           showEmpty: false,
-          gridLineColor: 'transparent',
+          lineWidth: 3,
+          gridLineWidth: 0,
           categories: [
             '5',
             '5.1',
@@ -92,34 +100,27 @@ export class BandDesignationGraphComponent
           ],
           min: 0,
           max: 4,
-          labels: {
-              align: 'left',
-          },
           zoomEnabled: false,
-      }, { // right y axis
-        zoomEnabled: false,
-        reversed: true,
-        showEmpty: false,
+        }, { // right y axis
+          zoomEnabled: false,
+          reversed: true,
+          showEmpty: false,
           gridLineWidth: 0,
           opposite: true,
           title: {
-              text: null
+            text: ''
           },
-          lineWidth: 3,
-        startOnTick: false,
-        endOnTick: false,
-        min: 0,
-        categories: [
-          Designations.AssistantManager,
-          Designations.CreditAnalyst,
-          Designations.ExecutiveHCMOD,
-          Designations.UnitHead
-        ],
-        max: 3,
-          labels: {
-              align: 'right',
-          },
-      }],
+          startOnTick: false,
+          endOnTick: false,
+          min: 0,
+          categories: [
+            Designations.AssistantManager,
+            Designations.CreditAnalyst,
+            Designations.ExecutiveHCMOD,
+            Designations.UnitHead
+          ],
+          max: 3,
+        }],
       xAxis: {
         zoomEnabled: false,
         min: 0,
@@ -156,22 +157,19 @@ export class BandDesignationGraphComponent
         },
       },
       tooltip: {
-        shared: true,
-        useHTML: true,
-        enabled: true,
-        backgroundColor: "rgba(255,255,255,0)",
-         borderWidth: 0,
-         shadow: false,
-         pointFormatter: function() {
-  
-          return  `
-          <tr><th>Year:</th><td> ${this.x}</td></tr><br />
-          <tr><th>Value:</th><td> ${this.y == 1 ?  Designations.UnitHead : that.valueRev[0]}
-           
-            </td></tr><br />
-          </table>`
-      }
+        pointFormatter: function () {
+          var val: any = this.y;
+          var name: string = DesignationsValues[val];
+          if (this.series.name == 'Bands') {
+            return ''
+              + '<span style="color:{point.color}">Band : </span>' + that.valueRev[val] + '<br/>';
+          } else this.series.name == 'Designations';
+          {
+            return '<span style="color:{point.color}">Designation</span> '
+              + Designations[name as keyof typeof Designations] + '<br/>';
+          }
 
+        }
       },
       plotOptions: {
         series: {

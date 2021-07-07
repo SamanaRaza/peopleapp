@@ -746,6 +746,14 @@ mat-footer-cell:first-of-type {
       font-weight: bold;
     }
 
+    text {
+      text-align: center;
+      color: #5a89ff !important;
+      background-color: lighten(#5a89ff, 20%) !important;
+      padding: 4px !important;
+      font-weight: bold;
+    }
+
     &.highcharts-yaxis-labels {
       span {
         display: block;
@@ -763,22 +771,22 @@ mat-footer-cell:first-of-type {
   }
 }
 
-.band-chart {
-  > div {
-    overflow: visible !important;
+// .band-chart {
+//   > div {
+//     overflow: visible !important;
 
-    > .highcharts-container {
-      overflow: visible !important;
+//     > .highcharts-container {
+//       overflow: visible !important;
 
-      .highcharts-root{
-        width: 1550px;
-      }
-      .highcharts-title {
-        top: -40px !important;
-      }
-    }
-  }
-}
+//       .highcharts-root{
+//         width: 1670px;
+//       }
+//       .highcharts-title {
+//         top: -40px !important;
+//       }
+//     }
+//   }
+// }
 
 .btn-xs {
   padding: 2px 15px;
