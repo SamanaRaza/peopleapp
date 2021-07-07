@@ -699,6 +699,8 @@ mat-footer-cell:first-of-type {
   float: left;
   width: 100%;
 
+  
+
   #chart {
     > div {
       overflow: visible !important;
@@ -756,6 +758,23 @@ mat-footer-cell:first-of-type {
       span {
         display: block;
         width: 40px;
+      }
+    }
+  }
+}
+
+.band-chart {
+  > div {
+    overflow: visible !important;
+
+    > .highcharts-container {
+      overflow: visible !important;
+
+      .highcharts-root{
+        width: 1550px;
+      }
+      .highcharts-title {
+        top: -40px !important;
       }
     }
   }

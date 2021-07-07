@@ -13,6 +13,7 @@ import { ActivatedRoute } from '@angular/router';
 import { BaseComponentComponent } from 'src/app/shared/base-component/base-component.component';
 import { AllServicesService } from 'src/app/services/all-services.service';
 import * as Highcharts from 'highcharts';
+import { Designations } from 'src/app/constants/constants';
 interface LegendBand {
   color: string;
   name: string;
@@ -48,7 +49,7 @@ export class BandDesignationGraphComponent
     that.queryParams = that.route.snapshot.queryParams;
     that.allServicesService.getBandGraph().subscribe((data) => {
       var data = (data as any).data;
-      that.graphDataCustomization(data.band_events);
+      that.graphDataCustomization(data);
       that.generateBandDesignation(
         that.band,
         that.designation,
@@ -74,31 +75,49 @@ export class BandDesignationGraphComponent
           styledMode: true,
         },
       },
-      yAxis: {
+      yAxis: [
+        { // left y axis
+         reversed: true,
+          title: {
+            text: '',
+          },
+          showEmpty: false,
+          gridLineColor: 'transparent',
+          categories: [
+            '5',
+            '5.1',
+            '5.2',
+            '6',
+            '7',
+          ],
+          min: 0,
+          max: 4,
+          labels: {
+              align: 'left',
+          },
+      }, { // right y axis
         reversed: true,
-        title: {
-          text: '',
-        },
-        gridLineColor: 'transparent',
-        labels: {
-          useHTML: true,
-          style: {},
-        },
-        categories: [
-          '5',
-          '5.1',
-          '5.2',
-          '6',
-          '7',
-          '8'
-        ],
-        min: 0,
-        max: 5,
-
-        lineWidth: 3,
+        showEmpty: false,
+          gridLineWidth: 0,
+          opposite: true,
+          title: {
+              text: null
+          },
+          lineWidth: 3,
         startOnTick: false,
         endOnTick: false,
-      },
+        min: 0,
+        categories: [
+          Designations.AssistantManager,
+          Designations.CreditAnalyst,
+          Designations.ExecutiveHCMOD,
+          Designations.UnitHead
+        ],
+        max: 3,
+          labels: {
+              align: 'right',
+          },
+      }],
       xAxis: {
         min: 0,
         max: 8,
@@ -173,23 +192,25 @@ export class BandDesignationGraphComponent
           },
           lineWidth: 4,
           data: bands,
+          yAxis: 0
         },
-        // {
-        //   name: 'Designations',
-        //   type: 'line',
-        //   allowPointSelect: true,
-        //   point: {
-        //     events: {
-        //       select: function () {
-        //         var text = this.y + ' was last selected',
-        //           chart = this.series.chart;
-        //         console.log(text);
-        //       },
-        //     },
-        //   },
-        //   lineWidth: 4,
-        //   data: designations,
-        // },
+        {
+          name: 'Designations',
+          type: 'line',
+          allowPointSelect: true,
+          point: {
+            events: {
+              select: function () {
+                var text = this.y + ' was last selected',
+                  chart = this.series.chart;
+                console.log(text);
+              },
+            },
+          },
+          lineWidth: 4,
+          data: designations,
+          yAxis: 1
+        },
       ],
 
       responsive: {

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import moment from 'moment';
+import { Designations, DesignationsValues } from 'src/app/constants/constants';
 
 @Component({
   selector: 'app-base-component',
@@ -68,7 +69,7 @@ export class BaseComponentComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  graphDataCustomization(employees: any = {}, salary: any = {}) {
+  graphDataCustomization(band_designation_data: any = {}, salary: any = {}) {
     let that = this;
 
     this.startingYear = new Date().getFullYear() - 9;
@@ -80,9 +81,9 @@ export class BaseComponentComponent implements OnInit {
     for (var year = 0; year < allYears; year++)
       that.years.push((startYear.getFullYear() + year).toString());
 
-    if (employees) {
-      const employee_band_year = Object.keys(employees);
-      const employee_band_data: any = Object.values(employees);
+    if (band_designation_data && band_designation_data.band_events) {
+      const employee_band_year = Object.keys(band_designation_data.band_events);
+      const employee_band_data: any = Object.values(band_designation_data.band_events);
       employee_band_data.map((result: any, index: any) => {
         var data: any[] = result[0] && result[0].employee__histories_group;
         if (data && data.length > 0) {
@@ -92,6 +93,34 @@ export class BaseComponentComponent implements OnInit {
         }
         else {
           that.band.push(null)
+        }
+      });
+    }
+
+    if (band_designation_data && band_designation_data.designation_events) {
+      const employee_designation_year = Object.keys(band_designation_data.designation_events);
+      const employee_designation_data: any = Object.values(band_designation_data.designation_events);
+      employee_designation_data.map((result: any, index: any) => {
+        var data: any[] = result[0] && result[0].employee__histories_group;
+        if (data && data.length > 0) {
+          data.map((designation: any, index: any) => {
+            if(designation.new_label == Designations.AssistantManager) {
+              that.designation.push(DesignationsValues.AssistantManager)
+            }
+            else if (designation.new_label == Designations.CreditAnalyst) {
+              that.designation.push(DesignationsValues.CreditAnalyst)
+            }
+            else if (designation.new_label == Designations.ExecutiveHCMOD) {
+              that.designation.push(DesignationsValues.ExecutiveHCMOD)
+            }
+            else if (designation.new_label == Designations.UnitHead) {
+              that.designation.push(DesignationsValues.UnitHead)
+            }
+            
+          })
+        }
+        else {
+          that.designation.push(null)
         }
       });
     }
