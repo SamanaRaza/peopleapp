@@ -343,10 +343,9 @@ export class PerformanceHistoryGraphComponent implements OnInit {
         formatter: function () {
           var key: any = this.key;
           return `
-          <tr><th>Year</th><td> ${this.x}</td></tr><br />
-          <tr><th>Role:</th><td> ${this.y == 0 ? 'LM' : this.y == 1 ? 'HR' : this.y == 2 ? 'Managment' : 'Employee'
-            }</td></tr><br />
-          <tr><td>${that.medalsReverse(key)}</td></tr></table>`;
+          <tr>${this.x}</td></tr><br />
+          <tr><td>${that.medalsReverse(key)} by ${this.y == 0 ? 'LM' : this.y == 1 ? 'HR' : this.y == 2 ? 'Managment' : 'Employee'
+            } </td></tr></table>`;
         },
       },
 
