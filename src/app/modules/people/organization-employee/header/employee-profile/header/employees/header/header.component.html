@@ -6,7 +6,8 @@
             <div class="filters ms-auto">
                 <mat-form-field>
                     <mat-label>Active/Non-Active</mat-label>
-                    <mat-select [(ngModel)]="activeVal" (selectionChange)="changeStatus($event, null)" disableOptionCentering>
+                    <mat-select [(ngModel)]="activeVal" (selectionChange)="changeStatus($event, null)"
+                        disableOptionCentering>
                         <mat-option [value]="active.value" *ngFor="let active of activeEmployees">
                             {{ active.status }}
                         </mat-option>
@@ -14,7 +15,8 @@
                 </mat-form-field>
                 <mat-form-field>
                     <mat-label>Sort By</mat-label>
-                    <mat-select [(ngModel)]="sortData" (selectionChange)="changeOrder($event, null)" disableOptionCentering>
+                    <mat-select [(ngModel)]="sortData" (selectionChange)="changeOrder($event, null)"
+                        disableOptionCentering>
                         <mat-option *ngFor="let empSort of employeeSort" [value]="empSort.value">
                             {{empSort.sort}}
                         </mat-option>
@@ -44,8 +46,8 @@
 
                     <ng-container [cdkColumnDef]="column.columnDef">
                         <mat-header-cell *cdkHeaderCellDef>{{ column.header }}</mat-header-cell>
-                        <mat-cell *cdkCellDef="let element">
-                            <button mat-icon-button [matMenuTriggerFor]="clickmenu">
+                        <mat-cell *cdkCellDef="let element" [matMenuTriggerFor]="clickmenu">
+                            <button mat-icon-button>
                                 {{column.cell(element)}}
                                 <mat-menu #clickmenu="matMenu">
                                     <ng-container *ngFor="let item of menuListItems">
