@@ -87,8 +87,9 @@ export class EmploymentStoryComponent implements OnInit {
         data = result[0];
         data.year = parseInt(employee_data_year[index])
         this.employeeTimeline.push(data);
-
+        
       })
+      this.employeeTimeline.reverse();
     });
   }
 
