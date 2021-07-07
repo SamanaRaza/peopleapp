@@ -169,10 +169,10 @@ export class PerformanceHistoryGraphComponent implements OnInit {
                 : pData[j].pref_level == 'employee' ? 3 : 2,
           z:
             pData[j].pref_size == 'min'
-              ? 40
+              ? 20
               : pData[j].pref_size == 'mid'
-                ? 65
-                : 80,
+                ? 35
+                : 90,
           name: this.medals(pData[j].pref_type),
         });
       }
