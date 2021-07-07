@@ -93,10 +93,10 @@
             ]
         },
         "roles": [
-            "lm",
-            "hr",
-            "management",
-            "employee"
+            "LM",
+            "HR",
+            "Management",
+            "Employee"
         ],
         "pref_types": [
             "Perfomance Rewards",

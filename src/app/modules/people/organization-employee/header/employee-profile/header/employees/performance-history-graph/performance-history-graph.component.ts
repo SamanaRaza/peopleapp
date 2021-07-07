@@ -271,10 +271,11 @@ export class PerformanceHistoryGraphComponent implements OnInit {
             '{index}. {point.name}, fat: {point.x}g, sugar: {point.y}g, obesity: {point.z}%.',
         },
       },
-
+    
       xAxis: {
+        zoomEnabled: false,
         labels: {
-          useHTML: true,
+          useHTML: true,  
         },
         lineColor: '#40A6DC',
         lineWidth: 3,
@@ -303,9 +304,11 @@ export class PerformanceHistoryGraphComponent implements OnInit {
       },
 
       yAxis: {
-
+        opposite: true,
+        zoomEnabled: false,
         labels: {
           useHTML: true,
+          
         },
         min: 0,
         categories: that.yAxisCatogories,
@@ -329,7 +332,7 @@ export class PerformanceHistoryGraphComponent implements OnInit {
         formatter: function () {
           return `
           <tr><th>Year</th><td> ${this.x}</td></tr><br />
-          <tr><th>Role:</th><td> ${this.y == 0 ? 'LM' : this.y == 1 ? 'HR' : 'Managment'
+          <tr><th>Role:</th><td> ${this.y == 0 ? 'LM' : this.y == 1 ? 'HR' : this.y == 2 ? 'Managment' : 'Employee'
             }</td></tr><br />
           <tr><th>Performance: </th><td>${this.color}</td></tr></table>`;
         },
@@ -364,7 +367,7 @@ export class PerformanceHistoryGraphComponent implements OnInit {
       },
       series: [
         {
-          enableMouseTracking: false,
+          
           animation: false,
           type: 'bubble',
           name: that.legendLabels[0],
