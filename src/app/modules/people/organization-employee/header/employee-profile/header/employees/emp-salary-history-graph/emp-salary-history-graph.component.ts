@@ -63,6 +63,7 @@ export class EmpSalaryHistoryGraphComponent
         enabled: false,
       },
       yAxis: {
+        zoomEnabled: false,
         min: 10000,
         max: 100000,
         tickInterval: 10000,
@@ -81,6 +82,7 @@ export class EmpSalaryHistoryGraphComponent
         maxPadding: 0.2,
       },
       xAxis: {
+        zoomEnabled: false,
         min: 0,
         max: 8,
         categories: that.years,

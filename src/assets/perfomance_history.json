@@ -16,25 +16,19 @@
                             "pref_size": "min",
                             "color": "blue"
                         },
+                      
                         {
                             "event_group_id": 1,
                             "pref_type": "rewards",
                             "pref_level": "lm",
-                            "pref_size": "max",
-                            "color": "green"
-                        },
-                        {
-                            "event_group_id": 1,
-                            "pref_type": "rewards",
-                            "pref_level": "lm",
-                            "pref_size": "min",
+                            "pref_size": "mid",
                             "color": "green"
                         },
                         {
                             "event_group_id": 1,
                             "pref_type": "warning",
                             "pref_level": "management",
-                            "pref_size": "min",
+                            "pref_size": "mid",
                             "color": "red"
                         },
                         {
@@ -43,14 +37,8 @@
                             "pref_level": "hr",
                             "pref_size": "max",
                             "color": "yellow"
-                        },
-                        {
-                            "event_group_id": 1,
-                            "pref_type": "appericiation",
-                            "pref_level": "hr",
-                            "pref_size": "min",
-                            "color": "yellow"
                         }
+                        
                     ]
                 }
             ],
