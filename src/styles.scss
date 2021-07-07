@@ -1142,6 +1142,7 @@ mat-footer-cell:first-of-type {
   padding: 5px 10px 4px;
   @extend %bold-fonts;
   margin-bottom: 10px;
+  color: white;
 }
 
 .year-container {
@@ -1151,6 +1152,7 @@ mat-footer-cell:first-of-type {
   right: -85px;
   bottom: 35px;
   margin-bottom: 0;
+  color:white
 }
 
 .story {

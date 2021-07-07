@@ -9,11 +9,12 @@
                     <div class="mdc-layout-grid padding-0">
                         <div class="mdc-layout-grid__inner">
                             <div class="mdc-layout-grid__cell border-right-line pr-90">
-                                <div class="flex-100">
+                                <div class="flex-100" *ngIf="timeline?.employee_history_salary_change">
                                     <div class="self-center">
                                         <span class="left-arrow"></span>
                                         <div class="year-container year" (click)="currentYear($event)">
-                                            {{timeline?.year}}
+                                            {{timeline.year}}
+                                           
                                         </div>
                                         <div class="button-group">
                                             <button mat-raised-button class="appriasal_name"

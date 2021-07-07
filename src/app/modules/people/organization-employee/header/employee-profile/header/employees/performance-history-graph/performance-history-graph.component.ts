@@ -338,7 +338,7 @@ export class PerformanceHistoryGraphComponent implements OnInit {
       plotOptions: {
 
         bubble: {
-          minSize: '30px',
+          minSize: '20px',
           maxSize: '40px',
 
         },
