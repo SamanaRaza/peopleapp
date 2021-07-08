@@ -27,15 +27,16 @@ interface LegendBand {
 })
 export class BandDesignationGraphComponent
   extends BaseComponentComponent
-  implements OnInit, AfterViewInit {
+  implements OnInit, AfterViewInit
+{
   @ViewChild('chartContainer') ChartContainer: ElementRef;
   data: any = {};
   queryParams: any = {};
   legend: LegendBand;
   processedYData: any = [];
   seriesNameConverter: any = {
-    'Seriesonename': 'Series One Name',
-    'Seriestwoname': 'Series Two Name'
+    Seriesonename: 'Series One Name',
+    Seriestwoname: 'Series Two Name',
   };
   constructor(
     private httpClient: HttpClient,
@@ -80,7 +81,8 @@ export class BandDesignationGraphComponent
         },
       },
       yAxis: [
-        { // left y axis
+        {
+          // left y axis
           reversed: true,
           title: {
             text: '',
@@ -91,24 +93,20 @@ export class BandDesignationGraphComponent
           showEmpty: false,
           lineWidth: 3,
           gridLineWidth: 0,
-          categories: [
-            '5',
-            '5.1',
-            '5.2',
-            '6',
-            '7',
-          ],
+          categories: ['5', '5.1', '5.2', '6', '7'],
           min: 0,
           max: 4,
           zoomEnabled: false,
-        }, { // right y axis
+        },
+        {
+          // right y axis
           zoomEnabled: false,
           reversed: true,
           showEmpty: false,
           gridLineWidth: 0,
           opposite: true,
           title: {
-            text: ''
+            text: '',
           },
           startOnTick: false,
           endOnTick: false,
@@ -117,10 +115,11 @@ export class BandDesignationGraphComponent
             Designations.AssistantManager,
             Designations.CreditAnalyst,
             Designations.ExecutiveHCMOD,
-            Designations.UnitHead
+            Designations.UnitHead,
           ],
           max: 3,
-        }],
+        },
+      ],
       xAxis: {
         zoomEnabled: false,
         min: 0,
@@ -131,7 +130,6 @@ export class BandDesignationGraphComponent
           useHTML: true,
           style: {},
         },
-
       },
       legend: {
         symbolPadding: 0,
@@ -161,15 +159,21 @@ export class BandDesignationGraphComponent
           var val: any = this.y;
           var name: string = DesignationsValues[val];
           if (this.series.name == 'Bands') {
-            return ''
-              + '<span style="color:{point.color}">Band : </span>' + that.valueRev[val] + '<br/>';
+            return (
+              '' +
+              '<span style="color:{point.color}">Band : </span>' +
+              that.valueRev[val] +
+              '<br/>'
+            );
           } else this.series.name == 'Designations';
           {
-            return '<span style="color:{point.color}">Designation</span> '
-              + Designations[name as keyof typeof Designations] + '<br/>';
+            return (
+              '<span style="color:{point.color}">Designation</span> ' +
+              Designations[name as keyof typeof Designations] +
+              '<br/>'
+            );
           }
-
-        }
+        },
       },
       plotOptions: {
         series: {
@@ -179,11 +183,10 @@ export class BandDesignationGraphComponent
               for (var i = 0; i < s.length; i++) {
                 if (this.name == 'Show All' || this == s[i])
                   s[i].setVisible(true);
-                else
-                  s[i].setVisible(false);
+                else s[i].setVisible(false);
               }
               return false;
-            }
+            },
           },
           label: {
             connectorAllowed: false,
@@ -211,7 +214,7 @@ export class BandDesignationGraphComponent
           },
           lineWidth: 4,
           data: bands,
-          yAxis: 0
+          yAxis: 0,
         },
         {
           name: 'Designations',
@@ -228,7 +231,7 @@ export class BandDesignationGraphComponent
           },
           lineWidth: 4,
           data: designations,
-          yAxis: 1
+          yAxis: 1,
         },
       ],
 

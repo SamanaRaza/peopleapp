@@ -5,25 +5,26 @@
     <mat-card-content>
         <div class="mdc-layout-grid">
             <div class="storyes-card mdc-layout-grid__inner justify-content-center mt-4">
-                <div  class="storyes mdc-layout-grid__cell" *ngFor="let year of this.years">
+                <div class="storyes mdc-layout-grid__cell" *ngFor="let year of this.years">
                     <div class="story">
                         <div class="year">{{year.year}}</div>
                         <div *ngIf="year.department" class="button-group">
-                            <button class="designation_btn" mat-raised-button>{{year.department}}</button>
+                            <button class="department_btn" mat-raised-button>{{year.department}}</button>
 
                         </div>
                     </div>
-                    <div *ngIf="year.office || year.city"  class="story">
+                    <div *ngIf="year.office || year.city" class="story">
                         <div class="button-group">
-                            <button *ngIf="year.office" mat-raised-button class="appriasal_name">{{year.office}}</button>
-                            <button *ngIf="year.city" mat-raised-button class="appriasal_rating">{{year.city}}</button>
+                            <button *ngIf="year.office" mat-raised-button
+                                class="office_name_btn">{{year.office}}</button>
+                            <button *ngIf="year.city" mat-raised-button class="location_btn">{{year.city}}</button>
                         </div>
                     </div>
                     <ng-container *ngIf="year.designations?.length > 0">
                         <ng-container *ngFor="let designation of year.designations">
                             <div class="story">
                                 <div class="button-group">
-                                    <button mat-raised-button class="band_btn">{{designation}}</button>
+                                    <button mat-raised-button class="designation_btn">{{designation}}</button>
                                 </div>
                             </div>
                         </ng-container>

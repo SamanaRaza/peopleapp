@@ -699,8 +699,6 @@ mat-footer-cell:first-of-type {
   float: left;
   width: 100%;
 
-  
-
   #chart {
     > div {
       overflow: visible !important;
@@ -726,8 +724,9 @@ mat-footer-cell:first-of-type {
     white-space: nowrap;
     text-align: center;
     padding: 10px 10px 0 !important;
-    width: 100% !important;
+    width: auto !important;
     left: 0 !important;
+    right: -1px !important;
   }
 
   .highcharts-background {
@@ -1169,7 +1168,6 @@ mat-footer-cell:first-of-type {
   padding: 5px 10px 4px;
   @extend %bold-fonts;
   margin-bottom: 10px;
-  color: white;
 }
 
 .year-container {
@@ -1179,7 +1177,6 @@ mat-footer-cell:first-of-type {
   right: -85px;
   bottom: 35px;
   margin-bottom: 0;
-  color:white
 }
 
 .story {
@@ -1289,5 +1286,40 @@ mat-footer-cell:first-of-type {
   tspan.highcharts-text-outline {
     stroke: none;
     fill: #fff;
+  }
+}
+
+g.highcharts-axis-labels.highcharts-yaxis-labels {
+  fill: green !important;
+  background-color: red;
+  z-index: 9999;
+  padding: 20px !important;
+}
+
+.mat-button-disabled {
+  background: #a0a0a0;
+  border-color: #a0a0a0 !important;
+  color: #fff;
+
+  .mat-button-wrapper {
+    .mat-paginator-icon path {
+      color: #fff;
+    }
+  }
+
+  &:hover,
+  &:focus,
+  &:active,
+  &:active:hover {
+    background: #a0a0a0;
+    border-color: #a0a0a0 !important;
+    color: #fff;
+    cursor: not-allowed !important;
+
+    .mat-button-wrapper {
+      .mat-paginator-icon path {
+        color: #fff;
+      }
+    }
   }
 }

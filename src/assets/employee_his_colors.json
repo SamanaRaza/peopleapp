@@ -11,7 +11,7 @@
     "office_name": "#6E6C8F",
     "year": {
       "foreground": "#5A89FF",
-      "background": "#5A89FF",
+      "background": "hsl(223deg 100% 68% / 20%)",
       "background_opacity": "20"
     },
     "graph_values": {
