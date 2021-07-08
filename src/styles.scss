@@ -604,7 +604,7 @@ mat-footer-cell:first-of-type {
     .right-arrow {
       position: absolute;
       right: 0;
-      top: 45px;
+      top: 44px;
       left: auto;
       width: 100px;
 
@@ -1397,4 +1397,14 @@ g.highcharts-axis-labels.highcharts-yaxis-labels {
 
 .mb-10 {
   margin-bottom: 10px !important;
+}
+
+.department-arrow {
+  &::before {
+    border-color: transparent transparent transparent var(--department);
+  }
+
+  &:after {
+    border-bottom: 1px solid var(--department);
+  }
 }
