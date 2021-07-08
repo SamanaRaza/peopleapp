@@ -97,7 +97,6 @@ export class BandDesignationGraphComponent
           min: 0,
           max: 4,
           zoomEnabled: false,
-          crosshair: true,
         },
         {
           // right y axis
@@ -107,11 +106,6 @@ export class BandDesignationGraphComponent
           gridLineWidth: 0,
           opposite: true,
           labels: {},
-          crosshair: {
-            label: {
-              enabled: true,
-            },
-          },
           title: {
             text: '',
           },
