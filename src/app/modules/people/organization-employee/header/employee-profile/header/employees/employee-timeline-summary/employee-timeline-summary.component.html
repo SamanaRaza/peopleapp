@@ -4,10 +4,10 @@
             <div
                 class="mdc-layout-grid__cell mdc-layout-grid__cell--span-1-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone self-center">
                 <div class="details" *ngIf="group.emp_pic">
-                    <img src={{group.emp_pic}} alt="">
+                    <img src={{group.emp_pic}} alt="" (click)="EmpInfo(group)">
                 </div>
                 <div class="details" *ngIf="!group.emp_pic">
-                    <img src="assets/images/dummy-pic.jpg" alt="">
+                    <img src="assets/images/dummy-pic.jpg" alt="" (click)="EmpInfo(group)">
                 </div>
             </div>
             <div

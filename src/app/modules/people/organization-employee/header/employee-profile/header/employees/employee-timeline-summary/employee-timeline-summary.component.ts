@@ -40,6 +40,10 @@ export class EmployeeTimelineSummaryComponent implements OnInit {
   designations(event:any){
     console.log('Starting Designation', event.starting_designation, '- Ending Designation',event.ending_designation);
   }
+  EmpInfo(event:any){
+    console.log('Employee Name', event.emp_name,'Starting Designation', event.starting_designation, 'Starting Year', event.starting_year, '- Ending Year',event.ending_year,
+    '- Ending Designation',event.ending_designation,'Latest Band', event.latest_band, '- Ending Band',event.ending_band,'Ending Department', event.ending_department);
+  }
   
 
 }
