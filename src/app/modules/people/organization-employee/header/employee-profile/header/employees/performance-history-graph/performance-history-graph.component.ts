@@ -60,8 +60,8 @@ export class PerformanceHistoryGraphComponent implements OnInit {
       that.performanceData = (data as any).data;
       that.yAxisCatogories = that.performanceData.roles;
       that.legendLabels = that.performanceData.pref_types;
-      const performance_year = Object.keys(that.performanceData.perfomance_history);
-      const performance_data: any = Object.values(that.performanceData.perfomance_history);
+      const performance_year = Object.keys(that.performanceData.performance_history);
+      const performance_data: any = Object.values(that.performanceData.performance_history);
       performance_data.map((result: any, index: any) => {
         var data = result[0].employee_pref_record_history;
         for (var k = 0; k < data.length; k++) {
@@ -293,7 +293,7 @@ export class PerformanceHistoryGraphComponent implements OnInit {
         labels: {
           useHTML: true,
         },
-        lineColor: '#40A6DC',
+
         lineWidth: 3,
         min: 2012,
         max: 2020,

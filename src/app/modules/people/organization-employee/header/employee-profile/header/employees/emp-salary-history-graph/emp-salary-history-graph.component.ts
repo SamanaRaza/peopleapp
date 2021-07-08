@@ -51,7 +51,7 @@ export class EmpSalaryHistoryGraphComponent
       },
       title: {
         useHTML: true,
-        text: 'Salary Change Histroy',
+        text: 'Salary Change History',
         style: {
           color: '#0B94DE',
           // 'background-color': '#9BE997',
