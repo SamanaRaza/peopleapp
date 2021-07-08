@@ -231,8 +231,6 @@ export class EmpHeaderComponent implements OnInit, AfterViewInit {
   applyFilter() {
     if (this.activeVal) {
       this.changeStatus();
-      
-
     } 
     else
     {
@@ -243,7 +241,7 @@ export class EmpHeaderComponent implements OnInit, AfterViewInit {
         const filterValue = this.filter;
       this.dataSource.filter = filterValue.trim().toLowerCase(); 
       }
-      else
+      else if(this.searchData)
       {
         this.filterValues[this.searchData] = this.filter;
         this.dataSource.filter = JSON.stringify(this.filterValues);
@@ -251,14 +249,12 @@ export class EmpHeaderComponent implements OnInit, AfterViewInit {
       this.dataSource.data = this.data;
       this.cdf.detectChanges();
     }
-    
   }
 
   changeStatus() {
     this.allServicesService.getEmployees().subscribe((data: any) => {
       var newData = (data as any).data;
       this.data = newData.filter((x: any) => x.status === this.activeVal);
-
       if(this.sortData){
         this.changeOrder();
       }
@@ -382,21 +378,26 @@ export class EmpHeaderComponent implements OnInit, AfterViewInit {
       }
       else
       {
-        for (let index = 0; index < Object.keys(data).length; index++) {
-          const key = Object.keys(data)[index];
-          if (!data[key]) {
-            data[key] = "";
+        if(that.filter) {
+
+          for (let index = 0; index < Object.keys(data).length; index++) {
+            const key = Object.keys(data)[index];
+            if (!data[key]) {
+              data[key] = "";
+            }
+            if (
+              data[key]
+                .toString()
+                .toLowerCase()
+                .includes(filter)
+            ) {
+              return true;
+            }
           }
-          if (
-            data[key]
-              .toString()
-              .toLowerCase()
-              .includes(filter)
-          ) {
-            return true;
-          }
+          return false;
         }
-        return false;
+        
+        return true;
       }
     
       
