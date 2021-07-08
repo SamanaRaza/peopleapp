@@ -1416,5 +1416,6 @@ g.highcharts-axis-labels.highcharts-yaxis-labels {
 
 .highcharts-yaxis .highcharts-axis-line,
 .highcharts-xaxis .highcharts-axis-line {
-  stroke-width: 2px;
+  stroke-width: 1px;
+  stroke: var(--designation);
 }
