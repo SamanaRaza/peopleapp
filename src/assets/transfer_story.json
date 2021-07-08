@@ -34,6 +34,18 @@
                     },
                     {
                         "event_group_id": 1,
+                        "event_type_id": 8,
+                        "new_label": "123 Mehran Town",
+                        "old_label": null,
+                        "starting_date": "2012-05-25",
+                        "duration": "12 months",
+                        "employee_event_name": {
+                            "id": 8,
+                            "name": "Office"
+                        }
+                    },
+                    {
+                        "event_group_id": 1,
                         "event_type_id": 7,
                         "new_label": "Lahore",
                         "old_label": null,
@@ -41,7 +53,7 @@
                         "duration": "12 months",
                         "employee_event_name": {
                             "id": 7,
-                            "name": "Office"
+                            "name": "Location"
                         }
                     }
                 ]
@@ -96,6 +108,18 @@
                             "id": 7,
                             "name": "Office"
                         }
+                    },
+                    {
+                        "event_group_id": 1,
+                        "event_type_id": 7,
+                        "new_label": "Lahore",
+                        "old_label": null,
+                        "starting_date": "2012-05-25",
+                        "duration": "12 months",
+                        "employee_event_name": {
+                            "id": 7,
+                            "name": "Location"
+                        }
                     }
                 ]
             }
@@ -141,13 +165,25 @@
                     {
                         "event_group_id": 5,
                         "event_type_id": 7,
-                        "new_label": "Lahore",
+                        "new_label": "Bhata Chowk",
                         "old_label": "Lahore",
                         "starting_date": "2014-06-25",
                         "duration": "20 months",
                         "employee_event_name": {
                             "id": 7,
                             "name": "Office"
+                        }
+                    },
+                    {
+                        "event_group_id": 1,
+                        "event_type_id": 7,
+                        "new_label": "Lahore",
+                        "old_label": null,
+                        "starting_date": "2012-05-25",
+                        "duration": "12 months",
+                        "employee_event_name": {
+                            "id": 7,
+                            "name": "Location"
                         }
                     }
                 ]

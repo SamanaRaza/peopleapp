@@ -58,7 +58,10 @@ export class TransferStoryComponent implements OnInit {
           else if(employeeDetail[j].employee_event_name.name == 'Office') {
             this.isData = true;
             this.year.office = employeeDetail[j].new_label;
-            this.year.city = employeeDetail[j].old_label;
+          }
+          else if(employeeDetail[j].employee_event_name.name == 'Location') {
+            this.isData = true;
+            this.year.location = employeeDetail[j].new_label;
           }
         }
         if(this.isData == true) {
