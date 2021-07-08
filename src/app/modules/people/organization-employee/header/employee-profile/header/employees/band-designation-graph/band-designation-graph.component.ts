@@ -67,7 +67,8 @@ export class BandDesignationGraphComponent
     const options: HighCharts.Options = {
       chart: {
         type: 'line',
-        plotBorderWidth: 0,
+        plotBorderWidth: 3,
+        plotBorderColor: 'green',
         zoomType: 'xy',
       },
       credits: {
@@ -126,7 +127,8 @@ export class BandDesignationGraphComponent
         min: 0,
         max: 8,
         categories: that.years,
-        lineWidth: 3,
+        lineWidth: 0,
+        lineColor : 'green',
         labels: {
           useHTML: true,
           style: {},
