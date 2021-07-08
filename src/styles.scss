@@ -484,9 +484,13 @@ p {
     .mat-form-field-label-wrapper {
       box-sizing: border-box;
       @extend %bold-fonts;
+      top: 0;
+      padding-top: 0;
+      line-height: 30px;
+      vertical-align: middle;
 
       .mat-form-field-label {
-        top: 19px;
+        top: 0;
         left: 6px;
       }
     }
