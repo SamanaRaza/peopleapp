@@ -743,7 +743,7 @@ mat-footer-cell:first-of-type {
       color: #5a89ff !important;
       background-color: lighten(#5a89ff, 20%) !important;
       padding: 4px !important;
-      font-weight: bold;
+      font-weight: 600;
     }
 
     text {
@@ -751,7 +751,7 @@ mat-footer-cell:first-of-type {
       color: #5a89ff !important;
       background-color: lighten(#5a89ff, 20%) !important;
       padding: 4px !important;
-      font-weight: bold;
+      font-weight: 600;
     }
 
     &.highcharts-yaxis-labels {

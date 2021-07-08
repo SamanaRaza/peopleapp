@@ -101,12 +101,21 @@ export class BandDesignationGraphComponent
           min: 0,
           max: 4,
           zoomEnabled: false,
+          crosshair: true
         }, { // right y axis
           zoomEnabled: false,
           reversed: true,
           showEmpty: false,
           gridLineWidth: 0,
           opposite: true,
+          labels: {
+          },
+                crosshair: {
+                    label: {
+                        
+                        enabled: true,
+                    }
+                },
           title: {
             text: ''
           },
@@ -200,6 +209,7 @@ export class BandDesignationGraphComponent
           name: 'Bands',
           type: 'line',
           allowPointSelect: true,
+          color: '#14b5d0',
           point: {
             events: {
               select: function () {
@@ -216,6 +226,7 @@ export class BandDesignationGraphComponent
         {
           name: 'Designations',
           type: 'line',
+          color: '#5a89ff',
           allowPointSelect: true,
           point: {
             events: {
