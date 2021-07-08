@@ -598,9 +598,9 @@ mat-footer-cell:first-of-type {
   }
 
   .details {
-    width: auto;
+    width: 60px;
     border-radius: 0;
-    height: auto;
+    height: 60px;
     display: inline-block;
     overflow: visible;
 
@@ -649,8 +649,8 @@ mat-footer-cell:first-of-type {
 }
 
 .details {
-  width: 100px;
-  height: 100px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   overflow: hidden;
 
@@ -947,7 +947,7 @@ mat-footer-cell:first-of-type {
 
 .year-btn {
   background: var(--background);
-  color: $white;
+  color: var(--foreground);
 
   &:hover,
   &:focus,
@@ -956,7 +956,7 @@ mat-footer-cell:first-of-type {
   &.cdk-focused,
   &.cdk-mouse-focused {
     background: var(--background);
-    color: $white;
+    color: var(--foreground);
   }
 }
 

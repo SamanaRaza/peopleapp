@@ -2,7 +2,7 @@
     <div class="mdc-layout-grid padding-0">
         <div class="mdc-layout-grid__inner">
             <div
-                class="custom-grid-cell mdc-layout-grid__cell mdc-layout-grid__cell--span-1-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+                class="self-center mdc-layout-grid__cell mdc-layout-grid__cell--span-1-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
                 <div class="details">
                     <img src={{group.emp_pic}} alt="">
                 </div>
@@ -10,12 +10,12 @@
             <div
                 class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
                 <div class="button-group">
-                    <button class="designation_btn" mat-raised-button>
+                    <button class="name_btn" mat-raised-button>
                         {{group.emp_name}}
                     </button>
                 </div>
                 <div class="button-group">
-                    <button class="band_btn" mat-raised-button>
+                    <button class="designation_btn" mat-raised-button>
                         {{group.ending_designation}}
                     </button>
                     <button class="department_btn" mat-raised-button>
@@ -26,7 +26,7 @@
             <div
                 class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop align-right mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
                 <div class="button-group">
-                    <button class="department_btn" mat-raised-button>
+                    <button class="year-btn" mat-raised-button>
                         {{group.starting_year}} - {{group.ending_year}}
 
                     </button>
@@ -35,7 +35,7 @@
                     </button>
                 </div>
                 <div class="button-group">
-                    <button class="band_btn" mat-raised-button>
+                    <button class="designation_btn" mat-raised-button>
                         {{group.starting_designation}} -
                         {{group.ending_designation}}
                     </button>
