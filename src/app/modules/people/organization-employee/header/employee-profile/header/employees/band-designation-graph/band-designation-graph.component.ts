@@ -174,7 +174,7 @@ export class BandDesignationGraphComponent
               + '<span style="color:{point.color}">Band : </span>' + that.valueRev[val] + '<br/>';
           } else this.series.name == 'Designations';
           {
-            return '<span style="color:{point.color}">Designation</span> '
+            return '<span style="color:{point.color}">Designation:</span> '
               + Designations[name as keyof typeof Designations] + '<br/>';
           }
 
