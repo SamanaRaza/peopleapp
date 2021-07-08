@@ -31,10 +31,10 @@ export class PerformanceHistoryGraphComponent implements OnInit {
   chartData: any = [];
   reward: any = [];
   warning: any = [];
-  appriciation: any = [];
+  appreciation: any = [];
   queryParams: any = {};
   performance: any = [];
-  appericiationData: any = [];
+  appreciationData: any = [];
   rewardsData: any = [];
   warningData: any = [];
   trainingData: any = [];
@@ -65,13 +65,13 @@ export class PerformanceHistoryGraphComponent implements OnInit {
       performance_data.map((result: any, index: any) => {
         var data = result[0].employee_pref_record_history;
         for (var k = 0; k < data.length; k++) {
-          if (data[k].pref_type == 'appericiation') {
-            if (this.appericiationData.length > 0) {
+          if (data[k].pref_type == 'appreciation') {
+            if (this.appreciationData.length > 0) {
               var newdata = this.loadPerformanceData(data, data[k].pref_type, performance_year[index]);
-              this.appericiationData[0].data = this.appericiationData[0].data.concat(newdata);
+              this.appreciationData[0].data = this.appreciationData[0].data.concat(newdata);
             }
             else {
-              this.appericiationData.push({
+              this.appreciationData.push({
                 name: data[k].pref_type,
                 type: 'bubble',
                 data: this.loadPerformanceData(data, data[k].pref_type, performance_year[index]),
@@ -122,15 +122,15 @@ export class PerformanceHistoryGraphComponent implements OnInit {
 
       })
       if (performance_data.length > 0) {
-        that.generatePerformance(this.rewardsData[0].data, this.appericiationData[0].data, this.warningData[0].data, this.trainingData[0].data);
+        that.generatePerformance(this.rewardsData[0].data, this.appreciationData[0].data, this.warningData[0].data, this.trainingData[0].data);
       } else {
         var emp_rewards: any = [];
-        var emp_appericiation: any = [];
+        var emp_appreciation: any = [];
         var emp_warning: any = [];
         var emp_training: any = [];
         that.generatePerformance(
           emp_rewards,
-          emp_appericiation,
+          emp_appreciation,
           emp_warning,
           emp_training
         );
@@ -186,7 +186,7 @@ export class PerformanceHistoryGraphComponent implements OnInit {
     switch (pref_type) {
       case 'rewards':
         return 'R';
-      case 'appericiation':
+      case 'appreciation':
         return 'A';
       case 'warning':
         return 'W';
@@ -203,7 +203,7 @@ export class PerformanceHistoryGraphComponent implements OnInit {
       case 'R':
         return 'Performance Reward';
       case 'A':
-        return 'Letter of Appericiations';
+        return 'Letter of Appreciation';
       case 'W':
         return 'Warning';
       case 'T':
@@ -215,7 +215,7 @@ export class PerformanceHistoryGraphComponent implements OnInit {
 
   generatePerformance(
     rewards: any,
-    appericiation: any,
+    appreciation: any,
     warning: any,
     training: any
   ) {
@@ -399,7 +399,7 @@ export class PerformanceHistoryGraphComponent implements OnInit {
         {
           type: 'bubble',
           name: that.legendLabels[1],
-          data: appericiation,
+          data: appreciation,
           color: 'rgb(237 187 7)',
           allowPointSelect: true,
           point: {

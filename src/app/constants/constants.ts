@@ -11,3 +11,9 @@ export enum DesignationsValues {
   ExecutiveHCMOD = 2,
   UnitHead = 3,
 }
+export enum EmployeeTransferHistories{
+  Department = 'Department',
+  Designation = 'Designation',
+  Office = 'Office',
+  Location = 'Location'
+}
