@@ -484,9 +484,13 @@ p {
     .mat-form-field-label-wrapper {
       box-sizing: border-box;
       @extend %bold-fonts;
+      top: 0;
+      padding-top: 0;
+      line-height: 30px;
+      vertical-align: middle;
 
       .mat-form-field-label {
-        top: 19px;
+        top: 0;
         left: 6px;
       }
     }
@@ -576,6 +580,10 @@ mat-footer-cell:first-of-type {
     content: "";
     display: block;
     top: 50px;
+
+    @media (max-width: 1600px) {
+      left: 20px;
+    }
   }
 
   &::after {
@@ -600,10 +608,6 @@ mat-footer-cell:first-of-type {
       left: auto;
       width: 100px;
 
-      @media (max-width: 1600px) {
-        right: -60px;
-      }
-
       &::before {
         left: 90px;
       }
@@ -612,6 +616,20 @@ mat-footer-cell:first-of-type {
         left: 20px;
         width: 70px;
         top: 15px;
+      }
+
+      @media (max-width: 1600px) {
+        right: -50px;
+
+        &::before {
+          left: 60px;
+        }
+
+        &::after {
+          left: 20px;
+          width: 40px;
+          top: 15px;
+        }
       }
     }
 
@@ -1128,7 +1146,7 @@ mat-footer-cell:first-of-type {
     box-shadow: none;
 
     @media (max-width: 1199px) {
-      height: auto;
+      height: auto !important;
       min-height: 40px;
     }
   }

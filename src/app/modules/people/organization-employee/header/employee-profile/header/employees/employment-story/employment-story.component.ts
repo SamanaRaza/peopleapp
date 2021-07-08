@@ -100,43 +100,51 @@ export class EmploymentStoryComponent implements OnInit {
   }
 
   currentYear(event: any) {
-    console.log('year', event.target.innerHTML);
+    console.log('year', event.year);
   }
   BandClick(event: any) {
-    console.log('Band', event.target.innerHTML);
+    console.log('Old Band', event.employee__histories_without_lm_group[1]?.old_label,'New Band',event.employee__histories_without_lm_group[1]?.new_label);
   }
   AppriasalName(event: any) {
-    console.log('AppriasalName', event.target.innerHTML);
+    console.log('AppriasalName', event.employee_history_salary_change?.salary_change_label);
   }
-  assesment(event: any) {
-    console.log('assesment', event.target.innerHTML);
+  selfAssesment(event: any) {
+    console.log('Self Assesment', event.employee_history_salary_change?.emp_rating);
+  }
+  LMAssesment(event: any) {
+    console.log('LM Assesment', event.employee_history_salary_change?.lm_rating);
+  }
+  HRAssesment(event: any) {
+    console.log('HR Assesment', event.employee_history_salary_change?.hr_rating);
   }
   salary(event: any) {
-    console.log('Old Salary & New Salary', event.target.innerHTML);
+    console.log('Old Salary', event.employee_history_salary_change?.old_salary,
+    'New Salary',event.employee_history_salary_change?.new_salary,
+    'Change in Salary',event.employee_history_salary_change?.change_in_salary);
   }
   currentDesignation(event: any) {
-    console.log('currentDesignation', event.target.innerHTML);
+    console.log('currentDesignation', event.employee__histories_without_lm_group[0]?.new_label);
   }
   currentDepartment(event: any) {
-    console.log('currentDepartment', event.target.innerHTML);
+    console.log('currentDepartment', event.employee__histories_without_lm_group[2]?.new_label);
   }
   currentBranch(event: any) {
-    console.log('currentBranch', event.target.innerHTML);
+    console.log('currentBranch', event.employee__histories_without_lm_group[3]?.new_label);
   }
   startingDate(event: any) {
-    console.log('startingDate', event.target.innerHTML);
+    console.log('startingDate', event.starting_date);
   }
   duration(event: any) {
-    console.log('duration', event.target.innerHTML);
+    console.log('duration', event.employee__histories_without_lm_group[1]?.duration);
   }
   LMDuration(event: any) {
-    console.log('LM Duration', event.target.innerHTML);
+    console.log('LM Duration', event.duration);
   }
   LMName(event: any) {
-    console.log('LM Name', event.target.innerHTML);
+    console.log('LM Name', event.new_label);
   }
   LMInfo(event: any) {
-    console.log('LM Info', event.name + '' + event.duration);
+    console.log('LM Name', event.new_label , 'LM Duration' , event.duration);
   }
   setBreadcrumbs() {
     let that = this;

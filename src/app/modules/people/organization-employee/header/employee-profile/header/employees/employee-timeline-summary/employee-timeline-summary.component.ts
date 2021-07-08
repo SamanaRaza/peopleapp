@@ -20,9 +20,26 @@ export class EmployeeTimelineSummaryComponent implements OnInit {
     this.allServicesService.getEmpDetails().subscribe((data:any) => {
       this.persons = (data as any).data;
       // this.persons = this.persons.filter((x: any) => x.empID == this.queryParams.employeeId);
-
-      
     });
   }
+  empName(event:any){
+    console.log('Employee Name', event.emp_name);
+  }
+  endingDesignation(event:any){
+    console.log('Ending Designation', event.ending_designation);
+  }
+  endingDepartment(event:any){
+    console.log('Ending Department', event.ending_department);
+  }
+  years(event:any){
+    console.log('Starting Year', event.starting_year, '- Ending Year',event.ending_year);
+  }
+  bands(event:any){
+    console.log('Latest Band', event.latest_band, '- Ending Band',event.ending_band);
+  }
+  designations(event:any){
+    console.log('Starting Designation', event.starting_designation, '- Ending Designation',event.ending_designation);
+  }
+  
 
 }

@@ -7,25 +7,25 @@
             <div class="storyes-card mdc-layout-grid__inner justify-content-center mt-4">
                 <div class="storyes mdc-layout-grid__cell" *ngFor="let year of this.years">
                     <div class="story">
-                        <div class="year">{{year.year}}</div>
+                        <div class="year" (click)="empYear(year)">{{year.year}}</div>
                         <div *ngIf="year.department" class="button-group">
-                            <button class="department_btn" mat-raised-button>{{year.department}}</button>
+                            <button class="department_btn" mat-raised-button (click)="department(year)">{{year.department}}</button>
 
                         </div>
                     </div>
                     <div *ngIf="year.office || year.location" class="story">
                         <div class="button-group">
                             <button *ngIf="year.office" mat-raised-button
-                                class="office_name_btn">{{year.office}}</button>
+                                class="office_name_btn" (click)="office(year)">{{year.office}}</button>
                             <button *ngIf="year.location" mat-raised-button
-                                class="location_btn">{{year.location}}</button>
+                                class="location_btn" (click)="location(year)">{{year.location}}</button>
                         </div>
                     </div>
                     <ng-container *ngIf="year.designations?.length > 0">
                         <ng-container *ngFor="let designation of year.designations">
                             <div class="story">
                                 <div class="button-group">
-                                    <button mat-raised-button class="designation_btn">{{designation}}</button>
+                                    <button mat-raised-button class="designation_btn" (click)="Designation(designation)">{{designation}}</button>
                                 </div>
                             </div>
                         </ng-container>
