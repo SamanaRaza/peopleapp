@@ -567,13 +567,35 @@ mat-footer-cell:first-of-type {
 .storyes-card {
   margin-bottom: 50px;
 
+  &::before {
+    position: absolute;
+    left: 30px;
+    border-color: transparent transparent transparent var(--designation);
+    border-width: 6px 0px 6px 11px;
+    border-style: solid;
+    content: "";
+    display: block;
+    top: 50px;
+  }
+
+  &::after {
+    position: absolute;
+    left: 0;
+    border-bottom: 1px solid var(--designation);
+    width: 30px;
+    content: "";
+    display: block;
+    top: 55px;
+    margin-top: 0;
+  }
+
   .storyes {
     margin-bottom: 50px;
     position: relative;
 
     .right-arrow {
       position: absolute;
-      right: -30px;
+      right: 0;
       top: 45px;
       left: auto;
       width: 100px;
@@ -582,10 +604,13 @@ mat-footer-cell:first-of-type {
         right: -60px;
       }
 
+      &::before {
+        left: 90px;
+      }
+
       &::after {
-        right: 0;
-        left: 0;
-        width: 40px;
+        left: 20px;
+        width: 70px;
         top: 15px;
       }
     }
@@ -1350,4 +1375,8 @@ g.highcharts-axis-labels.highcharts-yaxis-labels {
   .custom-grid-cell {
     grid-column-end: span 2;
   }
+}
+
+.mb-10 {
+  margin-bottom: 10px !important;
 }
