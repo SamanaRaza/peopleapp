@@ -225,8 +225,7 @@ export class PerformanceHistoryGraphComponent implements OnInit {
         animation: false,
         backgroundColor: '#FAFAFB',
         type: 'bubble',
-        plotBorderWidth: 3,
-        plotBorderColor: 'green',
+        plotBorderWidth: 0,
         zoomType: 'xy',
       },
       credits: {
@@ -295,8 +294,7 @@ export class PerformanceHistoryGraphComponent implements OnInit {
           useHTML: true,
         },
 
-        lineWidth: 0,
-        lineColor: 'green',
+        lineWidth: 3,
         min: 2012,
         max: 2020,
         categories: [
