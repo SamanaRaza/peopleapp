@@ -46,8 +46,7 @@ export class EmpSalaryHistoryGraphComponent
       chart: {
         backgroundColor: '#F2F3F4',
         type: 'line',
-        plotBorderWidth: 3,
-        plotBorderColor: 'green',
+        plotBorderWidth: 0,
         zoomType: 'xy',
       },
       title: {
@@ -83,8 +82,7 @@ export class EmpSalaryHistoryGraphComponent
         zoomEnabled: false,
         min: 0,
         max: 8,
-        lineWidth : 0,
-        lineColor: 'green',
+        lineWidth : 3,
         categories: that.years,
         labels: {
           useHTML: true,
