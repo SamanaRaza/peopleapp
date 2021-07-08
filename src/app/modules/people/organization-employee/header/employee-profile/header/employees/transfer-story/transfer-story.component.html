@@ -4,7 +4,7 @@
     </mat-card-header>
     <mat-card-content>
         <div class="mdc-layout-grid">
-            <div class="storyes-card mdc-layout-grid__inner justify-content-center mt-4">
+            <div class="storyes-card mdc-layout-grid__inner justify-content-center mt-4 department-arrow">
                 <div class="storyes mdc-layout-grid__cell" *ngFor="let year of this.years">
                     <div class="story">
                         <div class="year">{{year.year}}</div>
@@ -30,7 +30,7 @@
                             </div>
                         </ng-container>
                     </ng-container>
-                    <div class="right-arrow"></div>
+                    <div class="right-arrow department-arrow"></div>
                 </div>
             </div>
         </div>
