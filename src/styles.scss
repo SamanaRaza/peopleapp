@@ -1408,3 +1408,8 @@ g.highcharts-axis-labels.highcharts-yaxis-labels {
     border-bottom: 1px solid var(--department);
   }
 }
+
+.highcharts-yaxis .highcharts-axis-line,
+.highcharts-xaxis .highcharts-axis-line {
+  stroke-width: 4px;
+}
