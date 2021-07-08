@@ -2,7 +2,7 @@
     "status": "pass",
     "message": "success",
     "data": {
-        "perfomance_history": {
+        "performance_history": {
             "2012": [
                 {
                     "id": 1,
@@ -87,7 +87,7 @@
             "Employee"
         ],
         "pref_types": [
-            "Perfomance Rewards",
+            "Performance Rewards",
             "Letter of Appreciation",
             "Warning Letter",
             "Training"
