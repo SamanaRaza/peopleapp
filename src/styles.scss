@@ -575,11 +575,11 @@ mat-footer-cell:first-of-type {
     position: absolute;
     left: 30px;
     border-color: transparent transparent transparent var(--designation);
-    border-width: 6px 0px 6px 11px;
+    border-width: 6px 0px 6px 12px;
     border-style: solid;
     content: "";
     display: block;
-    top: 50px;
+    top: 54px;
 
     @media (max-width: 1600px) {
       left: 20px;
@@ -593,7 +593,7 @@ mat-footer-cell:first-of-type {
     width: 30px;
     content: "";
     display: block;
-    top: 55px;
+    top: 59px;
     margin-top: 0;
   }
 
@@ -1256,7 +1256,7 @@ mat-footer-cell:first-of-type {
     position: absolute;
     left: 30px;
     border-color: transparent transparent transparent var(--designation);
-    border-width: 6px 0px 6px 11px;
+    border-width: 6px 0px 6px 12px;
     border-style: solid;
     content: "";
     display: block;
