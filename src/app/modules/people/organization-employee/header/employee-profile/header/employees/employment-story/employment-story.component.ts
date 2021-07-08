@@ -38,7 +38,6 @@ export class EmploymentStoryComponent implements OnInit {
       .on('colors')
       .subscribe((data) => {
         this.color = data;
-        console.log('Color2', this.color);
         cssVars({
           variables: {
             '--designation': this.color.designation,

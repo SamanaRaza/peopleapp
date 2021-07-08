@@ -27,7 +27,6 @@ export class TransferStoryComponent implements OnInit {
     private allServicesService: AllServicesService,
     private route: ActivatedRoute, private comParentChildService: ComParentChildService) {
     this.subscription = this.comParentChildService.on('colors').subscribe(color => {
-      console.log('Colors3', color)
      })}
 
   ngOnInit() {
