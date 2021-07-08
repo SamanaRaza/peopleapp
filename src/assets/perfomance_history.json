@@ -50,7 +50,7 @@
                     "employee_pref_record_history": [
                         {
                             "event_group_id": 2,
-                            "pref_type": "appericiation",
+                            "pref_type": "appreciation",
                             "pref_level": "lm",
                             "pref_size": "min",
                             "color": "yellow"
@@ -88,7 +88,7 @@
         ],
         "pref_types": [
             "Perfomance Rewards",
-            "Letter of Appericiations",
+            "Letter of Appreciation",
             "Warning Letter",
             "Training"
         ]

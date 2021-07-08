@@ -5,6 +5,7 @@ import { ActivatedRoute } from "@angular/router";
 import { ComParentChildService } from 'src/app/services/com-parent-child.service';
 import { Subscription } from 'rxjs';
 import cssVars from 'css-vars-ponyfill';
+import { EmployeeTransferHistories } from "src/app/constants/constants";
 
 
 @Component({
@@ -45,21 +46,21 @@ export class TransferStoryComponent implements OnInit {
         var employeeDetail = value[0].employee_transfer__histories;
         // this.year.employee_transfer__histories = value[0].employee_transfer__histories;
         for(var j=0; j< employeeDetail.length; j++){
-          if(employeeDetail[j].employee_event_name.name == 'Department') {
+          if(employeeDetail[j].employee_event_name.name == EmployeeTransferHistories.Department) {
             this.isData = true;
             this.year.department = employeeDetail[j].new_label;
           }
-          else if(employeeDetail[j].employee_event_name.name == 'Designation') {
+          else if(employeeDetail[j].employee_event_name.name == EmployeeTransferHistories.Designation) {
             this.isData = true;
             employeeDetail[j].old_label ? this.designations.push(employeeDetail[j].old_label) : null;
             employeeDetail[j].new_label  ? this.designations.push(employeeDetail[j].new_label) : null;
             this.year.designations = this.designations;
           }
-          else if(employeeDetail[j].employee_event_name.name == 'Office') {
+          else if(employeeDetail[j].employee_event_name.name == EmployeeTransferHistories.Office) {
             this.isData = true;
             this.year.office = employeeDetail[j].new_label;
           }
-          else if(employeeDetail[j].employee_event_name.name == 'Location') {
+          else if(employeeDetail[j].employee_event_name.name == EmployeeTransferHistories.Location) {
             this.isData = true;
             this.year.location = employeeDetail[j].new_label;
           }
