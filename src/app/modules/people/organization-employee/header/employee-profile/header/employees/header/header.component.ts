@@ -347,7 +347,7 @@ export class EmpHeaderComponent implements OnInit, AfterViewInit {
   createFilter() {
     let that = this;
     let filterFunction = function (data: any, filter: string): boolean {
-      if(that.searchData)
+      if(that.searchData && that.searchData != 'empID')
       {
         let searchTerms = JSON.parse(filter);
         let isFilterSet = false;
@@ -375,6 +375,10 @@ export class EmpHeaderComponent implements OnInit, AfterViewInit {
           }
         }
       return nameSearch()
+      }
+      else if(that.searchData == 'empID') {
+        var val = JSON.parse(filter);
+        return data[that.searchData] == val.empID;
       }
       else
       {
