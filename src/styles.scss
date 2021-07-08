@@ -407,6 +407,10 @@ p {
 
     .mat-cell {
       @extend %light-fonts;
+
+      .mat-button-base {
+        width: auto;
+      }
     }
 
     .mat-footer-cell,
