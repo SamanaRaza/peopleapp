@@ -747,10 +747,10 @@ mat-footer-cell:first-of-type {
 
     text {
       text-align: center;
-      color: #5a89ff !important;
+      fill: #5a89ff !important;
       background-color: lighten(#5a89ff, 20%) !important;
       padding: 4px !important;
-      font-weight: 600;
+      @extend %bold-fonts;
     }
 
     &.highcharts-yaxis-labels {
@@ -1279,6 +1279,19 @@ mat-footer-cell:first-of-type {
   &:active,
   &:focus:active {
     background: lighten($info-btn, 10%);
+    color: $white;
+  }
+}
+
+.band-btn {
+  background: $band-btn;
+  color: $white;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &:focus:active {
+    background: lighten($band-btn, 10%);
     color: $white;
   }
 }

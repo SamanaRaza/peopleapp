@@ -141,14 +141,14 @@ export class BandDesignationGraphComponent
         labelFormatter: function () {
           if (this.name == 'Bands') {
             return (
-              '<button class="mat-focus-indicator info-btn mat-raised-button mat-button-base btn-width"> <span class="mat-button-wrapper">' +
+              '<button class="mat-focus-indicator band-btn mat-raised-button mat-button-base btn-width"> <span class="mat-button-wrapper">' +
               this.name +
               '</span></button>'
             );
           } else this.name == 'Designations';
           {
             return (
-              '<button class="mat-focus-indicator danger-btn mat-raised-button mat-button-base btn-width"> <span class="mat-button-wrapper">' +
+              '<button class="mat-focus-indicator info-btn mat-raised-button mat-button-base btn-width"> <span class="mat-button-wrapper">' +
               this.name +
               '</span></button>'
             );
