@@ -44,7 +44,7 @@ export class EmpHeaderComponent implements OnInit, AfterViewInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
   show: boolean;
-  dataSource: MatTableDataSource<Employee>;
+  dataSource = new MatTableDataSource();
   @ViewChild(MatTable) dtable: MatTable<Employee>;
   data: any;
   sortData: any;
@@ -54,6 +54,7 @@ export class EmpHeaderComponent implements OnInit, AfterViewInit {
   displayedColumns: string[];
   highlighted: any;
   filter: any;
+  filterValues : any= {};
   activeList = ['Yes', 'No'];
   employeeSort = [
     { value: 1, sort: 'A to Z' },
@@ -185,28 +186,32 @@ export class EmpHeaderComponent implements OnInit, AfterViewInit {
     that.setBreadcrumbs();
   }
 
+  // Get Uniqu values from columns to build filter
+  getFilterObject(fullObj :any, key : any) {
+    const uniqChk : any= [];
+    fullObj.filter((obj: any) => {
+      if (!uniqChk.includes(obj[key])) {
+        uniqChk.push(obj[key]);
+      }
+      return obj;
+    });
+    return uniqChk;
+  }
+
   loadData() {
     let that = this;
     this.allServicesService.getEmployees().subscribe(
       (data: any) => {
         this.data = (data as any).data;
-        this.dataSource = new MatTableDataSource((data as any).data);
-        this.dataSource.paginator = this.paginator;
+        // this.dataSource = new MatTableDataSource((data as any).data);
+        // this.dataSource.paginator = this.paginator;
+        this.dataSource.filterPredicate = this.createFilter();
 
-        this.dataSource.filterPredicate = function (
-          data1: any,
-          filter: string
-        ): boolean {
-          if (that.searchData == 'empID') {
-            return data1[that.searchData] == filter;
-          } else {
-            if (that.searchData == 'all') {
-              return true;
-            } else {
-              return data1[that.searchData].toLowerCase().includes(filter);
-            }
-          }
-        };
+        this.dataSource.data = (data as any).data;
+        this.dataSource.paginator = this.paginator;
+        this.columns.filter((o) => {
+      o.options = this.getFilterObject((data as any).data, o.columnProp);
+    });
       },
       (error) => console.error(error)
     );
@@ -222,31 +227,22 @@ export class EmpHeaderComponent implements OnInit, AfterViewInit {
   }
 
   applyFilter() {
-    if (this.filter) {
-      const filterValue = this.filter;
-      this.dataSource.filter = filterValue.trim().toLowerCase();
-      this.cdf.detectChanges();
-    } else {
-      this.loadData();
-      if (this.activeVal) {
-        this.changeStatus(null, this.activeVal);
-      }
-      this.cdf.detectChanges();
+    if (this.activeVal) {
+      this.changeStatus();
+      
+
+    } 
+    if(this.sortData){
+      this.changeOrder();
     }
+    this.filterValues[this.searchData] = this.filter;
+    this.dataSource.filter = JSON.stringify(this.filterValues);
+    this.dataSource.data = this.data;
+    this.cdf.detectChanges();
   }
 
-  changeStatus(e: any, status: any) {
-    var value = e ? e.value : status;
-    this.allServicesService.getEmployees().subscribe((data: any) => {
-      var newData = (data as any).data;
-      this.data = newData.filter((x: any) => x.status === value);
-      if (this.sortData) {
-        this.changeOrder(null, this.sortData);
-      }
-      this.dataSource = new MatTableDataSource(this.data);
-      this.dataSource.paginator = this.paginator;
-      this.dtable.renderRows();
-    });
+  changeStatus() {
+    this.data = this.data.filter((x: any) => x.status === this.activeVal);
   }
 
   compare(a: any, b: any) {
@@ -259,16 +255,14 @@ export class EmpHeaderComponent implements OnInit, AfterViewInit {
     return 0;
   }
 
-  changeOrder(e: any, sort: any) {
-    var value = e ? e.value : sort;
+  changeOrder() {
+    var value = this.sortData;
     if (value === 1) {
       this.data.sort(this.compare);
     } else if (value === 2) {
       this.data.sort(this.compare).reverse();
     }
-    this.dataSource = new MatTableDataSource(this.data);
-    this.dataSource.paginator = this.paginator;
-    this.dtable.renderRows();
+    
   }
   rowClick(index: string | number) {
     for (var i = 0; i < this.data.length; i++) {
@@ -313,6 +307,40 @@ export class EmpHeaderComponent implements OnInit, AfterViewInit {
         }
       );
     }
+  }
+
+  createFilter() {
+    let filterFunction = function (data: any, filter: string): boolean {
+      let searchTerms = JSON.parse(filter);
+      let isFilterSet = false;
+      for (const col in searchTerms) {
+        if (searchTerms[col].toString() !== '') {
+          isFilterSet = true;
+        } else {
+          delete searchTerms[col];
+        }
+      }
+
+      console.log(searchTerms);
+
+      let nameSearch = () => {
+        let found = false;
+        if (isFilterSet) {
+          for (const col in searchTerms) {
+            searchTerms[col].trim().toLowerCase().split(' ').forEach((word : any) => {
+              if (data[col].toString().toLowerCase().indexOf(word) != -1 && isFilterSet) {
+                found = true
+              }
+            });
+          }
+          return found
+        } else {
+          return true;
+        }
+      }
+      return nameSearch()
+    }
+    return filterFunction
   }
 
   setBreadcrumbs() {

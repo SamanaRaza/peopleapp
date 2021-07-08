@@ -73,5 +73,19 @@ export class TransferStoryComponent implements OnInit {
     })
 
   }
-
+  empYear(event:any){
+    console.log('Year',event.year)
+  }
+  department(event:any){
+    console.log('Department',event.department)
+  }
+  office(event:any){
+    console.log('Office',event.office)
+  }
+  location(event:any){
+    console.log('Location',event.location)
+  }
+  Designation(event:any){
+    console.log('Designation',event)
+  }
 }

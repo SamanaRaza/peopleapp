@@ -51,7 +51,7 @@
                         "salary_change_label": "Probation 2012",
                         "employee_event_name": {
                             "id": 2,
-                            "name": "Appriasal"
+                            "name": "Appraisal"
                         }
                     }
                 }
@@ -72,10 +72,10 @@
                         "new_salary": "13000",
                         "change_in_salary": "30%",
                         "event_type_id": 2,
-                        "salary_change_label": "Annular Appriasal 12-13",
+                        "salary_change_label": "Annual Appraisal 12-13",
                         "employee_event_name": {
                             "id": 2,
-                            "name": "Appriasal"
+                            "name": "Appraisal"
                         }
                     }
                 }
@@ -140,10 +140,10 @@
                         "new_salary": "40000",
                         "change_in_salary": "208%",
                         "event_type_id": 2,
-                        "salary_change_label": "Annular Appriasal 13-14",
+                        "salary_change_label": "Annual Appraisal 13-14",
                         "employee_event_name": {
                             "id": 2,
-                            "name": "Appriasal"
+                            "name": "Appraisal"
                         }
                     }
                 }
@@ -164,10 +164,10 @@
                         "new_salary": "50000",
                         "change_in_salary": "25%",
                         "event_type_id": 2,
-                        "salary_change_label": "Annular Appriasal 14-15",
+                        "salary_change_label": "Annual Appraisal 14-15",
                         "employee_event_name": {
                             "id": 2,
-                            "name": "Appriasal"
+                            "name": "Appraisal"
                         }
                     }
                 }
@@ -239,10 +239,10 @@
                         "new_salary": "55000",
                         "change_in_salary": "10%",
                         "event_type_id": 2,
-                        "salary_change_label": "Annular Appriasal 15-16",
+                        "salary_change_label": "Annual Appraisal 15-16",
                         "employee_event_name": {
                             "id": 2,
-                            "name": "Appriasal"
+                            "name": "Appraisal"
                         }
                     }
                 }
@@ -263,10 +263,10 @@
                         "new_salary": "70000",
                         "change_in_salary": "27%",
                         "event_type_id": 2,
-                        "salary_change_label": "Annular Appriasal 16-17",
+                        "salary_change_label": "Annual Appraisal 16-17",
                         "employee_event_name": {
                             "id": 2,
-                            "name": "Appriasal"
+                            "name": "Appraisal"
                         }
                     }
                 }
@@ -339,10 +339,10 @@
                         "new_salary": "80000",
                         "change_in_salary": "14%",
                         "event_type_id": 2,
-                        "salary_change_label": "Annular Appriasal 17-18",
+                        "salary_change_label": "Annual Appraisal 17-18",
                         "employee_event_name": {
                             "id": 2,
-                            "name": "Appriasal"
+                            "name": "Appraisal"
                         }
                     }
                 }
@@ -393,10 +393,10 @@
                         "new_salary": "90000",
                         "change_in_salary": "15%",
                         "event_type_id": 2,
-                        "salary_change_label": "Annular Appriasal 18-19",
+                        "salary_change_label": "Annual Appraisal 18-19",
                         "employee_event_name": {
                             "id": 2,
-                            "name": "Appriasal"
+                            "name": "Appraisal"
                         }
                     }
                 }

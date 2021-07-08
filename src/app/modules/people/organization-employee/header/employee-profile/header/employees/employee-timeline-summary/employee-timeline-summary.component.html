@@ -4,24 +4,24 @@
             <div
                 class="mdc-layout-grid__cell mdc-layout-grid__cell--span-1-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone self-center">
                 <div class="details" *ngIf="group.emp_pic">
-                    <img src={{group.emp_pic}} alt="">
+                    <img src={{group.emp_pic}} alt="" (click)="EmpInfo(group)">
                 </div>
                 <div class="details" *ngIf="!group.emp_pic">
-                    <img src="assets/images/dummy-pic.jpg" alt="">
+                    <img src="assets/images/dummy-pic.jpg" alt="" (click)="EmpInfo(group)">
                 </div>
             </div>
             <div
                 class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
                 <div class="button-group">
-                    <button class="name_btn" mat-raised-button>
+                    <button class="name_btn" mat-raised-button (click)="empName(group)">
                         {{group.emp_name}}
                     </button>
                 </div>
                 <div class="button-group">
-                    <button class="designation_btn" mat-raised-button>
+                    <button class="designation_btn" mat-raised-button (click)="endingDesignation(group)">
                         {{group.ending_designation}}
                     </button>
-                    <button class="department_btn" mat-raised-button>
+                    <button class="department_btn" mat-raised-button (click)="endingDepartment(group)">
                         {{group.ending_department}}
                     </button>
                 </div>
@@ -29,16 +29,16 @@
             <div
                 class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop align-right mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
                 <div class="button-group">
-                    <button class="year-btn" mat-raised-button>
+                    <button class="year-btn" mat-raised-button (click)="years(group)">
                         {{group.starting_year}} - {{group.ending_year}}
 
                     </button>
-                    <button class="band_btn" mat-raised-button>
+                    <button class="band_btn" mat-raised-button (click)="bands(group)">
                         {{group.ending_band}} - {{group.latest_band}}
                     </button>
                 </div>
                 <div class="button-group">
-                    <button class="designation_btn" mat-raised-button>
+                    <button class="designation_btn" mat-raised-button (click)="designations(group)">
                         {{group.starting_designation}} -
                         {{group.ending_designation}}
                     </button>
@@ -47,3 +47,4 @@
         </div>
     </div>
 </div>
+
