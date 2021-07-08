@@ -18,6 +18,7 @@ import { BreadcrumbService } from 'src/app/shared/breadcrumb/breadcrumb.service'
 import { AllServicesService } from 'src/app/services/all-services.service';
 import { PeriodicElement } from 'src/app/modules/people/home/header/header.component';
 import { SelectionModel } from '@angular/cdk/collections';
+import { faTheaterMasks } from '@fortawesome/free-solid-svg-icons';
 
 export interface Employee {
   empID: number;
@@ -65,7 +66,7 @@ export class EmpHeaderComponent implements OnInit, AfterViewInit {
     { value: 'Non Active', status: 'Non Active Employee' },
   ];
   searchBy = [
-    { value: 'all', search: 'All' },
+    { value: null, search: 'Not Set' },
     { value: 'empID', search: 'Employee Id' },
     { value: 'name', search: 'Name' },
     { value: 'designation', search: 'Designation' },
@@ -181,6 +182,15 @@ export class EmpHeaderComponent implements OnInit, AfterViewInit {
     ];
   }
 
+  searchByValues(event: any) {
+    let that = this;
+    if (event == null) {
+      that.filter = null;
+    } else {
+      
+    }
+  }
+
   ngAfterViewInit(): void {
     let that = this;
     that.setBreadcrumbs();
@@ -217,14 +227,6 @@ export class EmpHeaderComponent implements OnInit, AfterViewInit {
     );
   }
 
-  searchByValues(event: any) {
-    let that = this;
-    if (event != 'all') {
-    } else {
-      that.filter = null;
-      this.applyFilter();
-    }
-  }
 
   applyFilter() {
     if (this.activeVal) {
@@ -232,17 +234,50 @@ export class EmpHeaderComponent implements OnInit, AfterViewInit {
       
 
     } 
-    if(this.sortData){
-      this.changeOrder();
+    else
+    {
+      if(this.sortData){
+        this.changeOrder();
+      }
+      if(!this.searchData && this.filter){
+        const filterValue = this.filter;
+      this.dataSource.filter = filterValue.trim().toLowerCase(); 
+      }
+      else
+      {
+        this.filterValues[this.searchData] = this.filter;
+        this.dataSource.filter = JSON.stringify(this.filterValues);
+      }
+      this.dataSource.data = this.data;
+      this.cdf.detectChanges();
     }
-    this.filterValues[this.searchData] = this.filter;
-    this.dataSource.filter = JSON.stringify(this.filterValues);
-    this.dataSource.data = this.data;
-    this.cdf.detectChanges();
+    
   }
 
   changeStatus() {
-    this.data = this.data.filter((x: any) => x.status === this.activeVal);
+    this.allServicesService.getEmployees().subscribe((data: any) => {
+      var newData = (data as any).data;
+      this.data = newData.filter((x: any) => x.status === this.activeVal);
+
+      if(this.sortData){
+        this.changeOrder();
+      }
+      if(!this.searchData && this.filter){
+        const filterValue = this.filter;
+      this.dataSource.filter = filterValue.trim().toLowerCase(); 
+      }
+      else
+      {
+        if(this.searchData)
+        {
+          this.filterValues[this.searchData] = this.filter;
+          this.dataSource.filter = JSON.stringify(this.filterValues);
+        }
+      }
+
+      this.dataSource.data = this.data;
+      this.cdf.detectChanges();
+    });
   }
 
   compare(a: any, b: any) {
@@ -310,35 +345,62 @@ export class EmpHeaderComponent implements OnInit, AfterViewInit {
   }
 
   createFilter() {
+    let that = this;
     let filterFunction = function (data: any, filter: string): boolean {
-      let searchTerms = JSON.parse(filter);
-      let isFilterSet = false;
-      for (const col in searchTerms) {
-        if (searchTerms[col].toString() !== '') {
-          isFilterSet = true;
-        } else {
-          delete searchTerms[col];
-        }
-      }
-
-      console.log(searchTerms);
-
-      let nameSearch = () => {
-        let found = false;
-        if (isFilterSet) {
-          for (const col in searchTerms) {
-            searchTerms[col].trim().toLowerCase().split(' ').forEach((word : any) => {
-              if (data[col].toString().toLowerCase().indexOf(word) != -1 && isFilterSet) {
-                found = true
-              }
-            });
+      if(that.searchData)
+      {
+        let searchTerms = JSON.parse(filter);
+        let isFilterSet = false;
+        for (const col in searchTerms) {
+          if (searchTerms[col].toString() !== '') {
+            isFilterSet = true;
+          } else {
+            delete searchTerms[col];
           }
-          return found
-        } else {
-          return true;
         }
-      }
+
+        let nameSearch = () => {
+          let found = false;
+          if (isFilterSet) {
+            for (const col in searchTerms) {
+              searchTerms[col].trim().toLowerCase().split(' ').forEach((word : any) => {
+                if (data[col].toString().toLowerCase().indexOf(word) != -1 && isFilterSet) {
+                  found = true
+                }
+              });
+            }
+            return found
+          } else {
+            return true;
+          }
+        }
       return nameSearch()
+      }
+      else
+      {
+        for (let index = 0; index < Object.keys(data).length; index++) {
+          const key = Object.keys(data)[index];
+          if (!data[key]) {
+            data[key] = "";
+          }
+          if (
+            data[key]
+              .toString()
+              .toLowerCase()
+              .includes(filter)
+          ) {
+            return true;
+          }
+        }
+        return false;
+      }
+    
+      
+      
+      
+      //console.log(searchTerms);
+
+      //
     }
     return filterFunction
   }
