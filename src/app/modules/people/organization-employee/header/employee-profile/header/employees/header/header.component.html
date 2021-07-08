@@ -6,7 +6,7 @@
             <div class="filters ms-auto">
                 <mat-form-field>
                     <mat-label>Active/Non-Active</mat-label>
-                    <mat-select [(ngModel)]="activeVal" (selectionChange)="changeStatus($event, null)"
+                    <mat-select [(ngModel)]="activeVal"
                         disableOptionCentering>
                         <mat-option [value]="active.value" *ngFor="let active of activeEmployees">
                             {{ active.status }}
@@ -15,7 +15,7 @@
                 </mat-form-field>
                 <mat-form-field>
                     <mat-label>Sort By</mat-label>
-                    <mat-select [(ngModel)]="sortData" (selectionChange)="changeOrder($event, null)"
+                    <mat-select [(ngModel)]="sortData"
                         disableOptionCentering>
                         <mat-option *ngFor="let empSort of employeeSort" [value]="empSort.value">
                             {{empSort.sort}}
