@@ -407,6 +407,11 @@ p {
 
     .mat-cell {
       @extend %light-fonts;
+
+      .mat-button-base {
+        width: auto;
+        padding: 0 !important;
+      }
     }
 
     .mat-footer-cell,
@@ -575,11 +580,11 @@ mat-footer-cell:first-of-type {
     position: absolute;
     left: 30px;
     border-color: transparent transparent transparent var(--designation);
-    border-width: 6px 0px 6px 11px;
+    border-width: 6px 0px 6px 12px;
     border-style: solid;
     content: "";
     display: block;
-    top: 50px;
+    top: 54px;
 
     @media (max-width: 1600px) {
       left: 20px;
@@ -593,7 +598,7 @@ mat-footer-cell:first-of-type {
     width: 30px;
     content: "";
     display: block;
-    top: 55px;
+    top: 59px;
     margin-top: 0;
   }
 
@@ -604,7 +609,7 @@ mat-footer-cell:first-of-type {
     .right-arrow {
       position: absolute;
       right: 0;
-      top: 45px;
+      top: 44px;
       left: auto;
       width: 100px;
 
@@ -1256,7 +1261,7 @@ mat-footer-cell:first-of-type {
     position: absolute;
     left: 30px;
     border-color: transparent transparent transparent var(--designation);
-    border-width: 6px 0px 6px 11px;
+    border-width: 6px 0px 6px 12px;
     border-style: solid;
     content: "";
     display: block;
@@ -1397,4 +1402,19 @@ g.highcharts-axis-labels.highcharts-yaxis-labels {
 
 .mb-10 {
   margin-bottom: 10px !important;
+}
+
+.department-arrow {
+  &::before {
+    border-color: transparent transparent transparent var(--department);
+  }
+
+  &:after {
+    border-bottom: 1px solid var(--department);
+  }
+}
+
+.highcharts-yaxis .highcharts-axis-line,
+.highcharts-xaxis .highcharts-axis-line {
+  stroke-width: 4px;
 }

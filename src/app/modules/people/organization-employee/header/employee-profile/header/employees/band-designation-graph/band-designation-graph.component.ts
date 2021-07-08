@@ -91,7 +91,7 @@ export class BandDesignationGraphComponent
             useHTML: true,
           },
           showEmpty: false,
-          lineWidth: 3,
+          lineWidth: 6,
           gridLineWidth: 0,
           categories: ['5', '5.1', '5.2', '6', '7'],
           min: 0,
@@ -126,7 +126,7 @@ export class BandDesignationGraphComponent
         min: 0,
         max: 8,
         categories: that.years,
-        lineWidth: 3,
+        lineWidth: 6,
         labels: {
           useHTML: true,
           style: {},

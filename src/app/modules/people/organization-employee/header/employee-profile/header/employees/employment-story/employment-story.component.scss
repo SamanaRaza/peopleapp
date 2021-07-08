@@ -33,7 +33,7 @@
 .left-arrow {
   position: absolute;
   right: -74px;
-  bottom: 25px;
+  bottom: 29px;
 
   &::before {
     position: absolute;
@@ -58,15 +58,14 @@
 
 .right-arrow-center {
   position: absolute;
-  top: 50%;
-  margin-top: -35px;
+  top: 84px;
   right: 0;
 
   &::before {
     position: absolute;
     left: 5px;
     border-color: transparent transparent transparent var(--name);
-    border-width: 6px 0px 6px 11px;
+    border-width: 6px 0px 6px 12px;
     border-style: solid;
     content: "";
     display: block;
