@@ -1150,7 +1150,7 @@ mat-footer-cell:first-of-type {
     white-space: normal;
     box-shadow: none;
 
-    @media (max-width: 1400px) {
+    @media (max-width: 1600px) {
       height: auto !important;
       min-height: 40px;
     }
@@ -1190,7 +1190,11 @@ mat-footer-cell:first-of-type {
 .container-fluid {
   width: 80%;
 
-  @media (max-width: 1366px) {
+  @media (max-width: 1600px) {
+    width: 85%;
+  }
+
+  @media (max-width: 1400px) {
     width: 90%;
   }
 
