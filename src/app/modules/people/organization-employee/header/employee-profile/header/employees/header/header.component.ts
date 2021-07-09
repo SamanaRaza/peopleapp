@@ -266,6 +266,7 @@ export class EmpHeaderComponent implements OnInit, AfterViewInit {
       {
         if(this.searchData)
         {
+          this.filterValues = {};
           this.filterValues[this.searchData] = this.filter;
           this.dataSource.filter = JSON.stringify(this.filterValues);
         }
@@ -374,7 +375,10 @@ export class EmpHeaderComponent implements OnInit, AfterViewInit {
       }
       else if(that.searchData == 'empID') {
         var val = JSON.parse(filter);
-        return data[that.searchData] == val.empID;
+        if(val){
+          return data[that.searchData] == val.empID;
+        }
+        return false;
       }
       else
       {
