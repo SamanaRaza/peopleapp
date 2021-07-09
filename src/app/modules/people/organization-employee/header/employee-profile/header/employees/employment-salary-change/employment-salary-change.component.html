@@ -14,17 +14,17 @@
                             column.cell(row)}}</mat-cell>
                     </ng-container>
                     <ng-container [cdkColumnDef]="column.columnDef" *ngIf="column.header == 'Fixed Components'">
-                        <mat-header-cell *cdkHeaderCellDef>{{ column.header }}</mat-header-cell>
-                        <mat-cell *cdkCellDef="let element">
-                            <button class="grid-button" mat-icon-button (click)="openFixed()">
+                        <mat-header-cell *cdkHeaderCellDef >{{ column.header }}</mat-header-cell>
+                        <mat-cell *cdkCellDef="let element" (click)="openFixed()">
+                            <button class="grid-button" mat-icon-button >
                                 {{column.cell(element)}}
                             </button>
                         </mat-cell>
                     </ng-container>
                     <ng-container [cdkColumnDef]="column.columnDef" *ngIf="column.header == 'Variable Components'">
                         <mat-header-cell *cdkHeaderCellDef>{{ column.header }}</mat-header-cell>
-                        <mat-cell *cdkCellDef="let ele">
-                            <button class="grid-button" mat-icon-button (click)="openVariable()">
+                        <mat-cell *cdkCellDef="let ele" (click)="openVariable()">
+                            <button class="grid-button" mat-icon-button >
                                 {{column.cell(ele)}}
                             </button>
                         </mat-cell>
