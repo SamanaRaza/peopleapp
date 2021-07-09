@@ -1,4 +1,5 @@
-<div class="" *ngFor="let group of persons">
+<div  *ngFor="let groups of persons">
+<div  *ngFor="let group of groups.years">
     <div class="mdc-layout-grid padding-0">
         <div class="mdc-layout-grid__inner mb-10">
             <div
@@ -46,5 +47,6 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 

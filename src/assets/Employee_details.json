@@ -1,18 +1,98 @@
-{"draw":0,"recordsTotal":500,"recordsFiltered":500,"data":[
-    {
-        "status": "pass",
-        "message": "success",
-        "ending_band": "5.1",
-        "latest_band": "6",
-        "starting_designation": "Sr. Credit Analyst",
-        "ending_designation": "Unit Head SD-MIS",
-        "ending_department": "Service Delivery - MIS",
-        "emp_name": "Ahmad Hassan",
-        "emp_pic": "https://images.unsplash.com/photo-1589386417686-0d34b5903d23?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
-        "starting_year": "2012",
-        "ending_year": "2020",
-        "salary_hide": 1,
-        "information": 1
-    }
-]
+{
+    "draw": 0,
+    "recordsTotal": 500,
+    "recordsFiltered": 500,
+    "data": [
+        
+        {
+            "empId": "1",
+            "years": [
+                {
+                    "ending_band": "5.1",
+                    "latest_band": "6",
+                    "starting_designation": "Sr. Credit Analyst",
+                    "ending_designation": "Unit Head SD-MIS",
+                    "ending_department": "Service Delivery - MIS",
+                    "emp_name": "Ahmad Hassan",
+                    "emp_pic": "https://images.unsplash.com/photo-1589386417686-0d34b5903d23?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+                    "starting_year": "2012",
+                    "ending_year": "2020",
+                    "salary_hide": 1,
+                    "information": 1
+                }
+            ]
+        },
+        {
+            "empId": "2",
+            "years": [
+                {
+                    "ending_band": "7.1",
+                    "latest_band": "5",
+                    "starting_designation": "Jr. Analyst",
+                    "ending_designation": "Unit Head SD-MIS",
+                    "ending_department": "Accounts",
+                    "emp_name": "Arslan",
+                    "emp_pic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaNiWjX1vPLZVWCGUD6UYAtjUcUUPUNE2CxUx1chQaS1OFN3e8babdZNznetfLGZ3OB8w&usqp=CAU",
+                    "starting_year": "2012",
+                    "ending_year": "2020",
+                    "salary_hide": 1,
+                    "information": 1
+                }
+            ]
+        },
+        {
+            "empId": "3",
+            "years": [
+                {
+                    "ending_band": "8",
+                    "latest_band": "4",
+                    "starting_designation": "Web Engineer",
+                    "ending_designation": "Unit Head SD-MIS",
+                    "ending_department": "Computer Science",
+                    "emp_name": "Yonus",
+                    "emp_pic": "https://www.viennashots.com/wp-content/uploads/2021/05/09_VS_Mitarbeiterportraits-e1559232425483.jpg",
+                    "starting_year": "2014",
+                    "ending_year": "2019",
+                    "salary_hide": 1,
+                    "information": 1
+                }
+            ]
+        },
+        {
+            "empId": "4",
+            "years": [
+                {
+                    "ending_band": "4.1",
+                    "latest_band": "3",
+                    "starting_designation": "Jr. SQA",
+                    "ending_designation": "CS & IT",
+                    "ending_department": "Sr. SQA",
+                    "emp_name": "Mike",
+                    "emp_pic": "https://threewill.com/wp-content/uploads/austin-ryan-full-resolution-office-365.jpg",
+                    "starting_year": "2017",
+                    "ending_year": "2021",
+                    "salary_hide": 1,
+                    "information": 1
+                }
+            ]
+        },
+        {
+            "empId": "5",
+            "years": [
+                {
+                    "ending_band": "5.7",
+                    "latest_band": "7.4",
+                    "starting_designation": "Sr. Credit Analyst",
+                    "ending_designation": "Marketing Head",
+                    "ending_department": "Marketing",
+                    "emp_name": "Ammar",
+                    "emp_pic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCFzGctZ8H-V4AOBv_dss-59DmzwjHOnwsZEhnsG0H_L_M1ijIsgNlWruyrrhuO661umI&usqp=CAU",
+                    "starting_year": "2012",
+                    "ending_year": "2020",
+                    "salary_hide": 1,
+                    "information": 1
+                }
+            ]
+        }
+    ]
 }
