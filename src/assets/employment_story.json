@@ -118,14 +118,14 @@
                     "employee__histories_with_lm_group": [
                         {
                             "event_group_id": 3,
-                            "new_label": "Gohar Butt",
+                            "new_label": "Ahmad Butt",
                             "old_label": null,
                             "duration": "13 months",
                             "file_path": ""
                         },
                         {
                             "event_group_id": 3,
-                            "new_label": "Kamran Khalid",
+                            "new_label": "Asad Khalid",
                             "old_label": null,
                             "duration": "11 months",
                             "file_path": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpaMfkALsKeGcO5G6uTBH0AtbYJ2gK8jypbJ9ogVVZ5BZCbBLsr5senzJm3q63JPPf3zw&usqp=CAU"
@@ -217,14 +217,14 @@
                         },
                         {
                             "event_group_id": 5,
-                            "new_label": "Jawad Iqbal",
+                            "new_label": "Zafar Khan",
                             "old_label": "Irfan Bhatti",
                             "duration": "13 months",
                             "file_path": "https://images.unsplash.com/photo-1589386417686-0d34b5903d23?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
                         },
                         {
                             "event_group_id": 5,
-                            "new_label": "Gohar Butt",
+                            "new_label": "Usman Kiyani",
                             "old_label": "Jawad Iqbal",
                             "duration": "8 months",
                             "file_path": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpaMfkALsKeGcO5G6uTBH0AtbYJ2gK8jypbJ9ogVVZ5BZCbBLsr5senzJm3q63JPPf3zw&usqp=CAU"
@@ -317,15 +317,15 @@
                         },
                         {
                             "event_group_id": 7,
-                            "new_label": "Gohar Butt",
+                            "new_label": "Ahsan Raza",
                             "old_label": "Tahir Raza",
                             "duration": "20 months",
                             "file_path": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpaMfkALsKeGcO5G6uTBH0AtbYJ2gK8jypbJ9ogVVZ5BZCbBLsr5senzJm3q63JPPf3zw&usqp=CAU"
                         },
                         {
                             "event_group_id": 7,
-                            "new_label": "Abrahim Butt",
-                            "old_label": "Gohar Butt",
+                            "new_label": "Abrahim Rauf",
+                            "old_label": "farooq Wali",
                             "duration": "12 months",
                             "file_path": "https://images.unsplash.com/photo-1589386417686-0d34b5903d23?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
                         }
