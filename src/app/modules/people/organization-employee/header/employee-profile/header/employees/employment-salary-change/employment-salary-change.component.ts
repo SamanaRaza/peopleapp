@@ -48,7 +48,7 @@ export class EmploymentSalaryChangeComponent implements OnInit {
     this.allServicesService.getEmployeeSalaryHistroy().subscribe(data => {
       this.data = (data as any).data;
       var filteredData = this.data.filter((x: any) => x.EmployeeProfileID == this.queryParams.employeeId);
-      console.log(filteredData);
+      
       this.dataSource = new MatTableDataSource(filteredData);
       this.dataSource.paginator = this.paginator
 

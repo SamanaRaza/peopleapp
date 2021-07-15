@@ -25,7 +25,16 @@
           "id": 2,
           "starting_date": "2013-06-26",
           "ending_date": "2014-06-27",
-          "employee__histories_group": []
+          "employee__histories_group": [
+            {
+              "event_group_id": 1,
+              "event_type_id": 3,
+              "new_label": "Sr. Credit Analyst",
+              "old_label": null,
+              "starting_date": "2012-05-25",
+              "duration": "12 months"
+            }
+          ]
         }
       ],
       "2014": [
@@ -50,7 +59,17 @@
           "id": 4,
           "starting_date": "2015-06-26",
           "ending_date": "2016-06-27",
-          "employee__histories_group": []
+          "employee__histories_group": [
+            {
+              "event_group_id": 5,
+              "event_type_id": 3,
+              "new_label": "Sr. Executive HCM & OD",
+              "old_label": "Sr. Credit Analyst",
+              "starting_date": "2014-06-25",
+              "duration": "24 months"
+            }
+          ]
+          
         }
       ],
       "2016": [
@@ -63,7 +82,7 @@
               "event_group_id": 5,
               "event_type_id": 3,
               "new_label": "Sr. Executive HCM & OD",
-              "old_label": "Sr. Credit Analyst",
+              "old_label": "Unit Head SD-MIS",
               "starting_date": "2014-06-25",
               "duration": "24 months"
             }
@@ -75,7 +94,16 @@
           "id": 6,
           "starting_date": "2017-06-26",
           "ending_date": "2018-06-27",
-          "employee__histories_group": []
+          "employee__histories_group": [
+            {
+              "event_group_id": 5,
+              "event_type_id": 3,
+              "new_label": "Sr. Executive HCM & OD",
+              "old_label": "Sr. Credit Analyst",
+              "starting_date": "2014-06-25",
+              "duration": "24 months"
+            }
+          ]
         }
       ],
       "2018": [
@@ -111,6 +139,23 @@
             }
           ]
         }
+      ],
+      "2020": [
+        {
+          "id": 8,
+          "starting_date": "2019-06-26",
+          "ending_date": "2020-06-27",
+          "employee__histories_group": [
+            {
+              "event_group_id": 8,
+              "event_type_id": 3,
+              "new_label": "Sr. Executive HCM & OD",
+              "old_label": "Asst. Manager SD-MIS",
+              "starting_date": "2018-10-25",
+              "duration": "20 months"
+            }
+          ]
+        }
       ]
     },
     "band_events": {
@@ -136,7 +181,16 @@
           "id": 2,
           "starting_date": "2013-06-26",
           "ending_date": "2014-06-27",
-          "employee__histories_group": []
+          "employee__histories_group": [
+            {
+              "event_group_id": 7,
+              "event_type_id": 5,
+              "new_label": "5.1",
+              "old_label": "5.2",
+              "starting_date": "2016-06-25",
+              "duration": "28 months"
+            }
+          ]
         }
       ],
       "2014": [
@@ -161,7 +215,16 @@
           "id": 4,
           "starting_date": "2015-06-26",
           "ending_date": "2016-06-27",
-          "employee__histories_group": []
+          "employee__histories_group": [
+            {
+              "event_group_id": 7,
+              "event_type_id": 5,
+              "new_label": "5.5",
+              "old_label": "5.2",
+              "starting_date": "2016-06-25",
+              "duration": "28 months"
+            }
+          ]
         }
       ],
       "2016": [
@@ -173,7 +236,7 @@
             {
               "event_group_id": 5,
               "event_type_id": 5,
-              "new_label": "5.2",
+              "new_label": "6",
               "old_label": "6",
               "starting_date": "2014-06-25",
               "duration": "24 months"
@@ -186,7 +249,16 @@
           "id": 6,
           "starting_date": "2017-06-26",
           "ending_date": "2018-06-27",
-          "employee__histories_group": []
+          "employee__histories_group": [
+            {
+              "event_group_id": 7,
+              "event_type_id": 5,
+              "new_label": "5.4",
+              "old_label": "5.2",
+              "starting_date": "2016-06-25",
+              "duration": "28 months"
+            }
+          ]
         }
       ],
       "2018": [
@@ -198,8 +270,8 @@
             {
               "event_group_id": 7,
               "event_type_id": 5,
-              "new_label": "5.1",
-              "old_label": "5.2",
+              "new_label": "5.7",
+              "old_label": "5.3",
               "starting_date": "2016-06-25",
               "duration": "28 months"
             }
@@ -215,7 +287,24 @@
             {
               "event_group_id": 8,
               "event_type_id": 5,
-              "new_label": "5.1",
+              "new_label": "7",
+              "old_label": "6",
+              "starting_date": "2018-10-25",
+              "duration": "20 months"
+            }
+          ]
+        }
+      ],
+      "2020": [
+        {
+          "id": 8,
+          "starting_date": "2019-06-26",
+          "ending_date": "2020-06-27",
+          "employee__histories_group": [
+            {
+              "event_group_id": 8,
+              "event_type_id": 5,
+              "new_label": "5",
               "old_label": "5.1",
               "starting_date": "2018-10-25",
               "duration": "20 months"

@@ -19,7 +19,6 @@ export class EmployeeTimelineSummaryComponent implements OnInit {
     this.queryParams = this.route.snapshot.queryParams;
     this.allServicesService.getEmpDetails().subscribe((data:any) => {
       this.persons = (data as any).data;
-      console.log(this.persons)
        this.persons = this.persons.filter((x: any) => x.empId == this.queryParams.employeeId);
     });
   }

@@ -37,12 +37,130 @@
                             "pref_level": "hr",
                             "pref_size": "max",
                             "color": "yellow"
+                        },
+                        {
+                            "event_group_id": 2,
+                            "pref_type": "warning",
+                            "pref_level": "hr",
+                            "pref_size": "max",
+                            "color": "red"
                         }
                         
                     ]
                 }
             ],
             "2013": [
+                {
+                    "id": 2,
+                    "starting_date": "2013-06-26",
+                    "ending_date": "2014-06-27",
+                    "employee_pref_record_history": [
+                        {
+                            "event_group_id": 2,
+                            "pref_type": "appreciation",
+                            "pref_level": "lm",
+                            "pref_size": "min",
+                            "color": "yellow"
+                        },
+                        {
+                            "event_group_id": 2,
+                            "pref_type": "rewards",
+                            "pref_level": "management",
+                            "pref_size": "min",
+                            "color": "green"
+                        },
+                        {
+                            "event_group_id": 2,
+                            "pref_type": "warning",
+                            "pref_level": "hr",
+                            "pref_size": "max",
+                            "color": "red"
+                        },
+                        {
+                            "event_group_id": 2,
+                            "pref_type": "training",
+                            "pref_level": "employee",
+                            "pref_size": "mid",
+                            "color": "blue"
+                        }
+                    ]
+                }
+            ],
+            "2014": [
+                {
+                    "id": 2,
+                    "starting_date": "2013-06-26",
+                    "ending_date": "2014-06-27",
+                    "employee_pref_record_history": [
+                        {
+                            "event_group_id": 2,
+                            "pref_type": "appreciation",
+                            "pref_level": "lm",
+                            "pref_size": "min",
+                            "color": "yellow"
+                        },
+                        {
+                            "event_group_id": 2,
+                            "pref_type": "rewards",
+                            "pref_level": "management",
+                            "pref_size": "min",
+                            "color": "green"
+                        },
+                        {
+                            "event_group_id": 2,
+                            "pref_type": "warning",
+                            "pref_level": "hr",
+                            "pref_size": "max",
+                            "color": "red"
+                        },
+                        {
+                            "event_group_id": 2,
+                            "pref_type": "training",
+                            "pref_level": "employee",
+                            "pref_size": "mid",
+                            "color": "blue"
+                        }
+                    ]
+                }
+            ],
+            "2015": [
+                {
+                    "id": 2,
+                    "starting_date": "2013-06-26",
+                    "ending_date": "2014-06-27",
+                    "employee_pref_record_history": [
+                        {
+                            "event_group_id": 2,
+                            "pref_type": "appreciation",
+                            "pref_level": "lm",
+                            "pref_size": "min",
+                            "color": "yellow"
+                        },
+                        {
+                            "event_group_id": 2,
+                            "pref_type": "rewards",
+                            "pref_level": "management",
+                            "pref_size": "min",
+                            "color": "green"
+                        },
+                        {
+                            "event_group_id": 2,
+                            "pref_type": "warning",
+                            "pref_level": "hr",
+                            "pref_size": "max",
+                            "color": "red"
+                        },
+                        {
+                            "event_group_id": 2,
+                            "pref_type": "training",
+                            "pref_level": "employee",
+                            "pref_size": "mid",
+                            "color": "blue"
+                        }
+                    ]
+                }
+            ],
+            "2016": [
                 {
                     "id": 2,
                     "starting_date": "2013-06-26",

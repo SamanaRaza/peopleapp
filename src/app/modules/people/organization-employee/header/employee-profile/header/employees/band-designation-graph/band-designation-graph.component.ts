@@ -87,15 +87,18 @@ export class BandDesignationGraphComponent
           title: {
             text: '',
           },
+          categories: ['5', '5.1', '5.2', '6', '7'],
           labels: {
             useHTML: true,
-            
+          //   formatter: function() {
+          //     return '<span class="hc-label">' + this.value + '</span>';
+          // }
           },
           
           showEmpty: false,
           lineWidth: 6,
           gridLineWidth: 0,
-          categories: ['5', '5.1', '5.2', '6', '7'],
+          
           min: 0,
           max: 4,
           zoomEnabled: false,
@@ -105,9 +108,16 @@ export class BandDesignationGraphComponent
           zoomEnabled: false,
           reversed: true,
           showEmpty: false,
+          
           gridLineWidth: 0,
           opposite: true,
-          labels: {},
+          labels: {
+            //useHTML: true,
+          //   formatter: function() {
+          //     return '<span style="margin-left:1000px" class="hc-label">' + this.value + '</span>';
+          // }
+          },
+
           title: {
             text: '',
           },
@@ -180,6 +190,7 @@ export class BandDesignationGraphComponent
       },
       plotOptions: {
         series: {
+          
           events: {
             
             legendItemClick: function (event) {
