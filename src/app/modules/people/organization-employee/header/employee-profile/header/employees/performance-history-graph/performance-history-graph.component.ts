@@ -48,7 +48,7 @@ export class PerformanceHistoryGraphComponent implements OnInit {
     private httpClient: HttpClient,
     private allServicesService: AllServicesService,
     private route: ActivatedRoute
-  ) { }
+  ) {}
   ngOnInit() {
     let that = this;
     this.queryParams = this.route.snapshot.queryParams;
@@ -60,69 +60,105 @@ export class PerformanceHistoryGraphComponent implements OnInit {
       that.performanceData = (data as any).data;
       that.yAxisCatogories = that.performanceData.roles;
       that.legendLabels = that.performanceData.pref_types;
-      const performance_year = Object.keys(that.performanceData.performance_history);
-      const performance_data: any = Object.values(that.performanceData.performance_history);
+      const performance_year = Object.keys(
+        that.performanceData.performance_history
+      );
+      const performance_data: any = Object.values(
+        that.performanceData.performance_history
+      );
       performance_data.map((result: any, index: any) => {
         var data = result[0].employee_pref_record_history;
         for (var k = 0; k < data.length; k++) {
           if (data[k].pref_type == 'appreciation') {
             if (this.appreciationData.length > 0) {
-              var newdata = this.loadPerformanceData(data, data[k].pref_type, performance_year[index]);
-              this.appreciationData[0].data = this.appreciationData[0].data.concat(newdata);
-            }
-            else {
+              var newdata = this.loadPerformanceData(
+                data,
+                data[k].pref_type,
+                performance_year[index]
+              );
+              this.appreciationData[0].data =
+                this.appreciationData[0].data.concat(newdata);
+            } else {
               this.appreciationData.push({
                 name: data[k].pref_type,
                 type: 'bubble',
-                data: this.loadPerformanceData(data, data[k].pref_type, performance_year[index]),
+                data: this.loadPerformanceData(
+                  data,
+                  data[k].pref_type,
+                  performance_year[index]
+                ),
               });
             }
-
-          }
-          else if (data[k].pref_type == 'rewards') {
+          } else if (data[k].pref_type == 'rewards') {
             if (this.rewardsData.length > 0) {
-              var newdata = this.loadPerformanceData(data, data[k].pref_type, performance_year[index]);
-              this.rewardsData[0].data = this.rewardsData[0].data.concat(newdata);
-            }
-            else {
+              var newdata = this.loadPerformanceData(
+                data,
+                data[k].pref_type,
+                performance_year[index]
+              );
+              this.rewardsData[0].data =
+                this.rewardsData[0].data.concat(newdata);
+            } else {
               this.rewardsData.push({
                 name: data[k].pref_type,
                 type: 'bubble',
-                data: this.loadPerformanceData(data, data[k].pref_type, performance_year[index]),
+                data: this.loadPerformanceData(
+                  data,
+                  data[k].pref_type,
+                  performance_year[index]
+                ),
               });
             }
-          }
-          else if (data[k].pref_type == 'warning') {
+          } else if (data[k].pref_type == 'warning') {
             if (this.warningData.length > 0) {
-              var newdata = this.loadPerformanceData(data, data[k].pref_type, performance_year[index]);
-              this.warningData[0].data = this.warningData[0].data.concat(newdata);
-            }
-            else {
+              var newdata = this.loadPerformanceData(
+                data,
+                data[k].pref_type,
+                performance_year[index]
+              );
+              this.warningData[0].data =
+                this.warningData[0].data.concat(newdata);
+            } else {
               this.warningData.push({
                 name: data[k].pref_type,
                 type: 'bubble',
-                data: this.loadPerformanceData(data, data[k].pref_type, performance_year[index]),
+                data: this.loadPerformanceData(
+                  data,
+                  data[k].pref_type,
+                  performance_year[index]
+                ),
               });
             }
-          }
-          else if (data[k].pref_type == 'training') {
+          } else if (data[k].pref_type == 'training') {
             if (this.trainingData.length > 0) {
-              var newdata = this.loadPerformanceData(data, data[k].pref_type, performance_year[index]);
-              this.trainingData[0].data = this.trainingData[0].data.concat(newdata);
-            }
-            else {
+              var newdata = this.loadPerformanceData(
+                data,
+                data[k].pref_type,
+                performance_year[index]
+              );
+              this.trainingData[0].data =
+                this.trainingData[0].data.concat(newdata);
+            } else {
               this.trainingData.push({
                 name: data[k].pref_type,
                 type: 'bubble',
-                data: this.loadPerformanceData(data, data[k].pref_type, performance_year[index]),
+                data: this.loadPerformanceData(
+                  data,
+                  data[k].pref_type,
+                  performance_year[index]
+                ),
               });
             }
           }
         }
-
-      })
+      });
       if (performance_data.length > 0) {
-        that.generatePerformance(this.rewardsData[0].data, this.appreciationData[0].data, this.warningData[0].data, this.trainingData[0].data);
+        that.generatePerformance(
+          this.rewardsData[0].data,
+          this.appreciationData[0].data,
+          this.warningData[0].data,
+          this.trainingData[0].data
+        );
       } else {
         var emp_rewards: any = [];
         var emp_appreciation: any = [];
@@ -165,14 +201,16 @@ export class PerformanceHistoryGraphComponent implements OnInit {
             pData[j].pref_level == 'hr'
               ? 1
               : pData[j].pref_level == 'lm'
-                ? 0
-                : pData[j].pref_level == 'employee' ? 3 : 2,
+              ? 0
+              : pData[j].pref_level == 'employee'
+              ? 3
+              : 2,
           z:
             pData[j].pref_size == 'min'
               ? 20
               : pData[j].pref_size == 'mid'
-                ? 35
-                : 90,
+              ? 35
+              : 90,
           name: this.medals(pData[j].pref_type),
         });
       }
@@ -241,25 +279,25 @@ export class PerformanceHistoryGraphComponent implements OnInit {
           switch (this.name) {
             case that.legendLabels[0]:
               return (
-                '<button class="mat-focus-indicator success-btn mat-raised-button mat-button-base btn-width"> <span class="mat-button-wrapper">' +
+                '<button class="mat-focus-indicator success-btn mat-raised-button mat-button-base btn-width mb-10"> <span class="mat-button-wrapper">' +
                 this.name +
                 '</span></button>'
               );
             case that.legendLabels[1]:
               return (
-                '<button class="mat-focus-indicator warning-btn mat-raised-button mat-button-base btn-width"> <span class="mat-button-wrapper">' +
+                '<button class="mat-focus-indicator warning-btn mat-raised-button mat-button-base btn-width mb-10"> <span class="mat-button-wrapper">' +
                 this.name +
                 '</span></button>'
               );
             case that.legendLabels[2]:
               return (
-                '<button class="mat-focus-indicator danger-btn mat-raised-button mat-button-base btn-width"> <span class="mat-button-wrapper">' +
+                '<button class="mat-focus-indicator danger-btn mat-raised-button mat-button-base btn-width mb-10"> <span class="mat-button-wrapper">' +
                 this.name +
                 '</span></button>'
               );
             case that.legendLabels[3]:
               return (
-                '<button class="mat-focus-indicator info-btn mat-raised-button mat-button-base btn-width"> <span class="mat-button-wrapper">' +
+                '<button class="mat-focus-indicator info-btn mat-raised-button mat-button-base btn-width mb-10"> <span class="mat-button-wrapper">' +
                 this.name +
                 '</span></button>'
               );
@@ -277,7 +315,6 @@ export class PerformanceHistoryGraphComponent implements OnInit {
           // 'background-color': '#9BE997',
           // 'padding': '28px 333px 10px 250px',
           fontWeight: 'bold',
-
         },
       },
 
@@ -344,31 +381,34 @@ export class PerformanceHistoryGraphComponent implements OnInit {
           var key: any = this.key;
           return `
           <tr>${this.x}</td></tr><br />
-          <tr><td>${that.medalsReverse(key)} by ${this.y == 0 ? 'LM' : this.y == 1 ? 'HR' : this.y == 2 ? 'Managment' : 'Employee'
-            } </td></tr></table>`;
+          <tr><td>${that.medalsReverse(key)} by ${
+            this.y == 0
+              ? 'LM'
+              : this.y == 1
+              ? 'HR'
+              : this.y == 2
+              ? 'Managment'
+              : 'Employee'
+          } </td></tr></table>`;
         },
       },
 
       plotOptions: {
-
         bubble: {
           minSize: '20px',
           maxSize: '40px',
-
         },
         series: {
-
           events: {
             legendItemClick: function (event) {
               var s = this.chart.series;
               for (var i = 0; i < s.length; i++) {
                 if (this.name == 'Show All' || this == s[i])
                   s[i].setVisible(true);
-                else
-                  s[i].setVisible(false);
+                else s[i].setVisible(false);
               }
               return false;
-            }
+            },
           },
           dataLabels: {
             enabled: true,
@@ -378,7 +418,6 @@ export class PerformanceHistoryGraphComponent implements OnInit {
       },
       series: [
         {
-
           animation: false,
           type: 'bubble',
           name: that.legendLabels[0],
@@ -393,7 +432,6 @@ export class PerformanceHistoryGraphComponent implements OnInit {
                 console.log(text);
               },
             },
-
           },
         },
         {
@@ -443,7 +481,7 @@ export class PerformanceHistoryGraphComponent implements OnInit {
               },
             },
           },
-        }
+        },
       ],
     };
     Highcharts.chart(that.bubbleChartContainer.nativeElement, options);

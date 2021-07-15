@@ -274,10 +274,20 @@ p {
   .mat-button-wrapper {
     .mat-paginator-icon {
       path {
-        color: $text-primarey;
+        color: $text-color;
       }
     }
   }
+}
+
+.mat-button-wrapper {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.mb-10 {
+  margin-bottom: 10px !important;
 }
 
 .table {
@@ -338,6 +348,7 @@ p {
       th,
       tr {
         @extend %normal-fonts;
+        font-size: 11px;
       }
     }
 
@@ -418,6 +429,7 @@ p {
     .mat-button-base,
     .mat-button-wrapper {
       @extend %normal-fonts;
+      font-size: 11px;
     }
   }
 

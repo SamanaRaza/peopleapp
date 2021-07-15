@@ -1,126 +1,337 @@
 <mat-card class="example-card">
-    <mat-card-header class="header-center">
-        <mat-card-title>Employment Story</mat-card-title>
-    </mat-card-header>
-    <mat-card-content class="h-auto">
-        <div class="graph-container mt-4 pb-3">
-            <div *ngFor="let timeline of employeeTimeline">
-                <div>
-                    <div class="mdc-layout-grid padding-0">
-                        <div class="mdc-layout-grid__inner">
-                            <div class="mdc-layout-grid__cell border-right-line pr-90">
-                                <div class="flex-100" *ngIf="timeline?.employee_history_salary_change">
-                                    <div class="self-center">
-                                        <span class="left-arrow"></span>
-                                        <div class="year-container year" (click)="currentYear(timeline)">
-                                            {{timeline.year}}
-
-                                        </div>
-                                        <div class="button-group">
-                                            <button mat-raised-button class="appriasal_name"
-                                                (click)="AppriasalName(timeline)">{{timeline?.employee_history_salary_change?.salary_change_label}}
-                                            </button>
-                                        </div>
-                                        <div class="button-group" color="accent">
-                                            <button class="appriasal_rating" mat-raised-button
-                                                (click)="selfAssesment(timeline)">Self:
-                                                {{timeline?.employee_history_salary_change?.emp_rating}}
-                                            </button>
-                                            <button class="appriasal_rating" mat-raised-button
-                                                (click)="LMAssesment(timeline)">LM:{{timeline?.employee_history_salary_change?.lm_rating}}
-                                            </button>
-                                            <button class="appriasal_rating" mat-raised-button
-                                                (click)="HRAssesment(timeline)">HR:{{timeline?.employee_history_salary_change?.hr_rating}}
-                                            </button>
-                                        </div>
-                                        <div class="button-group">
-                                            <button class="salary_change" mat-raised-button (click)="salary(timeline)">
-                                                {{timeline?.employee_history_salary_change?.old_salary}}<span
-                                                    *ngIf="timeline?.employee_history_salary_change?.old_salary">-</span>
-                                                {{timeline?.employee_history_salary_change?.new_salary}}
-                                                ({{timeline?.employee_history_salary_change?.change_in_salary}})
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mdc-layout-grid__cell px-center pb-60">
-                                <span class="right-arrow"
-                                    *ngIf="timeline?.employee__histories_without_lm_group.length > 0"></span>
-                                <div class="right-container">
-                                    <div class="button-group">
-                                        <button class="designation_btn" mat-raised-button
-                                            *ngIf="timeline?.employee__histories_without_lm_group[0]?.new_label"
-                                            (click)="currentDesignation(timeline)">
-                                            {{timeline?.employee__histories_without_lm_group[0]?.new_label}}</button>
-
-                                    </div>
-                                    <div class="button-group">
-                                        <button class="band_btn" mat-raised-button
-                                            *ngIf="timeline?.employee__histories_without_lm_group[1]?.new_label"
-                                            (click)="BandClick(timeline)">
-                                            {{timeline?.employee__histories_without_lm_group[1]?.old_label}} <span
-                                                *ngIf="timeline?.employee__histories_without_lm_group[1]?.old_label">-</span>
-                                            {{timeline?.employee__histories_without_lm_group[1]?.new_label}}
-                                        </button>
-                                    </div>
-                                    <div class="button-group">
-                                        <button class="department_btn" mat-raised-button
-                                            *ngIf="timeline?.employee__histories_without_lm_group[2]?.new_label"
-                                            (click)="currentDepartment(timeline)">{{timeline?.employee__histories_without_lm_group[2]?.new_label}}</button>
-                                        <button class="location_btn" mat-raised-button
-                                            *ngIf="timeline?.employee__histories_without_lm_group[3]?.new_label"
-                                            (click)="currentBranch(timeline)">{{timeline?.employee__histories_without_lm_group[3]?.new_label}}</button>
-                                    </div>
-                                    <div class="button-group">
-                                        <button class="duration_date_btn" mat-raised-button
-                                            *ngIf="timeline?.employee__histories_without_lm_group[0]?.duration"
-                                            (click)="startingDate(timeline)">{{timeline?.starting_date | date
-                                            :'dd-MMM-yy'}}
-                                            - {{timeline?.ending_date | date :'dd-MMM-yy'}}</button>
-                                        <button class="duration_date_btn" mat-raised-button
-                                            *ngIf="timeline?.employee__histories_without_lm_group[0]?.duration"
-                                            (click)="duration(timeline)">{{timeline?.employee__histories_without_lm_group[1]?.duration}}</button>
-                                    </div>
-                                </div>
-                                <div class="right-arrow-center"
-                                    *ngIf="timeline.employee__histories_with_lm_group.length > 0"></div>
-                            </div>
-                            <div class="mdc-layout-grid__cell">
-                                <ng-container>
-                                    <div class="mdc-layout-grid padding-0">
-                                        <div class="mdc-layout-grid__inner">
-                                            <div class="mdc-layout-grid__cell self-center"
-                                                *ngFor="let lm of timeline.employee__histories_with_lm_group">
-                                                <div class="profil-details text-center mb-1">
-                                                    <div class="button-group">
-                                                        <button class="name_btn" mat-raised-button *ngIf="lm.new_label"
-                                                            (click)="LMName(lm)">{{lm?.new_label}}</button>
-                                                    </div>
-                                                    <div class="w-100">
-                                                        <div class="rounded-image text-center" *ngIf="lm.file_path">
-                                                            <img [src]="lm.file_path" (click)="LMInfo(lm)" />
-                                                        </div>
-                                                        <div class="rounded-image text-center" *ngIf="!lm.file_path">
-                                                            <img src="assets/images/dummy-pic.jpg"
-                                                                (click)="LMInfo(lm)" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="button-group">
-                                                        <button class="duration_date_btn" mat-raised-button
-                                                            *ngIf="lm.duration"
-                                                            (click)="LMDuration(lm)">{{lm?.duration}}</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </ng-container>
-                            </div>
-                        </div>
+  <mat-card-header class="header-center">
+    <mat-card-title>Employment Story</mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="h-auto">
+    <div class="graph-container mt-4 pb-3">
+      <div *ngFor="let timeline of employeeTimeline">
+        <div>
+          <div class="mdc-layout-grid padding-0">
+            <div class="mdc-layout-grid__inner">
+              <div class="mdc-layout-grid__cell border-right-line pr-90">
+                <div
+                  class="flex-100"
+                  *ngIf="timeline?.employee_history_salary_change"
+                >
+                  <div class="self-center">
+                    <span class="left-arrow"></span>
+                    <div
+                      class="year-container year"
+                      (click)="currentYear(timeline)"
+                    >
+                      {{ timeline.year }}
                     </div>
+                    <div class="button-group">
+                      <button
+                        
+                        class="appriasal_name"
+                        mat-raised-button
+                        matTooltipPosition="above"
+                        matTooltip="{{
+                          timeline?.employee_history_salary_change
+                            ?.salary_change_label
+                        }}"
+                        (click)="AppriasalName(timeline)"
+                      >
+                        {{
+                          timeline?.employee_history_salary_change
+                            ?.salary_change_label
+                        }}
+                      </button>
+                    </div>
+                    <div class="button-group" color="accent">
+                      <button
+                        class="appriasal_rating"
+                        
+                        mat-raised-button
+                        matTooltipPosition="above"
+                        matTooltip="{{
+                          timeline?.employee_history_salary_change?.emp_rating
+                        }}"
+                        (click)="selfAssesment(timeline)"
+                      >
+                        Self:
+                        {{
+                          timeline?.employee_history_salary_change?.emp_rating
+                        }}
+                      </button>
+                      <button
+                        class="appriasal_rating"
+                        
+                        mat-raised-button
+                        matTooltipPosition="above"
+                        matTooltip="{{
+                          timeline?.employee_history_salary_change?.lm_rating
+                        }}"
+                        (click)="LMAssesment(timeline)"
+                      >
+                        LM:{{
+                          timeline?.employee_history_salary_change?.lm_rating
+                        }}
+                      </button>
+                      <button
+                        class="appriasal_rating"
+                        
+                        mat-raised-button
+                        matTooltipPosition="above"
+                        matTooltip="{{
+                          timeline?.employee_history_salary_change?.hr_rating
+                        }}"
+                        (click)="HRAssesment(timeline)"
+                      >
+                        HR:{{
+                          timeline?.employee_history_salary_change?.hr_rating
+                        }}
+                      </button>
+                    </div>
+                    <div class="button-group">
+                      <button
+                        class="salary_change"
+                        
+                        mat-raised-button
+                        matTooltipPosition="below"
+                        matTooltip="{{
+                          timeline?.employee_history_salary_change?.old_salary
+                        }} - {{
+                          timeline?.employee_history_salary_change?.new_salary
+                        }} ({{
+                          timeline?.employee_history_salary_change
+                            ?.change_in_salary
+                        }})"
+                        (click)="salary(timeline)"
+                      >
+                        {{ timeline?.employee_history_salary_change?.old_salary
+                        }}<span
+                          *ngIf="
+                            timeline?.employee_history_salary_change?.old_salary
+                          "
+                          >-</span
+                        >
+                        {{
+                          timeline?.employee_history_salary_change?.new_salary
+                        }}
+                        ({{
+                          timeline?.employee_history_salary_change
+                            ?.change_in_salary
+                        }})
+                      </button>
+                    </div>
+                  </div>
                 </div>
+              </div>
+              <div class="mdc-layout-grid__cell px-center pb-60">
+                <span
+                  class="right-arrow"
+                  *ngIf="
+                    timeline?.employee__histories_without_lm_group.length > 0
+                  "
+                ></span>
+                <div class="right-container">
+                  <div class="button-group">
+                    <button
+                      class="designation_btn"
+                      
+                      mat-raised-button
+                      matTooltipPosition="above"
+                      matTooltip="{{ timeline?.employee__histories_without_lm_group[0]
+                        ?.new_label}}"
+                      *ngIf="
+                        timeline?.employee__histories_without_lm_group[0]
+                          ?.new_label
+                      "
+                      (click)="currentDesignation(timeline)"
+                    >
+                      {{
+                        timeline?.employee__histories_without_lm_group[0]
+                          ?.new_label
+                      }}
+                    </button>
+                  </div>
+                  <div class="button-group">
+                    <button
+                      class="band_btn"
+                      mat-raised-button
+                      matTooltipPosition="above"
+                      matTooltip="{{
+                        timeline?.employee__histories_without_lm_group[1]
+                          ?.old_label
+                      }} - {{
+                        timeline?.employee__histories_without_lm_group[1]
+                          ?.new_label
+                      }}"
+                      *ngIf="
+                        timeline?.employee__histories_without_lm_group[1]
+                          ?.new_label
+                      "
+                      (click)="BandClick(timeline)"
+                    >
+                      {{
+                        timeline?.employee__histories_without_lm_group[1]
+                          ?.old_label
+                      }}
+                      <span
+                        *ngIf="
+                          timeline?.employee__histories_without_lm_group[1]
+                            ?.old_label
+                        "
+                        >-</span
+                      >
+                      {{
+                        timeline?.employee__histories_without_lm_group[1]
+                          ?.new_label
+                      }}
+                    </button>
+                  </div>
+                  <div class="button-group">
+                    <button
+                      class="department_btn"
+                      mat-raised-button
+                      matTooltipPosition="above"
+                      matTooltip="{{
+                        timeline?.employee__histories_without_lm_group[2]
+                          ?.new_label
+                      }}"
+                      *ngIf="
+                        timeline?.employee__histories_without_lm_group[2]
+                          ?.new_label
+                      "
+                      (click)="currentDepartment(timeline)"
+                    >
+                      {{
+                        timeline?.employee__histories_without_lm_group[2]
+                          ?.new_label
+                      }}
+                    </button>
+                    <button
+                      class="location_btn"
+                      
+                      mat-raised-button
+                      matTooltipPosition="above"
+                      matTooltip="{{
+                        timeline?.employee__histories_without_lm_group[3]
+                          ?.new_label
+                      }}"
+                      *ngIf="
+                        timeline?.employee__histories_without_lm_group[3]
+                          ?.new_label
+                      "
+                      (click)="currentBranch(timeline)"
+                    >
+                      {{
+                        timeline?.employee__histories_without_lm_group[3]
+                          ?.new_label
+                      }}
+                    </button>
+                  </div>
+                  <div class="button-group">
+                    <button
+                      class="duration_date_btn"
+                      
+                      mat-raised-button
+                      matTooltipPosition="below"
+                      matTooltip="{{
+                        timeline?.starting_date | date: 'dd-MMM-yy'
+                      }}"
+                      *ngIf="
+                        timeline?.employee__histories_without_lm_group[0]
+                          ?.duration
+                      "
+                      (click)="startingDate(timeline)"
+                    >
+                      {{ timeline?.starting_date | date: "dd-MMM-yy" }} -
+                      {{ timeline?.ending_date | date: "dd-MMM-yy" }}
+                    </button>
+                    <button
+                      class="duration_date_btn"
+                      
+                      mat-raised-button
+                      matTooltipPosition="below"
+                      matTooltip="{{
+                        timeline?.employee__histories_without_lm_group[1]
+                          ?.duration
+                      }}"
+                      *ngIf="
+                        timeline?.employee__histories_without_lm_group[0]
+                          ?.duration
+                      "
+                      (click)="duration(timeline)"
+                    >
+                      {{
+                        timeline?.employee__histories_without_lm_group[1]
+                          ?.duration
+                      }}
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="right-arrow-center"
+                  *ngIf="timeline.employee__histories_with_lm_group.length > 0"
+                ></div>
+              </div>
+              <div class="mdc-layout-grid__cell">
+                <ng-container>
+                  <div class="mdc-layout-grid padding-0">
+                    <div class="mdc-layout-grid__inner">
+                      <div
+                        class="mdc-layout-grid__cell self-center"
+                        *ngFor="
+                          let lm of timeline.employee__histories_with_lm_group
+                        "
+                      >
+                        <div class="profil-details text-center mb-1">
+                          <div class="button-group">
+                            <button
+                              class="name_btn"
+                              
+                              *ngIf="lm.new_label"
+                              mat-raised-button
+                              matTooltipPosition="above"
+                              matTooltip="{{ lm?.new_label }}"
+                              (click)="LMName(lm)"
+                            >
+                              {{ lm?.new_label }}
+                            </button>
+                          </div>
+                          <div class="w-100">
+                            <div
+                              class="rounded-image text-center"
+                              *ngIf="lm.file_path"
+                            >
+                              <img [src]="lm.file_path" (click)="LMInfo(lm)" />
+                            </div>
+                            <div
+                              class="rounded-image text-center"
+                              *ngIf="!lm.file_path"
+                            >
+                              <img
+                                src="assets/images/dummy-pic.jpg"
+                                (click)="LMInfo(lm)"
+                              />
+                            </div>
+                          </div>
+                          <div class="button-group">
+                            <button
+                              class="duration_date_btn"
+                             
+                              mat-raised-button
+                              matTooltipPosition="below"
+                              matTooltip="{{ lm?.duration }}"
+                              *ngIf="lm.duration"
+                              (click)="LMDuration(lm)"
+                            >
+                              {{ lm?.duration }}
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </ng-container>
+              </div>
             </div>
+          </div>
         </div>
-    </mat-card-content>
+      </div>
+    </div>
+  </mat-card-content>
 </mat-card>
