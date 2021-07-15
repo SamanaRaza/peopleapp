@@ -527,7 +527,6 @@ p {
 
   .mat-button-base {
     top: 2px;
-    border: 1px solid $white;
   }
 }
 
@@ -668,7 +667,6 @@ mat-footer-cell:first-of-type {
 .mat-paginator-container {
   .mat-button-base {
     margin: 0 5px;
-    border: 1px solid $white;
   }
 }
 
@@ -1422,4 +1420,12 @@ g.highcharts-axis-labels.highcharts-yaxis-labels {
 .highcharts-xaxis .highcharts-axis-line {
   stroke-width: 1px;
   stroke: var(--designation);
+}
+
+@media (min-width: 600px) and (max-width: 1600px) {
+  .mdc-layout-grid__cell--span-12,
+  .mdc-layout-grid__cell--span-12-tablet {
+    width: 100%;
+    grid-column-end: span 12;
+  }
 }

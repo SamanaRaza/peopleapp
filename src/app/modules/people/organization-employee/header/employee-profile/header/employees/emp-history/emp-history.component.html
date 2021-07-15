@@ -1,13 +1,25 @@
 <div class="container-fluid mt-5">
     <app-breadcrumb></app-breadcrumb>
-    <div class="row">
-        <div class="col-md-12">
-            <app-employee-timeline-summary></app-employee-timeline-summary>
-            <anms-employment-story class="pb-3"></anms-employment-story>
-            <anms-transfer-story></anms-transfer-story>
-            <anms-band-designation-graph class="graph-card"></anms-band-designation-graph>
-            <anms-performance-history-graph class="graph-card"></anms-performance-history-graph>
-            <anms-emp-salary-history-graph class="graph-card"></anms-emp-salary-history-graph>
+    <app-employee-timeline-summary></app-employee-timeline-summary>
+
+    <div class="mdc-layout-grid p-0">
+        <div class="storyes-card mdc-layout-grid__inner">
+            <div
+                class="mdc-layout-grid__cell mdc-layout-grid__cell--span-8-desktop mdc-layout-grid__cell--span-12-tablet">
+                <anms-employment-story class="pb-3"></anms-employment-story>
+            </div>
+
+            <div
+                class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-12-tablet">
+                <anms-band-designation-graph class="graph-card"></anms-band-designation-graph>
+                <anms-performance-history-graph class="graph-card"></anms-performance-history-graph>
+                <anms-emp-salary-history-graph class="graph-card"></anms-emp-salary-history-graph>
+            </div>
+
+            <anms-transfer-story
+                class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-12-tablet">
+            </anms-transfer-story>
+
         </div>
     </div>
 </div>
