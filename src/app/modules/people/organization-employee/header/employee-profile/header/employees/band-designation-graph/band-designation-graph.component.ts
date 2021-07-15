@@ -31,6 +31,8 @@ export class BandDesignationGraphComponent
 {
   @ViewChild('chartContainer') ChartContainer: ElementRef;
   data: any = {};
+  isYaxisShow1 = false;
+  isYaxisShow0 = true;
   queryParams: any = {};
   legend: LegendBand;
   processedYData: any = [];
@@ -87,12 +89,10 @@ export class BandDesignationGraphComponent
           title: {
             text: '',
           },
+          visible: true,
           categories: ['5', '5.1', '5.2', '6', '7'],
           labels: {
             useHTML: true,
-          //   formatter: function() {
-          //     return '<span class="hc-label">' + this.value + '</span>';
-          // }
           },
           
           showEmpty: false,
@@ -105,24 +105,19 @@ export class BandDesignationGraphComponent
         },
         {
           // right y axis
-          zoomEnabled: false,
-          reversed: true,
-          showEmpty: false,
-          
-          gridLineWidth: 0,
-          opposite: true,
-          labels: {
-            //useHTML: true,
-          //   formatter: function() {
-          //     return '<span style="margin-left:1000px" class="hc-label">' + this.value + '</span>';
-          // }
-          },
-
           title: {
             text: '',
           },
-          startOnTick: false,
-          endOnTick: false,
+          zoomEnabled: false,
+          reversed: true,
+          showEmpty: false,
+          visible: false,
+          gridLineWidth: 0,
+          labels: {
+            useHTML: true,
+          },
+
+          lineWidth: 6,
           min: 0,
           categories: [
             Designations.AssistantManager,
@@ -199,8 +194,190 @@ export class BandDesignationGraphComponent
               for (var i = 0; i < s.length; i++) {
                 
                 if (this.name == 'Show All' || this == s[i])
-                  s[i].setVisible(true);
-                else s[i].setVisible(false);
+                {
+                  HighCharts.chart(that.ChartContainer.nativeElement, options).update({
+                    yAxis: [
+                      {
+                        // left y axis
+                        reversed: true,
+                        title: {
+                          text: '',
+                        },
+                        visible: true,
+                        categories: ['5', '5.1', '5.2', '6', '7'],
+                        labels: {
+                          useHTML: true,
+                        },
+                        
+                        showEmpty: false,
+                        lineWidth: 6,
+                        gridLineWidth: 0,
+                        
+                        min: 0,
+                        max: 4,
+                        zoomEnabled: false,
+                      },
+                      {
+                        // right y axis
+                        title: {
+                          text: '',
+                        },
+                        zoomEnabled: false,
+                        reversed: true,
+                        showEmpty: false,
+                        visible: false,
+                        gridLineWidth: 0,
+                        labels: {
+                          useHTML: true,
+                        },
+              
+                        lineWidth: 6,
+                        min: 0,
+                        categories: [
+                          Designations.AssistantManager,
+                          Designations.CreditAnalyst,
+                          Designations.ExecutiveHCMOD,
+                          Designations.UnitHead,
+                        ],
+                        max: 3,
+                      },
+                    ],
+                    series: [
+                      {
+                        visible: true,
+                        name: 'Bands',
+                        type: 'line',
+                        allowPointSelect: true,
+                        color: '#14b5d0',
+                        point: {
+                          events: {
+                            select: function () {
+                              var text = this.y + ' was last selected',
+                                chart = this.series.chart;
+                              console.log(text);
+                            },
+                          },
+                        },
+                        lineWidth: 4,
+                        data: bands,
+                        yAxis: 0,
+                      },
+                      {
+                        visible: false,
+                        name: 'Designations',
+                        type: 'line',
+                        color: '#5a89ff',
+                        allowPointSelect: true,
+                        point: {
+                          events: {
+                            select: function () {
+                              var text = this.y + ' was last selected',
+                                chart = this.series.chart;
+                              console.log(text);
+                            },
+                          },
+                        },
+                        lineWidth: 4,
+                        data: designations,
+                        yAxis: 1,
+                      },
+                    ],
+                  });
+                  
+
+                  
+                }
+                else {
+                  HighCharts.chart(that.ChartContainer.nativeElement, options).update({
+                    yAxis: [
+                      {
+                        // left y axis
+                        reversed: true,
+                        title: {
+                          text: '',
+                        },
+                        visible: false,
+                        categories: ['5', '5.1', '5.2', '6', '7'],
+                        labels: {
+                          useHTML: true,
+                        },
+                        
+                        showEmpty: false,
+                        lineWidth: 6,
+                        gridLineWidth: 0,
+                        
+                        min: 0,
+                        max: 4,
+                        zoomEnabled: false,
+                      },
+                      {
+                        // right y axis
+                        title: {
+                          text: '',
+                        },
+                        zoomEnabled: false,
+                        reversed: true,
+                        showEmpty: false,
+                        visible: !that.isYaxisShow1,
+                        gridLineWidth: 0,
+                        labels: {
+                          useHTML: true,
+                        },
+              
+                        lineWidth: 6,
+                        min: 0,
+                        categories: [
+                          Designations.AssistantManager,
+                          Designations.CreditAnalyst,
+                          Designations.ExecutiveHCMOD,
+                          Designations.UnitHead,
+                        ],
+                        max: 3,
+                      },
+                    ],
+                    series: [
+                      {
+                        visible: false,
+                        name: 'Bands',
+                        type: 'line',
+                        allowPointSelect: true,
+                        color: '#14b5d0',
+                        point: {
+                          events: {
+                            select: function () {
+                              var text = this.y + ' was last selected',
+                                chart = this.series.chart;
+                              console.log(text);
+                            },
+                          },
+                        },
+                        lineWidth: 4,
+                        data: bands,
+                        yAxis: 0,
+                      },
+                      {
+                        visible: true,
+                        name: 'Designations',
+                        type: 'line',
+                        color: '#5a89ff',
+                        allowPointSelect: true,
+                        point: {
+                          events: {
+                            select: function () {
+                              var text = this.y + ' was last selected',
+                                chart = this.series.chart;
+                              console.log(text);
+                            },
+                          },
+                        },
+                        lineWidth: 4,
+                        data: designations,
+                        yAxis: 1,
+                      },
+                    ],
+                  });
+                  
+                };
               }
               return false;
             },
