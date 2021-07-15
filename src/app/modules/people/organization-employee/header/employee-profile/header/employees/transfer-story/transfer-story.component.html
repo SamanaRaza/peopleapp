@@ -1,38 +1,80 @@
 <mat-card class="example-card">
-    <mat-card-header class="header-center">
-        <mat-card-title>Transfer Story</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-        <div class="mdc-layout-grid">
-            <div class="storyes-card mdc-layout-grid__inner justify-content-center mt-4 department-arrow">
-                <div class="storyes mdc-layout-grid__cell" *ngFor="let year of this.years">
-                    <div class="story">
-                        <div class="year" (click)="empYear(year)">{{year.year}}</div>
-                        <div *ngIf="year.department" class="button-group">
-                            <button class="department_btn" mat-raised-button (click)="department(year)">{{year.department}}</button>
-
-                        </div>
-                    </div>
-                    <div *ngIf="year.office || year.location" class="story">
-                        <div class="button-group">
-                            <button *ngIf="year.office" mat-raised-button
-                                class="office_name_btn" (click)="office(year)">{{year.office}}</button>
-                            <button *ngIf="year.location" mat-raised-button
-                                class="location_btn" (click)="location(year)">{{year.location}}</button>
-                        </div>
-                    </div>
-                    <ng-container *ngIf="year.designations?.length > 0">
-                        <ng-container *ngFor="let designation of year.designations">
-                            <div class="story">
-                                <div class="button-group">
-                                    <button mat-raised-button class="designation_btn" (click)="Designation(designation)">{{designation}}</button>
-                                </div>
-                            </div>
-                        </ng-container>
-                    </ng-container>
-                    <div class="right-arrow department-arrow"></div>
-                </div>
+  <mat-card-header class="header-center">
+    <mat-card-title>Transfer Story</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="mdc-layout-grid">
+      <div
+        class="
+          storyes-card
+          mdc-layout-grid__inner
+          justify-content-center
+          mt-4
+          department-arrow
+        "
+      >
+        <div
+          class="storyes mdc-layout-grid__cell"
+          *ngFor="let year of this.years"
+        >
+          <div class="story">
+            <div class="year" (click)="empYear(year)">{{ year.year }}</div>
+            <div *ngIf="year.department" class="button-group">
+              <button
+                class="department_btn"
+                mat-raised-button
+                (click)="department(year)"
+                matTooltipPosition="left"
+                matTooltip="{{ year.department }}"
+              >
+                {{ year.department }}
+              </button>
             </div>
+          </div>
+          <div *ngIf="year.office || year.location" class="story">
+            <div class="button-group">
+              <button
+                *ngIf="year.office"
+                mat-raised-button
+                class="office_name_btn"
+                (click)="office(year)"
+                matTooltipPosition="left"
+                matTooltip="{{ year.office }}"
+              >
+                {{ year.office }}
+              </button>
+              <button
+                *ngIf="year.location"
+                mat-raised-button
+                class="location_btn"
+                (click)="location(year)"
+                matTooltipPosition="right"
+                matTooltip="{{ year.location }}"
+              >
+                {{ year.location }}
+              </button>
+            </div>
+          </div>
+          <ng-container *ngIf="year.designations?.length > 0">
+            <ng-container *ngFor="let designation of year.designations">
+              <div class="story">
+                <div class="button-group">
+                  <button
+                    mat-raised-button
+                    class="designation_btn"
+                    (click)="Designation(designation)"
+                    matTooltipPosition="left"
+                    matTooltip="{{ designation }}"
+                  >
+                    {{ designation }}
+                  </button>
+                </div>
+              </div>
+            </ng-container>
+          </ng-container>
+          <div class="right-arrow department-arrow"></div>
         </div>
-    </mat-card-content>
+      </div>
+    </div>
+  </mat-card-content>
 </mat-card>

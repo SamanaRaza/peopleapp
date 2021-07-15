@@ -30,7 +30,6 @@ import { ComponentDirective } from './directive/component.directive';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component'
 import { BreadcrumbService } from './breadcrumb/breadcrumb.service';
 
-
 import {
   FontAwesomeModule,
   FaIconLibrary
@@ -90,7 +89,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {};
     MatSnackBarModule,
     MatSlideToggleModule,
     MatDividerModule,
-
+    MatTooltipModule,
     CdkTableModule,
     MatFormFieldModule,
     FontAwesomeModule,
@@ -118,7 +117,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {};
     MatTableModule,
     FormsModule,
     ReactiveFormsModule,
-
+    MatTooltipModule,
     MatDialogModule,
     MatButtonModule,
     MatMenuModule,
