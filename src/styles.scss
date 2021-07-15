@@ -280,6 +280,12 @@ p {
   }
 }
 
+.mat-button-wrapper {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 .mb-10 {
   margin-bottom: 10px !important;
 }
