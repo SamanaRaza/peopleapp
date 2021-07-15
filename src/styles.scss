@@ -274,10 +274,14 @@ p {
   .mat-button-wrapper {
     .mat-paginator-icon {
       path {
-        color: $text-primarey;
+        color: $text-color;
       }
     }
   }
+}
+
+.mb-10 {
+  margin-bottom: 10px !important;
 }
 
 .table {
