@@ -586,6 +586,9 @@ mat-footer-cell:first-of-type {
 
 .storyes-card {
   margin-bottom: 50px;
+  display: block;
+  overflow: auto;
+  white-space: nowrap;
 
   &::before {
     position: absolute;
@@ -616,6 +619,8 @@ mat-footer-cell:first-of-type {
   .storyes {
     margin-bottom: 50px;
     position: relative;
+    min-width: 290px;
+    display: inline-grid;
 
     .right-arrow {
       position: absolute;
