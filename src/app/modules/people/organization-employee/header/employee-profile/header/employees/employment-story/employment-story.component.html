@@ -231,7 +231,7 @@
                       matTooltipPosition="below"
                       matTooltip="{{
                         timeline?.starting_date | date: 'dd-MMM-yy'
-                      }}"
+                      }} - {{ timeline?.ending_date | date: 'dd-MMM-yy' }}"
                       *ngIf="
                         timeline?.employee__histories_without_lm_group[0]
                           ?.duration
