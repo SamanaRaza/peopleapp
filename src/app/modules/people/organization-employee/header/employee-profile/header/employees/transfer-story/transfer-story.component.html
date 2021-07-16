@@ -9,6 +9,8 @@
                     <div class="year" (click)="empYear(year)">{{year.year}}</div>
                     <div *ngIf="year.department" class="button-group">
                         <button class="department_btn" mat-raised-button
+                        matTooltipPosition="above"
+                        matTooltip="{{ year.department }}"
                             (click)="department(year)">{{year.department}}</button>
 
                     </div>
@@ -16,8 +18,12 @@
                 <div *ngIf="year.office || year.location" class="story">
                     <div class="button-group">
                         <button *ngIf="year.office" mat-raised-button class="office_name_btn"
+                        matTooltipPosition="left"
+                        matTooltip="{{ year.office }}"
                             (click)="office(year)">{{year.office}}</button>
                         <button *ngIf="year.location" mat-raised-button class="location_btn"
+                        matTooltipPosition="right"
+                        matTooltip="{{ year.location }}"
                             (click)="location(year)">{{year.location}}</button>
                     </div>
                 </div>
@@ -26,6 +32,8 @@
                         <div class="story">
                             <div class="button-group">
                                 <button mat-raised-button class="designation_btn"
+                                matTooltipPosition="below"
+                                matTooltip="{{designation}}"
                                     (click)="Designation(designation)">{{designation}}</button>
                             </div>
                         </div>
