@@ -33,6 +33,7 @@
     "font-awesome": "^4.7.0",
     "highcharts": "^9.1.2",
     "highcharts-angular": "^2.10.0",
+    "jquery": "^3.6.0",
     "moment": "^2.29.1",
     "ng7-mat-breadcrumb": "^5.0.1",
     "ngx-perfect-scrollbar": "^10.1.1",

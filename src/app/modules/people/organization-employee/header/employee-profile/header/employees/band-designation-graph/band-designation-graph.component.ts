@@ -14,6 +14,7 @@ import { BaseComponentComponent } from 'src/app/shared/base-component/base-compo
 import { AllServicesService } from 'src/app/services/all-services.service';
 import * as Highcharts from 'highcharts';
 import { Designations, DesignationsValues } from 'src/app/constants/constants';
+declare var jQuery: any;
 interface LegendBand {
   color: string;
   name: string;
@@ -33,6 +34,8 @@ export class BandDesignationGraphComponent
   data: any = {};
   isYaxisShow1 = false;
   isYaxisShow0 = true;
+  isBandClicked = false;
+  isDesignationClicked = false;
   queryParams: any = {};
   legend: LegendBand;
   processedYData: any = [];
@@ -62,6 +65,11 @@ export class BandDesignationGraphComponent
         that.designation,
         that.startingYear
       );
+      (function ($) {
+        $(document).ready(function () {
+          console.log('Hello from jQuery!');
+        });
+      })(jQuery);
     });
   }
   generateBandDesignation(bands: any, designations: any, startYear: any) {
@@ -94,11 +102,11 @@ export class BandDesignationGraphComponent
           labels: {
             useHTML: true,
           },
-          
+
           showEmpty: false,
           lineWidth: 6,
           gridLineWidth: 0,
-          
+
           min: 0,
           max: 4,
           zoomEnabled: false,
@@ -185,17 +193,17 @@ export class BandDesignationGraphComponent
       },
       plotOptions: {
         series: {
-          
           events: {
-            
             legendItemClick: function (event) {
-              
               var s = this.chart.series;
               for (var i = 0; i < s.length; i++) {
-                
-                if (this.name == 'Show All' || this == s[i])
-                {
-                  HighCharts.chart(that.ChartContainer.nativeElement, options).update({
+                if (this.name == 'Show All' || this == s[i]) {
+                  that.isBandClicked = !that.isBandClicked;
+                  that.isDesignationClicked = false;
+                  HighCharts.chart(
+                    that.ChartContainer.nativeElement,
+                    options
+                  ).update({
                     yAxis: [
                       {
                         // left y axis
@@ -208,104 +216,11 @@ export class BandDesignationGraphComponent
                         labels: {
                           useHTML: true,
                         },
-                        
-                        showEmpty: false,
-                        lineWidth: 6,
-                        gridLineWidth: 0,
-                        
-                        min: 0,
-                        max: 4,
-                        zoomEnabled: false,
-                      },
-                      {
-                        // right y axis
-                        title: {
-                          text: '',
-                        },
-                        zoomEnabled: false,
-                        reversed: true,
-                        showEmpty: false,
-                        visible: false,
-                        gridLineWidth: 0,
-                        labels: {
-                          useHTML: true,
-                        },
-              
-                        lineWidth: 6,
-                        min: 0,
-                        categories: [
-                          Designations.AssistantManager,
-                          Designations.CreditAnalyst,
-                          Designations.ExecutiveHCMOD,
-                          Designations.UnitHead,
-                        ],
-                        max: 3,
-                      },
-                    ],
-                    series: [
-                      {
-                        visible: true,
-                        name: 'Bands',
-                        type: 'line',
-                        allowPointSelect: true,
-                        color: '#14b5d0',
-                        point: {
-                          events: {
-                            select: function () {
-                              var text = this.y + ' was last selected',
-                                chart = this.series.chart;
-                              console.log(text);
-                            },
-                          },
-                        },
-                        lineWidth: 4,
-                        data: bands,
-                        yAxis: 0,
-                      },
-                      {
-                        visible: false,
-                        name: 'Designations',
-                        type: 'line',
-                        color: '#5a89ff',
-                        allowPointSelect: true,
-                        point: {
-                          events: {
-                            select: function () {
-                              var text = this.y + ' was last selected',
-                                chart = this.series.chart;
-                              console.log(text);
-                            },
-                          },
-                        },
-                        lineWidth: 4,
-                        data: designations,
-                        yAxis: 1,
-                      },
-                    ],
-                  });
-                  
 
-                  
-                }
-                else {
-                  HighCharts.chart(that.ChartContainer.nativeElement, options).update({
-                    yAxis: [
-                      {
-                        // left y axis
-                        reversed: true,
-                        title: {
-                          text: '',
-                        },
-                        visible: false,
-                        categories: ['5', '5.1', '5.2', '6', '7'],
-                        labels: {
-                          useHTML: true,
-                        },
-                        
                         showEmpty: false,
                         lineWidth: 6,
                         gridLineWidth: 0,
-                        
+
                         min: 0,
                         max: 4,
                         zoomEnabled: false,
@@ -318,12 +233,12 @@ export class BandDesignationGraphComponent
                         zoomEnabled: false,
                         reversed: true,
                         showEmpty: false,
-                        visible: !that.isYaxisShow1,
+                        visible: false,
                         gridLineWidth: 0,
                         labels: {
                           useHTML: true,
                         },
-              
+
                         lineWidth: 6,
                         min: 0,
                         categories: [
@@ -337,7 +252,109 @@ export class BandDesignationGraphComponent
                     ],
                     series: [
                       {
-                        visible: false,
+                        visible: true,
+                        name: 'Bands',
+                        type: 'line',
+                        allowPointSelect: true,
+                        color: '#14b5d0',
+                        point: {
+                          events: {
+                            select: function () {
+                              var text = this.y + ' was last selected',
+                                chart = this.series.chart;
+                              console.log(text);
+                            },
+                          },
+                        },
+                        lineWidth: 4,
+                        data: bands,
+                        yAxis: 0,
+                      },
+                      {
+                        visible: that.isBandClicked == true ? false : true,
+                        name: 'Designations',
+                        type: 'line',
+                        color: '#5a89ff',
+                        allowPointSelect: true,
+                        point: {
+                          events: {
+                            select: function () {
+                              var text = this.y + ' was last selected',
+                                chart = this.series.chart;
+                              console.log(text);
+                            },
+                          },
+                        },
+                        lineWidth: 4,
+                        data: designations,
+                        yAxis: 1,
+                      },
+                    ],
+                  });
+                } else {
+                  that.isDesignationClicked = !that.isDesignationClicked;
+                  that.isBandClicked = false;
+                  HighCharts.chart(
+                    that.ChartContainer.nativeElement,
+                    options
+                  ).update({
+                    yAxis: [
+                      {
+                        // left y axis
+                        reversed: true,
+                        title: {
+                          text: '',
+                        },
+                        visible:
+                          that.isDesignationClicked == true ? false : true,
+                        categories: ['5', '5.1', '5.2', '6', '7'],
+                        labels: {
+                          useHTML: true,
+                        },
+
+                        showEmpty: false,
+                        lineWidth: 6,
+                        gridLineWidth: 0,
+
+                        min: 0,
+                        max: 4,
+                        zoomEnabled: false,
+                      },
+                      {
+                        // right y axis
+                        title: {
+                          text: '',
+                        },
+                        zoomEnabled: false,
+                        reversed: true,
+                        showEmpty: false,
+                        visible:
+                          that.isDesignationClicked == true ? true : false,
+                        gridLineWidth: 0,
+                        labels: {
+                          useHTML: true,
+                          formatter: function () {
+                            return (
+                              '<span class="tamp">' + this.value + '</span>'
+                            );
+                          },
+                        },
+
+                        lineWidth: 6,
+                        min: 0,
+                        categories: [
+                          Designations.AssistantManager,
+                          Designations.CreditAnalyst,
+                          Designations.ExecutiveHCMOD,
+                          Designations.UnitHead,
+                        ],
+                        max: 3,
+                      },
+                    ],
+                    series: [
+                      {
+                        visible:
+                          that.isDesignationClicked == true ? false : true,
                         name: 'Bands',
                         type: 'line',
                         allowPointSelect: true,
@@ -376,12 +393,10 @@ export class BandDesignationGraphComponent
                       },
                     ],
                   });
-                  
-                };
+                }
               }
               return false;
             },
-             
           },
           label: {
             connectorAllowed: false,
@@ -395,7 +410,6 @@ export class BandDesignationGraphComponent
       },
       series: [
         {
-          
           name: 'Bands',
           type: 'line',
           allowPointSelect: true,

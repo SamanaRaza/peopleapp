@@ -40,6 +40,7 @@ export class PerformanceHistoryGraphComponent implements OnInit {
   trainingData: any = [];
   yAxisCatogories: any = [];
   legendLabels: any = [];
+  setVisibleBubble = false;
 
   training: any = [];
   @ViewChild('bubbleChartContainer') bubbleChartContainer: ElementRef;
@@ -402,10 +403,17 @@ export class PerformanceHistoryGraphComponent implements OnInit {
           events: {
             legendItemClick: function (event) {
               var s = this.chart.series;
+              that.setVisibleBubble = !that.setVisibleBubble;
               for (var i = 0; i < s.length; i++) {
-                if (this.name == 'Show All' || this == s[i])
+                if (this.name == 'Show All' || this == s[i]) {
                   s[i].setVisible(true);
-                else s[i].setVisible(false);
+                } else {
+                  if (that.setVisibleBubble == false) {
+                    s[i].setVisible(true);
+                  } else {
+                    s[i].setVisible(false);
+                  }
+                }
               }
               return false;
             },
@@ -481,6 +489,10 @@ export class PerformanceHistoryGraphComponent implements OnInit {
               },
             },
           },
+        },
+        {
+          type: 'bubble',
+          name: 'Show All',
         },
       ],
     };
